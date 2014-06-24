@@ -124,16 +124,15 @@
 }
 
 .entry pre {
-    padding: 15px 16px;
+    padding: 2px 18px;
     line-height: 16px;
     font-size: 14px;
     white-space: pre;
     word-wrap: normal;
     overflow: auto;
-    font-family: consolas,monaco,monospace;
-    border: 1px solid #e1e1e8;
-    border-right: none;
-    border-left: none;
+    font-family: Monaco,Consolas,monospace;
+    border-right: 0px solid #e1e1e8;
+    border-left: 5px solid #e1e1e8;
     background-color: #f7f7f9
 }
 
@@ -259,9 +258,9 @@
 
 .entry a {
     padding-bottom: .025em;
-    color: #069;
+    color: #2ba3d4;
     text-decoration: none;
-    border-bottom-color: #08c
+    border-bottom-color: #2ba3d4;
 }
 
 .entry a:focus {
@@ -269,8 +268,7 @@
 }
 
 .entry a:visited {
-    color: #551a8b;
-    border-bottom-color: #551a8b
+    
 }
 
 .entry a:hover {
@@ -324,7 +322,7 @@
     margin: 0;
     font-family: consolas,monaco,monospace;
     font-size: 14px;
-    color: #424b50;
+    color: #333;
     background: none;
     border: none
 }

@@ -1,3 +1,29 @@
+.sh_sourceCode {
+  font-weight: normal;
+  font-style: normal;
+}
+
+.sh_sourceCode .sh_symbol,
+.sh_sourceCode .sh_cbracket {
+  color: #333;
+}
+
+.sh_sourceCode .sh_keyword {
+  color: #E74C3C;
+}
+
+.sh_sourceCode .sh_string,
+.sh_sourceCode .sh_regexp,
+.sh_sourceCode .sh_number,
+.sh_sourceCode .sh_specialchar {
+  color: #690;
+}
+
+.sh_sourceCode .sh_comment {
+  color: #aaa;
+}
+
+
 /* Components */
 .btn {
 	color: #fff;
@@ -12,7 +38,7 @@
     box-shadow: 1px 1px 1px rgba(0,0,0,0.1);
     background: #fff;
     border: none;
-    color: #2ba3d4 !important;
+    color: #2ba3d4;
     min-height: 50px;
     padding: 0 30px;
     line-height: 50px;
@@ -24,12 +50,12 @@
     text-decoration: none;
     text-align: center;
     border-radius: 4px;
-    text-shadow: 0 1px 0 #fff;
+    -webkit-transition: all .15s ease-in-out;
+    transition: all .15s ease-in-out;
 }
 
-.startBtn :hover {
-    -webkit-transition: background-color .15s ease-in-out;
-    transition: background-color .15s ease-in-out;
+.startBtn:hover {
+    color: #777;
 }
 
 .startBtn:focus, .startBtn:active {

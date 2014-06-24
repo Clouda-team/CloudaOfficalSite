@@ -18,8 +18,7 @@ html {
 
 #nk {
 	position: relative;
-	background: #2ba3d4;
-	/* background: #2ba3d4 url("bg_teaser.svg") 50% 50% no-repeat */
+	background: #2ba3d4 url("bg_teaser.svg") 50% 50% no-repeat;
 }
 
 #bd {
@@ -69,7 +68,7 @@ html {
 
 #intro {
 	text-align: center;
-	padding: 100px 0 170px;
+	padding: 120px 0 170px;
 	font-family: Helvetica, STHeiti STXihei, Microsoft JhengHei, Microsoft YaHei, Tohoma, Arial;
 }
 
@@ -81,10 +80,11 @@ html {
 	margin: 0.5em 0;
 	color: #fff;
 	font-size: 4em;
+	font-weight: 500;
 }
 
 #intro p {
-	font-size: 20px;
+	font-size: 18px;
 	line-height: 26px;
 	font-weight: 300;
 	color: #fff;
@@ -116,7 +116,7 @@ html {
 }
 
 #features p {
-	font-size: 20px;
+	font-size: 18px;
 	line-height: 26px;
 	font-weight: 300;
 	color: #fff;
