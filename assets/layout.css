@@ -1,0 +1,37 @@
+/* Components */
+.btn {
+	color: #fff;
+	background-color: #f2594B;
+	border-radius: 2px;
+	font-weight: 400;
+	padding: 10px 53px;
+	display: block;
+}
+
+.btn:hover {
+	background-color: #FD6550;
+}
+
+.boxbtn {
+    padding: 0.6em 1.2em;
+    border: 1px solid #fff;
+    border-radius: 3px;
+    transition: all 0.2s linear;
+}
+
+.boldboxbtn {
+    font-weight: bold;
+    border: 3px solid #fff;
+    border: 1px solid #fff;
+    transition: all 0.2s linear;
+}
+
+.box {
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 3px rgba(34,25,25,.4);
+    background: #fff;
+}
+
+
+
+
