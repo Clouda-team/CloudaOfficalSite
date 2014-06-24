@@ -8,6 +8,42 @@
 	display: block;
 }
 
+.startBtn {
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+    background: #fff;
+    border: none;
+    color: #2ba3d4 !important;
+    min-height: 50px;
+    padding: 0 30px;
+    line-height: 50px;
+    font-size: 18px;
+    display: inline-block;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    vertical-align: middle;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 4px;
+    text-shadow: 0 1px 0 #fff;
+}
+
+.startBtn :hover {
+    -webkit-transition: background-color .15s ease-in-out;
+    transition: background-color .15s ease-in-out;
+}
+
+.startBtn:focus, .startBtn:active {
+    background: #2e93bc;
+    color: #fff !important;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.1);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.15),
+                inset 0 -1px 0px rgba(0,0,0,0.05),
+                inset 1px 0px 0px rgba(0,0,0,0.05),
+                inset -1px 0px 0px rgba(0,0,0,0.05);
+    -webkit-transition: background-color .05s ease-in-out;
+    transition: background-color .05s ease-in-out;
+}
+
 .btn:hover {
 	background-color: #FD6550;
 }
