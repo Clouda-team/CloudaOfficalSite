@@ -1,5 +1,5 @@
 html {
-	background: url('bg2.png') repeat #edece9;
+	/* background: url('bg2.png') repeat #edece9; */
 }
 
 .vp {
@@ -18,7 +18,8 @@ html {
 
 #nk {
 	position: relative;
-	background: #2ba3d4 url("bg_teaser.svg") 50% 50% no-repeat;
+	background: #2ba3d4;
+	/* background: #2ba3d4 url("bg_teaser.svg") 50% 50% no-repeat */
 }
 
 #bd {
@@ -69,6 +70,7 @@ html {
 #intro {
 	text-align: center;
 	padding: 170px 0;
+	font-family: Helvetica, STHeiti STXihei, Microsoft JhengHei, Microsoft YaHei, Tohoma, Arial;
 }
 
 #intro img {
@@ -76,7 +78,7 @@ html {
 }
 
 #intro h1 {
-	margin-top: -1em;
+	margin-top: 0.3em;
 	color: #fff;
 	font-size: 4em;
 }
@@ -130,6 +132,7 @@ html {
 	background-color: #3dc0f1;
 	padding: 170px 0;
 	text-align: center;
+	font-family: Helvetica, STHeiti STXihei, Microsoft JhengHei, Microsoft YaHei, Tohoma, Arial;
 }
 
 #features h1 {
