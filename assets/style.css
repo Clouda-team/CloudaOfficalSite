@@ -18,7 +18,6 @@ html {
 
 #nk {
 	position: relative;
-	background: #2ba3d4 url("bg_teaser.svg") 50% 50% no-repeat;
 }
 
 #bd {
@@ -67,6 +66,7 @@ html {
 }
 
 #intro {
+	background: #333 url("bg_teaser.svg") 50% 50% no-repeat;
 	text-align: center;
 	padding: 120px 0 170px;
 	font-family: Helvetica, STHeiti STXihei, Microsoft JhengHei, Microsoft YaHei, Tohoma, Arial;
