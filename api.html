@@ -70,7 +70,7 @@
     "author": "",
     "dependencies":{
         "clouda-core" : "*",
-        "clouda-httpServer" : "*"
+        "clouda-httpserver" : "*"
     },
     "license": "MIT"
 } 
@@ -80,8 +80,8 @@
 
 <p>
     其中<code>clouda-core</code>是<code>clouda+</code>框架的核心，为各类服务的扩展提供最基础的支持。<br>
-    <code>clouda-httpServer</code>是<code>clouda+</code>提供的httpServer服务。<br>
-    接下来我们从Hello,World！开始，开发一个最简单而又灵活的httpServer。
+    <code>clouda-httpserver</code>是<code>clouda+</code>提供的httpserver服务。<br>
+    接下来我们从Hello,World！开始，开发一个最简单而又灵活的httpserver。
 </p>
 
 
@@ -107,8 +107,8 @@ npm install
 <p>创建一个名为<code>hello.js</code>的文件：</p>
 <pre>
     <code>
-//引入httpServer
-var app = clouda.use('httpServer');
+//引入httpserver
+var app = clouda.use('httpserver');
 
 //定义一个Action
 app.defineAction('hello', function (default_request, default_response) {
@@ -124,11 +124,11 @@ app.defineAction('hello', function (default_request, default_response) {
 -->
 
 <h3>Step 3: 定义路由(*稍后通过命令行工具简化)</h3>
-在<code>hello</code>目录下新建<code>conf</code>目录，并创建httpServer的启动配置文件<code>http.conf.js</code>：
+在<code>hello</code>目录下新建<code>conf</code>目录，并创建httpserver的启动配置文件<code>http.conf.js</code>：
 <pre>
     <code>
 define({
-    "config.clouda-httpServer":{
+    "config.clouda-httpserver":{
         autoStart : true ,
         defaultAction : function(){
             this.send("Hello，World！");
@@ -138,9 +138,9 @@ define({
     </code>
 </pre>
 
-<h3>Step 4: 启动httpServer</h3>
+<h3>Step 4: 启动httpserver</h3>
 
-<p>运行<code>node start</code>，启动httpServer。<br> 打开浏览器访问`localhost:8080`：`Hello,World!`。</p>
+<p>运行<code>node start</code>，启动httpserver。<br> 打开浏览器访问`localhost:8080`：`Hello,World!`。</p>
             </article>
         </div>
 	</section>
