@@ -104,6 +104,10 @@
 	border-left: 2px solid #E74C3C;
 }
 
+#menu li div a.disable:hover{
+	background-color: gray;
+}
+
 #menu li div a:hover .fa, #menu li div a.active .fa{
 	color: #E74C3C;
 }
