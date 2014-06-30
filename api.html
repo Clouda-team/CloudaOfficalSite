@@ -5,42 +5,37 @@
 	<meta name="description" content="简单可依赖的Javascript开发框架" />
 	<title>Clouda+</title>
 	<link rel="stylesheet" href="assets/entry.css">
-	<link rel="stylesheet" href="assets/style.css">
+	<link rel="stylesheet" href="assets/api.css">
     <link rel="stylesheet" href="assets/base.css">
-    <link rel="stylesheet" href="assets/layout.css">
+    <link rel="stylesheet" href="assets/stylus.css">
+    <link rel="stylesheet" href="assets/font-awesome.min.css">
 </head>
 <body>
-	<header id="hd">
-		<div class="vp">
-			<div id="logo"><a href="index.html"><img src="assets/a+.png" alt=""></a></div>
-			<ul id="nav">
-				<li><a href="index.html">home</a></li>
-				<li><a href="#" class="active">docs</a></li>
-				<li><a href="https://github.com/Clouda-team">github</a></li>
-			</ul>
-		</div>
-	</header>
-    <section id="nk"></section>
-	<section id="bd">
+	<header class="hd">
+        <div class="vp">
+            <div id="logo"><a href="index.html"><img src="assets/clouda+logo.png" alt=""><span>Clouda+</span></a></div>
+            <ul id="nav">
+                <li><a href="index.html">home</a></li>
+                <li><a class="active"  href="#">docs</a></li>
+                <li><a href="https://github.com/Clouda-team">github</a></li>
+            </ul>
+        </div>
+    </header>
+	<section class="bd">
         <div class="vp">
             <aside id="menu">
                 <ul>
                     <li class="active">
-                        <h3><a href="#">初学者</a></h3>
-                        <div><a href="#">安装</a></div>
-                        <div><a href="#" class="active">起步</a></div>
+                        <h3><a href="cloudaAPI.html">Clouda</a></h3>
+                        <div><a href="#" class="active">起步<i class="fa fa-dot-circle-o"></i></a></div>
+                        <div><a href="#">API<i class="fa fa-files-o"></i></a></div>
+                        <div><a href="#">FAQ<i class="fa fa-question-circle"></i></a></div>
                     </li>
                     <li>
-                        <h3><a href="#">开发者</a></h3>
-                        <div><a href="">Item-1</a></div>
-                        <div><a href="">Item-2</a></div>
-                        <div><a href="">Item-3</a></div>
-                    </li>
-                    <li>
-                        <h3><a href="#">API</a></h3>
-                        <div><a href="">Item-1</a></div>
-                        <div><a href="">Item-2</a></div>
-                        <div><a href="">Item-3</a></div>
+                        <h3><a href="blendAPI.html">BlendUI</a></h3>
+                        <div><a href="">起步</a></div>
+                        <div><a href="">API</a></div>
+                        <div><a href="">FAQ</a></div>
                     </li>
                     <li>
                         <h3><a href="#">Showcase</a></h3>
@@ -51,100 +46,21 @@
                 </ul>
             </aside>
             <article class="entry" id="docs">
-                <h1>起步</h1>
-
-                <p>首先，确认你的机器已经安装<code>node</code>，如果没有安装，请移步<a href="http://nodejs.org">Node官网</a>完成安装工作。</p>
-                <h3>Step 1：初始化项目</h3>
-
-<p>创建一个项目目录，如<code>hello</code>，并创建一个<code>package.json</code>，用来描述项目信息，如下：</p>
-<pre>
-    <code>
-{
-    "name": "helloworld",
-    "version": "0.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-        "install" : "node ./node_modules/clouda-core/init.js"
-    },
-    "author": "",
-    "dependencies":{
-        "clouda-core" : "*",
-        "clouda-httpserver" : "*"
-    },
-    "license": "MIT"
-} 
-    </code>
-</pre>
-    
-
-<p>
-    其中<code>clouda-core</code>是<code>clouda+</code>框架的核心，为各类服务的扩展提供最基础的支持。<br>
-    <code>clouda-httpserver</code>是<code>clouda+</code>提供的httpserver服务。<br>
-    接下来我们从Hello,World！开始，开发一个最简单而又灵活的httpserver。
-</p>
-
-
-
-<h3>Step 2: 安装clouda+</h3>
-
-<p>在<code>hello</code>目录命令行下运行命令，安装项目依赖：</p>
-<pre>
-    <code>
-npm install 
-    </code>
-</pre>
-
-<p>
-这样在你的目录下就多出了一个`./node_modules`，目录里已经安装好了<code>package.json</code>里所声明的依赖。  <br>
-并且在安装完成后会自动生成启动文件<code>start.js</code>。
-</p>
-    
-
-<!--
-<h3>Step 3：配置一个Action</h3>
-
-<p>创建一个名为<code>hello.js</code>的文件：</p>
-<pre>
-    <code>
-//引入httpserver
-var app = clouda.use('httpserver');
-
-//定义一个Action
-app.defineAction('hello', function (default_request, default_response) {
-
-    this.send("Hello，World！");
-
-});
-    </code>
-</pre>
-
-
-<p><code>req</code>和<code>res</code>对象与<code>node</code>原生对象。</p>
--->
-
-<h3>Step 3: 定义路由(*稍后通过命令行工具简化)</h3>
-在<code>hello</code>目录下新建<code>conf</code>目录，并创建httpserver的启动配置文件<code>http.conf.js</code>：
-<pre>
-    <code>
-define({
-    "config.clouda-httpserver":{
-        autoStart : true ,
-        defaultAction : function(){
-            this.send("Hello，World！");
-        }
-    }
-});
-    </code>
-</pre>
-
-<h3>Step 4: 启动httpserver</h3>
-
-<p>运行<code>node start</code>，启动httpserver。<br> 打开浏览器访问`localhost:8080`：`Hello,World!`。</p>
+                <h1>APIs</h1>
+                <blockquote>
+                    <p>BlendUI 是解决开发者webapp中体验无法达到native的体验而生，</p>
+                    <p><code>clouda+</code> = <code>BlendUI</code> + <code>clouda api</code> + <code>native runtime</code></p>
+                    <p>使其web开发者迅速开发出具有web先天优越性的Native app 或 轻应用</p>
+                </blockquote>
+                <h4>传送门</h4>
+                <ul>
+                    <li><a href="cloudaAPI.html">Clouda</a></li>
+                    <li><a href="blendAPI.html">BlendUI</a></li>
+                </ul>
             </article>
         </div>
 	</section>
-	<section id="ft">
+	<section class="ft">
 		<div class="vp">
 			&copy; 2014 Baidu
 		</div>

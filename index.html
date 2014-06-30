@@ -5,59 +5,87 @@
 	<meta name="description" content="简单可依赖的Javascript开发框架" />
 	<title>Clouda+</title>
 	<link rel="stylesheet" href="assets/base.css">
-	<link rel="stylesheet" href="assets/layout.css">
+	<link rel="stylesheet" href="assets/stylus.css">
 	<link rel="stylesheet" href="assets/style.css">
 	<link rel="stylesheet" href="assets/font-awesome.min.css">
 </head>
 <body>
-	<header id="hd">
-		<div class="vp">
-			<div id="logo"><a href="index.html"><img src="assets/a+.png" alt=""></a></div>
-			<ul id="nav">
-				<li><a class="active" href="#">home</a></li>
-				<li><a href="api.html">docs</a></li>
-				<li><a href="https://github.com/Clouda-team">github</a></li>
+	<div id="intro">
+		<nav>
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="api.html">Docs</a></li>
+				<li><a href="https://github.com/Clouda-team">Github</a></li>
 			</ul>
-		</div>
-	</header>
-	<section id="nk">
-		<div id="intro">
-			<img src="assets/clouda+.png" width="200" alt="">
-			<h1>Clouda+</h1>
-			<p>一个轻量级，灵活，可扩展的<br>Webapp整体解决方案</p>
-			<a class="startBtn" href="api.html">Get Started</a>
-			<div id="ver">Version 0.0.1</div>
-		</div>
-	</section>
-	<section id="bd">
-		<div id="features">
-			<h1>Features</h1>
-			<p>Clouda+提供了一套Webapp整体构建方案，性能<br>让您的开发更简单，灵活，可扩展。</p>
-			<ul id="panel">
-				<li>
-					<img src="assets/code.svg" alt="" width="200" height="140">
-					<h3>简单可依赖</h3>
-					<p>框架基于那些简单又经典的思想而构建，<br>让开发不再彷徨。</p>
-				</li>
-				<li>
-					<img src="assets/theme.svg" alt="" width="200" height="140">
-					<h3>深度可定制</h3>
-					<p>模块化开发，按照自己的需求定制框架，<br>根据自己的风格做出抉择。</p>
-				</li>
-				<li>
-					<img src="assets/modular.svg" alt="" width="200" height="140">
-					<h3>灵活可扩展</h3>
-					<p>经典的层级架构，无论是小型应用，<br>还是大型服务，都从容应对。</p>
-				</li>
-				<li>
-					<img src="assets/webapp.svg" alt="" width="200" height="140">
-					<h3>为移动而生</h3>
-					<p>为智能手机与平板电脑特别设计，<br>性能媲美Native App。</p>
-				</li>
-			</ul>
-		</div>
-	</section>
-	<section id="ft">
+		</nav>
+		<img src="assets/clouda+.png" width="200" alt="">
+		<h1>Clouda+</h1>
+		<p>移动web应用开发整体解决方案，特别为轻应用设计。<br>服务端框架基于Nodejs，移动端框架基于本地Native能力，<br>让你的webapp体验和交互和Native应用媲美！</p>
+		<ul class="info">
+			<li><a href="https://github.com/Clouda-team/clouda-core">Clouda@v0.0.1</a></li>
+			<li><a href="https://github.com/Clouda-team/BlendUI">BlendUI@v0.0.1</a></li>
+		</ul>
+		<ul class="info">
+			<li><i class="fa fa-star"></i><a href="https://github.com/Clouda-team">2000 stars</a></li>
+			<li><i class="fa fa-code-fork"></i><a href="https://github.com/Clouda-team">1000 forks</a></li>
+			<li><i class="fa fa-github"></i><a href="https://github.com/Clouda-team">@Clouda-team</a></li>
+		</ul>
+	</div>
+	<div id="blendui" class="showcase">
+		<h1>BlendUI</h1>
+		<p>基于本地Native运行环境，为Javascript提供了操作Webview和Native控件的能力，<br>让你的web移动端交互流畅，体验无异于Native app</p>
+		<a href="blendAPI.html" class="startBtn">BlendUI Docs</a>
+		<ul class="panel">
+			<li>
+				<i class="fa fa-tachometer"></i>
+				<h3>高性能</h3>
+				<p>原生动画支持，缩减DOM层级，<br>让你的web应用不再卡顿。</p>
+			</li>
+			<li>
+				<i class="fa fa-cogs"></i>
+				<h3>灵活性</h3>
+				<p>基于web构建，<br>带来无限的可定制性。</p>
+			</li>
+			<li>
+				<i class="fa fa-codepen"></i>
+				<h3>能力丰富</h3>
+				<p>让你的Javascript拥有设备能力，云能力<br>以及webview控制力</p>
+			</li>
+			<li>
+				<i class="fa fa-code"></i>
+				<h3>Web API</h3>
+				<p>Web for all<br>Web on everything</p>
+			</li>
+		</ul>
+	</div>
+	<div id="clouda" class="showcase">
+		<h1>Clouda</h1>
+		<p>基于Nodejs的服务端开发框架，为移动而生，<br>让移动web开发更简单、更灵活、扩展能力更强。</p>
+		<a href="cloudaAPI.html" class="startBtn">Clouda Docs</a>
+		<ul class="panel">
+			<li>
+				<i class="fa fa-paper-plane"></i>
+				<h3>简单可依赖</h3>
+				<p>框架基于那些简单又经典的思想而构建，<br>让开发不再彷徨。</p>
+			</li>
+			<li>
+				<i class="fa fa-cube"></i>
+				<h3>深度可定制</h3>
+				<p>模块化开发，<br>按需定制，随心选择。</p>
+			</li>
+			<li>
+				<i class="fa fa-puzzle-piece"></i>
+				<h3>灵活可扩展</h3>
+				<p>层级架构，无论是小型应用，<br>还是大型服务，都能从容应对。<br></p>
+			</li>
+			<li>
+				<i class="fa fa-tablet"></i>
+				<h3>为移动而生</h3>
+				<p>为智能手机与平板电脑特别设计，<br>让你的移动应用体验更佳。</p>
+			</li>
+		</ul>
+	</div>
+	<section class="ft">
 		<div class="vp">
 			&copy; 2014 Baidu
 		</div>

@@ -1,3 +1,33 @@
+.hd {
+    background: #fff;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    padding: 6px 0.5%;
+    width: 99%;
+}
+
+.ft {
+    text-align: center;
+    padding: 1em 0;
+}
+
+@media screen and (min-width: 1440px) {
+    .vp {
+        max-width: 1200px;
+        min-width: 480px;
+        margin: 0 auto;
+        overflow: hidden;
+    }    
+}
+
+@media screen and (max-width: 1440px) {
+    .vp {
+        max-width: 980px;
+        min-width: 480px;
+        margin: 0 auto;
+        overflow: hidden;
+    }    
+}
+
 .sh_sourceCode {
   font-weight: normal;
   font-style: normal;
@@ -23,7 +53,6 @@
   color: #aaa;
 }
 
-
 /* Components */
 .btn {
 	color: #fff;
@@ -39,10 +68,8 @@
     background: #fff;
     border: none;
     color: #2ba3d4;
-    min-height: 50px;
-    padding: 0 30px;
-    line-height: 50px;
-    font-size: 18px;
+    padding: 10px 20px;
+    font-size: 13px;
     display: inline-block;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -55,7 +82,7 @@
 }
 
 .startBtn:hover {
-    color: #777;
+    color: #333;
 }
 
 .startBtn:focus, .startBtn:active {

@@ -5,7 +5,7 @@
     margin-left: auto;
     margin-right: auto;
     max-width: 980px;
-    padding: 1em 2em;
+    padding: 1em 2em 3em;
     line-height: 2;
     color: #424b50;
     word-wrap: break-word;
@@ -56,14 +56,6 @@
 
 .entry h1:first-child,.entry h2:first-child,.entry h3:first-child,.entry h4:first-child,.entry h5:first-child,.entry h6:first-child {
     margin-top: 0
-}
-
-.entry>h3,.entry>h4,.entry>h5,.entry>h6 {
-    margin-top: 32px
-}
-
-.entry>h1,.entry>h2 {
-    margin-top: 64px
 }
 
 .entry h1+*,.entry h2+*,.entry h3+*,.entry h4+*,.entry h5+*,.entry h6+* {
@@ -162,8 +154,12 @@
     list-style-type: decimal
 }
 
+.entry ol ul li {
+    list-style-type: circle;
+}
+
 .entry ol li ol li {
-    list-style-type: upper-roman
+    list-style-type: upper-roman;
 }
 
 .entry ol li ol li ol li {
@@ -171,7 +167,7 @@
 }
 
 .entry li>ul,.entry li>ol {
-    padding-left: 32px
+    padding-left: 18px;
 }
 
 .entry hr {
