@@ -1,3 +1,7 @@
+.disable {
+	cursor: not-allowed;
+}
+
 #logo {
 	float: left;
 }
