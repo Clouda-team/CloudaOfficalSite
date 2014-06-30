@@ -71,7 +71,7 @@
 	transition: all 0.15s linear;
 }
 
-#menu h3 a:hover, #menu h3 a.active {
+#menu h3 a:hover, #menu h3 a.active, #menu .active h3 a{
 	color: #fff;
 	background-color: #E74C3C;
 }
