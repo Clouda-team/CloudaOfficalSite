@@ -4,7 +4,7 @@
   "description": "Clouda+ Official Site",
   "main": "index.js",
   "scripts": {
-    "start": "node start.js",
+    "start": "node ./start.js",
     "install": "node ./node_modules/clouda-core/init.js"
   },
   "author": "huangxin03@baidu.com",
