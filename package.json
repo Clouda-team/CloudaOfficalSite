@@ -1,12 +1,16 @@
 {
-    "name": "bae-nodejs",
-    "version": "1.0.0",
-    "author": "bae",
-    "description": "The first bae nodejs app!",
-    "scripts": {
-        "start": "node server.js"
-    },
-    "dependencies": {
-    }
+  "name": "CloudaOfficalSite",
+  "version": "0.0.0",
+  "description": "Clouda+ Official Site",
+  "main": "index.js",
+  "scripts": {
+    "install": "node ./node_modules/clouda-core/init.js"
+  },
+  "author": "huangxin03@baidu.com",
+  "dependencies": {
+    "clouda-core": "*",
+    "clouda-httpserver": "*",
+    "marked": "^0.3.2"
+  },
+  "license": "MIT"
 }
-

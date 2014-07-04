@@ -1,0 +1,34 @@
+{# Dynamically Generate #}
+{% macro use(proj, mod, doc) %}
+    <ul>
+        <li {% if proj === "clouda" %}class="active"{% endif %}>
+            <h3><a href="/clouda/">Clouda</a></h3>
+            <div>
+                <a {% if mod === "core" %}class="active"{% endif %} href="/clouda/core">
+                    Core<i class="fa fa-files-o"></i>
+                </a>
+            </div>
+            <div>
+                <a {% if mod === "httpserver" %}class="active"{% endif %} href="/clouda/httpserver">
+                    HttpServer<i class="fa fa-question-circle"></i>
+                </a>
+            </div>
+        </li>
+        <li {% if proj === "blendui" %}class="active"{% endif %}>
+            <h3><a href="/blendui/">BlendUI</a></h3>
+            <div>
+                <a {% if mod === "getstart" %}class="active"{% endif %} href="/blendui/getstart">
+                    起步
+                </a>
+            </div>
+        </li>
+        <li {% if proj === "blendapi" %}class="active"{% endif %}>
+            <h3><a href="/blendapi/">BlendAPI</a></h3>
+            <div>
+                <a {% if mod === "getstart" %}class="active"{% endif %} href="/blendapi/getstart">
+                    起步
+                </a>
+            </div>
+        </li>
+    </ul>
+{% endmacro %}
