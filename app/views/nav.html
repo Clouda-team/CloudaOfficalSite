@@ -4,14 +4,28 @@
         <li {% if proj === "clouda" %}class="active"{% endif %}>
             <h3><a href="/clouda/">Clouda</a></h3>
             <div>
+                <a {% if mod === "get_started" %}class="active"{% endif %} href="/clouda/get_started/getting_started">
+                    快速入门<i class="fa fa-files-o"></i>
+                </a>
+            </div>
+            <div>
                 <a {% if mod === "core" %}class="active"{% endif %} href="/clouda/core">
                     Core<i class="fa fa-files-o"></i>
                 </a>
             </div>
             <div>
-                <a {% if mod === "httpserver" %}class="active"{% endif %} href="/clouda/httpserver">
-                    HttpServer<i class="fa fa-question-circle"></i>
+                <a {% if mod === "plugin" %}class="active"{% endif %} href="/clouda/plugin">
+                    Plugin<i class="fa fa-files-o"></i>
                 </a>
+                <ul>
+                    <li >
+                        <div>
+                            <a {% if mod === "httpserver" %}class="active"{% endif %} href="/clouda/httpserver">
+                                HttpServer<i class="fa fa-question-circle"></i>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </li>
         <li {% if proj === "blendui" %}class="active"{% endif %}>

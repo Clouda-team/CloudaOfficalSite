@@ -26,6 +26,9 @@ clouda.config.define({
 			url : /^\/assets\/(.*)/,
 			resource : "/app/assets/{1}"
 		},{
+			url : /^\/md\/images\/(.*)/,
+			resource : "/app/md/images/{1}"
+		},{
 			url : /^\/clouda(\/.*)?/,
 			doAction : "clouda"
 		},{
