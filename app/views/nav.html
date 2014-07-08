@@ -44,5 +44,13 @@
                 </a>
             </div>
         </li>
+        <li {% if proj === "runtime" %}class="active"{% endif %}>
+            <h3><a href="/runtime/">Runtime</a></h3>
+            <div>
+                <a {% if mod === "getstart" %}class="active"{% endif %} href="/runtime/getstart">
+                    起步
+                </a>
+            </div>
+        </li>
     </ul>
 {% endmacro %}

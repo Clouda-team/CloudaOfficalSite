@@ -38,6 +38,9 @@ clouda.config.define({
 			url : /^\/blendapi(\/.*)?/,
 			doAction : "blendapi"
 		},{
+			url : /^\/runtime(\/.*)?/,
+			doAction : "runtime"
+		},{
 			url : /^\/$/,
 			doAction : "index"
 		},{
