@@ -1,11 +1,10 @@
 /* Github Markdown README.md Style */
 .markdown {
     color: #424b50;
-    font-size: 15px;
-    line-height: 1.4;
+    line-height: 1.6;
     overflow: hidden;
     word-wrap: break-word;
-    font: 13px Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+    font: 14px Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
     background-color: #fff;
     border: 1px solid #ddd;
     border-bottom-left-radius: 3px;
