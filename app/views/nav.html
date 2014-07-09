@@ -1,96 +1,27 @@
 {# Dynamically Generate #}
 {% macro use(proj, mod, doc) %}
-    <ul>
-        <li {% if proj === "clouda" %}class="active"{% endif %}>
-            <h3><a href="/clouda/">Clouda</a></h3>
-            <div>
-                <a {% if mod === "get_started" %}class="active"{% endif %} href="/clouda/get_started/getting_started">
-                    快速入门<i class="fa fa-files-o"></i>
-                </a>
-            </div>
-            <div>
-                <a {% if mod === "core" %}class="active"{% endif %} href="/clouda/core">
-                    Core<i class="fa fa-files-o"></i>
-                </a>
-                <ul>
-                    <li >
-                        <div>
-                            <a {% if mod === "core_introduction" %}class="active"{% endif %} href="/clouda/core/core_introduction">
-                                开发指南<i class="fa fa-question-circle"></i>
-                            </a>
-                        </div>
-                    </li>
-                    <li >
-                        <div>
-                            <a {% if mod === "core_api_document" %}class="active"{% endif %} href="/clouda/core/core_api_document">
-                                API文档<i class="fa fa-question-circle"></i>
-                            </a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div>
-                <a {% if mod === "plugin" %}class="active"{% endif %} href="/clouda/plugin">
-                    Plugin<i class="fa fa-files-o"></i>
-                </a>
-                <ul>
-                    <li >
-                        <div>
-                            <a {% if mod === "httpserver" %}class="active"{% endif %} href="/clouda/httpserver">
-                                HttpServer<i class="fa fa-question-circle"></i>
-                            </a>
+    {# Clouda #}
+    <h3>Clouda</h3>
+    <dl>
+        <dt><a href="">序言</a></dt>
+        <dd><a href="">简介</a></dd>
+        <dd><a href="">快速入门</a></dd>
+    </dl>
+    <dl>
+        <dt><a href="">开始学习</a></dt>
+        <dd><a href="">安装</a></dd>
+        <dd><a href="">配置</a></dd>
+        <dd><a href="">路由</a></dd>
+    </dl>
+    <dl>
+        <dt><a href="">深度历险</a></dt>
+        <dd><a href="">Core</a></dd>
+    </dl>
 
-                            <ul>
-                                <li >
-                                    <div>
-                                        <a {% if mod === "httpserver_getstarted" %}class="active"{% endif %} href="/clouda/httpserver/getting_started">
-                                            快速入门<i class="fa fa-question-circle"></i>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li >
-                                    <div>
-                                        <a {% if mod === "httpserver_introduction" %}class="active"{% endif %} href="/clouda/httpserver/dev_guide">
-                                            开发指南<i class="fa fa-question-circle"></i>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li >
-                                    <div>
-                                        <a {% if mod === "httpserver_api_document" %}class="active"{% endif %} href="/clouda/httpserver/api_document">
-                                            API文档<i class="fa fa-question-circle"></i>
-                                        </a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </li>
-        <li {% if proj === "blendui" %}class="active"{% endif %}>
-            <h3><a href="/blendui/">BlendUI</a></h3>
-            <div>
-                <a {% if mod === "getstart" %}class="active"{% endif %} href="/blendui/getstart">
-                    起步
-                </a>
-            </div>
-        </li>
-        <li {% if proj === "blendapi" %}class="active"{% endif %}>
-            <h3><a href="/blendapi/">BlendAPI</a></h3>
-            <div>
-                <a {% if mod === "getstart" %}class="active"{% endif %} href="/blendapi/getstart">
-                    起步
-                </a>
-            </div>
-        </li>
-        <li {% if proj === "runtime" %}class="active"{% endif %}>
-            <h3><a href="/runtime/">Runtime</a></h3>
-            <div>
-                <a {% if mod === "getstart" %}class="active"{% endif %} href="/runtime/getstart">
-                    起步
-                </a>
-            </div>
-        </li>
-    </ul>
+    {# BlendUI #}
+    <h3>BlendUI</h3>
+
+    {# BlendAPI #}
+    <h3>BlendAPI</h3>
+
 {% endmacro %}
