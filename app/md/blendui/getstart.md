@@ -1,6 +1,13 @@
-> BlendUI 是解决开发者webapp中体验无法达到native的体验而生，`BlendUI`+`clouda  api`+ `native runtime`=`clouda+` 使其web开发者迅速开发出具有web先天优越性的Native app 或 轻应用；
+#快速入门
 
-//todo blendui的产生来由和目的
+BlendUI是解决开发者开发webapp中体验无法达到native的体验而生，使Webapp的体验和交互与Native媲美。
+
+具体而言，里面包括了两项关键能力：
+
+1. 多Webview控制能力。让一个Webapp拆到多个webview中运行，并能用Javascript来调度。搞定了业务无解的难题：页面过大导致卡顿，页面切换不流畅，
+2. Native组件嵌入能力。能将Native控件嵌入Webview中，这样就能让页面中那些性能较差的部分用Native来实现，以最大化地提高体验和交互。
+
+
 
 ## 相关接口
 
