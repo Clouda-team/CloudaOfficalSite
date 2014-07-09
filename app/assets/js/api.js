@@ -1,6 +1,24 @@
 document.addEventListener("DOMContentLoaded", function(){
 
-	//prettyPrint	
+	var tools = {
+
+		str : "abcdefghijklmnopqrstuvwxyz",
+
+		randomID : function(){
+			var i = 0, r, rstr = "";
+			for(i;i<4;i++){
+				r = Math.round(Math.random(26) * 10);
+				rstr += tools.str.slice(r,r+1);
+			}
+			return rstr;
+		}
+
+	};
+
+	var docs = document.querySelector("#docs");
+
+
+	//prettyPrint
 	var pres = document.querySelectorAll("pre");
 	if(pres.length){
 		[].forEach.call(pres, function(pre){
@@ -24,6 +42,29 @@ document.addEventListener("DOMContentLoaded", function(){
 			});	
 		}
 	}
-	//generateIcon();
+
+	var archive = function(){
+		
+		var h2s = document.querySelectorAll("#docs h2");
+		if(h2s.length){
+			var h1 = document.querySelector("#docs h1");
+			var arch = document.createElement("ul");
+			arch.id = "arch";
+			[].forEach.call(h2s, function(h2){
+				var id = tools.randomID();
+				h2.id = id;
+				var li = document.createElement("li");
+				var a = document.createElement("a");
+				a.href = "#" + id;
+				a.innerText = h2.innerText;
+				li.appendChild(a);
+				arch.appendChild(li);
+			});
+			
+			docs.insertBefore(arch, h1.nextSibling);
+		}
+	}
+
+	archive()
 
 }, false);

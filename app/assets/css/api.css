@@ -38,13 +38,31 @@ body{
 	margin-left: 0px;
 	line-height: 25px;
 }
-/*
-#menu dd:before{
-	content: "↳ ≡ ";
-	color: #ccc;
-}
-*/
+
 #menu dd:before{
 	content: " ≡ ";
 	color: #ccc;
+}
+
+#arch {
+	padding-left: 0;
+}
+
+#arch li a{
+	display: inline-block;
+	line-height: 24px;
+	font-size: 15px;
+	font-weight: 600;
+	transition: 250ms linear all;
+}
+
+#arch li a:hover {
+	color: #424b50;
+}
+
+#arch li:before{
+	content: "# ";
+	color: #f4645f;
+	padding-right: 5px;
+	opacity: .4;
 }
