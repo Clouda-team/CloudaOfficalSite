@@ -1,6 +1,49 @@
+#logo {
+    float: left;
+}
+
+#logo img{
+    height: 32px;
+    vertical-align: middle;
+}
+
+#logo a span {
+    line-height: 28px;
+    font-size: 16px;
+    font-weight: 400;
+    margin-left: 5px;
+}
+
+#nav {
+    float: right;
+}
+
+#nav li {
+    float: left;
+}
+
+#nav a {
+    color: #424b50;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 6px 10px;
+    font-size: 12px;
+    font-weight: 500;
+    transition: all 0.1s linear;
+    line-height: 20px;
+    display: block;
+    margin-left: 6px;
+}
+
+#nav a:hover, #nav a:focus, #nav a.active {
+    color: #fff;
+    background: #f4645f;
+}
+
 .hd {
     background: #fff;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid #e5e5e5;
+    box-shadow: 0 -5px 0 rgba(0,0,0,.03);
     padding: 6px 0.5%;
     width: 99%;
 }
@@ -28,29 +71,106 @@
     }    
 }
 
-.sh_sourceCode {
-  font-weight: normal;
-  font-style: normal;
+pre .str {
+    color: #f4645f
 }
 
-.sh_sourceCode .sh_symbol,
-.sh_sourceCode .sh_cbracket {
-  color: #333;
+pre .kwd {
+    color: #4bb1b1
 }
 
-.sh_sourceCode .sh_keyword {
-  color: #E74C3C;
+pre .com {
+    color: #888
 }
 
-.sh_sourceCode .sh_string,
-.sh_sourceCode .sh_regexp,
-.sh_sourceCode .sh_number,
-.sh_sourceCode .sh_specialchar {
-  color: #690;
+pre .typ {
+    color: #ef7c61
 }
 
-.sh_sourceCode .sh_comment {
-  color: #aaa;
+pre .lit {
+    color: #bcd42a
+}
+
+pre .pun,pre .opn,pre .clo {
+    color: #fff
+}
+
+pre .tag {
+    color: #4bb1b1
+}
+
+pre .atn {
+    color: #ef7c61
+}
+
+pre .atv {
+    color: #bcd42a
+}
+
+pre .dec,pre .var {
+    color: #606
+}
+
+pre .fun {
+    color: red
+}
+
+.prettyprint {
+    display: block;
+    font-family: Monaco,Consolas,"Lucida Console",monospace;
+    background-color: #333;
+    font-size: 8px;
+    border: 0;
+    color: #e9e4e5;
+    line-height: 1.9em;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -moz-background-clip: padding-box;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    padding: 20px!important;
+    white-space: pre;
+    overflow: hidden;
+    margin-top: 20px;
+    margin-bottom: 20px
+}
+
+.prettyprint .pln {
+    color: #e9e4e5
+}
+
+.prettyprint .com {
+    color: #888
+}
+
+.prettyprint .pun,.prettyprint .opn,.prettyprint .clo {
+    color: #fff
+}
+
+.prettyprint .dec,.prettyprint .var {
+    color: #606
+}
+
+.prettyprint .fun {
+    color: red
+}
+
+.prettyprint code {
+    font-family: Monaco,Consolas,"Lucida Console",monospace;
+    font-size: 11px
+}
+
+.prettyprint .str,.prettyprint .lit,.prettyprint .atv {
+    color: #bcd42a
+}
+
+.prettyprint .kwd,.prettyprint .tag {
+    color: #4bb1b1
+}
+
+.prettyprint .typ,.prettyprint .atn {
+    color: #ef7c61
 }
 
 /* Components */

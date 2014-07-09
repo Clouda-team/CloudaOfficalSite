@@ -1,14 +1,10 @@
-$(function(){
+document.addEventListener("DOMContentLoaded", function(){
 
-	//hilight code
-	highlight(undefined, undefined, 'pre');
+	var pres = document.querySelectorAll("pre");
 
-	//active nav
-	var $menu = $("#menu");
-	$menu.on("click", "dt", function(e){
-		var $dl = $(this).closest("dl");
-		$dl.toggleClass("unfold");
+	[].forEach.call(pres, function(pre){
+		pre.classList.add("prettyprint");
 	});
+	prettyPrint();
 
-
-});
+}, false);
