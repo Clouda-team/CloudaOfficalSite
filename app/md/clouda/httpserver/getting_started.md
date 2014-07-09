@@ -1,8 +1,8 @@
-# 从这里开始
+# 开速入门
 
 ## 安装Node.js
 
-如果您想在本地运行和测试Clouda开发的工程就需要安装Node.js，下载地址如下：
+如果您想在本地运行和测试Clouda开发的工程就需要安装Node.js，现在地址如下：
 
 <http://nodejs.org/download/>
 

@@ -12,6 +12,22 @@
                 <a {% if mod === "core" %}class="active"{% endif %} href="/clouda/core">
                     Core<i class="fa fa-files-o"></i>
                 </a>
+                <ul>
+                    <li >
+                        <div>
+                            <a {% if mod === "core_introduction" %}class="active"{% endif %} href="/clouda/core/core_introduction">
+                                开发指南<i class="fa fa-question-circle"></i>
+                            </a>
+                        </div>
+                    </li>
+                    <li >
+                        <div>
+                            <a {% if mod === "core_api_document" %}class="active"{% endif %} href="/clouda/core/core_api_document">
+                                API文档<i class="fa fa-question-circle"></i>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
             </div>
             <div>
                 <a {% if mod === "plugin" %}class="active"{% endif %} href="/clouda/plugin">
@@ -23,6 +39,30 @@
                             <a {% if mod === "httpserver" %}class="active"{% endif %} href="/clouda/httpserver">
                                 HttpServer<i class="fa fa-question-circle"></i>
                             </a>
+
+                            <ul>
+                                <li >
+                                    <div>
+                                        <a {% if mod === "httpserver_getstarted" %}class="active"{% endif %} href="/clouda/httpserver/getting_started">
+                                            快速入门<i class="fa fa-question-circle"></i>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li >
+                                    <div>
+                                        <a {% if mod === "httpserver_introduction" %}class="active"{% endif %} href="/clouda/httpserver/dev_guide">
+                                            开发指南<i class="fa fa-question-circle"></i>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li >
+                                    <div>
+                                        <a {% if mod === "httpserver_api_document" %}class="active"{% endif %} href="/clouda/httpserver/api_document">
+                                            API文档<i class="fa fa-question-circle"></i>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
                     </li>
                 </ul>

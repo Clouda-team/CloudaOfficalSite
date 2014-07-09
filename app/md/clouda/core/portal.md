@@ -1,14 +1,11 @@
 <div class="markdown-portal">
-	<h1>Clouda-core Portal</h1>
+	<h1>Clouda-core</h1>
 	<ul>
 		<li>
-			<a href="/clouda/core/synopsis">Synopsis</a>
+			<a href="/clouda/core/core_introduction">开发指南</a>
 		</li>
 		<li>
-			<a href="/clouda/core/api">API</a>
-		</li>
-		<li>
-			<a href="/clouda/core/getstart">Get Started</a>
+			<a href="/clouda/core/core_api_document">API文档</a>
 		</li>
 	</ul>
 </div>

@@ -1,17 +1,14 @@
 <div class="markdown-portal">
-	<h1>Clouda-httpServer Table of Contents</h1>
+	<h1>clouda-httpServer</h1>
 	<ul>
 		<li>
-			<a href="/clouda/httpserver/getstart">Get Started</a>
+			<a href="/clouda/httpserver/getting_started">快速入门</a>
 		</li>
 		<li>
-			<a href="/clouda/httpserver/synopsis/">Synopsis</a>
+			<a href="/clouda/httpserver/dev_guide">开发指南</a>
 		</li>
 		<li>
-			<a href="/clouda/httpserver/api/">API</a>
-		</li>
-		<li>
-			<a href="/clouda/httpserver/template/">Template</a>
+			<a href="/clouda/httpserver/api_document/">API文档</a>
 		</li>
 	</ul>
 </div>
