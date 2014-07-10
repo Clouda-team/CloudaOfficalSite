@@ -35,7 +35,7 @@ Clouda的路由一般通过`/conf`目录下的文件中的`mapping`参数来配�
 
 路由通过`mapping`设定，包含`url`、`doAction`、`resource`，`defaultAction`四个参数，参数说明如下：
 
-* url
+- url
 
 	URL中路径部分的值，类型：String，可以使用正则，url参数可以缺省，缺省就是表示如果没有匹配的路由就执行与之对应的'defaultAction'或者'resource'。
 	

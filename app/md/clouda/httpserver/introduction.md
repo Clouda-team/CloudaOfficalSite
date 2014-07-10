@@ -1,21 +1,28 @@
-## Clouda-httpserver
+#clouda-httpserver
 
->Clouda-httpserver是Clouda+ Framework中实现http server功能的插件。
 
------------------------
-### Configure
---------------
+## 概述
 
-配置httpserver相应的信息，其格式如下：
+clouda-httpserver是Clouda+ Framework中实现http server功能的插件。
+
+
+## 配置
+
+clouda-httpserver可以使用config来配置相应的信息。
+
+clouda-httpserver的配置格式如下：
 
 	define({
     	"config.clouda-httpserver":{
 		}
 	});
 
-配置相应项如下：
+clouda-httpserver包含以下配置项：
 
-#### autoStart
+### autoStart
+
+通过该项设置是否自行启动。
+
 <table style="border-style: solid; border-width: 0pt;" border="1" cellspacing="0" cellpadding="5px">
     <tbody>
         <tr>
@@ -41,7 +48,9 @@
         	}
 	});
 
-#### port
+### port
+
+通过该项配置访问的端口。
 
 <table style="border-style: solid; border-width: 0pt;" border="1" cellspacing="0" cellpadding="5px">
     <tbody>
@@ -67,7 +76,9 @@
         	}
 	});
 
-#### loading_dir
+### loading_dir
+
+通过该项添加载入的资源。
 
 <table style="border-style: solid; border-width: 0pt;" border="1" cellspacing="0" cellpadding="5px">
     <tbody>
@@ -96,6 +107,8 @@
 	});	
 
 #### mapping
+
+配置访问Action的路由。
 
 <table style="border-style: solid; border-width: 0pt;" border="1" cellspacing="0" cellpadding="5px">
     <tbody>
@@ -171,6 +184,8 @@
 	
 #### filter
 
+配置Filter的路由。
+
 <table style="border-style: solid; border-width: 0pt;" border="1" cellspacing="0" cellpadding="5px">
     <tbody>
         <tr>
@@ -179,7 +194,7 @@
         </tr>
         <tr>
         	<th>[object,object....]</th>
-       		<td>每一项表示一个被执行的过滤器对像，过滤器对像的配置与mapping的doAction配置类似,以减少对配置的理解成本。</tr>
+       		<td>每一项表示一个被执行的过滤器Filter的对象</tr>
    	    </tr>    
    </tbody>
 </table>
@@ -228,16 +243,13 @@
             	this.send("Hello,World!");
         	}
 	});
-
-------------------	
 	
-### Define
+	
+## 定义
 
-------------------
+clouda-httpserver提供自定义`Extension`、`Filter`、`Action`的方法。
 
-Clouda中可以使用下面的方法自定义Extension、Filter、Action
-
-#### httpd.defineExtension(name,handle)
+### httpd.defineExtension(name,handle)
 
 除系统默认的载入的extension以外，如果需要自定义extension，可以使用该方法添加
 
@@ -247,7 +259,7 @@ Clouda中可以使用下面的方法自定义Extension、Filter、Action
 	
 	httpd.defineExtension(name,handle)
 	
-#### httpd.defineFilter(name,depends,handle)
+### httpd.defineFilter(name,depends,handle)
 
 除系统默认载入的filter以外，如果需要自定义filter，可以使用该方法添加。
 
@@ -255,7 +267,7 @@ Clouda中可以使用下面的方法自定义Extension、Filter、Action
 
 实例：
 
-#### httpd.defineAction(name,depends,handle)
+### httpd.defineAction(name,depends,handle)
 
 除系统默认载入的Action外，如需要自定义的action，可以使用该方法添加。
 
@@ -268,10 +280,10 @@ Clouda中可以使用下面的方法自定义Extension、Filter、Action
 		this.sendContent(content);
 	})
 
--------------------------	
-### Start
----------------
-###httpd.start(conf)
+
+## 手动启动
+
+### httpd.start(conf)
 
 启动httpd服务，conf是配置对像，如果提供将与已有配置合并，如果服务已启动，则忽略执行
 
@@ -287,13 +299,11 @@ Clouda中可以使用下面的方法自定义Extension、Filter、Action
         }
 	});
 
------------------------
-### httpVisitor
---------------
+## httpVisitor
 
 httpVisitor表示每个请求的上下文对像，<font color=red>在使用框架的过程中将自动被注入action与filter的this对像</font>，并提供以下方法。
 
-#### httpVisitor.getComprcessType()
+### httpVisitor.getComprcessType()
 
 从请求的header中分析出客户端所支持的压缩类型，一般为gzip或deflate.
 
@@ -309,7 +319,7 @@ httpVisitor表示每个请求的上下文对像，<font color=red>在使用框�
         	}       	
 	});
 
-#### httpVisitor.getComprcessStream(pipeOnStream)
+### httpVisitor.getComprcessStream(pipeOnStream)
 
 根据request支持的类型，支持对应压缩类型的stream对像。
 
@@ -327,7 +337,7 @@ httpVisitor表示每个请求的上下文对像，<font color=red>在使用框�
         	}       	
 	});
 
-#### httpVisitor.parseForm(callback)
+### httpVisitor.parseForm(callback)
 
 解析一般form表单的参数，即content-type = application/x-www-form-urlencoded的表单。
 
@@ -351,7 +361,7 @@ httpVisitor表示每个请求的上下文对像，<font color=red>在使用框�
         	}       	
 	});
 
-#### httpVisitor.parseQuery(callback)
+### httpVisitor.parseQuery(callback)
 
 解析query部份的参数。
 
@@ -375,7 +385,7 @@ httpVisitor表示每个请求的上下文对像，<font color=red>在使用框�
         	}       	
 	});
 
-#### httpVisitor.parseParams(callback)
+### httpVisitor.parseParams(callback)
 
 一并解析query与form，如果query上存在与form中同名的参数，query上的值将被覆盖。
 
@@ -399,7 +409,7 @@ httpVisitor表示每个请求的上下文对像，<font color=red>在使用框�
         	}       	
 	});
 
-#### httpVisitor.setHeader(key,value)
+### httpVisitor.setHeader(key,value)
 
 httpResponse上setHeader的快捷方式，方法直接调用response的setHeader方法,支持key为一个map对像。
 
@@ -415,7 +425,7 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
         	}       	
 	});
 
-#### httpVisitor.setExpires(t)
+### httpVisitor.setExpires(t)
 
 设置response上的expires信息，当t为一个整数，表示从现在起向后多少秒后过期，当为字符串时，直接认为是GMT时间表示，当为Date对像直接将date对像转换为GMT格式
 
@@ -432,7 +442,7 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
         	}       	
 	});
 
-#### httpVisitor.setMaxAge(sec)
+### httpVisitor.setMaxAge(sec)
 
 设置response上的cache-coltrol:max-age={sec};
 
@@ -448,7 +458,7 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
         	}       	
 	});	
 
-#### httpVisitor.setNostore()
+### httpVisitor.setNostore()
 
 设置response上的cache-coltrol:no-store;
 
@@ -464,7 +474,7 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
         	}       	
 	});
 
-#### httpVisitor.setNoCache()
+### httpVisitor.setNoCache()
 
 设置response上的cache-coltrol:no-cache;
 
@@ -480,7 +490,7 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
         	}       	
 	});
 
-#### httpVisitor.sendStatus(code,msg,body)
+### httpVisitor.sendStatus(code,msg,body)
 
 设置一个状态响应。
 
@@ -496,7 +506,7 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
         	}       	
 	});
 
-#### httpVisitor.render(viewname,data,opts)
+### httpVisitor.render(viewname,data,opts)
 
 渲染一个模板,viewname为模板名称,将自动在config.views_dir中指定的位置下寻找模版,如果未提供配置，默认为`/app/views`;
 
@@ -516,7 +526,7 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
 	});	
 
 
-#### httpVisitor.renderStr(tplstr,data,opts)
+### httpVisitor.renderStr(tplstr,data,opts)
 
 渲染一个模板片段。
 
@@ -532,7 +542,7 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
         	}       	
 	});	
 
-#### httpVisitor.lookup(url)
+### httpVisitor.lookup(url)
 
 根据一个url或fname的扩展名返回对应的mime类型。
 
@@ -548,14 +558,14 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
         	}       	
 	});	
 
-#### httpVisitor.forward(name,conf)
+### httpVisitor.forward(name,conf)
 
 在server端重定向到指定的action处理链，这个重定向不再经过filter直接到达目标的action。
 
 	httpVisitor.forward(name,conf);
 
 	
-#### httpVisitor.redirect(url,[code])
+### httpVisitor.redirect(url,[code])
 
 发送一个客户端重定向请求。
 
@@ -582,7 +592,7 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
         	}       	
 	});			
 
-#### httpVisitor.send(content,[code],[contentType])
+### httpVisitor.send(content,[code],[contentType])
 
 
 发送一段内容到客户端。
@@ -623,7 +633,7 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
         	}       	
 	});	
 	
-#### httpVisitor.sendContent(content,[code],[contentType])
+### httpVisitor.sendContent(content,[code],[contentType])
 
 发送一段内容到客户端。
 
@@ -662,7 +672,7 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
         	}       	
 	});	
 
-#### httpVisitor.sendFile(file,[code],[headers]);
+### httpVisitor.sendFile(file,[code],[headers]);
 
 发送一个文件到客户端。
 
@@ -705,7 +715,7 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
 	});		
 	
 
-#### httpVisitor.sendError(error,[code]);
+### httpVisitor.sendError(error,[code]);
 
 发送一个错误信息到前端
 
