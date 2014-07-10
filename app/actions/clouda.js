@@ -6,7 +6,7 @@ var fs = require("fs");
 var cache = require("../utils/cache");
 var mddir = "md";
 
-server.defineAction("clouda", function(default_request, default_response){
+server.defineAction("clouda", function(default_request, default_response, cookie){
 
 	var req = default_request;
 	var res = default_response;
