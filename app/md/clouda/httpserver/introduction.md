@@ -23,7 +23,7 @@ clouda-httpserver包含以下配置项：
 
 通过该项设置是否自行启动。
 
-<table style="border-style: solid; border-width: 0pt;" border="1" cellspacing="0" cellpadding="5px">
+<table>
     <tbody>
         <tr>
             <th>类型</th>
@@ -52,7 +52,7 @@ clouda-httpserver包含以下配置项：
 
 通过该项配置访问的端口。
 
-<table style="border-style: solid; border-width: 0pt;" border="1" cellspacing="0" cellpadding="5px">
+<table>
     <tbody>
         <tr>
             <th>类型</th>
@@ -80,7 +80,7 @@ clouda-httpserver包含以下配置项：
 
 通过该项添加载入的资源。
 
-<table style="border-style: solid; border-width: 0pt;" border="1" cellspacing="0" cellpadding="5px">
+<table>
     <tbody>
         <tr>
             <th>类型</th>
@@ -110,7 +110,7 @@ clouda-httpserver包含以下配置项：
 
 配置访问Action的路由。
 
-<table style="border-style: solid; border-width: 0pt;" border="1" cellspacing="0" cellpadding="5px">
+<table>
     <tbody>
         <tr>
             <th>类型</th>
@@ -125,7 +125,7 @@ clouda-httpserver包含以下配置项：
 
 配置对象如下表：
 
-<table style="border-style: solid; border-width: 0pt;" border="1" cellspacing="0" cellpadding="5px">
+<table>
     <tbody>
         <tr>
             <th>参数</th>
@@ -186,7 +186,7 @@ clouda-httpserver包含以下配置项：
 
 配置Filter的路由。
 
-<table style="border-style: solid; border-width: 0pt;" border="1" cellspacing="0" cellpadding="5px">
+<table>
     <tbody>
         <tr>
             <th>类型</th>
@@ -202,7 +202,7 @@ clouda-httpserver包含以下配置项：
 每一个object的配置信息见下表：
 
 
-<table style="border-style: solid; border-width: 0pt;" border="1" cellspacing="0" cellpadding="5px">
+<table>
     <tbody>
         <tr>
             <th>参数</th>
@@ -601,7 +601,7 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
 	
 参数说明：
 
-<table style="border-style: solid; border-width: 0pt;" border="1" cellspacing="0" cellpadding="5px">
+<table>
     <tbody>
         <tr>
             <th>参数</th>
@@ -641,7 +641,7 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
 	
 参数说明：
 
-<table style="border-style: solid; border-width: 0pt;" border="1" cellspacing="0" cellpadding="5px">
+<table>
     <tbody>
         <tr>
             <th>参数</th>
@@ -680,7 +680,7 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
 
 参数说明：
 
-<table style="border-style: solid; border-width: 0pt;" border="1" cellspacing="0" cellpadding="5px">
+<table>
     <tbody>
         <tr>
             <th>参数</th>
@@ -721,9 +721,9 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
 
 	httpVisitor.sendError(error,[code]);
 	
-参数说明：
+参数说明
 
-<table style="border-style: solid; border-width: 0pt;" border="1" cellspacing="0" cellpadding="5px">
+<table>
     <tbody>
         <tr>
             <th>参数</th>

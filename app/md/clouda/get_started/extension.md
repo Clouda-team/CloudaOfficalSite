@@ -26,7 +26,7 @@ Extension用来实现http功能的包装，如Session，Cookie，fileupload，Fo
 	
 实例：
 
-
+	
 
 
 ## 使用Extension
