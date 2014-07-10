@@ -108,7 +108,8 @@
 }
 
 .markdown p,.markdown blockquote,.markdown ul,.markdown ol,.markdown dl,.markdown table,.markdown pre {
-    margin: 15px 0
+    margin: 15px 0;
+    line-height: 1.7;
 }
 
 .markdown hr {
