@@ -121,7 +121,8 @@
 }
 
 .markdown ul,.markdown ol {
-    padding-left: 30px
+    padding-left: 30px;
+    list-style-type: disc;
 }
 
 .markdown ul.no-list,.markdown ol.no-list {
