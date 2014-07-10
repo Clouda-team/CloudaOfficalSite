@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function(){
 				var li = document.createElement("li");
 				var a = document.createElement("a");
 				a.href = "#" + id;
-				a.innerText = h2.innerText;
+				a.innerHTML = h2.innerText || h2.innerHTML;
 				li.appendChild(a);
 				arch.appendChild(li);
 			});
