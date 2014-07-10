@@ -46,6 +46,7 @@ body{
 
 #arch {
 	padding-left: 0;
+	list-style-type: none;
 }
 
 #arch li a{
