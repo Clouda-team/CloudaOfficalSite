@@ -6,25 +6,25 @@
 
 指向启动文件所在的目录， 一般这个目录是应用的根目录。
 
-### USER_DIR
+<h3 class="全局属性">USER_DIR</h3>
 
 用户文件的目录， 默认为: ROOT_DIR/app/
 
-### CONF_DIR
+<h3 class="全局属性">CONF_DIR</h3>
 
 存放配置文件的目录，默认为: ROOT_DIR/conf/，系统将自动监测这个目录并载入下面的js文件
 
 ## 全局方法
 
-### define(map)
+<h3 class="全局方法">define(map)</h3>
 
 clouda.define()的快捷方式
 
-### watch(key1,key2,key3...keyN,callback);
+<h3 class="全局方法">watch(key1,key2,key3...keyN,callback);</h3>
 
 clouda.watch()的快捷方式
 
-### use(key);
+<h3 class="全局方法">use(key);</h3>
 
 同步返回key所表示的资源内容，如果不存在则返回undefined。
 
@@ -35,7 +35,7 @@ clouda.watch()的快捷方式
 
 ## 对象
 
-### watcher
+<h3 class="对象">watcher</h3>
 
 一个可监测自身改变的名称空间对象， 提供define、watch、remove、unwatch四个方法。
 
@@ -83,21 +83,21 @@ console会打印出：
 
 ## clouda-core属性
 
-### clouda.resource
+<h3 class="clouda-core属性">clouda.resource</h3>
 
 一个watcher对像，用于存放在全局范围内运行时会改变的一类资源。
 
-### clouda.config
+<h3 class="clouda-core属性">clouda.config</h3>
 
 一个watcher对像，用于存放在全局范围内运行时不会改变或很少改变的一类配置资源
 
-### clouda.plugin
+<h3 class="clouda-core属性">clouda.plugin</h3>
 
 一个watcher对像，用于存放在在全局范内被公开访问的可执行的插件资源
 	
 ## clouda-core方法
 
-### clouda.define(obj);
+<h3 class="clouda-core方法">clouda.define(obj);</h3>
 
 提供一个简单的方式来定义多个资源。方法接收一个map，其key为使用"."分隔的资源名称的表示，前半部份应该为resource、config、plugin三者之一。
 
@@ -112,7 +112,7 @@ console会打印出：
     	}
 	});
 	
-### clouda.watch(key1,key2,key3...keyN,callback);
+<h3 class="clouda-core方法">clouda.watch(key1,key2,key3...keyN,callback);</h3>
 
 提供一个简单的方式同时监测多个资源是否存在，当所有资源都存在时，执行一个回调并以相同的顺序将所需的资源传入callback中。其key应为使用"."分隔的资源名称的表示，前半部份应该为resource、config、plugin三者之一。
 
@@ -122,7 +122,7 @@ console会打印出：
      	talker.say();
  	})
 
-### clouda.requireDir(path,limit,isAbsPath);
+<h3 class="clouda-core方法">clouda.requireDir(path,limit,isAbsPath);</h3>
 
 用于载入一个目录下的js文件。
 
@@ -146,6 +146,6 @@ console会打印出：
 	clouda.requireDir("./",/include.*\.js/);
 
 
-### clouda.createWatcher();
+<h3 class="clouda-core方法">clouda.createWatcher();</h3>
 
 取得一个watcher对像的工厂方法

@@ -363,7 +363,7 @@ httpVisitor表示每个请求的上下文对像，<font color=red>在使用框�
             	//例如Form包含“name”
               	this.parseForm(function(err,content){
                 	if(err){
-            			me.sendError(err);
+            			this.sendError(err);
             			return;
           			}
           
@@ -387,7 +387,7 @@ httpVisitor表示每个请求的上下文对像，<font color=red>在使用框�
             	//例如Query包含“name”
               	this.parseQuery(function(err,content){
                 	if(err){
-            			me.sendError(err);
+            			this.sendError(err);
             			return;
           			}
           
@@ -411,7 +411,7 @@ httpVisitor表示每个请求的上下文对像，<font color=red>在使用框�
             	//例如Query或者Form包含“name”
               	this.parseParams(function(err,content){
                 	if(err){
-            			me.sendError(err);
+            			this.sendError(err);
             			return;
           			}
           
