@@ -29,7 +29,7 @@ clouda-httpserver包含以下配置项：
           <th rowspan=2>Boolean</th>
           <th>true</th> <td>表示依据配置自行启动</td></tr>
           <tr><th>false</th> <td>表示需要通过httpd.start启动</td></tr>
-        </tr>    
+        </tr>
    <tbody>
 </table>
 
@@ -56,7 +56,7 @@ clouda-httpserver包含以下配置项：
         <tr>
           <th>Number</th>
           <td>httpd的运行端口，默认值8080</tr>
-        </tr>    
+        </tr>
    <tbody>
 </table>
 
@@ -84,7 +84,7 @@ clouda-httpserver包含以下配置项：
         <tr>
           <th>[string,string...]</th>
           <td>每项内容为一个目录的名称，启动时将载入目录下所有.js文件。</tr>
-        </tr>    
+        </tr>
    <tbody>
 </table>
 
@@ -114,7 +114,7 @@ clouda-httpserver包含以下配置项：
         <tr>
           <th>[object,object....]</th>
           <td>其用于配置url与action的映射关系及filter的执行。每个object为一个配置对像。</tr>
-        </tr>    
+        </tr>
    </tbody>
 </table>
 
@@ -131,12 +131,12 @@ clouda-httpserver包含以下配置项：
           <th>url</th>
           <td>string</td>
           <td>目标url，可以为一个正则对像或一个包含*号的字符串对像。</tr>
-        </tr> 
+        </tr>
         <tr>
           <th>doAction</th>
           <td>string或者function</td>
           <td>所执行的action名称或handle。</tr>
-        </tr>   
+        </tr>
         <tr>
           <th>params</th>
           <td>object</td>
@@ -144,7 +144,7 @@ clouda-httpserver包含以下配置项：
               key1:value1,
               .....
           }
-        </tr>  
+        </tr>
         <tr>
           <th>http_status</th>
           <td>object</td>
@@ -154,7 +154,7 @@ clouda-httpserver包含以下配置项：
           <th>resource</th>
           <td>string</td>
           <td>返回静态资源，值可以为一个目录直接是一个文件名，等价于doAction:"resource"。</tr>
-        </tr>  
+        </tr>
         <tr>
           <th>redirect</th>
           <td>string</td>
@@ -168,7 +168,7 @@ clouda-httpserver包含以下配置项：
   	define({
       	"config.clouda-httpserver":{
           	autoStart : true,
-     
+
           	mapping:{
             	url:"/test",
             	doAction:function(){
@@ -176,7 +176,7 @@ clouda-httpserver包含以下配置项：
             }
        	}
   	}});
-  
+
 <h3 class="config">filter</h3>
 
 配置Filter的路由。
@@ -190,7 +190,7 @@ clouda-httpserver包含以下配置项：
         <tr>
           <th>[object,object....]</th>
           <td>每一项表示一个被执行的过滤器Filter的对象</tr>
-        </tr>    
+        </tr>
    </tbody>
 </table>
 
@@ -208,12 +208,12 @@ clouda-httpserver包含以下配置项：
           <th>url</th>
           <td>string</td>
           <td>url限制仅在匹配的情况下执行过滤器，如果需要配置非(not)操作,请使用正则对像。</tr>
-        </tr> 
+        </tr>
         <tr>
           <th>doFilter</th>
           <td>string</td>
           <td>将执行filter的名称。</tr>
-        </tr>   
+        </tr>
         <tr>
           <th>params</th>
           <td>object</td>
@@ -221,7 +221,7 @@ clouda-httpserver包含以下配置项：
               key1:value1,
               .....
           }
-        </tr>  
+        </tr>
    </tbody>
 </table>
 
@@ -238,8 +238,8 @@ clouda-httpserver包含以下配置项：
               this.send("Hello,World!");
           	}
   	});
-  
-  
+
+
 ## define
 
 clouda-httpserver提供自定义`Extension`、`Filter`、`Action`的方法。
@@ -251,9 +251,9 @@ clouda-httpserver提供自定义`Extension`、`Filter`、`Action`的方法。
   	httpd.defineExtension(name,handle);
 
 实例：
-  
+
   	httpd.defineExtension(name,handle)
-  
+
 <h3 class="define">httpd.defineFilter(name,depends,handle)</h3>
 
 除系统默认载入的filter以外，如果需要自定义filter，可以使用该方法添加。
@@ -286,9 +286,9 @@ clouda-httpserver提供自定义`Extension`、`Filter`、`Action`的方法。
   	clouda-httpserver.defineAction("index", function(default_request, default_response){
 		var req = default_request;
 		var res = default_response;
-		
+
 		this.send("Hello World!");
-	
+
 	});
 
 
@@ -299,7 +299,7 @@ clouda-httpserver提供自定义`Extension`、`Filter`、`Action`的方法。
 启动httpd服务，conf是配置对像，如果提供将与已有配置合并，如果服务已启动，则忽略执行
 
   	httpd.start(conf);
-  
+
 实例：
 
   	httpd.start({
@@ -319,15 +319,15 @@ httpVisitor表示每个请求的上下文对像，<font color=red>在使用框�
 从请求的header中分析出客户端所支持的压缩类型，一般为gzip或deflate.
 
   	httpVisitor.getComprcessType();
-  
+
 实例：
-  
+
   	define({
       	"config.clouda-httpserver":{
           	autoStart : true,
           	defaultAction : function(){
               this.getComprcessType();
-          	}         
+          	}
   	});
 
 <h3 class="httpvisitor">httpVisitor.getComprcessStream(pipeOnStream)</h3>
@@ -337,7 +337,7 @@ httpVisitor表示每个请求的上下文对像，<font color=red>在使用框�
 `注意`：pipeOnStream{WriteableStream}当提供时，将直接将WriteableStream对像到返回的stream对像上，未提供时，返回不对接到任何对像上的Writeablestream对像。
 
   	httpVisitor.getComprcessStream(pipeOnStream);
-  
+
 实例：
 
   	define({
@@ -345,7 +345,7 @@ httpVisitor表示每个请求的上下文对像，<font color=red>在使用框�
           	autoStart : true,
           	defaultAction : function(){
               	this.getComprcessStream(pipeOnStream);
-          	}         
+          	}
   	});
 
 <h3 class="httpvisitor">httpVisitor.parseForm(callback)</h3>
@@ -353,9 +353,9 @@ httpVisitor表示每个请求的上下文对像，<font color=red>在使用框�
 解析一般form表单的参数，即content-type = application/x-www-form-urlencoded的表单。
 
   	httpVisitor.parseForm(callback);
-  
+
 实例：
-  
+
   	define({
       	"config.clouda-httpserver":{
           	autoStart : true,
@@ -366,10 +366,10 @@ httpVisitor表示每个请求的上下文对像，<font color=red>在使用框�
             			this.sendError(err);
             			return;
           			}
-          
+
           			this.send(content.name);
               	});
-          	}         
+          	}
   	});
 
 <h3 class="httpvisitor">httpVisitor.parseQuery(callback)</h3>
@@ -377,7 +377,7 @@ httpVisitor表示每个请求的上下文对像，<font color=red>在使用框�
 解析query部份的参数。
 
   	httpVisitor.parseQuery(callback);
-  
+
 实例：
 
   	define({
@@ -390,10 +390,10 @@ httpVisitor表示每个请求的上下文对像，<font color=red>在使用框�
             			this.sendError(err);
             			return;
           			}
-          
+
           			this.send(content.name);
         		);
-          }         
+          }
   });
 
 <h3 class="httpvisitor">httpVisitor.parseParams(callback)</h3>
@@ -401,7 +401,7 @@ httpVisitor表示每个请求的上下文对像，<font color=red>在使用框�
 一并解析query与form，如果query上存在与form中同名的参数，query上的值将被覆盖。
 
   	httpVisitor.parseParams(callback);
-  
+
 实例：
 
   	define({
@@ -414,10 +414,10 @@ httpVisitor表示每个请求的上下文对像，<font color=red>在使用框�
             			this.sendError(err);
             			return;
           			}
-          
+
           			this.send(content.name);
         		);
-          }         
+          }
   	});
 
 <h3 class="httpvisitor">httpVisitor.setHeader(key,value)</h3>
@@ -425,7 +425,7 @@ httpVisitor表示每个请求的上下文对像，<font color=red>在使用框�
 httpResponse上setHeader的快捷方式，方法直接调用response的setHeader方法,支持key为一个map对像。
 
   	httpVisitor.setHeader(key,value);
-  
+
 实例：
 
   	define({
@@ -433,7 +433,7 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
           	autoStart : true,
           	defaultAction : function(){
               	this.setHeader("Content-Type","text/html");
-          	}         
+          	}
   	});
 
 <h3 class="httpvisitor">httpVisitor.setExpires(t)</h3>
@@ -442,7 +442,7 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
 
   	httpVisitor.setExpires(t);
 
-  
+
 实例：
 
   	define({
@@ -450,7 +450,7 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
           	autoStart : true,
           	defaultAction : function(){
               	this.setExpires(300000);
-          	}         
+          	}
   	});
 
 <h3 class="httpvisitor">httpVisitor.setMaxAge(sec)</h3>
@@ -458,7 +458,7 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
 设置response上的cache-coltrol:max-age={sec};
 
   	httpVisitor.setMaxAge(sec);
-  
+
 实例：
 
   	define({
@@ -466,7 +466,7 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
           	autoStart : true,
           	defaultAction : function(){
               	this.setMaxAge(30000);
-          	}         
+          	}
   	}});
 
 <h3 class="httpvisitor">httpVisitor.setNostore()</h3>
@@ -474,7 +474,7 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
 设置response上的cache-coltrol:no-store;
 
   	httpVisitor.setNostore();
-  
+
 实例：
 
   	define({
@@ -482,7 +482,7 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
           	autoStart : true,
           	defaultAction : function(){
               	this.setNostore();
-          	}         
+          	}
   	});
 
 <h3 class="httpvisitor">httpVisitor.setNoCache()</h3>
@@ -490,7 +490,7 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
 设置response上的cache-coltrol:no-cache;
 
   	httpVisitor.setNoCache();
-  
+
 实例：
 
   	define({
@@ -498,7 +498,7 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
           	autoStart : true,
           	defaultAction : function(){
               	this.setNoCache();
-          	}         
+          	}
   	});
 
 <h3 class="httpvisitor">httpVisitor.sendStatus(code,msg,body)</h3>
@@ -506,7 +506,7 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
 设置一个状态响应。
 
   	httpVisitor.sendStatus(code,msg,body);
-  
+
 实例：
 
   	define({
@@ -514,7 +514,7 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
           	autoStart : true,
           	defaultAction : function(){
               	this.sendStatus(500,"Server error","500,Server error");
-          	}         
+          	}
   	});
 
 <h3 class="httpvisitor">httpVisitor.render(viewname,data,opts)</h3>
@@ -522,7 +522,7 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
 渲染一个模板,viewname为模板名称,将自动在config.views_dir中指定的位置下寻找模版,如果未提供配置，默认为`/app/views`;
 
   	httpVisitor.render(viewname,data,opts);
-  
+
 实例：
 
   	define({
@@ -533,7 +533,7 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
             	var content = this.render("index");
             	//发送到前端
             	this.send(content);
-          	}         
+          	}
   	}});
 
 
@@ -542,7 +542,7 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
 渲染一个模板片段。
 
   	httpVisitor.renderStr(tplstr,data,opts);
-  
+
 实例：
 
   	define({
@@ -550,7 +550,7 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
           	autoStart : true,
           	defaultAction : function(){
               	this.render(viewname,data,opts);
-          	}         
+          	}
   	}});
 
 <h3 class="httpvisitor">httpVisitor.lookup(url)</h3>
@@ -558,7 +558,7 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
 根据一个url或fname的扩展名返回对应的mime类型。
 
   	httpVisitor.lookup(url);
-  
+
 实例：
 
   	define({
@@ -566,7 +566,7 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
           	autoStart : true,
           	defaultAction : function(){
               	this.lookup("http://www.XXX.com");
-          	}         
+          	}
   	}});
 
 <h3 class="httpvisitor">httpVisitor.forward(name,conf)</h3>
@@ -575,24 +575,24 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
 
   	httpVisitor.forward(name,conf);
 
-  
+
 <h3 class="httpvisitor">httpVisitor.redirect(url,[code])</h3>
 
 发送一个客户端重定向请求。
 
   	httpVisitor.redirect(url,[code]);
-  
+
 参数说明：
-  
+
 * url
-  
+
   表示重定向位置
-  
+
 * code
 
   code表示返回的http状态,这里应为`301`或`302`
 
-    
+
 实例：
 
   	define({
@@ -600,8 +600,8 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
           	autoStart : true,
           	defaultAction : function(){
               	this.redirect("http://www.baidu.com");
-          	}         
-  	}});    
+          	}
+  	}});
 
 <h3 class="httpvisitor">httpVisitor.send(content,[code],[contentType])</h3>
 
@@ -609,7 +609,7 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
 发送一段内容到客户端。
 
   	httpVisitor.send(content,[code],[contentType])
-  
+
 参数说明：
 
 <table>
@@ -621,15 +621,15 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
         <tr>
           <th>content</th>
           <td>发送的内容，类型：string 或者 buffer</td>
-        </tr>   
+        </tr>
         <tr>
           <th>code</th>
           <td>http状态码，默认为：200</td>
-        </tr> 
+        </tr>
         <tr>
           <th>contentType</th>
           <td>默认为: {"content-type":"text/html"}</td>
-        </tr>  
+        </tr>
    </tbody>
 </table>
 
@@ -641,15 +641,15 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
           	autoStart : true,
           	defaultAction : function(){
               	this.send("Hello,World!");
-          	}       
+          	}
   	}});
-  
+
 <h3 class="httpvisitor">httpVisitor.sendContent(content,[code],[contentType])</h3>
 
 发送一段内容到客户端。
 
   	httpVisitor.sendContent(content,[code],[contentType]);
-  
+
 参数说明：
 
 <table>
@@ -661,18 +661,18 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
         <tr>
           <th>content</th>
           <td>发送的内容，类型：string 或者 buffer</td>
-        </tr>   
+        </tr>
         <tr>
           <th>code</th>
           <td>http状态码，默认为：200</td>
-        </tr> 
+        </tr>
         <tr>
           <th>contentType</th>
           <td>默认为: {"content-type":"text/html"}</td>
-        </tr>  
+        </tr>
    </tbody>
 </table>
-  
+
 实例：
 
   	define({
@@ -680,7 +680,7 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
           	autoStart : true,
           	defaultAction : function(){
               	this.sendContent("Hello,World!");
-          	}         
+          	}
   	}});
 
 <h3 class="httpvisitor">httpVisitor.sendFile(file,[code],[headers]);</h3>
@@ -700,15 +700,15 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
         <tr>
           <th>file</th>
           <td>将发送的文件的名称或file对像产生的readableStream，如果是buffer，请使用sendContent方法，文件的路径为绝对路径，类型：string 或者 readableStream</td>
-        </tr>   
+        </tr>
         <tr>
           <th>code</th>
           <td>http状态码，默认为：200</td>
-        </tr> 
+        </tr>
         <tr>
           <th>headers</th>
           <td>默认为: {"content-type":"text/html"}</td>
-        </tr>  
+        </tr>
    </tbody>
 </table>
 
@@ -722,16 +722,16 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
           defaultAction : function(){
             //路径需要使用绝对路径
               this.sendFile(path.join(ROOT_DIR,"./conf/index.html");
-          }         
-  }});  
-  
+          }
+  }});
+
 
 <h3 class="httpvisitor">httpVisitor.sendError(error,[code]);</h3>
 
 发送一个错误信息到前端
 
   	httpVisitor.sendError(error,[code]);
-  
+
 参数说明
 
 <table>
@@ -743,14 +743,14 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
         <tr>
           <th>error</th>
           <td>错误对象</td>
-        </tr>   
+        </tr>
         <tr>
           <th>code</th>
           <td>http状态码</td>
-        </tr> 
+        </tr>
    </tbody>
 </table>
-  
+
 
 实例：
 
@@ -759,5 +759,5 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
           	autoStart : true,
           	defaultAction : function(){
               	this.sendError(new Error("Server Error!"),500);
-          	}         
+          	}
   	}});
