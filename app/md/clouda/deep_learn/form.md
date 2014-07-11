@@ -27,7 +27,7 @@ Clouda框架中提供很简单的方法直接处理表单，方法如下：
 	define("config.clouda-httpserver",{
 		autoStart:true,
 		mapping:{
-			url:"testForm",
+			url:"/testForm",
 			doAction:"testForm"
 		}
 		
