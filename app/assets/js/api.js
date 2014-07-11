@@ -2,15 +2,10 @@ document.addEventListener("DOMContentLoaded", function(){
 
 	var tools = {
 
-		str : "abcdefghijklmnopqrstuvwxyz",
-
 		randomID : function(){
-			var i = 0, r, rstr = "";
-			for(i;i<4;i++){
-				r = Math.round(Math.random(26) * 10);
-				rstr += tools.str.slice(r,r+1);
-			}
-			return rstr;
+			
+			return Math.random().toString(36).slice(2).replace(/\d/g,"");
+
 		}
 
 	};
@@ -56,8 +51,11 @@ document.addEventListener("DOMContentLoaded", function(){
 				h2.id = id;
 				var li = document.createElement("li");
 				var a = document.createElement("a");
-				a.href = "#" + id;
-				a.innerHTML = h2.innerText || h2.innerHTML;
+				a.addEventListener("click", function(e){
+					var offset = document.querySelector("#" + id).offsetTop;
+					window.scrollTo(0,offset);
+				}, false);
+				a.innerHTML = h2.innerHTML;
 				li.appendChild(a);
 
 				if(renderH3){
@@ -69,7 +67,10 @@ document.addEventListener("DOMContentLoaded", function(){
 							var h3li = document.createElement("li");
 							var h3lia = document.createElement("a");
 							h3li.appendChild(h3lia);
-							h3lia.href = "#" + h3id;
+							h3lia.addEventListener("click", function(e){
+								var offset = document.querySelector("#" + h3id).offsetTop;
+								window.scrollTo(0,offset);
+							}, false);
 							h3.id = h3id;
 							h3lia.innerHTML = h3.innerHTML;
 							ul.appendChild(h3li);

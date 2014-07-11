@@ -46,10 +46,9 @@ clouda.config.define({
 		},{
 			url : /^\/404/,
 			doAction : "404"
-		},{
-			defaultAction : "404"
-		}]
+		}],
 
+		defaultAction : "404"
 	}
 
 });
