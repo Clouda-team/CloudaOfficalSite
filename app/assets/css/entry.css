@@ -170,7 +170,8 @@
 .markdown table {
     width: 100%;
     overflow: auto;
-    display: block
+    display: block;
+    border-collapse: collapse;
 }
 
 .markdown table th {
