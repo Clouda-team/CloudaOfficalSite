@@ -71,50 +71,6 @@
     }    
 }
 
-pre .str {
-    color: #f4645f
-}
-
-pre .kwd {
-    color: #4bb1b1
-}
-
-pre .com {
-    color: #888
-}
-
-pre .typ {
-    color: #ef7c61
-}
-
-pre .lit {
-    color: #bcd42a
-}
-
-pre .pun,pre .opn,pre .clo {
-    color: #fff
-}
-
-pre .tag {
-    color: #4bb1b1
-}
-
-pre .atn {
-    color: #ef7c61
-}
-
-pre .atv {
-    color: #bcd42a
-}
-
-pre .dec,pre .var {
-    color: #606
-}
-
-pre .fun {
-    color: red
-}
-
 .prettyprint {
     display: block;
     font-family: Monaco,Consolas,"Lucida Console",monospace;
@@ -148,8 +104,12 @@ pre .fun {
     color: #fff
 }
 
-.prettyprint .dec,.prettyprint .var {
-    color: #606
+.prettyprint .dec{
+    color: #eee;
+}
+
+.prettyprint .var {
+    color : #606;
 }
 
 .prettyprint .fun {

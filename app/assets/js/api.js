@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", function(){
 
 	var docs = document.querySelector("#docs");
 
-
 	//prettyPrint
 	var pres = document.querySelectorAll("pre");
 	if(pres.length){
@@ -43,7 +42,9 @@ document.addEventListener("DOMContentLoaded", function(){
 		}
 	}
 
-	var archive = function(){
+
+	//generate archive
+	var archive = function(renderH3){
 		
 		var h2s = document.querySelectorAll("#docs h2");
 		if(h2s.length){
@@ -58,13 +59,64 @@ document.addEventListener("DOMContentLoaded", function(){
 				a.href = "#" + id;
 				a.innerHTML = h2.innerText || h2.innerHTML;
 				li.appendChild(a);
+
+				if(renderH3){
+					var h3s = document.querySelectorAll("." + h2.innerHTML.toLowerCase());
+					if(h3s.length){
+						var ul = document.createElement("ul");
+						[].forEach.call(h3s, function(h3){
+							var h3id = "h3" + tools.randomID();
+							var h3li = document.createElement("li");
+							var h3lia = document.createElement("a");
+							h3li.appendChild(h3lia);
+							h3lia.href = "#" + h3id;
+							h3.id = h3id;
+							h3lia.innerHTML = h3.innerHTML;
+							ul.appendChild(h3li);
+						});
+						li.appendChild(ul);
+					}
+				}
+				
 				arch.appendChild(li);
 			});
 			
 			docs.insertBefore(arch, h1.nextSibling);
 		}
 	}
+	if(url(3) === "api_document"){
+		archive(true);	
+	} else {
+		archive();
+	}
+	
+	//scrollTop
+	var goTop = function(){
+		if(document.querySelector("#gotop")) return console.log("duplicate id: gotop");
+		
+		var gotop = document.createElement("div");
+		gotop.id = "gotop";
+		gotop.innerHTML = '<i class="fa fa-arrow-up"></i>';
+		
+		document.body.appendChild(gotop);
 
-	archive()
+		gotop.addEventListener("click", function(){
+
+			window.scroll(0,0);
+
+		}, false);
+
+		window.addEventListener("scroll", function(e){
+			
+			if(document.body.scrollTop >= (window.screen.availHeight + 100)){
+				gotop.style.display = "block";
+			} else {
+				gotop.style.display = "none";
+			}
+
+		}, false);
+	}
+	goTop();
+	
 
 }, false);
