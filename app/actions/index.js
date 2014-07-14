@@ -1,4 +1,4 @@
-var server = use("clouda-httpserver");
+var server = rapid.use("rapid-httpserver");
 
 server.defineAction("index", function(default_request, default_response){
 

@@ -1,6 +1,6 @@
-clouda.config.define({
+rapid.config.define({
 
-	"clouda-httpserver" : {
+	"rapid-httpserver" : {
 
 		autoStart : true,
 
@@ -29,8 +29,8 @@ clouda.config.define({
 			url : /^\/md\/images\/(.*)/,
 			resource : "/app/md/images/{1}"
 		},{
-			url : /^\/clouda(\/.*)?/,
-			doAction : "clouda"
+			url : /^\/rapid(\/.*)?/,
+			doAction : "rapid"
 		},{
 			url : /^\/blendui(\/.*)?/,
 			doAction : "blendui"

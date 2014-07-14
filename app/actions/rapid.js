@@ -1,4 +1,4 @@
-var server = use("clouda-httpserver");
+var server = rapid.use("rapid-httpserver");
 var url = require("url");
 var path = require("path");
 var marked = require("marked");
@@ -6,7 +6,7 @@ var fs = require("fs");
 var cache = require("../utils/cache");
 var mddir = "md";
 
-server.defineAction("clouda", function(default_request, default_response, cookie){
+server.defineAction("rapid", function(default_request, default_response, cookie){
 
 	var req = default_request;
 	var res = default_response;

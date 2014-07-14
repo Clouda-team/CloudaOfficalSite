@@ -1,4 +1,4 @@
-var server = use("clouda-httpserver");
+var server = rapid.use("rapid-httpserver");
 var path = require("path");
 var marked = require("marked");
 var fs = require("fs");
