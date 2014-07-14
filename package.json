@@ -9,8 +9,8 @@
   },
   "author": "huangxin03@baidu.com",
   "dependencies": {
-    "clouda-core": "*",
-    "clouda-httpserver": "*",
+    "rapid-core": "*",
+    "rapid-httpserver": "*",
     "marked": "^0.3.2"
   },
   "license": "MIT"
