@@ -109,7 +109,7 @@ layerGroup包含以下配置项：
             <th>是否必须</th>
         </tr>
         <tr>
-          <th style="color:red">Number</th>
+          <th>Number</th>
           <td>layer像素宽度，默认全屏</td>
           <td>否</td>
         </tr>
@@ -139,7 +139,7 @@ layerGroup包含以下配置项：
             <th>是否必须</th>
         </tr>
         <tr>
-          <th style="color:red">Number</th>
+          <th>Number</th>
           <td>layerGroup像素高度，默认全屏</td>
           <td>否</td>
         </tr>
@@ -162,8 +162,8 @@ layerGroup包含以下配置项：
 });
 </code></pre>
 
-<h3 class="construct">onselected</h3>
-定义layerGroup中select事件处理
+<h3 class="construct">onshow</h3>
+定义layerGroup中layer间切换时事件处理，通过event对象中的detail字段可以获得当前激活的layer的id
 
 <table>
     <tbody>
@@ -174,7 +174,7 @@ layerGroup包含以下配置项：
         </tr>
         <tr>
           <th>Function</th>
-          <td>layerGroup中选择event事件</td>
+          <td>layer间切换时要触发的函数</td>
           <td>否</td>
         </tr>
    <tbody>
@@ -182,8 +182,7 @@ layerGroup包含以下配置项：
 
 <pre><code>function(event){
      //获取选择的layerId
-     var layerId = event['layerId'];
-     var layerGroupId = event['groupId'];
+     var layerId = event['detail'];
 }</code></pre>
 
 实例
@@ -198,14 +197,14 @@ layerGroup包含以下配置项：
         "url": "top.html",
         "autoload": true
     }],
-    onselected: function(event) {
-        var layerId = event['layerId'];
+    onshow: function(event) {
+        var layerId = event['detail'];
     }
 });
 </code></pre>
 
 <h3 class="construct">layers</h3>
-定义layerGroup中的layers
+定义layerGroup中要显示的layers
 
 <table>
     <tbody>
@@ -302,7 +301,7 @@ Base64编码的图片字符串-->
 ##method
 
 <h3 class="method">active (layerId)</h3>
-激活layerId相应layer，切换并显示layer
+切换到layerId对应的layer并显示
 
 <table>
     <tbody>
@@ -412,4 +411,3 @@ layer
 
 layerGroup.destroy();
 </code></pre>
-

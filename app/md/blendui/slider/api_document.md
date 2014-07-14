@@ -5,9 +5,10 @@
 ## construct
 
 配置所需参数来初始化一个幻灯片组件Slider
+
 Slider的配置格式如下：
 
-<pre><code>var slider = new Blend.Slider({"options":"values"})</code></pre>
+<pre><code>var slider = new Blend.Slider({"options":"values"});</code></pre>
 
 Slider包含以下配置项：
 
@@ -51,8 +52,8 @@ slider的id
             <th>是否必须</th>
         </tr>
         <tr>
-          <th style="color:red">String</th>
-          <td>slider距离屏幕top的坐标,默认值"0"</td>
+          <th>Number</th>
+          <td>slider距离屏幕top的坐标，默认值0</td>
           <td>否</td>
         </tr>
    <tbody>
@@ -61,7 +62,7 @@ slider的id
 实例：
 <pre><code>var slider = new Blend.Slider({
 	"id": "slider",
-	"top": "100",
+	"top": 100,
 	"images": [
 		{"url":"http://*.com/old_07_02.jpg"},
 		{"url":"http://*.com/old_09_02.jpg"}
@@ -80,8 +81,8 @@ slider的id
             <th>是否必须</th>
         </tr>
         <tr>
-          <th style="color:red">String</th>
-          <td>slider距离屏幕left的坐标,默认值"0"</td>
+          <th>Number</th>
+          <td>slider距离屏幕left的坐标，默认值0</td>
           <td>否</td>
         </tr>
    <tbody>
@@ -90,8 +91,8 @@ slider的id
 实例：
 <pre><code>var slider = new Blend.Slider({
 	"id": "slider",
-	"top": "100",
-	"left": "100",
+	"top": 100,
+	"left": 100,
 	"images": [
 		{"url":"http://*.com/old_07_02.jpg"},
 		{"url":"http://*.com/old_09_02.jpg"}
@@ -110,8 +111,8 @@ slider的id
             <th>是否必须</th>
         </tr>
         <tr>
-          <th style="color:red">String</th>
-          <td>slider像素宽度,默认屏幕宽度</td>
+          <th>Number</th>
+          <td>slider像素宽度，默认为屏幕宽度</td>
           <td>否</td>
         </tr>
    <tbody>
@@ -120,7 +121,7 @@ slider的id
 实例：
 <pre><code>var slider = new Blend.Slider({
 	"id": "slider",
-    "width": "100",
+    "width": 100,
 	"images": [
 		{"url":"http://*.com/old_07_02.jpg"},
 		{"url":"http://*.com/old_09_02.jpg"}
@@ -139,8 +140,8 @@ slider的id
             <th>是否必须</th>
         </tr>
         <tr>
-          <th style="color:red">String</th>
-          <td>slider像素高度,默认屏幕高度</td>
+          <th>Number</th>
+          <td>slider像素高度，默认为屏幕高度</td>
           <td>否</td>
         </tr>
    <tbody>
@@ -149,7 +150,7 @@ slider的id
 实例：
 <pre><code>var slider = new Blend.Slider({
 	"id": "slider",
-    "height": "100",
+    "height": 100,
 	"images": [
 		{"url":"http://*.com/old_07_02.jpg"},
 		{"url":"http://*.com/old_09_02.jpg"}
@@ -199,7 +200,7 @@ slider的id
         <tr>
           <th>Object</th>
           <td>图片数据json</td>
-          <td>否</td>
+          <td>是</td>
         </tr>
    <tbody>
 </table>
@@ -273,7 +274,7 @@ slider的id
 </code></pre>
 
 <h3 class="construct">hasIndicator</h3>
-配置是否添加图片指示器，指示当前图片位置
+是否添加页面指示，可以以圆点的方式展现有多少个图片页面，可以指示当前页面在整个页面的顺序。
 
 <table>
     <tbody>
@@ -284,7 +285,7 @@ slider的id
         </tr>
         <tr>
           <th>Boolean</th>
-          <td style="color:red">是否添加图片指示器,默认值？</td>
+          <td style="color:red">是否添加页面指示,默认值？</td>
           <td>否</td>
         </tr>
    <tbody>
@@ -302,7 +303,7 @@ slider的id
 </code></pre>
 
 <h3 class="construct">inactiveColor</h3>
-配置非选中状态的指示器颜色
+配置非选中状态的指示圆点图标的颜色
 <table>
     <tbody>
         <tr>
@@ -312,7 +313,7 @@ slider的id
         </tr>
         <tr>
           <th>String</th>
-          <td style="color:red">非选中状态的指示器颜色RGB值,默认值？</td>
+          <td style="color:red">非选中状态的指示圆点图标的颜色RGB值,默认值？</td>
           <td>否</td>
         </tr>
    <tbody>
@@ -331,7 +332,7 @@ slider的id
 </code></pre>
 
 <h3 class="construct">activeColor</h3>
-配置选中状态的指示器颜色
+配置选中状态的指示圆点图标的颜色
 
 <table>
     <tbody>
@@ -342,7 +343,7 @@ slider的id
         </tr>
         <tr>
           <th>String</th>
-          <td style="color:red">选中状态的指示器颜色RGB值,默认值？</td>
+          <td style="color:red">选中状态的指示圆点图标的颜色RGB值,默认值？</td>
           <td>否</td>
         </tr>
    <tbody>
@@ -362,7 +363,7 @@ slider的id
 </code></pre>
 
 <h3 class="construct">unitSize</h3>
-配置slider指示器尺寸
+配置页面指示圆点图标的尺寸
 
 <table>
     <tbody>
@@ -373,7 +374,7 @@ slider的id
         </tr>
         <tr>
           <th>Number</th>
-          <td style="color:red">指示器尺寸（单位：像素）,默认值？</td>
+          <td style="color:red">页面指示圆点图标的尺寸（单位：像素），默认值？</td>
           <td>否</td>
         </tr>
    <tbody>
@@ -392,7 +393,7 @@ slider的id
 </code></pre>
 
 <h3 class="construct">unitSpace</h3>
-配置指示器间距
+配置页面指示圆点图标间的间距
 
 <table>
     <tbody>
@@ -403,7 +404,7 @@ slider的id
         </tr>
         <tr>
           <th>Number</th>
-          <td style="color:red">指示器间距（单位：像素）,默认值？</td>
+          <td style="color:red">页面指示圆点图标间的间距（单位：像素），默认值？</td>
           <td>否</td>
         </tr>
    <tbody>
@@ -427,7 +428,7 @@ slider的id
 ##method
 
 <h3 class="method">prev ( )</h3>
-滚动到前一个页面
+滚动到前一个图片页面
 
 实例:
 <pre><code>var slider = new Blend.Slider({
@@ -443,7 +444,7 @@ slider.prev();
 
 
 <h3 class="method">next ( )</h3>
-滚动到下一个页面
+滚动到下一个图片页面
 
 实例:
 <pre><code>var slider = new Blend.Slider({
@@ -458,7 +459,7 @@ slider.next();
 </code></pre>
 
 <h3 class="method">sliderTo (index)</h3>
-滑动到第index个页面
+滑动到第index个图片页面
 
 <table>
     <tbody>

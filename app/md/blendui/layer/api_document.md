@@ -25,7 +25,7 @@ Layer包含以下配置项：
         </tr>
         <tr>
           <th>String</th>
-          <td>显示的页面地址url</td>
+          <td>要显示的页面url地址</td>
           <td>是</td>
         </tr>
    <tbody>
@@ -50,7 +50,7 @@ layer页面id
         </tr>
         <tr>
             <th>String</th>
-            <td>layer页面id</td>
+            <td>layer页面id，Blend API可以通过该id对页面控制</td>
             <td>否</td>
         </tr>
    <tbody>
@@ -91,7 +91,7 @@ layer页面id
 
 <h3 class="construct">autoStopLoading</h3>
 <!-- autoStopLoading : Boolean (optional) -->
-是否自动停止加载
+是否自动停止loading状态
 
  <table>
     <tbody>
@@ -102,7 +102,7 @@ layer页面id
         </tr>
         <tr>
             <th>Boolean</th>
-            <td>是否自动停止加载,默认true</td>
+            <td>是否自动停止loading状态（默认值true，当页面加载完毕时将停止loading状态）</td>
             <td>否</td>
         </tr>
    <tbody>
@@ -128,8 +128,8 @@ layer页面id
             <th>是否必须</th>
         </tr>
         <tr>
-            <th style="color:red">String</th>
-            <td>超时停止loading状态,默认2毫秒,单位毫秒</td>
+            <th style="color:red">Number</th>
+            <td>超时停止loading状态（默认2毫秒，单位毫秒）</td>
             <td>否</td>
         </tr>
    <tbody>
@@ -141,7 +141,7 @@ layer页面id
 	"id":"contentLayer",
 	"active":true,
 	"autoStopLoading":false,
-	"maxLoadingTime":"10"
+	"maxLoadingTime":10
 });
 </code></pre>
 
@@ -297,7 +297,7 @@ layer页面id
 
 <h3 class="construct">loadingIcon</h3>
 <!--	* loadingIcon : String (optional) (仅支持Android)  -->
-下拉操作后loading状态显示的Icon (仅支持Android)
+在页面加载前的loading状态时屏幕显示的Icon (仅支持Android)
 <table>
     <tbody>
         <tr>
@@ -319,11 +319,6 @@ layer页面id
 	"id":"contentLayer",
 	"active":true,
 
-	"pullToRefresh":true,
-	"pullText":"下拉可以刷新⊙０⊙",
-	"loadingText":"更新中，请等待...",
-	"releaseText":"释放更新⊙０⊙",
-	"pullIcon":"base64图片字符串",
 	"loadingIcon":"base64图片字符串"
 });
 </code></pre>
@@ -360,7 +355,7 @@ layerB.out();
 </code></pre>
 
 <h3 class="method">reload (url) : this</h3>
-重新刷新页面
+重载页面
 
 <table>
     <tbody>
@@ -373,7 +368,7 @@ layerB.out();
         <tr>
             <th>url</th>
             <th>String</th>
-            <td>刷新页面时所用的url</td>
+            <td>重载页面时所用的url</td>
             <td>是</td>
         </tr>
    <tbody>
@@ -387,8 +382,8 @@ layerB.out();
 layer.reload("http://www.baidu.com");
 </code></pre>
 
-<h3 class="method">stopPullRefresh ( )</h3>
-停止layer拉动刷新状态
+<!-- <h3 class="method">stopPullRefresh ( )</h3> -->
+<!-- 停止layer拉动刷新状态
 
 实例
 <pre><code>var layer = new Blend.Layer({
@@ -402,7 +397,7 @@ layer.reload("http://www.baidu.com");
 });
 
 layer.stopPullRefresh();
-</code></pre>
+</code></pre> -->
 
 <h3 class="method">replace (url) : this</h3>
 页面url替换
@@ -442,7 +437,7 @@ layer.in();
 	"url":"content.html"
 });
 
-var url = layer.getUrl();
+console.log(layer.getUrl());
 </code></pre>
 
 <h3 class="method">canGoBack ( ) : Boolean</h3>
@@ -455,6 +450,7 @@ layer是否可以回退，是否有历史记录
 
 if(layer.canGoBack()){
     //可以回退后操作
+    Blend.api.layerBack();
 }
 </code></pre>
 
