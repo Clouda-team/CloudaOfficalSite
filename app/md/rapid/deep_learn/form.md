@@ -1,6 +1,6 @@
 #表单处理
 
-Clouda框架中提供很简单的方法直接处理表单，方法如下：
+rapid框架中提供很简单的方法直接处理表单，方法如下：
 
 （1）定义视图并指定请求的路径
 
@@ -24,7 +24,7 @@ Clouda框架中提供很简单的方法直接处理表单，方法如下：
 （2）配置路由
 
 
-	define("config.clouda-httpserver",{
+	define("config.rapid-httpserver",{
 		autoStart:true,
 		mapping:{
 			url:"/testForm",
@@ -35,7 +35,7 @@ Clouda框架中提供很简单的方法直接处理表单，方法如下：
 	
 （3）定义Action处理表格
 
-	clouda-httpserver.defineAction("index", function(default_request, default_response){
+	rapid-httpserver.defineAction("index", function(default_request, default_response){
     	var req = default_request;
     	var res = default_response;
     	

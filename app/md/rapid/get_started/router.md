@@ -2,7 +2,7 @@
 
 ## 如何使用路由
 
-Clouda的路由一般通过`/conf`目录下的文件中的`mapping`参数来配置，最简单的配置方法如下
+rapid的路由一般通过`/conf`目录下的文件中的`mapping`参数来配置，最简单的配置方法如下
 
 	mapping : {
 		url : “/test”,
@@ -41,8 +41,8 @@ Clouda的路由一般通过`/conf`目录下的文件中的`mapping`参数来配�
 	
 实例：
 	
-	clouda.config.define({
-		"clouda-httpserver" : {
+	rapid.config.define({
+		"rapid-httpserver" : {
 			autoStart : true,
 			loading_dir : ["/app/actions/"],
 			
@@ -62,8 +62,8 @@ Clouda的路由一般通过`/conf`目录下的文件中的`mapping`参数来配�
 	
 或者
 
-	clouda.config.define({
-		"clouda-httpserver" : {
+	rapid.config.define({
+		"rapid-httpserver" : {
 			autoStart : true,
 			loading_dir : ["/app/actions/"],
 			
@@ -100,8 +100,8 @@ Clouda的路由一般通过`/conf`目录下的文件中的`mapping`参数来配�
 
 通过下面的路由建立URL与名为index的Action之间的映射关系。
 
-	clouda.config.define({
-		"clouda-httpserver" : {
+	rapid.config.define({
+		"rapid-httpserver" : {
 			autoStart : true,
 			port : 8082,
 			loading_dir : ["/app/actions/"],

@@ -15,11 +15,11 @@
 
 ## 传递参数给视图
 
-Clouda允许给视图传递参数，视图(View)中默认使用`Swig`模板，方法如下：
+rapid允许给视图传递参数，视图(View)中默认使用`Swig`模板，方法如下：
 
 （1）在Action中使用`render`方法想相应的视图模板传递参数
 
-	var server = use("clouda-httpserver");
+	var server = use("rapid-httpserver");
 	
 	server.defineAction("sendParamsToView", function(default_request, default_response){
 		//index为/app/views/index.html
@@ -43,7 +43,7 @@ Clouda允许给视图传递参数，视图(View)中默认使用`Swig`模板，�
 	
 ## 传递参数给子视图
 
-在项目中可能会出现多个视图的嵌套，例如导航栏、工具栏等这样的子视图，Clouda中提供了给子视图传递参数的方法。
+在项目中可能会出现多个视图的嵌套，例如导航栏、工具栏等这样的子视图，rapid中提供了给子视图传递参数的方法。
 
 （1）定义子视图取名为`nav.html`，并使用`Swig`模板提供的`{% macro use() %}`语法获取传递过来的参数，例如子视图中需要用到用户的名字和年龄，这个名字和年龄需要父视图提供。
 
@@ -64,7 +64,7 @@ Clouda允许给视图传递参数，视图(View)中默认使用`Swig`模板，�
 	<head>
 		<meta charset="UTF-8">
 		<meta name="description" content="简单可依赖的Javascript开发框架" />
-		<title>Clouda+ API</title>
+		<title>rapid+ API</title>
 	</head>
 	<body>
 		{{ nav.use("John","18") }}

@@ -1,8 +1,8 @@
-# Clouda快速入门
+# Rapid快速入门
 
 ## 安装Node.js
 
-Clouda开发的工程需要安装Node.js环境来安装依赖和为工程提供运行环境，Node.js下载地址如下：
+rapid开发的工程需要安装Node.js环境来安装依赖和为工程提供运行环境，Node.js下载地址如下：
 
 <http://nodejs.org/download/>
 
@@ -20,12 +20,12 @@ Clouda开发的工程需要安装Node.js环境来安装依赖和为工程提供�
     	"description": "",
     	"main": "index.js",
     	"scripts": {
-        	"install" : "node ./node_modules/clouda-core/init.js"
+        	"install" : "node ./node_modules/rapid-core/init.js"
     	},
     	"author": "",
     	"dependencies":{
-        	"clouda-core" : "*",
-        	"clouda-httpserver" : "*"
+        	"rapid-core" : "*",
+        	"rapid-httpserver" : "*"
     	},
     	"license": "MIT"
 	}
@@ -36,7 +36,7 @@ Clouda开发的工程需要安装Node.js环境来安装依赖和为工程提供�
 
 	npm install
 	
-命令执行完成后会自动安装`clouda-core`和`clouda-httpserver`依赖并自动创建`start.js`文件。
+命令执行完成后会自动安装`rapid-core`和`rapid-httpserver`依赖并自动创建`start.js`文件。
 
 
 ## 创建视图（View）
@@ -48,10 +48,10 @@ Clouda开发的工程需要安装Node.js环境来安装依赖和为工程提供�
 	<head>
 		<meta charset="UTF-8">
 		<meta name="description" content="简单可依赖的Javascript开发框架" />
-		<title>Clouda+</title>
+		<title>Rapid</title>
 	</head>
 	<body>
-		<p>Welcome to Clouda!</p>
+		<p>Welcome to rapid!</p>
 	</body>
 	</html>
 	
@@ -59,7 +59,7 @@ Clouda开发的工程需要安装Node.js环境来安装依赖和为工程提供�
 
 在`app`目录下新建`actions`目录并在`actions`目录下新建`welcome.js`文件，该文件描述工程的主要功能，内容如下：
 
-	var server = use("clouda-httpserver");
+	var server = use("rapid-httpserver");
 	
 	server.defineAction("index", function(default_request, default_response){
 		var req = default_request;
@@ -74,8 +74,8 @@ Clouda开发的工程需要安装Node.js环境来安装依赖和为工程提供�
 
 在`welcome`目录下新建`conf`目录并在`conf`目录下编写`http.conf.js`文件，对项目进行配置并编写路由规则。
 
-	clouda.config.define({
-		"clouda-httpserver" : {
+	rapid.config.define({
+		"rapid-httpserver" : {
 			autoStart : true,
 			port : 8080,
 			loading_dir : ["/app/actions/"],

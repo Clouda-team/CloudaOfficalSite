@@ -3,7 +3,7 @@
 
 ## 配置运行环境
 
-Clouda开发的工程需要安装Node.js环境来安装依赖和为工程提供运行环境，Node.js下载地址如下：
+rapid开发的工程需要安装Node.js环境来安装依赖和为工程提供运行环境，Node.js下载地址如下：
 
 <http://nodejs.org/download/>
 
@@ -23,12 +23,12 @@ Clouda开发的工程需要安装Node.js环境来安装依赖和为工程提供�
     	"description": "",
     	"main": "index.js",
     	"scripts": {
-        	"install" : "node ./node_modules/clouda-core/init.js"
+        	"install" : "node ./node_modules/rapid-core/init.js"
     	},
     	"author": "",
     	"dependencies":{
-        	"clouda-core" : "*",
-        	"clouda-httpserver" : "*"
+        	"rapid-core" : "*",
+        	"rapid-httpserver" : "*"
     	},
     	"license": "MIT"
 	}
@@ -37,7 +37,7 @@ Clouda开发的工程需要安装Node.js环境来安装依赖和为工程提供�
 
 * install
 
-	安装完依赖后执行node_modules/clouda-core/init.js在工程根目录下生成项目启动文件`start.js`，启动文件的主要完成设置`GLOBAL.ROOT_DIR`、`GLOBAL.USER_DIR`、`GLOBAL.CONF_DIR`参数后自动检测三个配置目录并载入配置目录的文件的功能。
+	安装完依赖后执行node_modules/rapid-core/init.js在工程根目录下生成项目启动文件`start.js`，启动文件的主要完成设置`GLOBAL.ROOT_DIR`、`GLOBAL.USER_DIR`、`GLOBAL.CONF_DIR`参数后自动检测三个配置目录并载入配置目录的文件的功能。
 	
 * dependencies
 
@@ -46,10 +46,10 @@ Clouda开发的工程需要安装Node.js环境来安装依赖和为工程提供�
 
 ### 配置工程运行信息
 
-当我们运行工程后，用户访问工程和工程运行的信息可通过`clouda.config.define`来配置，格式如下：
+当我们运行工程后，用户访问工程和工程运行的信息可通过`rapid.config.define`来配置，格式如下：
 
-	clouda.config.define({
-		"clouda-httpserver" : {
+	rapid.config.define({
+		"rapid-httpserver" : {
 			autoStart : true,
 			port : 8082,
 			loading_dir : ["/app/actions/"],
@@ -61,4 +61,4 @@ Clouda开发的工程需要安装Node.js环境来安装依赖和为工程提供�
 		}
 	});
 	
-该实例是对`clouda-httpserver`进行配置，关于配置项列表和详细介绍可查看《httpserver API Document》中`Configure`部分。
+该实例是对`rapid-httpserver`进行配置，关于配置项列表和详细介绍可查看《httpserver API Document》中`Configure`部分。

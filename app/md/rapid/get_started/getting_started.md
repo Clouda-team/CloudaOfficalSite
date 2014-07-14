@@ -2,7 +2,7 @@
 
 ## 安装Node.js
 
-如果您想在本地运行和测试Clouda开发的工程就需要安装Node.js，下载地址如下：
+如果您想在本地运行和测试rapid开发的工程就需要安装Node.js，下载地址如下：
 
 <http://nodejs.org/download/>
 
@@ -20,12 +20,12 @@
     	"description": "",
     	"main": "index.js",
     	"scripts": {
-        	"install" : "node ./node_modules/clouda-core/init.js"
+        	"install" : "node ./node_modules/rapid-core/init.js"
     	},
     	"author": "",
     	"dependencies":{
-        	"clouda-core" : "*",
-        	"clouda-httpserver" : "*"
+        	"rapid-core" : "*",
+        	"rapid-httpserver" : "*"
     	},
     	"license": "MIT"
 	} 
@@ -46,7 +46,7 @@
 在工程目录`helloworld`下新建`conf`目录，并在`conf`目录下创建`httpserver`的启动配置文件`http.conf.js`，该文件的主要作用是定义路由与Action的映射关系，内容如下：
 
 	define({
-    	"config.clouda-httpserver":{
+    	"config.rapid-httpserver":{
        		autoStart : true ,
         	defaultAction : function(){
             	this.send("Hello,World!");

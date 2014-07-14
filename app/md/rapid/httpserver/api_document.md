@@ -1,18 +1,18 @@
 
-# clouda-httpserver API文档
+# rapid-httpserver API文档
 
 ## config
 
-clouda-httpserver可以使用config来配置相应的信息。
+rapid-httpserver可以使用config来配置相应的信息。
 
-clouda-httpserver的配置格式如下：
+rapid-httpserver的配置格式如下：
 
   	define({
-      	"config.clouda-httpserver":{
+      	"config.rapid-httpserver":{
     	}
   	});
 
-clouda-httpserver包含以下配置项：
+rapid-httpserver包含以下配置项：
 
 <h3 class="config">autoStart</h3>
 
@@ -36,7 +36,7 @@ clouda-httpserver包含以下配置项：
 实例：
 
   	define({
-      	"config.clouda-httpserver":{
+      	"config.rapid-httpserver":{
           	autoStart : true,
           	defaultAction : function(){
               	this.send("Hello,World!");
@@ -63,7 +63,7 @@ clouda-httpserver包含以下配置项：
 实例：
 
   	define({
-      	"config.clouda-httpserver":{
+      	"config.rapid-httpserver":{
          	autoStart : true,
           	port:8082,
           	defaultAction : function(){
@@ -91,7 +91,7 @@ clouda-httpserver包含以下配置项：
 实例：
 
   	define({
-      	"config.clouda-httpserver":{
+      	"config.rapid-httpserver":{
           	autoStart : true,
           	port:8082,
           	//添加/app/actions目录下的文件
@@ -166,7 +166,7 @@ clouda-httpserver包含以下配置项：
 实例：
 
   	define({
-      	"config.clouda-httpserver":{
+      	"config.rapid-httpserver":{
           	autoStart : true,
 
           	mapping:{
@@ -228,7 +228,7 @@ clouda-httpserver包含以下配置项：
 实例：
 
   	define({
-      	"config.clouda-httpserver":{
+      	"config.rapid-httpserver":{
           	autoStart : true,
           	filter:{
             	url:"/test",
@@ -242,7 +242,7 @@ clouda-httpserver包含以下配置项：
 
 ## define
 
-clouda-httpserver提供自定义`Extension`、`Filter`、`Action`的方法。
+rapid-httpserver提供自定义`Extension`、`Filter`、`Action`的方法。
 
 <h3 class="define">httpd.defineExtension(name,handle)</h3>
 
@@ -283,7 +283,7 @@ clouda-httpserver提供自定义`Extension`、`Filter`、`Action`的方法。
 
 实例：
 
-  	clouda-httpserver.defineAction("index", function(default_request, default_response){
+  	rapid-httpserver.defineAction("index", function(default_request, default_response){
 		var req = default_request;
 		var res = default_response;
 
@@ -323,7 +323,7 @@ httpVisitor表示每个请求的上下文对像，<font color=red>在使用框�
 实例：
 
   	define({
-      	"config.clouda-httpserver":{
+      	"config.rapid-httpserver":{
           	autoStart : true,
           	defaultAction : function(){
               this.getComprcessType();
@@ -341,7 +341,7 @@ httpVisitor表示每个请求的上下文对像，<font color=red>在使用框�
 实例：
 
   	define({
-      	"config.clouda-httpserver":{
+      	"config.rapid-httpserver":{
           	autoStart : true,
           	defaultAction : function(){
               	this.getComprcessStream(pipeOnStream);
@@ -357,7 +357,7 @@ httpVisitor表示每个请求的上下文对像，<font color=red>在使用框�
 实例：
 
   	define({
-      	"config.clouda-httpserver":{
+      	"config.rapid-httpserver":{
           	autoStart : true,
           	defaultAction : function(){
             	//例如Form包含“name”
@@ -381,7 +381,7 @@ httpVisitor表示每个请求的上下文对像，<font color=red>在使用框�
 实例：
 
   	define({
-      	"config.clouda-httpserver":{
+      	"config.rapid-httpserver":{
           	autoStart : true,
           	defaultAction : function(){
             	//例如Query包含“name”
@@ -405,7 +405,7 @@ httpVisitor表示每个请求的上下文对像，<font color=red>在使用框�
 实例：
 
   	define({
-      	"config.clouda-httpserver":{
+      	"config.rapid-httpserver":{
           	autoStart : true,
           	defaultAction : function(){
             	//例如Query或者Form包含“name”
@@ -429,7 +429,7 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
 实例：
 
   	define({
-      	"config.clouda-httpserver":{
+      	"config.rapid-httpserver":{
           	autoStart : true,
           	defaultAction : function(){
               	this.setHeader("Content-Type","text/html");
@@ -446,7 +446,7 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
 实例：
 
   	define({
-      	"config.clouda-httpserver":{
+      	"config.rapid-httpserver":{
           	autoStart : true,
           	defaultAction : function(){
               	this.setExpires(300000);
@@ -462,7 +462,7 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
 实例：
 
   	define({
-      	"config.clouda-httpserver":{
+      	"config.rapid-httpserver":{
           	autoStart : true,
           	defaultAction : function(){
               	this.setMaxAge(30000);
@@ -478,7 +478,7 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
 实例：
 
   	define({
-      	"config.clouda-httpserver":{
+      	"config.rapid-httpserver":{
           	autoStart : true,
           	defaultAction : function(){
               	this.setNostore();
@@ -494,7 +494,7 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
 实例：
 
   	define({
-      	"config.clouda-httpserver":{
+      	"config.rapid-httpserver":{
           	autoStart : true,
           	defaultAction : function(){
               	this.setNoCache();
@@ -510,7 +510,7 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
 实例：
 
   	define({
-      	"config.clouda-httpserver":{
+      	"config.rapid-httpserver":{
           	autoStart : true,
           	defaultAction : function(){
               	this.sendStatus(500,"Server error","500,Server error");
@@ -526,7 +526,7 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
 实例：
 
   	define({
-      	"config.clouda-httpserver":{
+      	"config.rapid-httpserver":{
           	autoStart : true,
           	defaultAction : function(){
             	//渲染app/views/index.html
@@ -546,7 +546,7 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
 实例：
 
   	define({
-      	"config.clouda-httpserver":{
+      	"config.rapid-httpserver":{
           	autoStart : true,
           	defaultAction : function(){
               	this.render(viewname,data,opts);
@@ -562,7 +562,7 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
 实例：
 
   	define({
-      	"config.clouda-httpserver":{
+      	"config.rapid-httpserver":{
           	autoStart : true,
           	defaultAction : function(){
               	this.lookup("http://www.XXX.com");
@@ -596,7 +596,7 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
 实例：
 
   	define({
-      	"config.clouda-httpserver":{
+      	"config.rapid-httpserver":{
           	autoStart : true,
           	defaultAction : function(){
               	this.redirect("http://www.baidu.com");
@@ -637,7 +637,7 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
 实例：
 
   	define({
-      	"config.clouda-httpserver":{
+      	"config.rapid-httpserver":{
           	autoStart : true,
           	defaultAction : function(){
               	this.send("Hello,World!");
@@ -676,7 +676,7 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
 实例：
 
   	define({
-      	"config.clouda-httpserver":{
+      	"config.rapid-httpserver":{
           	autoStart : true,
           	defaultAction : function(){
               	this.sendContent("Hello,World!");
@@ -717,7 +717,7 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
   var path = require("path");
 
   define({
-      "config.clouda-httpserver":{
+      "config.rapid-httpserver":{
           autoStart : true,
           defaultAction : function(){
             //路径需要使用绝对路径
@@ -755,7 +755,7 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
 实例：
 
   	define({
-      	"config.clouda-httpserver":{
+      	"config.rapid-httpserver":{
           	autoStart : true,
           	defaultAction : function(){
               	this.sendError(new Error("Server Error!"),500);

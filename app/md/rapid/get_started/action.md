@@ -8,9 +8,9 @@ Action用来实现最终的业务功能。
 
 ## 普通定义Action
 
-在Clouda中通常使用`clouda-httpserver.defineAction(name,depends,handle)`方法来定义一个Action，实例如下：
+在rapid中通常使用`rapid-httpserver.defineAction(name,depends,handle)`方法来定义一个Action，实例如下：
 
-	clouda-httpserver.defineAction("index", function(default_request, default_response){
+	rapid-httpserver.defineAction("index", function(default_request, default_response){
 		var req = default_request;
 		var res = default_response;
 		
@@ -39,7 +39,7 @@ Action用来实现最终的业务功能。
 除了定义Action后再使用Action以外，还可以使用function()直接定义的方法来使用Action，方法如下：
 
 
-	define("config.clouda-httpserver",{
+	define("config.rapid-httpserver",{
 		autoStart:true,
 		mapping:{
 			defaultAction:function(){

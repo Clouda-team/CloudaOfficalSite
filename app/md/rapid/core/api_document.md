@@ -1,4 +1,4 @@
-# clouda-core API文档
+# rapid-core API文档
 
 ## 全局属性
 
@@ -18,11 +18,11 @@
 
 <h3 class="全局方法">define(map)</h3>
 
-clouda.define()的快捷方式
+rapid.define()的快捷方式
 
 <h3 class="全局方法">watch(key1,key2,key3...keyN,callback);</h3>
 
-clouda.watch()的快捷方式
+rapid.watch()的快捷方式
 
 <h3 class="全局方法">use(key);</h3>
 
@@ -81,30 +81,30 @@ console会打印出：
 		console.log("Stop watch!");
 	});
 
-## clouda-core属性
+## rapid-core属性
 
-<h3 class="clouda-core属性">clouda.resource</h3>
+<h3 class="rapid-core属性">rapid.resource</h3>
 
 一个watcher对像，用于存放在全局范围内运行时会改变的一类资源。
 
-<h3 class="clouda-core属性">clouda.config</h3>
+<h3 class="rapid-core属性">rapid.config</h3>
 
 一个watcher对像，用于存放在全局范围内运行时不会改变或很少改变的一类配置资源
 
-<h3 class="clouda-core属性">clouda.plugin</h3>
+<h3 class="rapid-core属性">rapid.plugin</h3>
 
 一个watcher对像，用于存放在在全局范内被公开访问的可执行的插件资源
 	
-## clouda-core方法
+## rapid-core方法
 
-<h3 class="clouda-core方法">clouda.define(obj);</h3>
+<h3 class="rapid-core方法">rapid.define(obj);</h3>
 
 提供一个简单的方式来定义多个资源。方法接收一个map，其key为使用"."分隔的资源名称的表示，前半部份应该为resource、config、plugin三者之一。
 
 实例：
 
-	clouda.define({
-    	"config.clouda-httpserver":{
+	rapid.define({
+    	"config.rapid-httpserver":{
            	autoStart : true ,
         	defaultAction : function(){
             	this.send("Hello,World!");
@@ -112,17 +112,17 @@ console会打印出：
     	}
 	});
 	
-<h3 class="clouda-core方法">clouda.watch(key1,key2,key3...keyN,callback);</h3>
+<h3 class="rapid-core方法">rapid.watch(key1,key2,key3...keyN,callback);</h3>
 
 提供一个简单的方式同时监测多个资源是否存在，当所有资源都存在时，执行一个回调并以相同的顺序将所需的资源传入callback中。其key应为使用"."分隔的资源名称的表示，前半部份应该为resource、config、plugin三者之一。
 
 实例：
 
- 	clouda.watch("plugin.talker",function(talker){
+ 	rapid.watch("plugin.talker",function(talker){
      	talker.say();
  	})
 
-<h3 class="clouda-core方法">clouda.requireDir(path,limit,isAbsPath);</h3>
+<h3 class="rapid-core方法">rapid.requireDir(path,limit,isAbsPath);</h3>
 
 用于载入一个目录下的js文件。
 
@@ -143,9 +143,9 @@ console会打印出：
 实例：
 
 	//载入目录下以include开头的js文件
-	clouda.requireDir("./",/include.*\.js/);
+	rapid.requireDir("./",/include.*\.js/);
 
 
-<h3 class="clouda-core方法">clouda.createWatcher();</h3>
+<h3 class="rapid-core方法">rapid.createWatcher();</h3>
 
 取得一个watcher对像的工厂方法

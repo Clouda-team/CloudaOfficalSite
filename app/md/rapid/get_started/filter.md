@@ -77,7 +77,7 @@ Filter定义完成后就可以在`config`中使用`filter`来使用，格式如�
 ## 实例
 
 	define({
-    	"config.clouda-httpserver":{
+    	"config.rapid-httpserver":{
         	autoStart : true,
         	filter:{
         		url:"/test",
