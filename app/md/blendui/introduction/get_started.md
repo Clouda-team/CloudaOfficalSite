@@ -4,7 +4,13 @@
 
 创建一个名为`Hello`的目录，并在`Hello`目录下创建一个名`helloworld.html`的文件，并在文件中输入以下内容：
 
-	<a href="http://m.baidu.com" target='_blank'>百度首页</a>
+	<html>
+		<head>
+		</head>
+		<body>
+			<a href="http://m.baidu.com" target='_blank'>百度首页</a>
+		</body>
+	</html>
 		
 ## 引入BlendUI脚本
 
@@ -12,7 +18,7 @@
 
 （1）下载BlendUI脚本到本地然后引入，下载地址如下：
 
-
+<https://github.com/Clouda-team/BlendUI>
 
 下载完成后放入`Hello`目录下，并在`helloworld.html`中引入BlendUI脚本	
 	
@@ -107,17 +113,50 @@ BlendUI有两种使用方式，一种是直接使用BlendUI开发，第二种是
 
 ### Android端浏览
 
-开发完成后在打包平台上使用打包工具将应用打包成`apk`文件，在`Android`移动端上安装相应格式的应用即可。
+下载blendui.apk并安装到Android移动端上，下载地址如下：
 
-打包平台的地址如下：
+<https://github.com/Clouda-team/BlendUI>
 
-[http://10.42.82.59/wenku/injekt.php](http://10.42.82.59/wenku/injekt.php) 
+安装完成后打开blendui应用，使用“扫码”扫描BlendUI开发应用的服务器URL地址即可查看应用。
 
 ### IOS端浏览
 
+使用IOS终端扫描下面的二维码安装BlendUI测试运行应用
 
+![](/md/images/iosdownload.png)
+
+安装完成后打开blendui应用，使用“扫码”扫描BlendUI开发应用的服务器URL地址即可查看应用。
 
 ### 浏览器浏览
 
+如果需要直接使用浏览器中浏览，需要添加一下操作：
+
+（1）首先需要下载`crema.css`文件，下载地址如下
+
+<https://github.com/Clouda-team/BlendUI>
+
+（2）HTML中引入`crema.css`
+
+	<link rel="stylesheet" href="crema.css">
+	
+（3）修改HTMl代码，在body中加入三个标签
+
+	<html>
+		<head>
+			<link rel="stylesheet" href="crema.css">
+			<script src="./BlendUI-0.0.1.min.js">\</script>
+		</head>
+		<body>
+			<div class="pages">
+				<div class="page">
+					<div class="page-content">
+						<a href="http://m.baidu.com" target='_blank'>百度首页</a>
+					</div>
+				</div>
+			</div>
+		</body>
+	</html>
+
+修改后直接在浏览器中输入应用服务器的URL即可。
 
 
