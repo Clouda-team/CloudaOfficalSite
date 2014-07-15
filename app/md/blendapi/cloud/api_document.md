@@ -9,6 +9,7 @@
 
 
 ## Account
+
     Blend.mbaas.account
 
 帐号登录
@@ -18,7 +19,8 @@
 - login(options)
 - closeLoginDialog()
 
-### login ###
+<h3 class="Account">login</h3>
+
     login(options)
 
 **功能描述：**
@@ -56,7 +58,8 @@ onfail | function(){}  | 登录失败的回调函数. onfail函数体中,需要�
 
 
 
-## 轻支付(PAY)
+## 轻支付
+
     Blend.mbaas.pay
     
 PAY接口提供支付功能。
