@@ -11,22 +11,7 @@
 			<a href="http://m.baidu.com" target='_blank'>百度首页</a>
 		</body>
 	</html>
-		
-## 引入BlendUI脚本
 
-引入BlendUI脚本有两种方法：
-
-（1）下载BlendUI脚本到本地然后引入，下载地址如下：
-
-<https://github.com/Clouda-team/BlendUI>
-
-下载完成后放入`Hello`目录下，并在`helloworld.html`中引入BlendUI脚本	
-	
-	<script src="./BlendUI-0.0.1.min.js">\</script>
-
-（2）在`helloworld.html`中使用远程地址直接引入BlendUI脚本
-
-	<script src="http://BlendUI-0.0.1.min.js">\</script>
 	
 ## 使用BlendUI
 
