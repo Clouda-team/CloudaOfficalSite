@@ -37,7 +37,7 @@
 		 
 ## 初始化Blend api
 
-初始化Blend api，可以使用如下方法:
+从百度开放云平台上获取API Key并初始化Blend api，可以使用如下方法:
 
 	Blend.lightInit({
         ak:apikey,//从百度开放云平台获取
