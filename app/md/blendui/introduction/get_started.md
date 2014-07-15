@@ -120,33 +120,70 @@ BlendUI有两种使用方式，一种是直接使用BlendUI开发，第二种是
 
 实例：使用BlendUI中`Layer`加载helloworld.html中`a`标签的链接
 
-	clouda.lightInit({
-		ak:xxxx, //轻应用apikey
-		module:["blendui"]//根据需要添加模块到数组中即可
-	});
+
+（1）在HTMl中引入Clouda脚本
+
+	<html>
+		<head>
+			<meta charset="utf-8">
+    		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    		<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport" />
+    		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    		
+    		<script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8" src="http://apps.bdimg.com/cloudaapi/lightapp.js"></script>
+		</head>
+		<body>
+			<a class="testLink" href="http://m.baidu.com">百度首页</a>
+		</body>
+	</html>
 	
-	document.addEventListener("blendready",function(){
-		//启动动画默认开启，这里先去除启动画面直接看实例效果
-		main.api.removeSplashScreen();
-				
-		//外链a用BlendUI layer打开
-		var Layer = main.Layer;
-		var links = $("a[target='_blank']");
-		var page = null;
-		links.click(function(e){
-			e.preventDefault();
-			var $t = $(this);
-			var link = $t.attr("href");
-			if(page){ 
-				page.destroy();
-			}
-			page = new Layer({
-				"id":"layerId",
-			   	"url":link,
-			   	"active":true
+（3）加入BlendUI js代码完成使用BlendUI中`Layer`加载helloworld.html中`a`标签的链接的功能
+
+	<html>
+		<head>
+			<meta charset="utf-8">
+    		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    		<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport" />
+    		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    		
+    		<script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8" src="http://apps.bdimg.com/cloudaapi/lightapp.js"></script>
+		</head>
+		<body>
+			<a class="testLink" href="http://m.baidu.com">百度首页</a>
+		</body>
+		<script>
+			clouda.lightInit({
+				ak:xxxx, //轻应用apikey
+				module:["blendui"]//根据需要添加模块到数组中即可
 			});
-		});
-	});
+			
+			document.addEventListener("blendready",function(){	
+				Blend.start("herfLayer",function(dom){
+					$(".testLink",dom).delegate("a","click",function(e){
+                		e.preventDefault();
+                	
+                		Blend.fire("herfLayer","top",{
+                    		url: this.href
+                		});
+            		});
+				
+				});
+			
+				var herfLayer;
+				Blend.on("createHerfLayer",function(e){
+					if(herfLayer){
+                    	herfLayer.in();
+                	}else{
+                		herfLayer = new Blend.Layer({
+                			"id" : "herfLayer",
+                			"url" : e['data'].url,
+                			"active" :true
+                		});
+                	}
+				})
+			});
+		</script>
+	</html>
 
 
 ## 浏览应用
