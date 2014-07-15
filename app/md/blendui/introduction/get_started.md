@@ -35,36 +35,76 @@ BlendUI有两种使用方式，一种是直接使用BlendUI开发，第二种是
 
 ### 直接使用BlendUI开发
 
-	Blend.ready(function(main){
+	document.addEventListener("blendready",function(){
 	
 	});
 
 
 实例：使用BlendUI中`Layer`加载helloworld.html中`a`标签的链接
 
-	Blend.ready(function(main) {
-		//启动动画默认开启，这里先去除启动画面直接看实例效果
-		main.api.removeSplashScreen();
-				
-		//外链a用BlendUI layer打开
-		var Layer = main.Layer;
-		var links = $("a[target='_blank']");
-		var page = null;
-		links.click(function(e){
-			e.preventDefault();
-			var $t = $(this);
-			var link = $t.attr("href");
-			if(page){ 
-				page.destroy();
-			}
-			page = new Layer({
-				"id":"layerId",
-			   	"url":link,
-			   	"active":true
-			});
-		});
+（1） 下载BlendUI脚本到本地，下载地址如下：
+
+<https://github.com/Clouda-team/BlendUI>
+
+（2）在HTMl中引入BlendUI脚本
+
+	<html>
+		<head>
+			<meta charset="utf-8">
+    		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    		<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport" />
+    		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    		<script src="BlendUI-0.0.1.min.js">\</script>
+		</head>
+		<body>
+			<a class="testLink" href="http://m.baidu.com">百度首页</a>
+		</body>
+	</html>
+	
+（3）加入BlendUI js代码完成使用BlendUI中`Layer`加载helloworld.html中`a`标签的链接的功能
+
+	<html>
+		<head>
+			<meta charset="utf-8">
+    		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    		<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport" />
+    		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    		<script src="BlendUI-0.0.1.min.js">\</script>
+		</head>
+		<body>
+			<a class="testLink" href="http://m.baidu.com">百度首页</a>
+		</body>
+		<script>
+			document.addEventListener("blendready",function(){
 			
-	}); 
+				Blend.start("herfLayer",function(dom){
+					$(".testLink",dom).delegate("a","click",function(e){
+                		e.preventDefault();
+                	
+                		Blend.fire("herfLayer","top",{
+                    		url: this.href
+                		});
+            		});
+				
+				});
+			
+				var herfLayer;
+				Blend.on("createHerfLayer",function(e){
+					if(herfLayer){
+                    	herfLayer.in();
+                	}else{
+                		herfLayer = new Blend.Layer({
+                			"id" : "herfLayer",
+                			"url" : e['data'].url,
+                			"active" :true
+                		});
+                	}
+				})
+			});
+		</script>
+	</html>
+
+	 
 
 ### 结合Clouda方式开发
 
@@ -150,7 +190,7 @@ BlendUI有两种使用方式，一种是直接使用BlendUI开发，第二种是
 			<div class="pages">
 				<div class="page">
 					<div class="page-content">
-						<a href="http://m.baidu.com" target='_blank'>百度首页</a>
+						<a class="testLink" href="http://m.baidu.com">百度首页</a>
 					</div>
 				</div>
 			</div>
