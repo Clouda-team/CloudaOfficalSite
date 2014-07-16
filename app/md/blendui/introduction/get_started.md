@@ -91,9 +91,9 @@ BlendUI有两种使用方式，一种是直接使用BlendUI开发，第二种是
 
 	 
 
-### 结合Clouda方式开发
+### 结合Blend API方式开发
 
-	clouda.lightInit({
+	Blend.lightInit({
 		ak:xxxx, //轻应用apikey
 		module:["xxxx","blendui"]//根据需要添加模块到数组中即可
 	});
@@ -137,7 +137,7 @@ BlendUI有两种使用方式，一种是直接使用BlendUI开发，第二种是
 			<a class="testLink" href="http://m.baidu.com">百度首页</a>
 		</body>
 		<script>
-			clouda.lightInit({
+			Blend.lightInit({
 				ak:xxxx, //轻应用apikey
 				module:["blendui"]//根据需要添加模块到数组中即可
 			});

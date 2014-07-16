@@ -12,11 +12,18 @@ server.defineAction("blendapi", function(default_request, default_response){
 	var res = default_response;
 	var visitor = this;
 
-	var sep = this.url("seppath", req.url);
-	var proj = sep[0] || "";
-	var doc = (sep[1] || "portal") + ".md";
+	// var sep = this.url("seppath", req.url);
+	// var proj = sep[0] || "";
+	// var doc = (sep[1] || "portal") + ".md";
 
-	var mdpath = path.join(USER_DIR, mddir, proj, doc);
+	// var mdpath = path.join(USER_DIR, mddir, proj, doc);
+
+	var sep = this.url("seppath", req.url);
+	var proj = sep[0];
+	var mod = sep[1];
+	var doc = sep[2];
+
+	var mdpath = path.join(USER_DIR, mddir, proj, mod, doc + ".md");
 
 	var cached = cache.get(mdpath);
 	if(cached){
