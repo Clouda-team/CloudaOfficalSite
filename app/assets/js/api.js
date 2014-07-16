@@ -129,11 +129,14 @@ document.addEventListener("DOMContentLoaded", function(){
 			var text = h3.innerText || h3.textContent;
 			text = text.toLowerCase().replace(/\s/ig, "");
 			h3nav[text] = h3;
+			if(text === "blendui" || text === "blendapi"){
+				h3.classList.add("sub");
+			}
 		});
 		var mod = url(1, location.href);
 		var el = h3nav[mod];
 		while(el.nextElementSibling && el.nextElementSibling.tagName === "DL"){
-			el.nextElementSibling.style.display = "block";
+			el.nextElementSibling.classList.add("active");
 			el = el.nextElementSibling;
 		}
 	}
