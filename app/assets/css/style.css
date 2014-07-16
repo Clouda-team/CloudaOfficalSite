@@ -1,0 +1,146 @@
+#intro {
+	height: 100%;
+	min-height: 640px;
+	background-color : #333;
+	background-image: url("/assets/images/9.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	text-align: center;
+	font-family: Helvetica, STHeiti STXihei, Microsoft JhengHei, Microsoft YaHei, Tohoma, Arial;
+}
+
+#intro nav{
+	width: 100%;
+	background: rgba(255,255,255,0.1);
+}
+
+#intro nav li{
+	padding: 20px 12px;
+	display: inline-block;
+}
+
+#intro nav li a{
+	color: #fff;
+	font-weight: bold;
+	-webkit-transition: all .15s ease-in-out;
+	transition: all .15s ease-in-out;
+}
+
+#intro nav li a:hover{
+	color : #333;
+}
+
+#intro img {
+	vertical-align: middle;
+}
+
+#intro h1 {
+	margin: 0.5em 0;
+	color: #fff;
+	font-size: 4em;
+	font-weight: 500;
+}
+
+#intro p {
+	font-size: 18px;
+	line-height: 26px;
+	font-weight: 300;
+	color: #fff;
+}
+
+#intro .info {
+	margin-top: 8px;
+	font-size: 14px;
+	line-height: 20px;
+	font-weight: 400;
+	color: #fff;
+}
+
+#intro .info li {
+	display: inline-block;
+	margin-right: 10px;
+}
+
+#intro .info li a {
+	color: #fff;
+	margin-left: 3px;
+}
+
+#intro .info li a:hover {
+	text-decoration: underline;
+}
+
+#blendui {
+	background-image: url("/assets/images/8.jpg");
+}
+
+#rapid {
+	background-image: url("/assets/images/7.jpg");
+}
+
+#tank {
+	background-image: url("/assets/images/6.jpg");
+}
+
+.showcase {
+	min-height: 640px;
+	height: 100%;
+	background-color : #333;
+	background-repeat: no-repeat;
+	background-size: cover;
+	text-align: center;
+	font-family: Helvetica, STHeiti STXihei, Microsoft JhengHei, Microsoft YaHei, Tohoma, Arial;
+}
+
+.showcase h1 {
+	color: #fff;
+	font-weight: 400;
+	font-size: 3.5em;
+	margin:0;
+}
+
+.showcase p {
+	font-size: 18px;
+	line-height: 26px;
+	font-weight: 300;
+	color: #fff;
+}
+
+.showcase .startBtn {
+	margin-top: 1em;
+}
+
+.panel {
+	max-width: 1200px;
+	margin: 70px auto;
+	overflow: hidden;
+	color: #fff;
+	text-align: center;
+}
+
+.panel li {
+	display: inline-block;
+	width: 24.5%;
+}
+
+.panel li h3 {
+	font-size: 24px;
+	line-height: 30px;
+	font-weight: 300;
+}
+
+.panel li p {
+	margin: 15px 0;
+	padding: 0 12px;
+	font-size: 14px;
+	line-height: 20px;
+	font-weight: 400;
+}
+
+.panel i.fa {
+	font-size: 7em;
+	margin-bottom: 20px;
+	height: 105px;
+}
+
+

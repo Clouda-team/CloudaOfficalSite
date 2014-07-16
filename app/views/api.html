@@ -1,0 +1,33 @@
+{% import "./hd.html" as hd %}
+{% import "./nav.html" as nav %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="简单可依赖的Javascript开发框架" />
+	<title>Clouda+ Docs</title>
+	<link rel="stylesheet" href="/assets/css/entry.css">
+	<link rel="stylesheet" href="/assets/css/api.css">
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/assets/css/stylus.css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/css/prettify.min.css">
+</head>
+<body>
+    {{ hd.use("api") }}
+    <section class="bd">
+        <div class="vp">
+            <aside id="menu">
+                {{ nav.use(proj,mod, doc) }}
+            </aside>
+            <article class="markdown" id="docs">
+                {{ ctnt }}
+            </article>
+        </div>
+    </section>
+    {% include "./ft.html" %}
+    <script src="/assets/js/prettify.min.js"></script>
+    <script src="/assets/js/url.js"></script>
+    <script src="/assets/js/api.js"></script>
+</body>
+</html>

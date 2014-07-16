@@ -1,0 +1,22 @@
+{% macro use(active) %}
+<header class="hd">
+    <div class="vp">
+        <div id="logo">
+        	<a href="/">
+        		<img src="/assets/images/clouda+logo.png" alt=""><span>Clouda+</span>
+        	</a>
+        </div>
+        <ul id="nav">
+            <li>
+            	<a href="/">home</a>
+            </li>
+            <li>
+            	<a {% if active === "api" %}class="active"{% endif %} href="/api">docs</a>
+            </li>
+            <li>
+            	<a href="https://github.com/Clouda-team">github</a>
+            </li>
+        </ul>
+    </div>
+</header>
+{% endmacro %}

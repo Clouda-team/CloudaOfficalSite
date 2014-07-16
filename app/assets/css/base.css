@@ -1,0 +1,29 @@
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    height: 100%;
+}
+
+body {
+    font-family: Helvetica, STHeiti STXihei, Microsoft JhengHei, Microsoft YaHei, Tohoma, Arial;
+    font-size: 14px;
+    margin: 0; 
+    padding: 0;
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: #424b50;
+}
+
+a:focus,a:active, a:hover{
+    outline: 0;
+}
+
+ul, ol, dl{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
