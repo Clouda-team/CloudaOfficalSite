@@ -118,6 +118,23 @@ document.addEventListener("DOMContentLoaded", function(){
 		}, false);
 	}
 	goTop();
-	
+
+	//menu
+	var h3nav = {};
+	var initMenu = function(){
+		var h3s = document.querySelectorAll("h3");
+		[].forEach.call(h3s, function(h3){
+			var text = h3.innerText || h3.textContent;
+			text = text.toLowerCase().replace(/\s/ig, "");
+			h3nav[text] = h3;
+		});
+		var mod = url(1, location.href);
+		var el = h3nav[mod];
+		while(el.nextElementSibling.tagName === "DL"){
+			el.nextElementSibling.style.display = "block";
+			el = el.nextElementSibling;
+		}
+	}
+	initMenu();
 
 }, false);
