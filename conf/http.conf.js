@@ -32,7 +32,7 @@ rapid.config.define({
 			url : /^\/rapid(\/.*)?/,
 			doAction : "rapid"
 		},{
-			url : /^\/blendui(\/.*)?/,
+			url : /^\/blend(\/.*)?/,
 			doAction : "blendui"
 		},{
 			url : /^\/blendapi(\/.*)?/,
