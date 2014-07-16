@@ -21,7 +21,7 @@ rapid.config.define({
 
 		mapping : [{
 			url : /^\/favicon.ico$/,
-			resource : "/favicon.png"
+			resource : "/favicon.ico"
 		},{
 			url : /^\/assets\/(.*)/,
 			resource : "/app/assets/{1}"
