@@ -59,7 +59,9 @@ document.addEventListener("DOMContentLoaded", function(){
 				li.appendChild(a);
 
 				if(renderH3){
-					var h3s = document.querySelectorAll("." + h2.innerHTML.toLowerCase());
+					var sel = h2.innerText || h2.textContent;
+					sel = sel.toLowerCase().replace(/\(.*\)/,"");
+					var h3s = document.querySelectorAll("." + sel);
 					if(h3s.length){
 						var ul = document.createElement("ul");
 						[].forEach.call(h3s, function(h3){
@@ -130,7 +132,7 @@ document.addEventListener("DOMContentLoaded", function(){
 		});
 		var mod = url(1, location.href);
 		var el = h3nav[mod];
-		while(el.nextElementSibling.tagName === "DL"){
+		while(el.nextElementSibling && el.nextElementSibling.tagName === "DL"){
 			el.nextElementSibling.style.display = "block";
 			el = el.nextElementSibling;
 		}
