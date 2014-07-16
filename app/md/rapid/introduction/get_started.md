@@ -1,4 +1,4 @@
-# Rapid快速入门
+# RapidJS快速入门
 
 ## 安装Node.js
 

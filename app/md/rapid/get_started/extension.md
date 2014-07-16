@@ -47,9 +47,102 @@ Extension用来实现http功能的包装，如Session，Cookie，fileupload，Fo
 		var req = default_request;
 		var res = default_response;
 
-		cookie.set("name","huangxin")
+		cookie.set("name","John")
 			  .set("age","17")
 			  .set("company","baidu", {
 			  	  expires : new Date(Date.now() + 1000000)
 			  });
 	});
+	
+	
+## 内置API
+
+为了方便开发者更好更快速的开发应用，我们在Extension中提供了内置的API，包括：cookie、session、url三部分，现在将详细介绍这些API的用法。
+
+### cookies
+
+设置Cookie, 如果没有相关key值，则创建一个key-value cookie。
+
+	Cookies.set(key, value [, options])
+	
+参数说明：
+
+- *key*
+
+	{String} cookie key 
+	 
+- *value* 
+
+	{String} cookie value 
+	 
+- *options*: 
+
+	{Object} Cookie相关参数，详细说明见下表：  
+	
+	 key | value | 默认值 
+	:---------|:--------|:------
+ 	`expires` |  {Object} date | 浏览器差窗口关闭即过期. 
+ 	`domain` |  {String} 在特定域名下才能收到cookie. | 当前域名 
+ 	`path` | {String} 为特定路径指定cookie. | 当前路径 
+ 	`secure` | {Boolean} 指定是否只在`https`下生效. | `false` 
+	
+返回说明：
+
+返回`Cookies`对象，支持链式操作。
+
+
+实例：
+
+	cookie.set("name","John");
+	
+### url
+
+解析URL
+
+例如URL为：
+
+	var path = http://rapid:123456@www.example.com/path/index.html?query1=test&silly=willy#test=hash&chucky=cheese
+	
+可使用下面的方法来解析URL
+
+	this.url(path);            // http://rapid:123456@www.example.com/path/index.html?query1=test&silly=willy#test=hash&chucky=cheese
+	this.url('domain', path);    // example.com
+	this.url('hostname', path);  // www.example.com
+	this.url('sub', path);       // www
+	this.url('.0', path)         // ""(an empty string)
+	this.url('.1', path)         // www
+	this.url('.2', path)         // example
+	this.url('.-1', path)        // com
+	this.url('auth', path)       // rapid:123456
+	this.url('user', path)       // rapid
+	this.url('pass', path)       // 123456
+	this.url('port', path);      // 80
+	this.url('protocol', path);  // http
+	this.url('path', path);      // /path/index.html
+	this.url('file', path);      // index.html
+	this.url('filename', path);  // index
+	this.url('fileext', path);   // html
+	this.url('1', path);         // path
+	this.url('2', path);         // index.html
+	this.url('3', path);         // (an empty string)
+	this.url('-1', path);        // index.html
+	this.url(1, path);           // path
+	this.url(2, path);           // index.html
+	this.url(-1, path);          // index.html
+	this.url('?', path);         // query1=test&silly=willy
+	this.url('?silly', path);    // willy
+	this.url('?poo', path);      // null
+	this.url('#', path);         // test=hash&chucky=cheese
+	this.url('#chucky', path);   // cheese
+	this.url('#poo', path);      // null
+
+实例：
+
+    define({
+        "config.rapid-httpserver":{
+            autoStart : true,
+            defaultAction : function(req，res){
+                var path = this.url('path', req.url);
+                this.send(path);
+            }
+    }});
