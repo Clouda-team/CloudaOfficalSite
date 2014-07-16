@@ -251,11 +251,11 @@ document.addEventListener("blendready",function() {
 实例
 <pre><code>//添加script脚本
 document.addEventListener("blendready",function() {
-    var layerA = new Blend.Layer({
+    var layerA = new Blend.ui.Layer({
     	"url":"contentA.html",
     	"id":"contentLayerA"
 	 });
-	var layerB = new Blend.Layer({
+	var layerB = new Blend.ui.Layer({
     	"url":"contentB.html",
     	"id":"contentLayerB"
 	 });
