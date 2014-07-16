@@ -37,6 +37,11 @@ document.addEventListener("DOMContentLoaded", function(){
 		}
 	}
 
+	var platico = {
+		ios : '<i class="fa fa-apple"></i>',
+		android : '<i class="fa fa-android"></i>',
+		web : '<i class="fa fa-desktop"></i>'
+	}
 
 	//generate archive
 	var archive = function(renderH3){
@@ -74,6 +79,18 @@ document.addEventListener("DOMContentLoaded", function(){
 								window.scrollTo(0,offset);
 							}, false);
 							h3.id = h3id;
+							//render ico
+							var plat = h3.getAttribute("platform");
+							if(plat){
+								var icos = "";
+								plat.split(" ").forEach(function(name){
+									if(platico[name]){
+										icos += platico[name];	
+									}
+								});
+								h3.innerHTML += icos;
+							}
+
 							h3lia.innerHTML = h3.innerHTML;
 							ul.appendChild(h3li);
 						});
