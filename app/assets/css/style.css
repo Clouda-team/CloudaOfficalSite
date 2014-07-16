@@ -32,7 +32,6 @@
 
 #intro img {
 	vertical-align: middle;
-	margin-top: 70px;
 }
 
 #intro h1 {
@@ -73,15 +72,18 @@
 
 #blendui {
 	background-image: url("/assets/images/8.jpg");
-	min-height: 640px;
 }
 
 #rapid {
 	background-image: url("/assets/images/7.jpg");
-	min-height: 640px;
+}
+
+#tank {
+	background-image: url("/assets/images/6.jpg");
 }
 
 .showcase {
+	min-height: 640px;
 	height: 100%;
 	background-color : #333;
 	background-repeat: no-repeat;
@@ -95,7 +97,6 @@
 	font-weight: 400;
 	font-size: 3.5em;
 	margin:0;
-	padding-top: 70px;
 }
 
 .showcase p {
@@ -119,7 +120,7 @@
 
 .panel li {
 	display: inline-block;
-	width: 24%;
+	width: 24.5%;
 }
 
 .panel li h3 {

@@ -87,7 +87,7 @@
     background-clip: padding-box;
     padding: 20px!important;
     white-space: pre;
-    overflow: hidden;
+    overflow: scroll;
     margin-top: 20px;
     margin-bottom: 20px
 }
@@ -118,7 +118,7 @@
 
 .prettyprint code {
     font-family: Monaco,Consolas,"Lucida Console",monospace;
-    font-size: 12px;
+    font-size: 13px;
 }
 
 .prettyprint .str,.prettyprint .lit,.prettyprint .atv {

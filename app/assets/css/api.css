@@ -56,11 +56,16 @@ body{
 
 #arch li a{
 	display: inline-block;
-	line-height: 24px;
-	font-size: 15px;
-	font-weight: 600;
+	line-height: 20px;
+	font-size: 14px;
+	text-decoration: none;
 	transition: 250ms linear all;
 	cursor: pointer;
+}
+
+#arch > li > a {
+	font-weight: 600;
+	font-size: 15px;
 }
 
 #arch li a:hover {
