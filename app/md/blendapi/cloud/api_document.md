@@ -3,9 +3,9 @@
 云服务类API目前支持以下功能： 
 
 - 帐号 (Account)
-- 轻应用（App）
+- 轻支付（Pay）
 - 社会化分享（Socialshare）
-- 服务推送(Push)
+- 推送(Push)
 
 
 ## Account
