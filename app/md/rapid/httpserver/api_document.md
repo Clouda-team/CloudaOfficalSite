@@ -761,3 +761,59 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
               	this.sendError(new Error("Server Error!"),500);
           	}
   	}});
+
+
+<h3 class="httpvisitor">httpVisitor.url(selector, url);</h3>
+
+
+解析url
+
+```html
+var path = http://rapid:123456@www.example.com/path/index.html?query1=test&silly=willy#test=hash&chucky=cheese
+```
+
+参数说明
+
+```js
+this.url(path);            // http://rapid:123456@www.example.com/path/index.html?query1=test&silly=willy#test=hash&chucky=cheese
+this.url('domain', path);    // example.com
+this.url('hostname', path);  // www.example.com
+this.url('sub', path);       // www
+this.url('.0', path)         // ""(an empty string)
+this.url('.1', path)         // www
+this.url('.2', path)         // example
+this.url('.-1', path)        // com
+this.url('auth', path)       // rapid:123456
+this.url('user', path)       // rapid
+this.url('pass', path)       // 123456
+this.url('port', path);      // 80
+this.url('protocol', path);  // http
+this.url('path', path);      // /path/index.html
+this.url('file', path);      // index.html
+this.url('filename', path);  // index
+this.url('fileext', path);   // html
+this.url('1', path);         // path
+this.url('2', path);         // index.html
+this.url('3', path);         // (an empty string)
+this.url('-1', path);        // index.html
+this.url(1, path);           // path
+this.url(2, path);           // index.html
+this.url(-1, path);          // index.html
+this.url('?', path);         // query1=test&silly=willy
+this.url('?silly', path);    // willy
+this.url('?poo', path);      // null
+this.url('#', path);         // test=hash&chucky=cheese
+this.url('#chucky', path);   // cheese
+this.url('#poo', path);      // null
+```
+
+实例：
+
+    define({
+        "config.rapid-httpserver":{
+            autoStart : true,
+            defaultAction : function(){
+                var path = this.url('path', req.url);
+                this.send(path);
+            }
+    }});
