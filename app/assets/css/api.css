@@ -9,6 +9,10 @@ body{
 	background-color: #fff;
 }
 
+#docs br {
+	display: none;
+}
+
 #menu {
 	width: 200px;
     float: left;
