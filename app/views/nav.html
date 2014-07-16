@@ -2,12 +2,12 @@
 {% macro use(proj, mod, doc) %}
     {# Rapid #}
     <h3><a href="/rapid/introduction/rapid_introduction/">Rapid</a></h3>
-    <dl>
+    <dl {% if proj === "rapid"%}class="active"{% endif %}>
         <dt><a href="">序言</a></dt>
         <dd><a href="/rapid/introduction/rapid_introduction/">简介</a></dd>
         <dd><a href="/rapid/introduction/get_started">快速入门</a></dd>
     </dl>
-    <dl>
+    <dl {% if proj === "rapid"%}class="active"{% endif %}>
         <dt><a href="">开始学习</a></dt>
         <dd><a href="/rapid/get_started/config">配置</a></dd>
         <dd><a href="/rapid/get_started/router">路由</a></dd>
@@ -16,15 +16,15 @@
         <dd><a href="/rapid/get_started/action">Action</a></dd>
         
     </dl>
-    <dl>
+    <dl {% if proj === "rapid"%}class="active"{% endif %}>
         <dt><a href="">深度历险</a></dt>
         <dd><a href="/rapid/get_started/filter">创建Filter</a></dd>
         <dd><a href="/rapid/get_started/extension">创建Extension</a></dd>
         <dd><a href="/rapid/deep_learn/form">表单处理</a></dd>
 
-    </dl>
+    </dl {% if proj === "rapid"%}class="active"{% endif %}>
 
-    <dl>
+    <dl {% if proj === "rapid"%}class="active"{% endif %}>
         <dt><a href="">API手册</a></dt>
         <dd><a href="/rapid/core/api_document">Core</a></dd>
         <dd><a href="/rapid/httpserver/api_document">Httpserver</a></dd>
@@ -34,14 +34,14 @@
     <h3><a href="/blend/introduction/introduction">Blend</a></h3>
     
     {# BlendUI #}
-    <h3><a href="/blendui/introduction/introduction">BlendUI</a></h3>
-    <dl>
+    <h3 class="sub"><a href="/blendui/introduction/introduction">BlendUI</a></h3>
+    <dl {% if proj === "blendui"%}class="active"{% endif %}>
         <dt><a href="">序言</a></dt>
         <dd><a href="/blendui/introduction/introduction">简介</a></dd>
         <dd><a href="/blendui/introduction/get_started">快速入门</a></dd>
     </dl>
 
-    <dl>
+    <dl {% if proj === "blendui"%}class="active"{% endif %}>
         <dt><a href="">开始学习</a></dt>     
         <dd><a href="/blendui/get_started/define_event">自定义事件</a></dd>
         <dd><a href="/blendui/get_started/tabs">Tabs</a></dd>
@@ -53,7 +53,7 @@
         <dd><a href="/blendui/get_started/publish">应用发布</a></dd>
     </dl>
     
-    <dl>
+    <dl {% if proj === "blendui"%}class="active"{% endif %}>
         <dt><a href="">API手册</a></dt>
         <dd><a href="/blendui/layer/api_document">Layer</a></dd>
         <dd><a href="/blendui/layergroup/api_document">LayerGroup</a></dd>
@@ -61,15 +61,15 @@
     </dl>
 
     {# Blend API #}
-    <h3><a href="/blendapi/introduction/introduce">BlendAPI</a></h3>
-    <dl>
+    <h3 class="sub"><a href="/blendapi/introduction/introduce">BlendAPI</a></h3>
+    <dl {% if proj === "blendapi"%}class="active"{% endif %}>
         <dt><a href="">序言</a></dt>
         <dd><a href="/blendapi/introduction/introduce">简介</a></dd>
         <dd><a href="/blendapi/introduction/get_started">快速入门</a></dd>
         <dd><a href="/blendapi/introduction/get_api_key">获取API Key</a></dd>
         <dd><a href="/blendapi/introduction/get_author">申请权限</a></dd>
     </dl>
-    <dl>
+    <dl {% if proj === "blendapi"%}class="active"{% endif %}>
         <dt><a href="">API手册</a></dt>
         <dd><a href="/blendapi/local/api_document">本地端能力</a></dd>
         <dd><a href="/blendapi/cloud/api_document">云能力</a></dd>

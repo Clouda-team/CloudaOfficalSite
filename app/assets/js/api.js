@@ -140,6 +140,6 @@ document.addEventListener("DOMContentLoaded", function(){
 			el = el.nextElementSibling;
 		}
 	}
-	initMenu();
+	//initMenu();
 
 }, false);
