@@ -1,15 +1,21 @@
 #layerGroup API文档
 
-## construct
+## Construct
 配置所需要参数来构建layerGroup。
 
 layerGroup的配置格式如下：
 
-<pre><code>var layerGroup = new Blend.layerGroup({"options":"values"});</code></pre>
+<pre><code>var layerGroup = new Blend.ui.layerGroup({"options":"values"});</code></pre>
+
+另一种配置格式如下：
+<pre><code>var LayerGroup = Blend.ui.layerGroup;
+var layerGroup = new LayerGroup({"options":"values"});</code></pre>
+
+> 开发者可自行选定使用格式，以下统一以第一种格式展示代码
 
 layerGroup包含以下配置项：
 
-<h3 class="construct">id</h3>
+<h3 class="construct" platform="ios android web">id</h3>
 配置layerGroup的id
 
 <table>
@@ -28,7 +34,7 @@ layerGroup包含以下配置项：
 </table>
 
 实例
-<pre><code>var layerGroup = new Blend.LayerGroup({
+<pre><code>var layerGroup = new Blend.ui.LayerGroup({
     id: "group",
 	layers: [{
         "id": "first",
@@ -38,7 +44,7 @@ layerGroup包含以下配置项：
 });
 </code></pre>
 
-<h3 class="construct">top</h3>
+<h3 class="construct" platform="ios android web">top</h3>
 配置layerGroup距离屏幕top的坐标
 
 <table>
@@ -57,7 +63,7 @@ layerGroup包含以下配置项：
 </table>
 
 实例
-<pre><code>var layerGroup = new Blend.LayerGroup({
+<pre><code>var layerGroup = new Blend.ui.LayerGroup({
     id: "group",
 	layers: [{
         "id": "first",
@@ -68,7 +74,7 @@ layerGroup包含以下配置项：
 });
 </code></pre>
 
-<h3 class="construct">left</h3>
+<h3 class="construct" platform="ios android web">left</h3>
 配置layerGroup距离屏幕left的坐标
 
 <table>
@@ -87,7 +93,7 @@ layerGroup包含以下配置项：
 </table>
 
 实例
-<pre><code>var layerGroup = new Blend.LayerGroup({
+<pre><code>var layerGroup = new Blend.ui.LayerGroup({
     id: "group",
 	layers: [{
         "id": "first",
@@ -98,7 +104,7 @@ layerGroup包含以下配置项：
 });
 </code></pre>
 
-<h3 class="construct">width</h3>
+<h3 class="construct" platform="ios android web">width</h3>
 配置layerGroup像素宽度
 
 <table>
@@ -117,7 +123,7 @@ layerGroup包含以下配置项：
 </table>
 
 实例
-<pre><code>var layerGroup = new Blend.LayerGroup({
+<pre><code>var layerGroup = new Blend.ui.LayerGroup({
     id: "group",
 	layers: [{
         "id": "first",
@@ -128,7 +134,7 @@ layerGroup包含以下配置项：
 });
 </code></pre>
 
-<h3 class="construct">height</h3>
+<h3 class="construct" platform="ios android web">height</h3>
 配置layerGroup像素高度
 
 <table>
@@ -147,7 +153,7 @@ layerGroup包含以下配置项：
 </table>
 
 实例
-<pre><code>var layerGroup = new Blend.LayerGroup({
+<pre><code>var layerGroup = new Blend.ui.LayerGroup({
     id: "group",
 	layers: [{
         "id": "first",
@@ -162,7 +168,7 @@ layerGroup包含以下配置项：
 });
 </code></pre>
 
-<h3 class="construct">onshow</h3>
+<h3 class="construct" platform="ios android web">onshow</h3>
 定义layerGroup中layer间切换时事件处理，通过event对象中的detail字段可以获得当前激活的layer的id
 
 <table>
@@ -186,7 +192,7 @@ layerGroup包含以下配置项：
 }</code></pre>
 
 实例
-<pre><code>var layerGroup = new Blend.LayerGroup({
+<pre><code>var layerGroup = new Blend.ui.LayerGroup({
     id: "group",
 	layers: [{
         "id": "first",
@@ -203,7 +209,7 @@ layerGroup包含以下配置项：
 });
 </code></pre>
 
-<h3 class="construct">layers</h3>
+<h3 class="construct" platform="ios android web">layers</h3>
 定义layerGroup中要显示的layers
 
 <table>
@@ -279,7 +285,7 @@ Base64编码的图片字符串 -->
 Base64编码的图片字符串-->
 
 实例
-<pre><code>var layerGroup = new Blend.LayerGroup({
+<pre><code>var layerGroup = new Blend.ui.LayerGroup({
     id: "group",
 	layers: [{
         "id": "first",
@@ -298,9 +304,9 @@ Base64编码的图片字符串-->
 });
 </code></pre>
 
-##method
+##Method
 
-<h3 class="method">active (layerId)</h3>
+<h3 class="method" platform="ios android web">active (layerId)</h3>
 切换到layerId对应的layer并显示
 
 <table>
@@ -321,7 +327,7 @@ Base64编码的图片字符串-->
 </table>
 
 实例
-<pre><code>var layerGroup = new Blend.LayerGroup({
+<pre><code>var layerGroup = new Blend.ui.LayerGroup({
     id: "group",
 	layers: [{
         "id": "first",
@@ -392,11 +398,11 @@ layer
 ---
 -->
 
-<h3 class="method">destroy ( )</h3>
+<h3 class="method" platform="ios android web">destroy ( )</h3>
 销毁layerGroup
 
 实例
-<pre><code>var layerGroup = new Blend.LayerGroup({
+<pre><code>var layerGroup = new Blend.ui.LayerGroup({
     id: "group",
 	layers: [{
         "id": "first",

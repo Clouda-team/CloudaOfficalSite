@@ -2,17 +2,17 @@
 
 <!-- 幻灯片组件 -->
 
-## construct
+## Construct
 
 配置所需参数来初始化一个幻灯片组件Slider
 
 Slider的配置格式如下：
 
-<pre><code>var slider = new Blend.Slider({"options":"values"});</code></pre>
+<pre><code>var slider = new Blend.ui.Slider({"options":"values"});</code></pre>
 
 Slider包含以下配置项：
 
-<h3 class="construct">id</h3>
+<h3 class="construct" platform="ios android">id</h3>
 slider的id
 
 <table>
@@ -25,13 +25,13 @@ slider的id
         <tr>
           <th>String</th>
           <td>slider的id</td>
-          <td style="color:red">否</td>
+          <td>否</td>
         </tr>
    <tbody>
 </table>
 
 实例：
-<pre><code>var slider = new Blend.Slider({
+<pre><code>var slider = new Blend.ui.Slider({
 	"id": "slider",
 	"images": [
 		{"url":"http://*.com/old_07_02.jpg"},
@@ -41,7 +41,7 @@ slider的id
 </code></pre>
 
 
-<h3 class="construct">top</h3>
+<h3 class="construct" platform="ios android">top</h3>
 配置slider距离屏幕top的坐标
 
 <table>
@@ -60,7 +60,7 @@ slider的id
 </table>
 
 实例：
-<pre><code>var slider = new Blend.Slider({
+<pre><code>var slider = new Blend.ui.Slider({
 	"id": "slider",
 	"top": 100,
 	"images": [
@@ -70,7 +70,7 @@ slider的id
 });
 </code></pre>
 
-<h3 class="construct">left</h3>
+<h3 class="construct" platform="ios android">left</h3>
 配置slider距离屏幕left的坐标
 
 <table>
@@ -89,7 +89,7 @@ slider的id
 </table>
 
 实例：
-<pre><code>var slider = new Blend.Slider({
+<pre><code>var slider = new Blend.ui.Slider({
 	"id": "slider",
 	"top": 100,
 	"left": 100,
@@ -100,7 +100,7 @@ slider的id
 });
 </code></pre>
 
-<h3 class="construct">width</h3>
+<h3 class="construct" platform="ios android">width</h3>
 配置slider宽度
 
 <table>
@@ -119,7 +119,7 @@ slider的id
 </table>
 
 实例：
-<pre><code>var slider = new Blend.Slider({
+<pre><code>var slider = new Blend.ui.Slider({
 	"id": "slider",
     "width": 100,
 	"images": [
@@ -129,7 +129,7 @@ slider的id
 });
 </code></pre>
 
-<h3 class="construct">height</h3>
+<h3 class="construct" platform="ios android">height</h3>
 配置slider高度
 
 <table>
@@ -148,7 +148,7 @@ slider的id
 </table>
 
 实例：
-<pre><code>var slider = new Blend.Slider({
+<pre><code>var slider = new Blend.ui.Slider({
 	"id": "slider",
     "height": 100,
 	"images": [
@@ -158,7 +158,7 @@ slider的id
 });
 </code></pre>
 
-<h3 class="construct">bgColor</h3>
+<h3 class="construct" platform="ios android">bgColor</h3>
 配置slider背景颜色
 
 <table>
@@ -177,7 +177,7 @@ slider的id
 </table>
 
 实例：
-<pre><code>var slider = new Blend.Slider({
+<pre><code>var slider = new Blend.ui.Slider({
 	"id": "slider",
     "bgColor": "#cccccc",
 	"images": [
@@ -187,7 +187,7 @@ slider的id
 });
 </code></pre>
 
-<h3 class="construct">images</h3>
+<h3 class="construct" platform="ios android">images</h3>
 配置图片数据json
 
 <table>
@@ -206,7 +206,7 @@ slider的id
 </table>
 
 实例：
-<pre><code>var slider = new Blend.Slider({
+<pre><code>var slider = new Blend.ui.Slider({
 	"id": "slider",
 	"images": [
 		{"url":"http://*.com/old_07_02.jpg"},
@@ -215,7 +215,7 @@ slider的id
 });
 </code></pre>
 
-<h3 class="construct">tap</h3>
+<h3 class="construct" platform="ios android">tap</h3>
 配置点击slider的事件回调
 
 <table>
@@ -234,7 +234,7 @@ slider的id
 </table>
 
 实例：
-<pre><code>var slider = new Blend.Slider({
+<pre><code>var slider = new Blend.ui.Slider({
 	"id": "slider",
 	"images": [
 		{"url":"http://*.com/old_07_02.jpg"},
@@ -244,7 +244,7 @@ slider的id
 });
 </code></pre>
 
-<h3 class="construct">slide</h3>
+<h3 class="construct" platform="ios android">slide</h3>
 配置滑动slide的事件回调
 
 <table>
@@ -263,7 +263,7 @@ slider的id
 </table>
 
 实例：
-<pre><code>var slider = new Blend.Slider({
+<pre><code>var slider = new Blend.ui.Slider({
 	"id": "slider",
 	"images": [
 		{"url":"http://*.com/old_07_02.jpg"},
@@ -273,7 +273,7 @@ slider的id
 });
 </code></pre>
 
-<h3 class="construct">hasIndicator</h3>
+<h3 class="construct" platform="ios android">hasIndicator</h3>
 是否添加页面指示，可以以圆点的方式展现有多少个图片页面，可以指示当前页面在整个页面的顺序。
 
 <table>
@@ -292,7 +292,7 @@ slider的id
 </table>
 
 实例：
-<pre><code>var slider = new Blend.Slider({
+<pre><code>var slider = new Blend.ui.Slider({
 	"id": "slider",
 	"images": [
 		{"url":"http://*.com/old_07_02.jpg"},
@@ -302,7 +302,7 @@ slider的id
 });
 </code></pre>
 
-<h3 class="construct">inactiveColor</h3>
+<h3 class="construct" platform="ios android">inactiveColor</h3>
 配置非选中状态的指示圆点图标的颜色
 <table>
     <tbody>
@@ -320,7 +320,7 @@ slider的id
 </table>
 
 实例：
-<pre><code>var slider = new Blend.Slider({
+<pre><code>var slider = new Blend.ui.Slider({
 	"id": "slider",
 	"images": [
 		{"url":"http://*.com/old_07_02.jpg"},
@@ -331,7 +331,7 @@ slider的id
 });
 </code></pre>
 
-<h3 class="construct">activeColor</h3>
+<h3 class="construct" platform="ios android">activeColor</h3>
 配置选中状态的指示圆点图标的颜色
 
 <table>
@@ -350,7 +350,7 @@ slider的id
 </table>
 
 实例：
-<pre><code>var slider = new Blend.Slider({
+<pre><code>var slider = new Blend.ui.Slider({
 	"id": "slider",
 	"images": [
 		{"url":"http://*.com/old_07_02.jpg"},
@@ -362,7 +362,7 @@ slider的id
 });
 </code></pre>
 
-<h3 class="construct">unitSize</h3>
+<h3 class="construct" platform="ios android">unitSize</h3>
 配置页面指示圆点图标的尺寸
 
 <table>
@@ -381,7 +381,7 @@ slider的id
 </table>
 
 实例：
-<pre><code>var slider = new Blend.Slider({
+<pre><code>var slider = new Blend.ui.Slider({
 	"id": "slider",
 	"images": [
 		{"url":"http://*.com/old_07_02.jpg"},
@@ -392,7 +392,7 @@ slider的id
 });
 </code></pre>
 
-<h3 class="construct">unitSpace</h3>
+<h3 class="construct" platform="ios android">unitSpace</h3>
 配置页面指示圆点图标间的间距
 
 <table>
@@ -411,7 +411,7 @@ slider的id
 </table>
 
 实例:
-<pre><code>var slider = new Blend.Slider({
+<pre><code>var slider = new Blend.ui.Slider({
 	"id": "slider",
 	"images": [
 		{"url":"http://*.com/old_07_02.jpg"},
@@ -425,13 +425,13 @@ slider的id
 });
 </code></pre>
 
-##method
+##Method
 
-<h3 class="method">prev ( )</h3>
+<h3 class="method" platform="ios android">prev ( )</h3>
 滚动到前一个图片页面
 
 实例:
-<pre><code>var slider = new Blend.Slider({
+<pre><code>var slider = new Blend.ui.Slider({
 	"id": "slider",
 	"images": [
 		{"url":"http://*.com/old_07_02.jpg"},
@@ -443,11 +443,11 @@ slider.prev();
 </code></pre>
 
 
-<h3 class="method">next ( )</h3>
+<h3 class="method" platform="ios android">next ( )</h3>
 滚动到下一个图片页面
 
 实例:
-<pre><code>var slider = new Blend.Slider({
+<pre><code>var slider = new Blend.ui.Slider({
 	"id": "slider",
 	"images": [
 		{"url":"http://*.com/old_07_02.jpg"},
@@ -458,7 +458,7 @@ slider.prev();
 slider.next();
 </code></pre>
 
-<h3 class="method">sliderTo (index)</h3>
+<h3 class="method" platform="ios android">sliderTo (index)</h3>
 滑动到第index个图片页面
 
 <table>
@@ -479,7 +479,7 @@ slider.next();
 </table>
 
 实例:
-<pre><code>var slider = new Blend.Slider({
+<pre><code>var slider = new Blend.ui.Slider({
 	"id": "slider",
 	"images": [
 		{"url":"http://*.com/old_07_02.jpg"},
@@ -490,11 +490,11 @@ slider.next();
 slider.sliderTo(0);
 </code></pre>
 
-<h3 class="method">destroy ( )</h3>
+<h3 class="method" platform="ios android">destroy ( )</h3>
 销毁slider
 
 实例:
-<pre><code>var slider = new Blend.Slider({
+<pre><code>var slider = new Blend.ui.Slider({
 	"id": "slider",
 	"images": [
 		{"url":"http://*.com/old_07_02.jpg"},
