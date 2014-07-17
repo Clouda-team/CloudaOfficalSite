@@ -179,7 +179,7 @@ document.addEventListener("blendready",function(){
 </code></pre>
 
 
-<h3 class="event platform="ios android web">once (event_type, [callback]) </h3>
+<h3 class="event" platform="ios android web">once (event_type, [callback]) </h3>
 触发自定义事件后，将该事件注销掉
 <pre><code>Blend.ui.once(event_type, [callback]);</code></pre>
 
