@@ -210,7 +210,7 @@ layerGroup包含以下配置项：
 </code></pre>
 
 <h3 class="construct" platform="ios android web">layers</h3>
-定义layerGroup中要显示的layers
+定义layerGroup中要显示的layers (部分配置仅限iOS)
 
 <table>
     <tbody>
@@ -253,27 +253,27 @@ layers中layer配置参数如下：
         <tr>
           <th>pullToRefresh</th>
           <th>Boolean</td>
-          <td>是否支持下拉刷新，仅支持iOS</td>
+          <td platform="ios web">是否支持下拉刷新<label style="color:red">(仅支持iOS)</td>
         </tr>
         <tr>
           <th>pullBgColor</th>
           <th>String</td>
-          <td>下拉刷新的背景颜色RGB值，仅支持iOS</td>
+          <td>下拉刷新的背景颜色RGB值<label style="color:red">(仅支持iOS)</td>
         </tr>
         <tr>
           <th>pullText</th>
           <th>String</td>
-          <td>下拉时显示的文字，仅支持iOS</td>
+          <td>下拉时显示的文字<label style="color:red">(仅支持iOS)</td>
         </tr>
         <tr>
           <th>loadingText</th>
           <th>String</td>
-          <td>加载中显示的文字，仅支持iOS</td>
+          <td>加载中显示的文字<label style="color:red">(仅支持iOS)</td>
         </tr>
         <tr>
           <th>releaseText</th>
           <th>String</td>
-          <td>释放提示的文字，仅支持iOS</td>
+          <td>释放提示的文字<label style="color:red">(仅支持iOS)</td>
         </tr>
    <tbody>
 </table>
