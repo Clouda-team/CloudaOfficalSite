@@ -38,9 +38,9 @@ document.addEventListener("DOMContentLoaded", function(){
 	}
 
 	var platico = {
-		ios : '<i class="fa fa-apple"></i>',
-		android : '<i class="fa fa-android"></i>',
-		web : '<i class="fa fa-desktop"></i>'
+		ios : '<i class="fa fa-apple" title=" iOS "></i>',
+		android : '<i class="fa fa-android" title=" Android "></i>',
+		web : '<i class="fa fa-desktop" title=" Web "></i>'
 	}
 
 	//generate archive
@@ -90,7 +90,6 @@ document.addEventListener("DOMContentLoaded", function(){
 								});
 								h3.innerHTML += icos;
 							}
-
 							h3lia.innerHTML = h3.innerHTML;
 							ul.appendChild(h3li);
 						});
