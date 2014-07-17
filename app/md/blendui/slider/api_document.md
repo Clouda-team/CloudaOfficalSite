@@ -374,7 +374,7 @@ slider的id
         </tr>
         <tr>
           <th>Number</th>
-          <td style="color:red">页面指示圆点图标的尺寸（单位：像素），默认值？</td>
+          <td>页面指示圆点图标的尺寸（单位：像素），默认值10</td>
           <td>否</td>
         </tr>
    <tbody>
@@ -404,7 +404,7 @@ slider的id
         </tr>
         <tr>
           <th>Number</th>
-          <td style="color:red">页面指示圆点图标间的间距（单位：像素），默认值？</td>
+          <td>页面指示圆点图标间的间距（单位：像素），默认值5</td>
           <td>否</td>
         </tr>
    <tbody>

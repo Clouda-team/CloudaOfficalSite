@@ -221,9 +221,9 @@ document.addEventListener("blendready",function() {
 });
 </code></pre>
 
-<h3 class="event" platform="ios android web">start ( layerId, callback )</h3>
-<p style="color:red">在layerId对应的页面初始化后的执行回调函数
-<pre><code>Blend.ui.start(layerId, callback);</code></pre>
+<h3 class="event" platform="ios android web">layerInit ( layerId, callback )</h3>
+在layerId对应的页面初始化后的执行函数
+<pre><code>Blend.ui.layerInit(layerId, callback);</code></pre>
 
 <table>
     <tbody>
@@ -260,6 +260,6 @@ document.addEventListener("blendready",function() {
     	"id":"contentLayerB"
 	 });
     var callback = function(e){console.log(e)};
-    Blend.ui.start(layerA, callback);
+    Blend.ui.layerInit(layerA, callback);
 });
 </code></pre>

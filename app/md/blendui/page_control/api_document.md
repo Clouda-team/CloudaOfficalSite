@@ -53,7 +53,7 @@
 
 实例
 <pre><code>document.addEventListener("blendready", function() {
-	Blend.ui.start("0", function(dom) {
+	Blend.ui.layerInit("0", function(dom) {
 		var contentLayer = new Blend.Layer({
             "id": "contentLayerId",
             "url": "content.html",
@@ -137,7 +137,7 @@
 
 实例
 <pre><code>document.addEventListener("blendready", function() {
-	Blend.ui.start("0", function(dom) {
+	Blend.ui.layerInit("0", function(dom) {
         //点击按钮切换页面
 		$('#button', dom).click(function(e) {
 			Blend.ui.fire("createContentLayer", "0");
@@ -160,12 +160,3 @@
 		});
 	});
 });</code></pre>
-
-<h3 class="control" platform="ios android">getLayerId ( ) : String</h3>
-<p style="color:red">返回当前显示的layer的id? native可用 web 不可用</p>
-
-实例
-<pre><code>document.addEventListener("blendready",fuction(){
-	console.log(Blend.ui.getLayerId());
-});
-</code></pre>

@@ -5,8 +5,8 @@
 ##Loading简单使用
 代码主要格式如下：
 <pre><code>document.addEventListener("blendready", function() {
-    Blend.start("0", function (dom) {
-        var contentLayer = new Blend.Layer({
+    Blend.ui.layerInit("0", function (dom) {
+        var contentLayer = new Blend.ui.Layer({
             "id": "contentLayerId",
             "url": "content.html",
             "active": true,
@@ -20,8 +20,8 @@
 ##开启Loading状态配置
 通过设置`autoStopLoading : false`阻止系统自动停止Loading状态，只有在此前提下才能继续配置Loading时间和图标。
 <pre><code>document.addEventListener("blendready", function() {
-    Blend.start("0", function (dom) {
-        var contentLayer = new Blend.Layer({
+    Blend.ui.layerInit("0", function (dom) {
+        var contentLayer = new Blend.ui.Layer({
             "id": "contentLayerId",
             "url": "content.html",
             "autoStopLoading": false
@@ -32,8 +32,8 @@
 ##配置Loading时长
 设置Loading状态的时长，单位为毫秒。
 <pre><code>document.addEventListener("blendready", function() {
-    Blend.start("0", function (dom) {
-        var contentLayer = new Blend.Layer({
+    Blend.ui.layerInit("0", function (dom) {
+        var contentLayer = new Blend.ui.Layer({
             "id": "contentLayerId",
             "url": "content.html",
             "autoStopLoading": false,
@@ -45,8 +45,8 @@
 ##配置Loading图标
 设置Loading状态显示的图标，需要图片的Base64字符串（不包含头）。
 <pre><code>document.addEventListener("blendready", function() {
-    Blend.start("0", function (dom) {
-        var contentLayer = new Blend.Layer({
+    Blend.ui.layerInit("0", function (dom) {
+        var contentLayer = new Blend.ui.Layer({
             "id": "contentLayerId",
             "url": "content.html",
             "autoStopLoading": false,
