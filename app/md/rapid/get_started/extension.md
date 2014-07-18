@@ -95,6 +95,49 @@ Extension用来实现http功能的包装，如Session，Cookie，fileupload，Fo
 
 	cookie.set("name","John");
 	
+	
+### session
+
+对session的操作
+
+#### session.set(key,value)
+
+设置session
+
+	session.set(key,value);
+	
+#### session.getId()
+
+获取session的ID
+
+	session.getId()
+	
+#### session.get(key)
+
+获取session中key对应的value
+
+	session.get(key);
+	
+#### session.getStartTime()
+
+获取session开始时间
+
+	session.getStartTime()
+	
+#### session.getLastActiveTime()
+
+获取session的最后存在时间
+
+	session.getLastActiveTime()
+	
+#### session.isTimeout()
+
+判断session时候超时
+
+	session.isTimeout()
+
+	
+	
 ### url
 
 解析URL
