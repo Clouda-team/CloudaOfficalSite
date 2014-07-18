@@ -5,7 +5,6 @@ var fs = require("fs");
 var cache = require("../utils/cache");
 var mddir = "md";
 
-
 server.defineAction("blendui", function(default_request, default_response){
 
 	var req = default_request;
@@ -19,12 +18,6 @@ server.defineAction("blendui", function(default_request, default_response){
 
 	var mdpath = path.join(USER_DIR, mddir, proj, mod, doc + ".md");
 
-	var cached = cache.get(mdpath);
-	if(cached){
-		visitor.send(cached);
-		return;
-	}
-
 	fs.stat(mdpath, function(err, stat){
 
 		if(err){
@@ -33,15 +26,18 @@ server.defineAction("blendui", function(default_request, default_response){
 		}
 
 		var md = fs.readFileSync(mdpath).toString();
+		var cached = cache.get(mdpath);
+		var html = cached ? cached : marked(md);
 
 		var content = visitor.render("api", {
 			proj : proj,
 			doc : doc,
-			ctnt : marked(md)
+			mod : mod,
+			ctnt : html
 		}, {
 			autoescape : false
 		});
-		cache.add(mdpath, content);
+		cache.add(mdpath, html);
 		visitor.send(content);
 		return ;
 
