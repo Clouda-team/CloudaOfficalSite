@@ -69,7 +69,7 @@ layer页面id
 
 <h3 class="construct" platform="ios android web">active</h3>
 <!-- active : Boolean (optional)  -->
- 通过该项配置是否立即激活
+ 通过该项配置是否立即激活。如果不激活的话，该页面将不会显示。
 
  <table>
     <tbody>
@@ -80,7 +80,7 @@ layer页面id
         </tr>
         <tr>
             <th>Boolean</th>
-            <td>是否立即激活</td>
+            <td>是否立即激活，默认为false，激活时需要使用Layer的in()方法激活页面</td>
             <td>否</td>
         </tr>
    <tbody>
@@ -331,7 +331,7 @@ layer页面id
 
 <h3 class="method" platform="ios android web">in ( )</h3>
 <!--in ( ) : Object-->
-激活layer页面
+激活layer页面，在页面初始化配置时，如果`active`属性未配置，则需要使用该方法激活要显示的页面。
 
 实例
 <pre><code>var layer = new Blend.ui.Layer({
@@ -348,10 +348,12 @@ layer.in();
 
 实例
 <pre><code>var layerA = new Blend.ui.Layer({
-	"url":"contentA.html"
+	"url":"contentA.html",
+	"active":true
 });
 var layerB = new Blend.ui.Layer({
-	"url":"contentB.html"
+	"url":"contentB.html",
+	"active":true
 });
 
 //layerB退场，返回上一个layerA
@@ -380,7 +382,8 @@ layerB.out();
 
 实例
 <pre><code>var layer = new Blend.ui.Layer({
-	"url":"content.html"
+	"url":"content.html",
+	"active":true
 });
 
 layer.reload("http://www.baidu.com");
@@ -425,7 +428,8 @@ layer.stopPullRefresh();
 
 实例
 <pre><code>var layer = new Blend.ui.Layer({
-	"url":"content.html"
+	"url":"content.html",
+	"active":true
 });
 
 layer.replace("http://www.baidu.com");
@@ -449,7 +453,8 @@ layer是否可以回退，是否有历史记录
 
 实例
 <pre><code>var layer = new Blend.ui.Layer({
-	"url":"content.html"
+	"url":"content.html",
+	"active":true
 });
 
 if(layer.canGoBack()){
@@ -463,7 +468,8 @@ if(layer.canGoBack()){
 
 实例
 <pre><code>var layer = new Blend.ui.Layer({
-	"url":"content.html"
+	"url":"content.html",
+	"active":true
 });
 
 layer.clearHistory();
@@ -474,11 +480,12 @@ layer是否是激活状态
 
 实例
 <pre><code>var layer = new Blend.ui.Layer({
-	"url":"content.html"
+	"url":"content.html",
+	"active":true
 });
 
-//页面激活状态
-var layerState = layer.isActive();
+//页面激活状态，以下为true
+console.log(layer.isActive());
 </code></pre>
 
 

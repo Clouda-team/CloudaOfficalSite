@@ -78,16 +78,26 @@
 
 
 实例
-<pre><code>//添加script脚本
-document.addEventListener("blendready",function() {
+<pre><code>document.addEventListener("blendready",function() {
     var callbackA = function(e){
 		console.log(e['data']);
     };
     var callbackB = function(e){
 		console.log(e['detail']);
     };
+
+    //注册事件
+    //如果是自定义的消息类型，则需要自行触发
 	Blend.ui.on("event",callbackA};
 	Blend.ui.on("event",callbackB};
+
+	Blend.ui.fire("event","false");
+
+	//如果为系统事件，可以由系统触发
+	//如下为按下android返回键时的处理操作
+	Blend.ui.on("backPressedBeforeExit",function(){
+	    console.log("back event");
+	});
 });
 </code></pre>
 
@@ -120,8 +130,7 @@ document.addEventListener("blendready",function() {
 </table>
 
 实例
-<pre><code>//添加script脚本
-document.addEventListener("blendready",function(){
+<pre><code>document.addEventListener("blendready",function(){
     var callbackA = function(e){console.log(e)};
     var callbackB = function(e){console.log(e)};
 	Blend.ui.on("event",callbackA};
@@ -155,7 +164,7 @@ document.addEventListener("blendready",function(){
         <tr>
           <th>targetId</th>
           <th>String</th>
-          <td>发送目标的layerId, 如果是false则是广播，如果为“top”则向原始layer发送</td>
+          <td>发送目标的layerId, 如果是false则是广播，如果为“0”则表示向首页发送（通常为index.html）</td>
           <td>是</td>
         </tr>
         <tr>
@@ -168,20 +177,19 @@ document.addEventListener("blendready",function(){
 </table>
 
 实例
-<pre><code>//添加script脚本
-document.addEventListener("blendready",function(){
+<pre><code>document.addEventListener("blendready",function(){
     //自定义事件
     var callback = function(e){console.log(e)};
 	Blend.ui.on("event",callback};
 
-	Blend.ui.fire("event","top",{"url":"http://www.baidu.com"});
+	Blend.ui.fire("event","0",{"url":"http://www.baidu.com"});
 });
 </code></pre>
 
 
-<h3 class="event" platform="ios android web">once (event_type, [callback]) </h3>
-触发自定义事件后，将该事件注销掉
-<pre><code>Blend.ui.once(event_type, [callback]);</code></pre>
+<h3 class="event" platform="ios android web">once ( event_type, callback ) </h3>
+注册自定义事件，该自定义事件将在触发后自动注销，只能执行一次
+<pre><code>Blend.ui.once(event_type, callback);</code></pre>
 
 <table>
     <tbody>
@@ -200,24 +208,21 @@ document.addEventListener("blendready",function(){
         <tr>
           <th>callback</th>
           <th>Function</th>
-          <td>要触发一次后解绑的函数，如果callback为空或"all"，在触发所有响应后删除所有与event_type绑定的回调函数</td>
-          <td>否</td>
+          <td>事件绑定的回调函数fuction(event): event['detail']为layer的id, event['data']为通过fire方法传递过来的数据</td>
+          <td>是</td>
         </tr>
    <tbody>
 </table>
 
 实例
-<pre><code>//添加script脚本
-document.addEventListener("blendready",function() {
-    var callbackA = function(e){console.log(e)};
-    var callbackB = function(e){console.log(e)};
-	Blend.ui.on("event",callbackA};
-	Blend.ui.on("event",callbackB};
-	//触发一次后解绑callbackA
-	Blend.ui.once("event",callbackA);
-	//触发一次后解除与event相关的所有绑定
-	Blend.ui.once("event");
-	//Blend.ui.once("event","all");
+<pre><code>document.addEventListener("blendready",function() {
+    var callback = function(e){console.log(e)};
+    //注册事件
+	Blend.ui.once("event",callback};
+	//触发一次事件
+	Blend.ui.fire("event","false");
+	//二次触发无效，事件已注销
+	//Blend.ui.fire("event","false");
 });
 </code></pre>
 
@@ -236,7 +241,7 @@ document.addEventListener("blendready",function() {
         <tr>
           <th>layerId</th>
           <th>String</th>
-          <td>layer的id；当layerId为"0"时，首页初始化后执行callback函数</td>
+          <td>layer的id；当layerId为"0"时表示首页初始化后执行callback函数，其它页面的id由用户自行定义</td>
           <td>是</td>
         </tr>
         <tr>
@@ -249,17 +254,16 @@ document.addEventListener("blendready",function() {
 </table>
 
 实例
-<pre><code>//添加script脚本
-document.addEventListener("blendready",function() {
-    var layerA = new Blend.ui.Layer({
-    	"url":"contentA.html",
-    	"id":"contentLayerA"
-	 });
-	var layerB = new Blend.ui.Layer({
-    	"url":"contentB.html",
-    	"id":"contentLayerB"
-	 });
-    var callback = function(e){console.log(e)};
-    Blend.ui.layerInit(layerA, callback);
+<pre><code>document.addEventListener("blendready",function() {
+    //定义页面id为test的layer初始化后执行的callback
+    var callback = function(e){console.log("test layer ok")};
+    Blend.ui.layerInit("test", callback);
+
+    //创建layer并显示
+    var layer = new Blend.ui.Layer({
+    	"url":"content.html",
+    	"id":"test",
+    	"active":true
+	});
 });
 </code></pre>

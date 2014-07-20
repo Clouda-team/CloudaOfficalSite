@@ -35,7 +35,7 @@ BlendUI提供了监听事件添加功能，用户可以自行定义事件类型�
 
 一个实例：
 
-<pre><code>var handle = function(event){
+<pre><code>var handler = function(event){
     //event中detail字段保存有页面id
 	console.log(event['detail']);
 };
@@ -45,10 +45,28 @@ Blend.ui.layerInit("页面id",function(dom){
 	    //event中data字段保存有fire方法传递的数据
 	    console.log(event['data']);
 	});
-	Blend.ui.on("eventType",handle});
+	Blend.ui.on("eventType",handler});
 });</code></pre>
 
 > 以上代码表示，我们为`eventType`绑定了两个事件处理函数，此处我们使用了`Function handle`作为`on`方法的第二个参数，这种方式可以方便用户进行事件解绑操作，详见解绑事件。
+
+当用户需要添加的监听事件只需执行一次，则可以使用`once("eventType",callback)`方法，使用方法同`on("eventType",callback)`。
+
+一个实例：
+
+<pre><code>var handler = function(event){
+    //event中detail字段保存有页面id
+	console.log(event['detail']);
+};
+
+Blend.ui.layerInit("页面id",function(dom){
+	Blend.ui.once("eventType",handler);
+
+	//触发一次操作后，该自定义事件将会自动注销不可再触发
+	Blend.ui.fire("eventType","页面id");
+});</code></pre>
+
+
 
 ##触发监听事件
 绑定了事件之后，需要用户控制进行触发操作，这个触发操作既可以触发当前页面的监听事件也可以触发其他页面的监听事件，通过这种方式，用户也可以实现页面间数据传递。使用方法如下：
