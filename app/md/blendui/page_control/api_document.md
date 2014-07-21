@@ -54,7 +54,7 @@
 实例
 <pre><code>document.addEventListener("blendready", function() {
 	Blend.ui.layerInit("0", function(dom) {
-		var contentLayer = new Blend.Layer({
+		var contentLayer = new Blend.ui.Layer({
             "id": "contentLayerId",
             "url": "content.html",
             "active": true,

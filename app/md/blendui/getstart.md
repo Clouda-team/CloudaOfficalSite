@@ -107,7 +107,7 @@ BlendUI和clouda api是兄弟关系，如果webapp中不使用本地能力可直
 		    });
 			
 			document.addEventListener("blendready",function(){
-				var Layer = Blend.Layer;
+				var Layer = Blend.ui.Layer;
 		        var links = $("a[target='_blank']");
 		        var page = null;
 		        links.click(function(e){

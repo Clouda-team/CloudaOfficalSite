@@ -62,7 +62,7 @@ BlendUI有两种使用方式，一种是直接使用BlendUI开发，第二种是
 		<script>
 			document.addEventListener("blendready",function(){
 			
-				Blend.start("herfLayer",function(dom){
+				Blend.ui.layerInit("herfLayer",function(dom){
 					$(".testLink",dom).delegate("a","click",function(e){
                 		e.preventDefault();
                 	
@@ -74,11 +74,11 @@ BlendUI有两种使用方式，一种是直接使用BlendUI开发，第二种是
 				});
 			
 				var herfLayer;
-				Blend.on("createHerfLayer",function(e){
+				Blend.ui.on("createHerfLayer",function(e){
 					if(herfLayer){
                     	herfLayer.in();
                 	}else{
-                		herfLayer = new Blend.Layer({
+                		herfLayer = new Blend.ui.Layer({
                 			"id" : "herfLayer",
                 			"url" : e['data'].url,
                 			"active" :true
@@ -143,7 +143,7 @@ BlendUI有两种使用方式，一种是直接使用BlendUI开发，第二种是
 			});
 			
 			document.addEventListener("blendready",function(){	
-				Blend.start("herfLayer",function(dom){
+				Blend.ui.layerInit("herfLayer",function(dom){
 					$(".testLink",dom).delegate("a","click",function(e){
                 		e.preventDefault();
                 	
@@ -155,11 +155,11 @@ BlendUI有两种使用方式，一种是直接使用BlendUI开发，第二种是
 				});
 			
 				var herfLayer;
-				Blend.on("createHerfLayer",function(e){
+				Blend.ui.on("createHerfLayer",function(e){
 					if(herfLayer){
                     	herfLayer.in();
                 	}else{
-                		herfLayer = new Blend.Layer({
+                		herfLayer = new Blend.ui.Layer({
                 			"id" : "herfLayer",
                 			"url" : e['data'].url,
                 			"active" :true

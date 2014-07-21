@@ -38,7 +38,7 @@
 
 ##加入下拉事件响应
 <pre><code>document.addEventListener("blendready", function() {
-    Blend.layerInit("contentLayerId",function(dom){
+    Blend.ui.LayerInit("contentLayerId",function(dom){
         Blend.ui.on("layerPullDown",function(event){
             //监听下拉事件，自定义刷新操作
             setTimeout(function(){
@@ -49,7 +49,7 @@
         });
     });
 
-    Blend.layerInit("0", function(dom) {
+    Blend.ui.LayerInit("0", function(dom) {
         var contentLayer = new Blend.ui.Layer({
             "id": "contentLayerId",
             "url": "content.html",
@@ -73,7 +73,7 @@
 
 一个实例：
 <pre><code>document.addEventListener("blendready", function() {
-    Blend.layerInit("0", function(dom) {
+    Blend.ui.LayerInit("0", function(dom) {
         var contentLayer = new Blend.ui.Layer({
             "id": "contentLayerId",
             "url": "content.html",
@@ -86,7 +86,7 @@
         });
     });
 
-    Blend.layerInit("contentLayerId",function(dom){
+    Blend.ui.LayerInit("contentLayerId",function(dom){
         Blend.ui.on("layerPullDown",function(event){
             setTimeout(function(){
                 $("#content", dom).prepend("刷新操作");
@@ -99,7 +99,7 @@
 ##LayerGroup页面内下拉刷新操作
 代码主要格式如下：
 <pre><code>document.addEventListener("blendready", function () {
-    Blend.layerInit("content", function (dom) {
+    Blend.ui.LayerInit("content", function (dom) {
         Blend.ui.on("layerPullDown", function (event) {
             setTimeout(function () {
                 $("#page-content", dom).prepend("刷新操作");
@@ -107,7 +107,7 @@
             }, 2000);
         });
     });
-    Blend.layerInit("0", function (dom) {
+    Blend.ui.LayerInit("0", function (dom) {
         var tabs = new Blend.ui.LayerGroup({
             id: "tab",
             layers: [
