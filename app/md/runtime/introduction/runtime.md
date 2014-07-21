@@ -4,15 +4,15 @@
 
 当您集成Runtime时，我们为您提供三套集成方案：静态方案、动态远程方案、动态本地方案。
 
-<h3 class="Runtime集成方案"> 静态方案</h3>
+<h3 class="runtime集成方案">静态方案</h3>
 
 静态方案会将**Runtime的java文件和资源合并到宿主工程对应目录中**。这它的优点是执行效率高，缺点是集成难度比较大，因为要修改宿主的工程代码，同时也占用宿主包的尺寸	
 	
-### 动态远程方案
+<h3 class="runtime集成方案"> 动态远程方案 </h3>
 
 动态远程方案是宿主中只是包含sdk的代码，没有runtime，当需要运行runtime时候从服务器下载后再加载。它的优点是集成快速，和宿主没有耦合关系；缺点是需要远程下载，所以首次执行时间比较长
 
-### 动态本地方案
+<h3 class="runtime集成方案"> 动态本地方案</h3>
 
 动态本地方案是宿主中保存sdk的jar包，同时在assets目录下存放一个runtime文件，同时支持网络静默下载最新的runtime文件。它的优点是集成快速，执行效率高；缺点是和静态方案一样，影响宿主包的尺寸
 
@@ -79,7 +79,7 @@
 
 下面我们将详细介绍这四个步骤。
 
-### 集成Runtime Jar包到应用工程
+<h3 class="runtime集成"> 集成Runtime Jar包到应用工程</h3>
 
 #### 获取Runtime Jar包
 
@@ -121,7 +121,7 @@ Jar中的`libext.Jar`是Runtime依赖的`zeus-sdk`、`frontia`、`galaxy`这三�
 			<img src="/md/images/static.png" height="300px">
 
 
-### 配置AndroidManifest.xml
+<h3 class="runtime集成"> 配置AndroidManifest.xml </h3>
 
 当您已经将Runtime添加到项目工程中后，我们需要对工程AndroidManifest.xml进行配置，配置内容如下：
 
@@ -333,9 +333,9 @@ Runtime**目前只支持Android 2.3以上版本**，请您再申请权限之前�
 到此，AndroidManifest.xml配置完成。
 
 
-### 调用初始化接口
+<h3 class="runtime集成"> 调用初始化接口</h3>
 
-Runtime的Jar包已经添加到项目工程并完成了AndroidManifest.xml的配置，下面我们来实现在应用调起Runtime，在调用任何Runtime接口之前，需要`先进行初始化操作`，初始化的方法需要根据您选择的集成方案（Native和Remote）来选择，**这里以静态方案为例**，其他方案初始化方法在[4.1.2](#remote)中将做详细介绍。
+Runtime的Jar包已经添加到项目工程并完成了AndroidManifest.xml的配置，下面我们来实现在应用调起Runtime，在调用任何Runtime接口之前，需要`先进行初始化操作`，初始化的方法需要根据您选择的集成方案来选择，**这里以静态方案为例**。
 
 初始化操作很简单，
 
@@ -348,7 +348,7 @@ Runtime的Jar包已经添加到项目工程并完成了AndroidManifest.xml的配
 			
 			<meta-data  android:name="lightapp_apikey" android:value="aabbccddeeff"/>
 			
-	> 温馨提示：如果是开发版本，apiKey的内容默认值必须是字符，而不能是一串数字，如果是正式版就需要填入开发者中心获取的API Key，如何获取API Key可以参考[第五节](#getAPIKey)
+	> 温馨提示：如果是开发版本，apiKey的内容默认值必须是字符，而不能是一串数字，如果是正式版就需要填入开发者中心获取的API Key，如何获取API Key可以参考[如何获取Api Key](#getAPIKey)
 
 2. 在您想初始化Runtime的地方加入以下代码：
 
@@ -386,7 +386,7 @@ ERROR_MESSAGE_RUNTIME_ZIP_UNZIPING_OCCUR_ERROR | 解压runtime文件出现错误
 
 <font color=red>**注意: 初始化操作不能在Application.onCreate里调用**</font>
 
-### 调起Runtime GUI
+<h3 class="runtime集成"> 调起Runtime GUI</h3>
 
 完成Runtime初始化后，我们就可以在自己应用中调起Runtime GUI，调起接口如下：
 
@@ -432,7 +432,7 @@ ERROR_MESSAGE_RUNTIME_ZIP_UNZIPING_OCCUR_ERROR | 解压runtime文件出现错误
 
 <img src="/md/images/RuntimeGUI.jpeg" height="400px">	
 
-###  实现Runtime登陆接口
+<h3 class="runtime集成">  实现Runtime登陆接口</h3>
 
 当您调起了Runtime GUI后，你会发现在GUI中有的界面是与用户相关的展现，例如"我的轻应用"等，为了方便用户登陆并使轻应用与您的应用登陆状态一致，可以使用下面的方法实现登陆功能。
 
@@ -485,7 +485,7 @@ ERROR_MESSAGE_RUNTIME_ZIP_UNZIPING_OCCUR_ERROR | 解压runtime文件出现错误
 在第三章我们介绍如何在应用中集成Runtime，上述为最简单的集成方法，我们还为您提供了更多高级的使用方法，您可根据自己的实际需要使用这些方法。
 
 
-### 4.1 Runtime初始化接口
+<h3 class="高级开发"> Runtime初始化接口</h3>
 
 
 基于第二章中我们提供了三套集成方案，我们为这三种方案提供了初始化方法，方法如下：
@@ -512,7 +512,7 @@ ERROR_MESSAGE_RUNTIME_ZIP_UNZIPING_OCCUR_ERROR | 解压runtime文件出现错误
 
 实例中的Api Key等信息如何获取将在第5章中做详细的介绍。
 
-### 调起Runtime其他界面
+<h3 class="高级开发"> 调起Runtime其他界面</h3>
 
 在Runtime中不仅可以直接调起轻应用的运行界面，还可以直接调起轻应用设置界面。
 

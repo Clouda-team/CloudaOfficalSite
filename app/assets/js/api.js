@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function(){
 			docs.insertBefore(arch, h1.nextSibling);
 		}
 	}
-	if(url(3) === "api_document"){
+	if(url(3) === "api_document" || url(3) === "runtime"){
 		archive(true);	
 	} else {
 		archive();
