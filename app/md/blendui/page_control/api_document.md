@@ -77,7 +77,7 @@
 </code></pre>
 
 <h3 class="control" platform="ios android web">layerBack ( [layerId] )</h3>
-退出layerId对应的layer
+退出当前layer，显示layerId对应的页面
 
 <pre><code>Blend.ui.layerBack([layerId])</code></pre>
 
@@ -92,7 +92,7 @@
         <tr>
           <th>layerId</th>
           <th>String</th>
-          <td>退出layerId对应的layer，默认退出当前页面layer</td>
+          <td>退出当前页面后要显示的页面id</td>
           <td>否</td>
         </tr>
    <tbody>
@@ -105,7 +105,7 @@
     	"id":"contentLayer",
     	"active":true
 	 });
-	 Blend.ui.layerBack("contentLayer");
+	 Blend.ui.layerBack();
 </code></pre>
 
 

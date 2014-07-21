@@ -7,7 +7,6 @@
 ## Pageback
 
 <h3 class="pageback">out方法</h3>
-
 out方法针对的是Layer对象，可以实现退出该对象的页面并返回到上一个页面效果。但退出的Layer页面并未被销毁，如果切换回来的话，直接使用in() 方法激活即可。
 一个实例：
 <pre><code>document.addEventListener("blendready", function () {
@@ -64,9 +63,12 @@ out方法针对的是Layer对象，可以实现退出该对象的页面并返回
         });
     });
 });</code></pre>
-> 代码中使用`Blend.ui.layerInit`方法定义了`index.html`页面初始化后的操作，`layerInit`第一个参数代表页面的id（默认首页id为“0”）。跳转页面之前进行了判断，如果页面已经创建，直接使用`in()`方法激活页面。
 
-（2）在`content.html`页面上添加回退按钮`id:nav-back`，当触发回退操作时，使用BlendUI自定义事件调起回退操作。部分代码如下：
+<blockquote>
+<p>代码中使用`Blend.ui.layerInit`方法定义了`index.html`页面初始化后的操作，`layerInit`第一个参数代表页面的id(默认首页id为“0”)。跳转页面之前进行了判断，如果页面已经创建，直接使用`in()`方法激活页面。</p>
+</blockquote>
+
+(2) 在`content.html`页面上添加回退按钮`id:nav-back`，当触发回退操作时，使用BlendUI自定义事件调起回退操作。部分代码如下：
 <pre><code>document.addEventListener("blendready", function () {
     Blend.ui.layerInit("0", function (dom) {
         $('#jump', dom).click(function (e) {
@@ -100,7 +102,9 @@ out方法针对的是Layer对象，可以实现退出该对象的页面并返回
     });
 });</code></pre>
 
->代码中同样使用`layerInit`方法对id为`contentLayerId`的`content.html`页面进行了回退按钮绑定操作，定义了触发`back`回退事件，使用`Layer.out()`方法实现页面回退操作。
+<blockquote>
+<p>代码中同样使用`layerInit`方法对id为`contentLayerId`的`content.html`页面进行了回退按钮绑定操作，定义了触发`back`回退事件，使用`Layer.out()`方法实现页面回退操作。</p>
+</blockquote>
 
 <h3 class="pageback">destroy方法</h3>
 
@@ -146,8 +150,8 @@ out方法针对的是Layer对象，可以实现退出该对象的页面并返回
     Blend.ui.layerInit("contentLayerId", function (dom) {
         $('#nav-back', dom).click(function (e) {
             //回退操作
-            Blend.ui.layerBack("contentLayerId");
-            //Blend.ui.layerBack();
+            Blend.ui.layerBack();
+            //Blend.ui.layerBack("退至其他页面id");
         });
     });
 
