@@ -25,7 +25,7 @@
 
 - start(options)
 
-### start
+<h3 class="activity"> start</h3>
 
   	start(options)
 
@@ -110,7 +110,8 @@
 - startListen(options)
 - stopListen(options)
 
-### get ###
+<h3 class="battery"> get </h3>
+
     get(options)
 
 **功能描述：**
@@ -164,7 +165,8 @@
 </table>
 
 
-### startListen ###
+<h3 class="battery"> startListen </h3>
+
     startListen(options)
 
 **功能描述：**
@@ -203,7 +205,7 @@ onfail | function(err){}  | 操作失败，返回错误码信息
 
 - get(options)
 
-### get ###
+<h3 class="connection"> get </h3>
 
     get(options)
 
@@ -259,7 +261,8 @@ onfail | function(err){}  | 操作失败，返回错误码信息
 - getDeviceModelName(options)
 - getScreenSize(options)
 
-### getImei ###
+<h3 class="device"> getImei </h3>
+
     getImei(options)
 
 **功能描述：**
@@ -289,7 +292,8 @@ onfail | function(err){}  | 操作失败，返回错误码信息
     </tbody>
 </table>
 
-### getSysVersion ###
+<h3 class="device"> getSysVersion </h3>
+
     getSysVersion(options)
 
 **功能描述：**
@@ -310,7 +314,8 @@ onfail | function(err){} | 操作失败，返回错误码信息
 
 
 
-### getDeviceModelName ###
+<h3 class="device"> getDeviceModelName </h3>
+
     getDeviceModelName(options)
 
 **功能描述：**
@@ -329,7 +334,8 @@ onfail | function(err){} | 操作失败，返回错误码信息
 
  
 
-### getScreenSize ###
+<h3 class="device"> getScreenSize </h3>
+
     getScreenSize(options)
 
 **功能描述：**
@@ -366,7 +372,8 @@ colorDepth | int | 色深
 
 - post(path,target,options)
 
-### post ###
+<h3 class="filesystem"> post </h3>
+
     post(path,target,options)
 
 **功能描述：**
@@ -398,7 +405,8 @@ uploadKey | string | 上传表单中的key
 - startListen(options)
 - stopListen(options)
 
-### get ###
+<h3 class="geolocation"> get </h3>
+
     get(options)
 
 **功能描述：**
@@ -426,7 +434,8 @@ coordtype | string | 坐标类型, 包括:<br/> Blend.device.COORDTYPE.BD 百度
 
 
 
-### startListen ###
+<h3 class="geolocation"> startListen </h3>
+
     startListen(options)
 
 **功能描述：**
@@ -447,7 +456,8 @@ onsuccess | function(data){} | 操作成功，返回地理信息对象
 onfail | function(err){} | 操作失败，返回错误码信息 
 significant | bool | 是否仅在位置发生大幅变化时进行回调，boolean类型，默认true(相当于省电模式)。<font color="red">目前大幅变化阈值设置为20米，不支持自定义配置。</font>
 
-### stopListen ###
+<h3 class="geolocation"> stopListen </h3>
+
     stopListen(options)
 
 **功能描述：**
@@ -472,7 +482,8 @@ onfail | function(err){} | 操作失败，返回错误码信息
 
 - getlocale(options)
 
-### getlocale ### 
+<h3 class="globalization"> getlocale </h3>
+
   getlocale(options)
 
 **功能描述：** 
@@ -500,7 +511,8 @@ onfail | function(err){} | 操作失败，返回错误码信息
 - captureMedia(options)
 - operateMedia(link, operator, options)    
 
-### CaptureMedia ###
+<h3 class="media"> CaptureMedia </h3>
+
     captureMedia(options)
 
 **功能描述：**
@@ -555,7 +567,8 @@ type | string | 文件的MIME类型
 lastModifiedDate | timestamp | 文件最后修改时间
 size | int | 文件大小，单位：字节(bytes)
 
-### operateMedia ###
+<h3 class="media"> operateMedia </h3>
+
     operateMedia(link, operator, options)
 
 **功能描述：**
@@ -596,7 +609,7 @@ onfail | function(err){} | 操作失败，返回错误码信息
 
 - startCapture(options)
 
-### startCapture ###
+<h3 class="qrcode"> startCapture </h3>
 
     startCapture(options)
 

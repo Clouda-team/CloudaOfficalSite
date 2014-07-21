@@ -21,6 +21,7 @@
         <dd><a href="/rapid/get_started/filter">Filter</a></dd>
         <dd><a href="/rapid/get_started/extension">Extension</a></dd>
         <dd><a href="/rapid/deep_learn/form">表单处理</a></dd>
+        <dd><a href="/rapid/deep_learn/csrf">CSRF</a></dd>
 
     </dl {% if proj === "rapid"%}class="active"{% endif %}>
 
@@ -76,6 +77,20 @@
         <dd><a href="/blendapi/local/api_document">本地端能力</a></dd>
         <dd><a href="/blendapi/cloud/api_document">云能力</a></dd>
         <!-- <dd><a href="/blendapi/touch/api_document">手势库</a></dd> -->
+    </dl>
+
+    {# Blend API #}
+    <h3><a href="/runtime/introduction/introduce">Runtime</a></h3>
+    <dl {% if proj === "runtime"%}class="active"{% endif %}>
+        <dt><a href="">序言</a></dt>
+        <dd><a href="/runtime/introduction/introduce">简介</a></dd>
+        <dd><a href="/runtime/introduction/get_api_key">如何获取API Key</a></dd>
+    </dl>
+    <dl {% if proj === "runtime"%}class="active"{% endif %}>
+        <dt><a href="">集成指南</a></dt>
+        <dd><a href="/runtime/introduction/runtime">集成方案</a></dd>
+        <dd><a href="/runtime/introduction/runtime_integration">集成步骤</a></dd>
+        <dd><a href="/runtime/introduction/senor_runtime">高级方法</a></dd>
     </dl>
 
 {% endmacro %}

@@ -1,8 +1,6 @@
 # CSRF
 
-> CSRF（Cross-site request forgery跨站请求伪造，也被称为 "one click attack" 或者 "session riding"，通常缩写为CSRF或者XSRF，是一种对网站的恶意利用。CSRF通过伪装来自受信任用户的请求来利用受信任的网站。
-
-CSRF模块支持所有模板语言，此处以默认的Swig模板语言规范为例。
+RapidJS提供便捷的方法来避免应用程序受到跨站伪造请求(CSRF)的攻击。
 
 
 ## 对数据进行CSRF处理
@@ -25,12 +23,12 @@ CSRF模块支持所有模板语言，此处以默认的Swig模板语言规范为
 
 	});
 
-处理后的数据会随机生成一个CSRF Token，分别分发至前后端。
+处理后的数据会随机生成一个`CSRF Token`，分别分发至前后端。
 
 
 ## 前端使用CSRFToken
 
-CSRF默认从3个地方验证token：
+CSRF默认从三个地方验证token：
 
 1. Query中key为csrfToken的字段；  
 2. 请求头部的`x-csrf-token`或者`x-xsrf-token`字段；  
