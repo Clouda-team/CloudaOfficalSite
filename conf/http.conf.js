@@ -39,7 +39,7 @@ rapid.config.define({
 			doAction : "blendapi"
 		},{
 			url : /^\/runtime(\/.*)?/,
-			doAction : "runtime"
+			doAction : "blendui"
 		},{
 			url : /^\/$/,
 			doAction : "index"
