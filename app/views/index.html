@@ -4,9 +4,7 @@
 		<meta charset="UTF-8">
 		<meta name="description" content="简单可依赖的Javascript开发框架" />
 		<title>Clouda+</title>
-		<link rel="stylesheet" href="/assets/css/base.css">
-		<link rel="stylesheet" href="/assets/css/stylus.css">
-		<link rel="stylesheet" href="/assets/css/style.css">
+		<link rel="stylesheet" href="/assets/css/site.css">
 		<link rel="stylesheet" href="/assets/css/font-awesome.min.css">
 		<link rel="stylesheet" href="/assets/css/index.css">
 	</head>
@@ -16,22 +14,18 @@
 				<nav>
 					<ul>
 						<li><a href="/">Home</a></li>
-						<li><a href="/rapid/introduction/rapid_introduction/">Docs</a></li>
-						<li><a href="https://github.com/Clouda-team">Github</a></li>
+						<li><a href="/portal/">Docs</a></li>
+						<li><a href="https://github.com/Clouda-team">Open Source</a></li>
 					</ul>
 				</nav>
 				<div id="clouda">
 					<img src="/assets/images/clouda+.png" width="200" alt="">
 					<h1>Clouda+</h1>
-					<p>Projs + BlendUI + BlendAPI = Clouda+</p>
+					<!--p>Rapidjs + Tankjs + BlendUI + BlendAPI + Runtime = Clouda+</p-->
 					<p>移动web应用开发整体解决方案，特别为轻应用设计<br>让你的webapp体验和交互媲美Native应用！</p>
 					<ul class="info">
-						<li><a href="https://github.com/Clouda-team/rapid-core">RapidJS 1.0</a></li>
-						<li><a href="https://github.com/Clouda-team/BlendUI">BlendUI 1.0</a></li>
-					</ul>
-					<ul class="info">
-						<li><i class="fa fa-star"></i><a href="https://github.com/Clouda-team">75 stars</a></li>
-						<li><i class="fa fa-code-fork"></i><a href="https://github.com/Clouda-team">18 forks</a></li>
+						<li><i class="fa fa-star"></i><a href="https://github.com/Clouda-team">{{stars}} stars</a></li>
+						<li><i class="fa fa-code-fork"></i><a href="https://github.com/Clouda-team">{{forks}} forks</a></li>
 						<li><i class="fa fa-github"></i><a href="https://github.com/Clouda-team">Clouda-team</a></li>
 					</ul>
 				</div>
@@ -41,7 +35,8 @@
 			<div class="sermon">
 				<h1>BlendUI</h1>
 				<p>基于本地Native运行环境，让Javascript拥有操作Webview和Native控件的能力<br>让你的web移动端交互流畅，体验无异于Native app</p>
-				<a href="blendui" class="startBtn">BlendUI Docs</a>
+				<a href="/blend/introduction/introduction/" class="startBtn">BlendUI Docs</a>
+				<a href="https://github.com/Clouda-team/BlendUI" class="startBtn">Source code</a>
 				<ul class="panel">
 					<li>
 						<i class="fa fa-tachometer"></i>
@@ -71,6 +66,7 @@
 				<h1>RapidJS</h1>
 				<p>基于Nodejs的服务端开发框架，为移动而生，<br>让移动web开发简单、灵活、扩展能力强。</p>
 				<a href="/rapid/introduction/rapid_introduction/" class="startBtn">Rapid Docs</a>
+				<a href="https://github.com/Clouda-team/rapid-core" class="startBtn">Source code</a>
 				<ul class="panel">
 					<li>
 						<i class="fa fa-paper-plane"></i>
@@ -95,16 +91,42 @@
 				</ul>
 			</div>
 		</div>
+		<div id="blendapi" class="showcase">
+			<div class="sermon">
+				<h1>BlendAPI</h1>
+                <p>让webapp拥有移动设备的原生能力和百度云服务能力</p>
+				<a href="/blendapi/introduction/introduce" class="startBtn">BlendAPI Docs</a>
+				<ul class="panel">
+					<li>
+						<i class="fa fa-road"></i>
+						<h3>Web API</h3>
+					</li>
+					<li>
+						<i class="fa fa-puzzle-piece"></i>
+						<h3>172组API</h3>
+					</li>
+					<li>
+						<i class="fa fa-shield"></i>
+						<h3>四大百度云服务</h3>
+					</li>
+					<li>
+						<i class="fa fa-smile-o"></i>
+						<h3>五亿用户预装</h3>
+					</li>
+				</ul>
+			</div>
+		</div>
 		<div id="tank" class="showcase">
 			<div class="sermon">
 				<h1>TankJS</h1>
-				<p>集成Nodejs执行容器，面向应用开发各个环节，提供专业支持<br>抛弃烦恼，让Node.js开发变成乐趣</p>
+                <p>Nodejs执行容器框架，能面向应用开发、运行环节<br />随心控制你的Nodejs程序</p>
 				<a href="/" class="startBtn">TankJS Docs</a>
+				<a href="https://github.com/Clouda-team/Tankjs-core" class="startBtn">Source code</a>
 				<ul class="panel">
 					<li>
 						<i class="fa fa-road"></i>
 						<h3>高并发</h3>
-						<p>定向请求分发模块<br>提高Cache命中率，免启动可视化流量调整</p>
+						<p>免重启可视化流量、分发调整<br>提高缓存命中率</p>
 					</li>
 					<li>
 						<i class="fa fa-puzzle-piece"></i>
@@ -114,12 +136,12 @@
 					<li>
 						<i class="fa fa-shield"></i>
 						<h3>高稳定性</h3>
-						<p>服务双重守护<br>经理再也不用担心服务down掉了</p>
+						<p>服务双重守护<br>再也不用担心服务down掉了</p>
 					</li>
 					<li>
 						<i class="fa fa-smile-o"></i>
 						<h3>易上手</h3>
-						<p>兼容多种服务框架<br>同时提供命令行，图形支持，界面友好</p>
+						<p>兼容所有Nodejs开发框架<br>命令行，GUI皆可操作</p>
 					</li>
 				</ul>
 			</div>

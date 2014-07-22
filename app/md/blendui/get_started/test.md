@@ -2,11 +2,11 @@
 
 ## Android
 
-### 下载blendui.apk
+### 下载blend.apk
 
-blendui.apk为BlendUI在Android上得测试环境，如果需要线下调试或者运行BlendUI开发的应用，需要先下载blendui.apk并安装到测试的Android端上。
+blend.apk为BlendUI在Android上得测试环境，如果需要线下调试或者运行BlendUI开发的应用，需要先下载blend.apk并安装到测试的Android端上。
 
-blendui.apk现在地址如下：
+blend.apk现在地址如下：
 
 <https://github.com/Clouda-team/BlendUI>
 
@@ -20,7 +20,7 @@ blendui.apk现在地址如下：
 
 ### 配置URL到APK
 
-将Android的端连接到`adb`,并使用下面的命令将URL配置到blendui.apk中
+将Android的端连接到`adb`,并使用下面的命令将URL配置到blend.apk中
 
 	//例如应用的本地地址为“http://192.168.0.100/index.html”
 	
@@ -32,7 +32,7 @@ blendui.apk现在地址如下：
 
 #### 运行
 
-配置完成后，重新启动安装的blendui app（通过安装blendui.apk的应用）即可看到上一步配置的URL应用。
+配置完成后，重新启动安装的blendui app（通过安装blend.apk的应用）即可看到上一步配置的URL应用。
 
 #### 调试
 
@@ -58,7 +58,23 @@ IOS需要下载一个Xcode的工程，在工程中调试BlendUI应用，Xcode工
 	
 将自己应用的首页地址替换`@"http://www.baidu.com/"`即可
 
-### 
+## 手机调试工具-weinre
+
+移动端对于轻应用的调试可以使用weinre来调试手机的页面，步骤如下：
+
+（1）首先在需要调试的页面加入以下代码
+
+	<script src="http://weinre123.duapp.com/target/target-script-min.js"></script>
+
+（2）使用浏览器访问“http://weinre123.duapp.com/”，填入你本机的IP并点击“调试一下”，保持页面
+
+（3）使用移动端访问需要调试的页面
+
+（4）回到“http://weinre123.duapp.com/”即可看到下面的页面
+
+![](/md/images/weinre.png)
+
+
 
 
 

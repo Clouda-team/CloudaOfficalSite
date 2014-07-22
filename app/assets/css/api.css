@@ -13,6 +13,33 @@ body{
 	display: none;
 }
 
+#docs #arch .fa{
+	padding: 0 0.1em 0 0.2em;
+	color: #bbc;
+}
+
+#docs #arch .fa:first-child{
+	margin-left: 0.5em;
+}
+
+#docs #arch .fa-desktop{
+	font-size: 0.8em;
+}
+
+#docs h3 .fa{
+	font-size: 0.8em;
+	padding: 0 0.1em 0 0.2em;
+	color: #bbc;
+}
+
+#docs h3 .fa:first-child{
+	margin-left: 0.5em;
+}
+
+#docs h3 .fa-desktop{
+	font-size: 0.67em;
+}
+
 #menu {
 	width: 200px;
     float: left;

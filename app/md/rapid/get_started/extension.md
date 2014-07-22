@@ -77,14 +77,39 @@ Extension用来实现http功能的包装，如Session，Cookie，fileupload，Fo
 	 
 - *options*: 
 
-	{Object} Cookie相关参数，详细说明见下表：  
+	{Object} Cookie相关参数，详细说明见下表： 
 	
-	 key | value | 默认值 
-	:---------|:--------|:------
- 	`expires` |  {Object} date | 浏览器差窗口关闭即过期. 
- 	`domain` |  {String} 在特定域名下才能收到cookie. | 当前域名 
- 	`path` | {String} 为特定路径指定cookie. | 当前路径 
- 	`secure` | {Boolean} 指定是否只在`https`下生效. | `false` 
+<table>
+    <tbody>
+        <tr>
+            <th>key</th>
+            <th>value</th>
+            <th>默认值</th>
+        </tr>
+        <tr>
+          <th>expires</th>
+          <td>{Object} date</td>
+          <td>浏览器差窗口关闭即过期</td> 
+        </tr>
+        <tr>
+          <th>domain</th>
+          <td>{String} 在特定域名下才能收到cookie</td>
+          <td>当前域名</td> 
+        </tr>
+        <tr>
+          <th>path</th>
+          <td>{String} 为特定路径指定cookie</td>
+          <td>当前路径</td> 
+        </tr>
+        <tr>
+          <th>secure</th>
+          <td>{Boolean} 指定是否只在`https`下生效</td>
+          <td>默认值false</td> 
+        </tr>
+   <tbody>
+</table> 
+	
+
 	
 返回说明：
 
@@ -94,6 +119,49 @@ Extension用来实现http功能的包装，如Session，Cookie，fileupload，Fo
 实例：
 
 	cookie.set("name","John");
+	
+	
+### session
+
+对session的操作
+
+#### session.set(key,value)
+
+设置session
+
+	session.set(key,value);
+	
+#### session.getId()
+
+获取session的ID
+
+	session.getId()
+	
+#### session.get(key)
+
+获取session中key对应的value
+
+	session.get(key);
+	
+#### session.getStartTime()
+
+获取session开始时间
+
+	session.getStartTime()
+	
+#### session.getLastActiveTime()
+
+获取session的最后存在时间
+
+	session.getLastActiveTime()
+	
+#### session.isTimeout()
+
+判断session时候超时
+
+	session.isTimeout()
+
+	
 	
 ### url
 

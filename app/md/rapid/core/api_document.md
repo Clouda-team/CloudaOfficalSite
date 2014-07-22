@@ -14,24 +14,6 @@
 
 存放配置文件的目录，默认为: ROOT_DIR/conf/，系统将自动监测这个目录并载入下面的js文件
 
-## 全局方法
-
-<h3 class="全局方法">define(map)</h3>
-
-rapid.define()的快捷方式
-
-<h3 class="全局方法">watch(key1,key2,key3...keyN,callback);</h3>
-
-rapid.watch()的快捷方式
-
-<h3 class="全局方法">use(key);</h3>
-
-同步返回key所表示的资源内容，如果不存在则返回undefined。
-
->温馨提示: 
-
->当文件中存在循环依赖时,可能导至一个或多个文件永远不能被载入,所以使用时应当小心这种情况
-
 
 ## 对象
 
@@ -149,3 +131,13 @@ console会打印出：
 <h3 class="rapid-core方法">rapid.createWatcher();</h3>
 
 取得一个watcher对像的工厂方法
+
+
+
+<h3 class="rapid-core方法">rapid.use(module);</h3>
+
+同步返回module所表示的资源内容，如果不存在则返回undefined。
+
+>温馨提示: 
+
+>当文件中存在循环依赖时,可能导至一个或多个文件永远不能被载入,所以使用时应当小心这种情况

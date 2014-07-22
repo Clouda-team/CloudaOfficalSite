@@ -1,5 +1,4 @@
 var server = rapid.use("rapid-httpserver");
-var url = require("url");
 var path = require("path");
 var marked = require("marked");
 var fs = require("fs");
@@ -18,34 +17,27 @@ server.defineAction("rapid", function(default_request, default_response, cookie)
 	var doc = sep[2];
 
 	var mdpath = path.join(USER_DIR, mddir, proj, mod, doc + ".md");
-	var cached = cache.get(mdpath);
-
-	if(cached){
-		visitor.send(cached);
-		return;
-	}
 
 	fs.stat(mdpath, function(err, stat){
 
 		if(err){
-			visitor.redirect("/404/");
+			visitor.redirect("/404");
 			return ;
 		}
 
 		var md = fs.readFileSync(mdpath).toString();
-
-		var mdparsed = marked(md);
+		var cached = cache.get(mdpath);
+		var html = cached ? cached : marked(md);
 
 		var content = visitor.render("api", {
 			proj : proj,
 			mod : mod,
 			doc : doc,
-			ctnt : mdparsed
+			ctnt : html
 		}, {
 			autoescape : false
 		});
-
-		cache.add(mdpath, content);
+		cache.add(mdpath, html);
 		visitor.send(content);
 		return ;
 

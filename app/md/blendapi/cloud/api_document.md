@@ -19,7 +19,7 @@
 - login(options)
 - closeLoginDialog()
 
-<h3 class="Account">login</h3>
+<h3 class="account">login</h3>
 
     login(options)
 
@@ -44,7 +44,8 @@ disable_third_login | number(可选),默认为1 | 当 disable_third_login = 1 �
 onsuccess | function(){}  | 登录成功的回调函数. onsuccess函数体中,需要开发者手动调用一次`Blend.mbaas.account.closeLoginDialog()`方法.
 onfail | function(){}  | 登录失败的回调函数. onfail函数体中,需要开发者手动调用一次`Blend.mbaas.account.closeLoginDialog()`方法
 
-### closeLoginDialog ###
+<h3 class="account">closeLoginDialog </h3>
+
     closeLoginDialog()
 
 **功能描述：**
@@ -69,7 +70,8 @@ PAY接口提供支付功能。
 - init(parter_id,options)
 - doPay(options)
 
-### init###
+<h3 class="轻支付"> init </h3>
+
     init(parter_id,options)
 
 **功能描述：**
@@ -87,7 +89,8 @@ onsuccess | function(data){} | 操作成功，返回成功信息
 onfail | function(err){} | 操作失败，返回错误码信息
 
 
-### doPay###
+<h3 class="轻支付"> doPay </h3>
+
     doPay(options)
 
 **功能描述：**
@@ -284,7 +287,8 @@ goods_channel | 数字商品渠道 | 商户与渠道商提前约定好，字符�
 
 - callShare(options) 
 
-### callShare ###
+<h3 class="socialshare"> callShare </h3>
+
     callShare(options)
 
 **功能描述：**
@@ -343,7 +347,8 @@ email | 邮件
 - isBind(options)
 
 
-### registerUnicast ###
+<h3 class="push"> registerUnicast </h3>
+
     registerUnicast(options)
 
 **功能描述：**
@@ -407,7 +412,8 @@ options：为object类型，其中包括以下参数：
 
 
 
-### unregisterUnicast ###
+<h3 class="push"> unregisterUnicast  </h3>
+
     unregisterUnicast(options)
 
 **功能描述：**
@@ -465,7 +471,8 @@ options：为object类型，其中包括以下参数：
 </table>
 
 
-### registerMulticast ###
+<h3 class="push"> registerMulticast </h3>
+
     registerMulticast(options)
 
 **功能描述：**
@@ -535,7 +542,8 @@ options：为object类型，其中包括以下参数：
 
 
 
-### unregisterMulticast ###
+<h3 class="push"> unregisterMulticast </h3>
+
     unregisterMulticast(options)
 
 **功能描述：**
@@ -594,7 +602,8 @@ options：为object类型，其中包括以下参数：
 
 
 
-### getUniqueId ###
+<h3 class="push"> getUniqueId </h3>
+
     getUniqueId(options)
 
 **功能描述：**
@@ -647,7 +656,8 @@ options：为object类型，其中包括以下参数：
 
 
 
-### isBind ###
+<h3 class="push"> isBind </h3>
+
     isBind(options)
 
 **功能描述：**

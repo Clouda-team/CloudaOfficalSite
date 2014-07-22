@@ -37,6 +37,11 @@ document.addEventListener("DOMContentLoaded", function(){
 		}
 	}
 
+	var platico = {
+		ios : '<i class="fa fa-apple" title=" iOS "></i>',
+		android : '<i class="fa fa-android" title=" Android "></i>',
+		web : '<i class="fa fa-desktop" title=" Web "></i>'
+	}
 
 	//generate archive
 	var archive = function(renderH3){
@@ -74,6 +79,17 @@ document.addEventListener("DOMContentLoaded", function(){
 								window.scrollTo(0,offset);
 							}, false);
 							h3.id = h3id;
+							//render ico
+							var plat = h3.getAttribute("platform");
+							if(plat){
+								var icos = "";
+								plat.split(" ").forEach(function(name){
+									if(platico[name]){
+										icos += platico[name];	
+									}
+								});
+								h3.innerHTML += icos;
+							}
 							h3lia.innerHTML = h3.innerHTML;
 							ul.appendChild(h3li);
 						});
@@ -87,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function(){
 			docs.insertBefore(arch, h1.nextSibling);
 		}
 	}
-	if(url(3) === "api_document"){
+	if(url(3) === "api_document" || url(3) === "runtime"){
 		archive(true);	
 	} else {
 		archive();
@@ -140,6 +156,6 @@ document.addEventListener("DOMContentLoaded", function(){
 			el = el.nextElementSibling;
 		}
 	}
-	initMenu();
+	//initMenu();
 
 }, false);

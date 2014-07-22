@@ -7,14 +7,14 @@
 ##Layer页面内下拉刷新操作
 代码主要格式如下：
 <pre><code>document.addEventListener("blendready", function() {
-    Blend.start("contentLayerId",function(dom){
-        Blend.on("layerPullDown",function(event){
-            Blend.api.layerStopRefresh();
+    Blend.ui.layerInit("contentLayerId",function(dom){
+        Blend.ui.on("layerPullDown",function(event){
+            Blend.ui.layerStopRefresh();
         });
     });
 
-    Blend.start("0", function(dom) {
-        var contentLayer = new Blend.Layer({
+    Blend.ui.layerInit("0", function(dom) {
+        var contentLayer = new Blend.ui.Layer({
             "id": "contentLayerId",
             "url": "content.html",
             "pullToRefresh": true
@@ -24,8 +24,8 @@
 
 一个简单的实例：
 <pre><code>document.addEventListener("blendready", function() {
-    Blend.start("0", function(dom) {
-        var contentLayer = new Blend.Layer({
+    Blend.ui.layerInit("0", function(dom) {
+        var contentLayer = new Blend.ui.Layer({
             "id": "contentLayerId",
             "url": "content.html",
             "pullToRefresh": true
@@ -38,19 +38,19 @@
 
 ##加入下拉事件响应
 <pre><code>document.addEventListener("blendready", function() {
-    Blend.start("contentLayerId",function(dom){
-        Blend.on("layerPullDown",function(event){
+    Blend.ui.LayerInit("contentLayerId",function(dom){
+        Blend.ui.on("layerPullDown",function(event){
             //监听下拉事件，自定义刷新操作
             setTimeout(function(){
                 $("#content", dom).prepend("刷新操作");
                 //一定要在操作结束后停止页面刷新
-                Blend.api.layerStopRefresh();
+                Blend.ui.layerStopRefresh();
             },1000);
         });
     });
 
-    Blend.start("0", function(dom) {
-        var contentLayer = new Blend.Layer({
+    Blend.ui.LayerInit("0", function(dom) {
+        var contentLayer = new Blend.ui.Layer({
             "id": "contentLayerId",
             "url": "content.html",
             "pullToRefresh": true
@@ -73,8 +73,8 @@
 
 一个实例：
 <pre><code>document.addEventListener("blendready", function() {
-    Blend.start("0", function(dom) {
-        var contentLayer = new Blend.Layer({
+    Blend.ui.LayerInit("0", function(dom) {
+        var contentLayer = new Blend.ui.Layer({
             "id": "contentLayerId",
             "url": "content.html",
             "active": true,
@@ -86,11 +86,11 @@
         });
     });
 
-    Blend.start("contentLayerId",function(dom){
-        Blend.on("layerPullDown",function(event){
+    Blend.ui.LayerInit("contentLayerId",function(dom){
+        Blend.ui.on("layerPullDown",function(event){
             setTimeout(function(){
                 $("#content", dom).prepend("刷新操作");
-                Blend.api.layerStopRefresh();
+                Blend.ui.layerStopRefresh();
             },1000);
         });
     });
@@ -99,16 +99,16 @@
 ##LayerGroup页面内下拉刷新操作
 代码主要格式如下：
 <pre><code>document.addEventListener("blendready", function () {
-    Blend.start("content", function (dom) {
-        Blend.on("layerPullDown", function (event) {
+    Blend.ui.LayerInit("content", function (dom) {
+        Blend.ui.on("layerPullDown", function (event) {
             setTimeout(function () {
                 $("#page-content", dom).prepend("刷新操作");
-                Blend.api.layerStopRefresh();
+                Blend.ui.layerStopRefresh();
             }, 2000);
         });
     });
-    Blend.start("0", function (dom) {
-        var tabs = new Blend.LayerGroup({
+    Blend.ui.LayerInit("0", function (dom) {
+        var tabs = new Blend.ui.LayerGroup({
             id: "tab",
             layers: [
                 {
@@ -131,4 +131,4 @@
     });
 });</code></pre>
 
-> layerGroup与layer页面下刷新操作基本一致，具体参数配置和使用方法见上面讲解。
+> LayerGroup与Layer页面下刷新操作基本一致，具体参数配置和使用方法见上面讲解。

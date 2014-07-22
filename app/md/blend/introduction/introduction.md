@@ -2,7 +2,7 @@
 
 ## 概述
 
-Blend是一套使用JavaScript语言提供的应用工具接口，方便快捷的实现轻应用开发，并使的Web App的体验能够能够媲美Native App。
+Blend是一套JavaScript的API，将Native的端能力和百度的云服务融合（Blend）到webapp中。
 
 Blend提供以下能力：
 

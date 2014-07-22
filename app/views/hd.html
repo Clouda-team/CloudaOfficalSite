@@ -10,8 +10,13 @@
             <li>
             	<a href="/">home</a>
             </li>
-            <li>
-            	<a {% if active === "api" %}class="active"{% endif %} href="/api">docs</a>
+            <li class="api">
+            	<a {% if active === "api" %}class="active"{% endif %} href="/portal/">docs   <i class="fa fa-caret-down"></i></a>
+                <ul id="navlist">
+                    <li><a href="/rapid/introduction/rapid_introduction/">RapidJS</a></li>
+                    <li><a href="/blend/introduction/introduction">Blend</a></li>
+                    <li><a href="/runtime/introduction/introduce">Runtime</a></li>
+                </ul>
             </li>
             <li>
             	<a href="https://github.com/Clouda-team">github</a>

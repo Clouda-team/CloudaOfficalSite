@@ -2,17 +2,22 @@
 
 <!--Layer类，内含一个web容器，可以放置在手机屏幕的任何位置，动画可自定义。-->
 
-## construct
+## Construct
 
 配置所需参数来构建一个Layer。
 
 Layer的配置格式如下：
 
-<pre><code>var layer = new Blend.Layer({"options":"values"});</code></pre>
+<pre><code>var layer = new Blend.ui.Layer({"options":"values"});</code></pre>
+另一种格式如下：
+<pre><code>var Layer = Blend.ui.Layer;
+var layer = new Layer({"options":"values"});</code></pre>
+
+> 开发者可自行选定使用格式，以下统一以第一种格式展示代码
 
 Layer包含以下配置项：
 
-<h3 class="construct">url</h3>
+<h3 class="construct" platform="ios android web">url</h3>
 
 通过该项设置要显示的页面地址
 
@@ -33,12 +38,12 @@ Layer包含以下配置项：
 
 实例：
 
-<pre><code>var layer = new Blend.Layer({
+<pre><code>var layer = new Blend.ui.Layer({
 	"url":"content.html"
 });
 </code></pre>
 
-<h3 class="construct">id</h3>
+<h3 class="construct" platform="ios android web">id</h3>
 layer页面id
 
 <table>
@@ -50,21 +55,21 @@ layer页面id
         </tr>
         <tr>
             <th>String</th>
-            <td>layer页面id，Blend API可以通过该id对页面控制</td>
+            <td>layer页面id，标识一个页面</td>
             <td>否</td>
         </tr>
    <tbody>
 </table>
 
 实例：
-<pre><code>var layer = new Blend.Layer({
+<pre><code>var layer = new Blend.ui.Layer({
 	"url":"content.html",
 	"id":"contentLayer"
 });</code></pre>
 
-<h3 class="construct">active</h3>
+<h3 class="construct" platform="ios android web">active</h3>
 <!-- active : Boolean (optional)  -->
- 通过该项配置是否立即激活
+ 通过该项配置是否立即激活。如果不激活的话，该页面将不会显示。
 
  <table>
     <tbody>
@@ -75,21 +80,21 @@ layer页面id
         </tr>
         <tr>
             <th>Boolean</th>
-            <td>是否立即激活</td>
+            <td>是否立即激活，默认为false，激活时需要使用Layer的in()方法激活页面</td>
             <td>否</td>
         </tr>
    <tbody>
 </table>
 
 实例：
-<pre><code>var layer = new Blend.Layer({
+<pre><code>var layer = new Blend.ui.Layer({
 	"url":"content.html",
 	"id":"contentLayer",
 	"active":true
 });
 </code></pre>
 
-<h3 class="construct">autoStopLoading</h3>
+<h3 class="construct" platform="ios android web">autoStopLoading</h3>
 <!-- autoStopLoading : Boolean (optional) -->
 是否自动停止loading状态
 
@@ -109,7 +114,7 @@ layer页面id
 </table>
 
 实例：
-<pre><code>var layer = new Blend.Layer({
+<pre><code>var layer = new Blend.ui.Layer({
 	"url":"content.html",
 	"id":"contentLayer",
 	"active":true,
@@ -117,7 +122,7 @@ layer页面id
 });
 </code></pre>
 
-<h3 class="construct">maxLoadingTime</h3>
+<h3 class="construct" platform="ios android web">maxLoadingTime</h3>
 <!-- maxLoadingTime : String (optional) -->
 当autoStopLoading设置为false时，超过定义时间将停止loading状态
  <table>
@@ -128,7 +133,7 @@ layer页面id
             <th>是否必须</th>
         </tr>
         <tr>
-            <th style="color:red">Number</th>
+            <th>Number</th>
             <td>超时停止loading状态（默认2毫秒，单位毫秒）</td>
             <td>否</td>
         </tr>
@@ -136,7 +141,7 @@ layer页面id
 </table>
 
 实例：
-<pre><code>var layer = new Blend.Layer({
+<pre><code>var layer = new Blend.ui.Layer({
 	"url":"content.html",
 	"id":"contentLayer",
 	"active":true,
@@ -145,7 +150,7 @@ layer页面id
 });
 </code></pre>
 
-<h3 class="construct">pullToRefresh</h3>
+<h3 class="construct" platform="ios android web">pullToRefresh</h3>
 <!--	* pullToRefresh : Boolean (optional) -->
 是否支持下拉刷新
 <table>
@@ -157,14 +162,14 @@ layer页面id
         </tr>
         <tr>
             <th>Boolean</th>
-            <td>是否支持下拉刷新</td>
+            <td>是否支持下拉刷新（默认为false，不支持下拉刷新）</td>
             <td>否</td>
         </tr>
    <tbody>
 </table>
 
 实例：
-<pre><code>var layer = new Blend.Layer({
+<pre><code>var layer = new Blend.ui.Layer({
 	"url":"content.html",
 	"id":"contentLayer",
 	"active":true,
@@ -173,7 +178,7 @@ layer页面id
 });
 </code></pre>
 
-<h3 class="construct">pullText</h3>
+<h3 class="construct" platform="ios android web">pullText</h3>
 <!--	* pullText : String (optional)  -->
 下拉显示的文字
 <table>
@@ -192,7 +197,7 @@ layer页面id
 </table>
 
 实例：
-<pre><code>var layer = new Blend.Layer({
+<pre><code>var layer = new Blend.ui.Layer({
 	"url":"content.html",
 	"id":"contentLayer",
 	"active":true,
@@ -202,7 +207,7 @@ layer页面id
 });
 </code></pre>
 
-<h3 class="construct">loadingText</h3>
+<h3 class="construct" platform="ios android web">loadingText</h3>
 <!--	* loadingText : String (optional)  -->
 加载中的文字
 <table>
@@ -221,7 +226,7 @@ layer页面id
 </table>
 
 实例：
-<pre><code>var layer = new Blend.Layer({
+<pre><code>var layer = new Blend.ui.Layer({
 	"url":"content.html",
 	"id":"contentLayer",
 	"active":true,
@@ -232,7 +237,7 @@ layer页面id
 });
 </code></pre>
 
-<h3 class="construct">releaseText</h3>
+<h3 class="construct" platform="ios android web">releaseText</h3>
 <!--	* releaseText : String (optional)  -->
 提示释放的文字
 <table>
@@ -251,7 +256,7 @@ layer页面id
 </table>
 
 实例：
-<pre><code>var layer = new Blend.Layer({
+<pre><code>var layer = new Blend.ui.Layer({
 	"url":"content.html",
 	"id":"contentLayer",
 	"active":true,
@@ -263,9 +268,9 @@ layer页面id
 });
 </code></pre>
 
-<h3 class="construct">pullIcon</h3>
+<h3 class="construct" platform="android web">pullIcon</h3>
 <!--	* pullIcon : String (optional)  (仅支持Android)  -->
-下拉操作时需要显示的Icon (仅支持Android)
+下拉操作时需要显示的Icon
 <table>
     <tbody>
         <tr>
@@ -282,7 +287,7 @@ layer页面id
 </table>
 
 实例：
-<pre><code>var layer = new Blend.Layer({
+<pre><code>var layer = new Blend.ui.Layer({
 	"url":"content.html",
 	"id":"contentLayer",
 	"active":true,
@@ -295,9 +300,8 @@ layer页面id
 });
 </code></pre>
 
-<h3 class="construct">loadingIcon</h3>
-<!--	* loadingIcon : String (optional) (仅支持Android)  -->
-在页面加载前的loading状态时屏幕显示的Icon (仅支持Android)
+<h3 class="construct" platform="android web">loadingIcon</h3>
+在页面加载完毕前的loading状态时，屏幕显示的Icon
 <table>
     <tbody>
         <tr>
@@ -314,7 +318,7 @@ layer页面id
 </table>
 
 实例：
-<pre><code>var layer = new Blend.Layer({
+<pre><code>var layer = new Blend.ui.Layer({
 	"url":"content.html",
 	"id":"contentLayer",
 	"active":true,
@@ -323,14 +327,14 @@ layer页面id
 });
 </code></pre>
 
-## method
+## Method
 
-<h3 class="method">in ( ) : this</h3>
+<h3 class="method" platform="ios android web">in ( )</h3>
 <!--in ( ) : Object-->
-激活layer页面
+激活layer页面，在页面初始化配置时，如果`active`属性未配置，则需要使用该方法激活要显示的页面。
 
 实例
-<pre><code>var layer = new Blend.Layer({
+<pre><code>var layer = new Blend.ui.Layer({
 	"url":"content.html"
 });
 
@@ -339,22 +343,24 @@ layer.replace("http://www.baidu.com");
 layer.in();
 </code></pre>
 
-<h3 class="method">out ( ) : this</h3>
+<h3 class="method" platform="ios android web">out ( )</h3>
 当前layer退场，返回上一个Layer
 
 实例
-<pre><code>var layerA = new Blend.Layer({
-	"url":"contentA.html"
+<pre><code>var layerA = new Blend.ui.Layer({
+	"url":"contentA.html",
+	"active":true
 });
-var layerB = new Blend.Layer({
-	"url":"contentB.html"
+var layerB = new Blend.ui.Layer({
+	"url":"contentB.html",
+	"active":true
 });
 
 //layerB退场，返回上一个layerA
 layerB.out();
 </code></pre>
 
-<h3 class="method">reload (url) : this</h3>
+<h3 class="method" platform="ios android web">reload (url)</h3>
 重载页面
 
 <table>
@@ -375,8 +381,9 @@ layerB.out();
 </table>
 
 实例
-<pre><code>var layer = new Blend.Layer({
-	"url":"content.html"
+<pre><code>var layer = new Blend.ui.Layer({
+	"url":"content.html",
+	"active":true
 });
 
 layer.reload("http://www.baidu.com");
@@ -386,7 +393,7 @@ layer.reload("http://www.baidu.com");
 <!-- 停止layer拉动刷新状态
 
 实例
-<pre><code>var layer = new Blend.Layer({
+<pre><code>var layer = new Blend.ui.Layer({
 	"url":"content.html",
 	"pullToRefresh":true,
 	"pullText":"下拉可以刷新⊙０⊙",
@@ -399,7 +406,7 @@ layer.reload("http://www.baidu.com");
 layer.stopPullRefresh();
 </code></pre> -->
 
-<h3 class="method">replace (url) : this</h3>
+<h3 class="method" platform="ios android web">replace (url)</h3>
 页面url替换
 
 <table>
@@ -420,8 +427,9 @@ layer.stopPullRefresh();
 </table>
 
 实例
-<pre><code>var layer = new Blend.Layer({
-	"url":"content.html"
+<pre><code>var layer = new Blend.ui.Layer({
+	"url":"content.html",
+	"active":true
 });
 
 layer.replace("http://www.baidu.com");
@@ -429,60 +437,63 @@ layer.replace("http://www.baidu.com");
 layer.in();
 </code></pre>
 
-<h3 class="method">getUrl ( ) : String</h3>
+<h3 class="method" platform="ios android web">getUrl ( ) : String</h3>
 获取layer页面的url属性
 
 实例
-<pre><code>var layer = new Blend.Layer({
+<pre><code>var layer = new Blend.ui.Layer({
 	"url":"content.html"
 });
 
 console.log(layer.getUrl());
 </code></pre>
 
-<h3 class="method">canGoBack ( ) : Boolean</h3>
+<h3 class="method" platform="ios android web">canGoBack ( ) : Boolean</h3>
 layer是否可以回退，是否有历史记录
 
 实例
-<pre><code>var layer = new Blend.Layer({
-	"url":"content.html"
+<pre><code>var layer = new Blend.ui.Layer({
+	"url":"content.html",
+	"active":true
 });
 
 if(layer.canGoBack()){
     //可以回退后操作
-    Blend.api.layerBack();
+    Blend.ui.layerBack();
 }
 </code></pre>
 
-<h3 class="method">clearHistory ( ) </h3>
+<h3 class="method" platform="ios android web">clearHistory ( ) </h3>
 清空页面历史记录
 
 实例
-<pre><code>var layer = new Blend.Layer({
-	"url":"content.html"
+<pre><code>var layer = new Blend.ui.Layer({
+	"url":"content.html",
+	"active":true
 });
 
 layer.clearHistory();
 </code></pre>
 
-<h3 class="method">isActive ( ) : Boolean</h3>
+<h3 class="method" platform="ios android web">isActive ( ) : Boolean</h3>
 layer是否是激活状态
 
 实例
-<pre><code>var layer = new Blend.Layer({
-	"url":"content.html"
+<pre><code>var layer = new Blend.ui.Layer({
+	"url":"content.html",
+	"active":true
 });
 
-//页面激活状态
-var layerState = layer.isActive();
+//页面激活状态，以下为true
+console.log(layer.isActive());
 </code></pre>
 
 
-<h3 class="method">destroy ( )</h3>
+<h3 class="method" platform="ios android web">destroy ( )</h3>
 销毁layer
 
 实例
-<pre><code>var layer = new Blend.Layer({
+<pre><code>var layer = new Blend.ui.Layer({
 	"url":"content.html"
 });
 
