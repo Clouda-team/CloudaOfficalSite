@@ -1,5 +1,6 @@
 {# Dynamically Generate #}
 {% macro use(proj, mod, doc) %}
+{% if (proj === "rapid" || proj === "404") %}
     {# Rapid #}
     <h3><a href="/rapid/introduction/rapid_introduction/">RapidJS</a></h3>
     <dl {% if proj === "rapid"%}class="active"{% endif %}>
@@ -22,15 +23,17 @@
         <dd><a href="/rapid/get_started/extension">Extension</a></dd>
         <dd><a href="/rapid/deep_learn/form">表单处理</a></dd>
         <dd><a href="/rapid/deep_learn/csrf">CSRF</a></dd>
-
-    </dl {% if proj === "rapid"%}class="active"{% endif %}>
-
+    
+    </dl>
+    
     <dl {% if proj === "rapid"%}class="active"{% endif %}>
         <dt><a href="">API手册</a></dt>
         <dd><a href="/rapid/core/api_document">Core</a></dd>
         <dd><a href="/rapid/httpserver/api_document">Httpserver</a></dd>
     </dl>
-
+{% endif %}
+    
+{% if (proj === "blendui" || proj === "blendapi" || proj === "blend" || proj === "404") %}
     {# Blend #}
     <h3><a href="/blend/introduction/introduction">Blend</a></h3>
 
@@ -78,8 +81,10 @@
         <dd><a href="/blendapi/cloud/api_document">云能力</a></dd>
         <!-- <dd><a href="/blendapi/touch/api_document">手势库</a></dd> -->
     </dl>
+{% endif %}
 
-    {# Blend API #}
+{% if proj === "runtime" || proj === "404" %}
+    {# Runtime #}
     <h3><a href="/runtime/introduction/introduce">Runtime</a></h3>
     <dl {% if proj === "runtime"%}class="active"{% endif %}>
         <dt><a href="">序言</a></dt>
@@ -92,5 +97,6 @@
         <dd><a href="/runtime/introduction/runtime_integration">集成步骤</a></dd>
         <dd><a href="/runtime/introduction/senor_runtime">高级方法</a></dd>
     </dl>
+{% endif %}
 
 {% endmacro %}

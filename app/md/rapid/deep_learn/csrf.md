@@ -28,13 +28,7 @@ RapidJS提供便捷的方法来避免应用程序受到跨站伪造请求(CSRF)�
 
 ## 前端使用CSRFToken
 
-CSRF默认从三个地方验证token：
-
-1. Query中key为csrfToken的字段；  
-2. 请求头部的`x-csrf-token`或者`x-xsrf-token`字段；  
-3. 请求body中key为csrfToken的字段。
-
-下面是个各种方式的简要说明:
+下面是前端发送请求
 
 ##### 提交FORM
 
@@ -60,6 +54,12 @@ CSRF在前端模板中变量名固定为`csrfToken`，绑定在模板的全局�
 ## 添加validateCSRF Filter
 
 `validateCSRF`是`rapid-httpserver`提供的默认filter，filter在用户action之前对token进行验证。
+
+CSRF默认从三个地方验证token：
+
+1. Query中key为csrfToken的字段；  
+2. 请求头部的`x-csrf-token`或者`x-xsrf-token`字段；  
+3. 请求body中key为csrfToken的字段。
 
 	rapid.config.define({
 

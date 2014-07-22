@@ -1,3 +1,36 @@
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    height: 100%;
+}
+
+body {
+    font-family: Helvetica, STHeiti STXihei, Microsoft JhengHei, Microsoft YaHei, Tohoma, Arial;
+    font-size: 14px;
+    margin: 0; 
+    padding: 0;
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: #424b50;
+}
+
+a:focus,a:active, a:hover{
+    outline: 0;
+}
+
+ul, ol, dl{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+
+
 #logo {
     float: left;
 }
@@ -135,12 +168,12 @@
 
 /* Components */
 .btn {
-	color: #fff;
-	background-color: #f2594B;
-	border-radius: 2px;
-	font-weight: 400;
-	padding: 10px 53px;
-	display: block;
+    color: #fff;
+    background-color: #f2594B;
+    border-radius: 2px;
+    font-weight: 400;
+    padding: 10px 53px;
+    display: block;
 }
 
 .startBtn {
@@ -178,7 +211,7 @@
 }
 
 .btn:hover {
-	background-color: #FD6550;
+    background-color: #FD6550;
 }
 
 .boxbtn {
@@ -200,7 +233,3 @@
     box-shadow: 0 1px 3px rgba(34,25,25,.4);
     background: #fff;
 }
-
-
-
-

@@ -1,0 +1,140 @@
+<svg id="kity_svg_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+width="487" height="258" contenteditable="true" style="font-family: Arial, &quot;Microsoft Yahei&quot;,  &quot;Heiti SC&quot;;"
+viewBox="546 186 487 258">
+    <defs id="kity_defs_3">
+        <marker id="kity_marker_0" orient="auto" refX="6" refY="0" viewBox="-7 -7 14 14"
+        markerWidth="7" markerHeight="7" markerUnits="userSpaceOnUse">
+            <path id="kity_path_1" fill="rgb(115, 161, 191)" stroke="none" d="M6,0A6,6,0,1,1,-6,0A6,6,0,1,1,6,0">
+            </path>
+        </marker>
+    </defs>
+    <g id="kity_g_4" transform="translate(0.5, 0.5)">
+        <g id="minder_1" transform="matrix( 1 0 0 1 758 228.00000000000006 )">
+            <g id="minder_connect_group_1">
+                <path id="kity_path_647" fill="none" stroke="rgb(115, 161, 191)" stroke-width="1"
+                d="M31 21L31 51L-145 51L-145 90">
+                </path>
+                <path id="kity_path_660" fill="none" stroke="rgb(115, 161, 191)" stroke-width="1"
+                d="M31 21L31 51L31 51L31 90">
+                </path>
+                <path id="kity_path_676" fill="none" stroke="rgb(115, 161, 191)" stroke-width="1"
+                d="M31 21L31 51L209 51L209 90">
+                </path>
+                <path id="kity_path_699" fill="none" stroke="rgb(115, 161, 191)" stroke-width="1"
+                d="M31 118L31 138L-24 138L-24 174">
+                </path>
+                <path id="kity_path_721" fill="none" stroke="rgb(115, 161, 191)" stroke-width="1"
+                d="M31 118L31 138L86 138L86 174">
+                </path>
+            </g>
+            <g id="kity_g_7" display="none">
+                <path id="kity_path_8" fill="none" stroke="none" d="M0,0h0v0h0z">
+                </path>
+            </g>
+            <g id="kity_g_9" display="none">
+                <path id="kity_path_10" fill="none" stroke="none" d="M0,0h0v0h0z">
+                </path>
+                <path id="kity_path_11" fill="none" stroke="none">
+                </path>
+            </g>
+            <g id="minder_node_1" transform="matrix( 1 0 0 1 0 0 )">
+                <path id="kity_path_406" fill="rgba(0, 0, 0, .25)" stroke="none" d="M9,-23h78a30,30,0,0,1,30,30v-3a30,30,0,0,1,-30,30h-78a30,30,0,0,1,-30,-30v3a30,30,0,0,1,30,-30z"
+                display="none">
+                </path>
+                <path id="node_outline_1" fill="rgb(115, 161, 191)" stroke="rgb(115, 161, 191)"
+                d="M-19,-21h99a5,5,0,0,1,5,5v32a5,5,0,0,1,-5,5h-99a5,5,0,0,1,-5,-5v-32a5,5,0,0,1,5,-5z"
+                stroke-width="3">
+                </path>
+                <text id="node_text_1" text-rendering="geometricPrecision" dy="5.546875"
+                fill="white" font-size="16" style="cursor: text;" opacity="1">
+                    Clouda+
+                </text>
+            </g>
+            <g id="minder_node_477" transform="matrix( 1 0 0 1 -172 104 )" opacity="1">
+                <g id="node_expander_26" transform="translate( 0 0 )" style="cursor: pointer;"
+                display="none">
+                    <path id="kity_path_651" fill="white" stroke="gray" d="M5,0A5,5,0,1,1,-5,0A5,5,0,1,1,5,0">
+                    </path>
+                    <path id="kity_path_652" fill="none" stroke="black">
+                    </path>
+                </g>
+                <path id="node_outline_27" fill="rgb(238, 243, 246)" stroke="rgb(115, 161, 191)"
+                d="M-17,-14h87a3,3,0,0,1,3,3v22a3,3,0,0,1,-3,3h-87a3,3,0,0,1,-3,-3v-22a3,3,0,0,1,3,-3z"
+                stroke-width="1">
+                </path>
+                <text id="node_text_27" text-rendering="geometricPrecision" dy="4.859375"
+                fill="black" font-size="14">
+                    RapidJS
+                </text>
+            </g>
+            <g id="minder_node_484" transform="matrix( 1 0 0 1 13 104 )" opacity="1">
+                <g id="node_expander_27" transform="translate( 18 20 )" style="cursor: pointer;">
+                    <path id="kity_path_664" fill="white" stroke="gray" d="M5,0A5,5,0,1,1,-5,0A5,5,0,1,1,5,0">
+                    </path>
+                    <path id="kity_path_665" fill="none" stroke="black" d="M-3.5,0L3.5,0">
+                    </path>
+                </g>
+                <path id="node_outline_28" fill="rgb(238, 243, 246)" stroke="rgb(115, 161, 191)"
+                d="M-17,-14h70a3,3,0,0,1,3,3v22a3,3,0,0,1,-3,3h-70a3,3,0,0,1,-3,-3v-22a3,3,0,0,1,3,-3z"
+                stroke-width="1">
+                </path>
+                <text id="node_text_28" text-rendering="geometricPrecision" dy="4.859375"
+                fill="black" font-size="14" opacity="1" style="cursor: default;">
+                    Blend
+                </text>
+            </g>
+            <g id="minder_node_494" transform="matrix( 1 0 0 1 182 104 )" opacity="1">
+                <g id="node_expander_28" transform="translate( 0 0 )" style="cursor: pointer;"
+                display="none">
+                    <path id="kity_path_680" fill="white" stroke="gray" d="M5,0A5,5,0,1,1,-5,0A5,5,0,1,1,5,0">
+                    </path>
+                    <path id="kity_path_681" fill="none" stroke="black">
+                    </path>
+                </g>
+                <path id="node_outline_29" fill="rgb(238, 243, 246)" stroke="rgb(115, 161, 191)"
+                d="M-17,-14h87a3,3,0,0,1,3,3v22a3,3,0,0,1,-3,3h-87a3,3,0,0,1,-3,-3v-22a3,3,0,0,1,3,-3z"
+                stroke-width="1">
+                </path>
+                <text id="node_text_29" text-rendering="geometricPrecision" dy="4.859375"
+                fill="black" font-size="14" style="cursor: default;">
+                    Runtime
+                </text>
+            </g>
+            <g id="minder_node_511" transform="matrix( 1 0 0 1 -48 186 )" opacity="1">
+                <g id="node_expander_29" transform="translate( 0 0 )" style="cursor: pointer;"
+                display="none">
+                    <path id="kity_path_703" fill="white" stroke="gray" d="M5,0A5,5,0,1,1,-5,0A5,5,0,1,1,5,0">
+                    </path>
+                    <path id="kity_path_704" fill="none" stroke="black">
+                    </path>
+                </g>
+                <path id="node_outline_30" fill="none" stroke="none" d="M-5,-12h57a5,5,0,0,1,5,5v13a5,5,0,0,1,-5,5h-57a5,5,0,0,1,-5,-5v-13a5,5,0,0,1,5,-5z"
+                stroke-width="3">
+                </path>
+                <text id="node_text_30" text-rendering="geometricPrecision" dy="4.1640625"
+                fill="black" font-size="12">
+                    Blend UI
+                </text>
+            </g>
+            <g id="minder_node_527" transform="matrix( 1 0 0 1 59 186 )" opacity="1">
+                <g id="node_expander_30" transform="translate( 0 0 )" style="cursor: pointer;"
+                display="none">
+                    <path id="kity_path_725" fill="white" stroke="gray" d="M5,0A5,5,0,1,1,-5,0A5,5,0,1,1,5,0">
+                    </path>
+                    <path id="kity_path_726" fill="none" stroke="black">
+                    </path>
+                </g>
+                <path id="node_outline_31" fill="none" stroke="none" d="M-5,-12h64a5,5,0,0,1,5,5v13a5,5,0,0,1,-5,5h-64a5,5,0,0,1,-5,-5v-13a5,5,0,0,1,5,-5z"
+                stroke-width="3">
+                </path>
+                <text id="node_text_31" text-rendering="geometricPrecision" dy="4.1640625"
+                fill="black" font-size="12" opacity="1" style="cursor: default;">
+                    Blend API
+                </text>
+                <path id="_kity_selection" fill="rgb(0, 61, 102)" stroke="none" d="M53.5,-8.5h2v15h-2z"
+                opacity="1" style="cursor: text; display: none;">
+                </path>
+            </g>
+        </g>
+    </g>
+</svg>

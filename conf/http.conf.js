@@ -15,7 +15,7 @@ rapid.config.define({
 			url : /^\/assets\/(.*)/,
 			doFilter : "addHeaders",
 			params : {
-				"Cache-Control" : "max-age:0"
+				"Cache-Control" : "max-age:31536000"
 			}
 		}],
 
@@ -28,6 +28,9 @@ rapid.config.define({
 		},{
 			url : /^\/md\/images\/(.*)/,
 			resource : "/app/md/images/{1}"
+		},{
+			url : /^\/portal\/?$/,
+			doAction : "portal"
 		},{
 			url : /^\/rapid(\/.*)?/,
 			doAction : "rapid"
