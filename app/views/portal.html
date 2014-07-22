@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/assets/css/site.css">
     <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="/assets/css/portal.css">
+    <link rel="stylesheet" href="/assets/css/markdown.css">
 </head>
 <body>
     {{ hd.use("api") }}
@@ -156,51 +157,54 @@
                             </g>
                         </g>
                     </svg>
-                <article>
-                <h2>Clouda+</h2>
+                <article class="markdown">
+                    <h2>Clouda+</h2>
 
-                    <h3> 文档阅读建议
+                        <h3> 文档阅读建议 </h3>
 
-                    <p>
-                    看来你已经准备好要学习Clouda+了，为了提供良好的学习体验，我们为Clouda+编写了清晰、扼要的文档。你可以按照下面的顺序阅读：
-                    </p>
+                        <p>
+                        看来你已经准备好要学习Clouda+了，为了提供良好的学习体验，我们为Clouda+编写了清晰、扼要的文档。你可以按照下面的顺序阅读：
+                        </p>
 
-                    <ul>
-                        <li> 看完本文，了解Clouda+的设计思想
-                        <li> 根据你的业务需求，选择性入手：
                         <ul>
-                            <li> 如果你关注轻应用在手机端的浏览体验，请按照 BlendUI - BlendAPI - Runtime的顺序阅读
-                            <li> 如果你关注Nodejs在轻应用服务端的运用，请主要阅读Rapidjs部分
-                            <li>  对于Clouda+的每个构成部分，我们都准备了三部分文档，请按顺序阅读：
+                            <li> 看完本文，了解Clouda+的设计思想 </li>
+                            <li> 
+                                根据你的业务需求，选择性入手：
+                                <ul>
+                                    <li> 如果你关注轻应用在手机端的浏览体验，请按照 BlendUI - BlendAPI - Runtime的顺序阅读 </li>
+                                    <li> 如果你关注Nodejs在轻应用服务端的运用，请主要阅读Rapidjs部分</li>
+                                    <li> 对于Clouda+的每个构成部分，我们都准备了三部分文档，请按顺序阅读：
+                                        <ul>
+                                            <li> 快速开始 </li>
+                                            <li> 开始学习 </li>
+                                            <li> 深度历险 </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
                         </ul>
-                        <ul>
-                            <li> 快速开始
-                            <li> 开始学习
-                            <li>  深度历险
-                        </ul>
-                    </ul>
 
-                    <p>
-                    好，让我们开始吧。
-                    </p>
+                        <p>
+                        好，让我们开始吧。
+                        </p>
 
-                    <h3> Clouda+的设计思想 </h4>
+                        <h3> Clouda+的设计思想 </h4>
 
-                    <p>
-                    Clouda+是移动web应用开发整体解决方案，并特别针对百度轻应用场景进行了优化，旨在让webapp体验和交互媲美Native应用。
-                    </p>
+                        <p>
+                        Clouda+是移动web应用开发整体解决方案，并特别针对百度轻应用场景进行了优化，旨在让webapp体验和交互媲美Native应用。
+                        </p>
 
-                    <p>
-                    我们认为，开发webapp应该是愉悦的，并且让使用者也能愉快而流畅的完成交互。Clouda+努力剔除开发过程中的痛苦，因此，我们帮助开发者完成流畅的动画、减少DOM层级、让布局更容易（Blend UI），将设备能力暴露给web（Blend API），让webapp能像Native App一样安装、更新和接受推送（Runtime），用熟悉的Javascript完成服务端开发（Rapidjs）并且能轻松地管理Nodejs运行环境（Tankjs）。我们不拘泥于固定的语言和技术，只要有技术对提升Webapp的体验有帮助，它们就能为我们所用。
+                        <p>
+                        我们认为，开发webapp应该是愉悦的，并且让使用者也能愉快而流畅的完成交互。Clouda+努力剔除开发过程中的痛苦，因此，我们帮助开发者完成流畅的动画、减少DOM层级、让布局更容易（Blend UI），将设备能力暴露给web（Blend API），让webapp能像Native App一样安装、更新和接受推送（Runtime），用熟悉的Javascript完成服务端开发（Rapidjs）并且能轻松地管理Nodejs运行环境（Tankjs）。我们不拘泥于固定的语言和技术，只要有技术对提升Webapp的体验有帮助，它们就能为我们所用。
 
-                    </p>
-                    <p>
-                    Clouda+是解耦的，易于理解的。刚才提到的那些组成部分联合起来，能像覆盖整个轻应用的所有开发环节，如果你有更加趁手的技术，也可以只使用其中一部分组件，它们同样能很好地为你工作。
-                    </p>
+                        </p>
+                        <p>
+                        Clouda+是解耦的，易于理解的。刚才提到的那些组成部分联合起来，能像覆盖整个轻应用的所有开发环节，如果你有更加趁手的技术，也可以只使用其中一部分组件，它们同样能很好地为你工作。
+                        </p>
 
-                    <p>
-                    Clouda+的伸缩性很强。它能覆盖开发者从业务搭建之初，到产品成长、成熟的整个迭代过程，从设计之初便在系统的延展性及适用方式上做了大量考虑。
-                    </p>
+                        <p>
+                        Clouda+的伸缩性很强。它能覆盖开发者从业务搭建之初，到产品成长、成熟的整个迭代过程，从设计之初便在系统的延展性及适用方式上做了大量考虑。
+                        </p>
                 </article>
             </div>
         </div>
