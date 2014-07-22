@@ -1,0 +1,12 @@
+#portal {
+	text-align: center;
+	margin-top: 20px;
+}
+
+#portal a{
+	transition: all 0.1s linear;
+}
+
+#portal a:hover{
+	opacity: 0.6;
+}
