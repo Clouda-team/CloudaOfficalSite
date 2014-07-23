@@ -98,7 +98,7 @@ viewBox="546 186 487 258">
                     </text>
                 </g>
             </a>
-            <a xlink:href="/blendui/introduction/introduction/" style="cursor: pointer;" >
+            <a xlink:href="/runtime/introduction/introduce" style="cursor: pointer;" >
                 <g id="minder_node_511" transform="matrix( 1 0 0 1 -48 186 )" opacity="1">
                     <g id="node_expander_29" transform="translate( 0 0 )" display="none">
                         <path id="kity_path_703" fill="white" stroke="gray" d="M5,0A5,5,0,1,1,-5,0A5,5,0,1,1,5,0">
