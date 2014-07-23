@@ -12,7 +12,7 @@ Slider的配置格式如下：
 
 Slider包含以下配置项：
 
-<h3 class="construct" platform="ios android">id</h3>
+<h3 class="construct" platform="ios android web">id</h3>
 slider的id
 
 <table>
@@ -41,7 +41,7 @@ slider的id
 </code></pre>
 
 
-<h3 class="construct" platform="ios android">top</h3>
+<h3 class="construct" platform="ios android web">top</h3>
 配置slider距离屏幕top的坐标
 
 <table>
@@ -70,7 +70,7 @@ slider的id
 });
 </code></pre>
 
-<h3 class="construct" platform="ios android">left</h3>
+<h3 class="construct" platform="ios android web">left</h3>
 配置slider距离屏幕left的坐标
 
 <table>
@@ -100,7 +100,7 @@ slider的id
 });
 </code></pre>
 
-<h3 class="construct" platform="ios android">width</h3>
+<h3 class="construct" platform="ios android web">width</h3>
 配置slider宽度
 
 <table>
@@ -129,7 +129,7 @@ slider的id
 });
 </code></pre>
 
-<h3 class="construct" platform="ios android">height</h3>
+<h3 class="construct" platform="ios android web">height</h3>
 配置slider高度
 
 <table>
@@ -158,7 +158,7 @@ slider的id
 });
 </code></pre>
 
-<h3 class="construct" platform="ios android">bgColor</h3>
+<h3 class="construct" platform="ios android web">bgColor</h3>
 配置slider背景颜色
 
 <table>
@@ -187,7 +187,7 @@ slider的id
 });
 </code></pre>
 
-<h3 class="construct" platform="ios android">images</h3>
+<h3 class="construct" platform="ios android web">images</h3>
 配置图片数据json
 
 <table>
@@ -215,7 +215,7 @@ slider的id
 });
 </code></pre>
 
-<h3 class="construct" platform="ios android">tap</h3>
+<h3 class="construct" platform="ios android web">tap</h3>
 配置点击slider的事件回调
 
 <table>
@@ -244,7 +244,7 @@ slider的id
 });
 </code></pre>
 
-<h3 class="construct" platform="ios android">slide</h3>
+<h3 class="construct" platform="ios android web">slide</h3>
 配置滑动slide的事件回调
 
 <table>
@@ -273,7 +273,7 @@ slider的id
 });
 </code></pre>
 
-<h3 class="construct" platform="ios android">hasIndicator</h3>
+<h3 class="construct" platform="ios android web">hasIndicator</h3>
 是否添加页面指示，可以以圆点的方式展现有多少个图片页面，可以指示当前页面在整个页面的顺序。
 
 <table>
@@ -302,7 +302,7 @@ slider的id
 });
 </code></pre>
 
-<h3 class="construct" platform="ios android">inactiveColor</h3>
+<h3 class="construct" platform="ios android web">inactiveColor</h3>
 配置非选中状态的指示圆点图标的颜色
 <table>
     <tbody>
@@ -313,7 +313,7 @@ slider的id
         </tr>
         <tr>
           <th>String</th>
-          <td style="color:red">非选中状态的指示圆点图标的颜色RGB值,默认值？</td>
+          <td>非选中状态的指示圆点图标的颜色RGB值</td>
           <td>否</td>
         </tr>
    <tbody>
@@ -331,7 +331,7 @@ slider的id
 });
 </code></pre>
 
-<h3 class="construct" platform="ios android">activeColor</h3>
+<h3 class="construct" platform="ios android web">activeColor</h3>
 配置选中状态的指示圆点图标的颜色
 
 <table>
@@ -343,7 +343,7 @@ slider的id
         </tr>
         <tr>
           <th>String</th>
-          <td style="color:red">选中状态的指示圆点图标的颜色RGB值,默认值？</td>
+          <td>选中状态的指示圆点图标的颜色RGB值</td>
           <td>否</td>
         </tr>
    <tbody>
@@ -427,7 +427,7 @@ slider的id
 
 ##Method
 
-<h3 class="method" platform="ios android">prev ( )</h3>
+<h3 class="method" platform="ios android web">prev ( )</h3>
 滚动到前一个图片页面
 
 实例:
@@ -443,7 +443,7 @@ slider.prev();
 </code></pre>
 
 
-<h3 class="method" platform="ios android">next ( )</h3>
+<h3 class="method" platform="ios android web">next ( )</h3>
 滚动到下一个图片页面
 
 实例:
@@ -458,7 +458,7 @@ slider.prev();
 slider.next();
 </code></pre>
 
-<h3 class="method" platform="ios android">sliderTo (index)</h3>
+<h3 class="method" platform="ios android web">sliderTo (index)</h3>
 滑动到第index个图片页面
 
 <table>
@@ -490,7 +490,7 @@ slider.next();
 slider.sliderTo(0);
 </code></pre>
 
-<h3 class="method" platform="ios android">destroy ( )</h3>
+<h3 class="method" platform="ios android web">destroy ( )</h3>
 销毁slider
 
 实例:
