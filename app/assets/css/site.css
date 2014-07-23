@@ -34,8 +34,10 @@ ul, ol, dl{
 }
 
 #logo img{
-    height: 32px;
+    height: 38px;
     vertical-align: middle;
+    position: relative;
+    top: -2px;
 }
 
 #logo a span {
@@ -171,15 +173,15 @@ ul, ol, dl{
 }
 
 .prettyprint .str,.prettyprint .lit,.prettyprint .atv {
-    color: #bcd42a
+    color: #bcd42a;
 }
 
 .prettyprint .kwd,.prettyprint .tag {
-    color: #4bb1b1
+    color: #4bb1b1;
 }
 
 .prettyprint .typ,.prettyprint .atn {
-    color: #ef7c61
+    color: #ef7c61;
 }
 
 /* Components */
