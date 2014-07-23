@@ -58,7 +58,7 @@ ul, ol, dl{
 
 #nav a {
     color: #424b50;
-    text-transform: uppercase;
+    text-transform: capitalize;
     text-decoration: none;
     padding: 6px 10px;
     font-size: 12px;
@@ -74,11 +74,11 @@ ul, ol, dl{
     background: #f4645f;
 }
 
-#nav .api .fa{
-    margin:0 6px 0 4px;
+#nav .apidocs .fa{
+    margin:0 6px 0 10px;
 }
 
-#nav .api:hover #navlist, #nav .api a:hover #navlist{
+#nav .apidocs:hover #navlist, #nav .apidocs a:hover #navlist{
     display: block;
 }
 

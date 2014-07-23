@@ -123,6 +123,7 @@
 }
 
 .panel li {
+	vertical-align: top;
 	display: inline-block;
 	width: 24.5%;
 }

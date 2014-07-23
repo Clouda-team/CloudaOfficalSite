@@ -14,3 +14,14 @@
 #portal article {
 	text-align: left;
 }
+
+#modules {
+	overflow: hidden;
+	margin: 2% 0;
+}
+
+#modules li{
+	float: left;
+	width: 25%;
+	text-align: center;
+}
