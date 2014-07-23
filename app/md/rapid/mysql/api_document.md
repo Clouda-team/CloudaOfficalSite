@@ -21,7 +21,9 @@ rapid-mysql是用于rapid框架的mysql插件，对mysql库的重新封装，针
 
 ## API
 
-<h3 class="api">Static function getAgent(url:string | options:object)</h3>
+<h3 class="api"> getAgent </h3>
+
+	Static function getAgent(url:string | options:object)
 
 创建新的连接上下文/获取已有连接上下文，返回`Agent`对象。
 
@@ -85,7 +87,9 @@ clusters接受三种数据类型：对象、字符串数组、字符串。
 >  - cluster无法覆盖maxAgents等上文提到的其它选项
 >  - 非slave连接被释放时，当有写操作在排队申请连接时将优先处理。
 
-<h3 class="api">function QueryContext::query(query:string, optional data:array, optional cb:function)</h3>
+<h3 class="api">QueryContext::query</h3>
+
+	function QueryContext::query(query:string, optional data:array, optional cb:function)
 
 从当前上下文获取连接并执行查询，返回`Promise`对象。
 
@@ -98,7 +102,9 @@ clusters接受三种数据类型：对象、字符串数组、字符串。
 > 温馨提示：
 > Agent/Transaction等类派生于QueryContext，所以它们的实例可使用query/findOne等方法。
 
-<h3 class="api">function QueryContext::find(tableName:string, optional condition:object, optional options:object, optional cb:function)</h3>
+<h3 class="api">QueryContext::find</h3>
+
+	function QueryContext::find(tableName:string, optional condition:object, optional options:object, optional cb:function)
 
 执行一次查询，从`tableName`指定的表中找到满足`condition`指定条件的行，并返回`options.fields`指定的列。
 
@@ -163,11 +169,15 @@ find支持以下查询条件表达式：
 
 子查询接受字符串(如: `SELECT id from user`)或对象类型。对象类型子查询包含`tableName`,`condition`,`fields`,`orderBy`等字段。
 
-<h3 class="api">function QueryContext::findOne(tableName:string, optional condition:object, optional options:object, optional cb:function)</h3>
+<h3 class="api">QueryContext::findOne</h3>
+
+	function QueryContext::findOne(tableName:string, optional condition:object, optional options:object, optional cb:function)
 
 尝试获取一个值，如果找不到，则返回ERR_NOT_FOUND
 
-<h3 class="api">function Agent::prepareStatement(query:string, optional options:object)</h3>
+<h3 class="api">Agent::prepareStatement</h3>
+
+	function Agent::prepareStatement(query:string, optional options:object)
 
 创建一个查询语句。查询语句可以被稍后执行，并允许对请求进行合并、缓存，返回`Statement对象`
 
@@ -192,7 +202,9 @@ find支持以下查询条件表达式：
 	var stmt = db.prepareStatement('SELECT * from user where id=?');
 	
 
-<h3 class="api">function Statement::query(optional data:array, optional cb:function, optional noCache:boolean)</h3>
+<h3 class="api">Statement::query</h3>
+
+	function Statement::query(optional data:array, optional cb:function, optional noCache:boolean)
 
 执行Statement。如果statement启用了cache，且之前有命中的请求未到期或未完成，且noCache不为true，则返回之前缓存的结果，返回`Promise对象`
 
@@ -200,8 +212,9 @@ find支持以下查询条件表达式：
 
 	stmt.query([userid]).then(function(results){...});
 
-<h3 class="api">function Agent::begin(optional cb:function)
-</h3>
+<h3 class="api">Agent::begin</h3>
+
+	function Agent::begin(optional cb:function)
 
 使用事务。begin将申请一个非slave连接，并发送`begin`命令，当连接成功后，将一个Transaction对象传递到回调，返回`Promise对象`。
 
@@ -216,11 +229,15 @@ Transaction继承于QueryContext，所以可以在Transaction对象上使用quer
 	});
 	
 
-<h3 class="api">function Transaction::commit(optional cb:function)</h3>
+<h3 class="api">Transaction::commit</h3>
+
+	function Transaction::commit(optional cb:function)
 
 发送commit并结束事务，返回`Promise对象`。
 
-<h3 class="api">function Transaction::rollback(optional cb:function)</h3>
+<h3 class="api">Transaction::rollback</h3>
+
+	function Transaction::rollback(optional cb:function)
 
 发送rollback并结束事务
 
