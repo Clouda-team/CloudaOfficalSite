@@ -19,3 +19,7 @@
 	width: 25%;
 	text-align: center;
 }
+
+#modules li a:hover{
+	opacity: 0.8;
+}

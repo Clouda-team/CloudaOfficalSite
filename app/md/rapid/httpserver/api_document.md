@@ -314,11 +314,11 @@ rapid-httpserver提供自定义`Extension`、`Filter`、`Action`的方法。
 
 httpVisitor表示每个请求的上下文对像，<font color=red>在使用框架的过程中将自动被注入action与filter的this对像</font>，并提供以下方法。
 
-<h3 class="httpvisitor">httpVisitor.getComprcessType()</h3>
+<h3 class="httpvisitor">httpVisitor.getCompressType()</h3>
 
 从请求的header中分析出客户端所支持的压缩类型，一般为gzip或deflate.
 
-  	httpVisitor.getComprcessType();
+  	httpVisitor.getCompressType();
 
 实例：
 
@@ -326,7 +326,7 @@ httpVisitor表示每个请求的上下文对像，<font color=red>在使用框�
       	"config.rapid-httpserver":{
           	autoStart : true,
           	defaultAction : function(){
-              this.getComprcessType();
+              this.getCompressType();
           	}
   	});
 
