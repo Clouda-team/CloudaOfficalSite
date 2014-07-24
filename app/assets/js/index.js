@@ -1,10 +1,11 @@
 document.addEventListener("DOMContentLoaded", function(){
 
 	var adjust = function(){
+		
 		move("#introbox").duration(800).set("opacity",1).end();
 
 		var sh = window.innerHeight < 640 ? 640 : window.innerHeight;
-		var ch = document.querySelector("#clouda").offsetHeight;
+		var ch = 466 || document.querySelector("#clouda").offsetHeight;
 		var mv = (sh - ch - 60) / 2;
 		move("#clouda").duration(0).y(mv).end();
 

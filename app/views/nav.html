@@ -30,6 +30,7 @@
         <dt><a href="">API手册</a></dt>
         <dd><a href="/rapid/core/api_document">Core</a></dd>
         <dd><a href="/rapid/httpserver/api_document">Httpserver</a></dd>
+        <dd><a href="/rapid/mysql/api_document">Mysql</a></dd>
     </dl>
 {% endif %}
     
@@ -49,7 +50,7 @@
         <dt><a href="">开始学习</a></dt>
         <dd><a href="/blendui/get_started/define_event">自定义事件</a></dd>
         <dd><a href="/blendui/get_started/page_change">页面间切换</a></dd>
-        <dd><a href="/blendui/get_started/loading_page">Loading</a></dd>
+        <!-- <dd><a href="/blendui/get_started/loading_page">Loading</a></dd> -->
         <dd><a href="/blendui/get_started/powerpoint">幻灯片</a></dd>
         <dd><a href="/blendui/get_started/tabs">Tabs</a></dd>
         <dd><a href="/blendui/get_started/refresh">下拉刷新</a></dd>
@@ -96,6 +97,14 @@
         <dd><a href="/runtime/introduction/runtime">集成方案</a></dd>
         <dd><a href="/runtime/introduction/runtime_integration">集成步骤</a></dd>
         <dd><a href="/runtime/introduction/senor_runtime">高级方法</a></dd>
+    </dl>
+    <dl {% if proj === "runtime"%}class="active"{% endif %}>
+        <dt><a href="">Runtime插件开发</a></dt>
+        <dd><a href="/runtime/introduction/plugin_inner_introduce">简介</a></dd>
+        <dd><a href="/runtime/introduction/plugin_inner_dev">开发指南</a></dd>
+        <dd><a href="/runtime/introduction/plugin_inner_pub">插件发布</a></dd>
+        <dd><a href="/runtime/introduction/plugin_inner_faq">常见问题</a></dd>
+        <dd><a href="/runtime/introduction/plugin_inner_appendix">附录</a></dd>
     </dl>
 {% endif %}
 

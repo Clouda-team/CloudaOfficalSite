@@ -66,11 +66,11 @@ IOS需要下载一个Xcode的工程，在工程中调试BlendUI应用，Xcode工
 
 	<script src="http://weinre123.duapp.com/target/target-script-min.js"></script>
 
-（2）使用浏览器访问“http://weinre123.duapp.com/”，填入你本机的IP并点击“调试一下”，保持页面
+（2）使用浏览器访问`http://weinre123.duapp.com/`，填入你本机的IP并点击`调试一下`，保持页面
 
 （3）使用移动端访问需要调试的页面
 
-（4）回到“http://weinre123.duapp.com/”即可看到下面的页面
+（4）回到`http://weinre123.duapp.com/`即可看到下面的页面
 
 ![](/md/images/weinre.png)
 

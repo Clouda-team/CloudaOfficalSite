@@ -268,7 +268,7 @@ layer页面id
 });
 </code></pre>
 
-<h3 class="construct" platform="android web">pullIcon</h3>
+<h3 class="construct" platform="android">pullIcon</h3>
 <!--	* pullIcon : String (optional)  (仅支持Android)  -->
 下拉操作时需要显示的Icon
 <table>
@@ -300,7 +300,7 @@ layer页面id
 });
 </code></pre>
 
-<h3 class="construct" platform="android web">loadingIcon</h3>
+<h3 class="construct" platform="android">loadingIcon</h3>
 在页面加载完毕前的loading状态时，屏幕显示的Icon
 <table>
     <tbody>
@@ -406,7 +406,7 @@ layer.reload("http://www.baidu.com");
 layer.stopPullRefresh();
 </code></pre> -->
 
-<h3 class="method" platform="ios android web">replace (url)</h3>
+<h3 class="method" platform="ios android">replace (url)</h3>
 页面url替换
 
 <table>
@@ -463,7 +463,7 @@ if(layer.canGoBack()){
 }
 </code></pre>
 
-<h3 class="method" platform="ios android web">clearHistory ( ) </h3>
+<h3 class="method" platform="ios android">clearHistory ( ) </h3>
 清空页面历史记录
 
 实例

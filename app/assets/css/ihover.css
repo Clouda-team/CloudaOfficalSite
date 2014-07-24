@@ -1,0 +1,219 @@
+.ih-item {
+    position: relative;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+}
+
+.ih-item,.ih-item * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+.ih-item a {
+    color: #333
+}
+
+.ih-item a:hover {
+    text-decoration: none
+}
+
+.ih-item img {
+    width: 100%;
+    height: 100%
+}
+
+.ih-item.circle {
+    position: relative;
+    width: 170px;
+    height: 170px;
+    border-radius: 50%
+}
+
+.ih-item.circle .img {
+    position: relative;
+    width: 170px;
+    height: 170px;
+    border-radius: 50%
+}
+
+.ih-item.circle .img:before {
+    position: absolute;
+    display: block;
+    content: '';
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 3px rgba(255,255,255,0.6),0 1px 2px rgba(0,0,0,0.3);
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out
+}
+
+.ih-item.circle .img img {
+    border-radius: 50%
+}
+
+.ih-item.circle .info {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    border-radius: 50%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden
+}
+
+.ih-item.circle.effect13.colored .info {
+    background: #1a4a72;
+    background: rgba(26,74,114,0.6)
+}
+
+.ih-item.circle.effect13 .info {
+    opacity: 0;
+    pointer-events: none;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out
+}
+
+.ih-item.circle.effect13 .info h3 {
+    visibility: hidden;
+    color: #fff;
+    text-transform: uppercase;
+    position: relative;
+    letter-spacing: 2px;
+    font-size: 22px;
+    margin: 0 auto;
+    padding: 60px 0 0 0;
+    height: 110px;
+    text-shadow: 0 0 1px #fff,0 1px 2px rgba(0,0,0,0.3);
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out
+}
+
+.ih-item.circle.effect13 .info p {
+    visibility: hidden;
+    color: #fff;
+    padding: 10px 5px;
+    font-style: italic;
+    margin: 0 30px;
+    font-size: 12px;
+    border-top: 1px solid rgba(255,255,255,0.5);
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out
+}
+
+.ih-item.circle.effect13 a:hover .info, .ih-item.circle.effect13 a.active .info {
+    opacity: 1
+}
+
+.ih-item.circle.effect13 a:hover h3, .ih-item.circle.effect13 a.active h3 {
+    visibility: visible
+}
+
+.ih-item.circle.effect13 a:hover p, .ih-item.circle.effect13 a.active p {
+    visibility: visible
+}
+
+.ih-item.circle.effect13.from_left_and_right .info h3 {
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    transform: translateX(-100%)
+}
+
+.ih-item.circle.effect13.from_left_and_right .info p {
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    transform: translateX(100%)
+}
+
+.ih-item.circle.effect13.from_left_and_right a:hover h3, .ih-item.circle.effect13.from_left_and_right a.active h3 {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0)
+}
+
+.ih-item.circle.effect13.from_left_and_right a:hover p, .ih-item.circle.effect13.from_left_and_right a.active p {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0)
+}
+
+.ih-item.circle.effect13.top_to_bottom .info h3 {
+    -webkit-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    -o-transform: translateY(-100%);
+    transform: translateY(-100%)
+}
+
+.ih-item.circle.effect13.top_to_bottom .info p {
+    -webkit-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    -o-transform: translateY(-100%);
+    transform: translateY(-100%)
+}
+
+.ih-item.circle.effect13.top_to_bottom a:hover h3, .ih-item.circle.effect13.top_to_bottom a.active h3 {
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0)
+}
+
+.ih-item.circle.effect13.top_to_bottom a:hover p, .ih-item.circle.effect13.top_to_bottom a.active p {
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0)
+}
+
+.ih-item.circle.effect13.bottom_to_top .info h3 {
+    -webkit-transform: translateY(100%);
+    -moz-transform: translateY(100%);
+    -ms-transform: translateY(100%);
+    -o-transform: translateY(100%);
+    transform: translateY(100%)
+}
+
+.ih-item.circle.effect13.bottom_to_top .info p {
+    -webkit-transform: translateY(100%);
+    -moz-transform: translateY(100%);
+    -ms-transform: translateY(100%);
+    -o-transform: translateY(100%);
+    transform: translateY(100%)
+}
+
+.ih-item.circle.effect13.bottom_to_top a:hover h3, .ih-item.circle.effect13.bottom_to_top a.active h3 {
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0)
+}
+
+.ih-item.circle.effect13.bottom_to_top a:hover p, .ih-item.circle.effect13.bottom_to_top a.active p {
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0)
+}

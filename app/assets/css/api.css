@@ -1,10 +1,6 @@
-body{
-	background-color: #f5f5f5;
-}
-
 #docs {
 	margin-top: 20px;
-	margin-left: 230px;
+	margin-left: 210px;
 	border: 1px solid #eee;
 	background-color: #fff;
 }
@@ -16,6 +12,10 @@ body{
 #docs #arch .fa{
 	padding: 0 0.1em 0 0.2em;
 	color: #bbc;
+}
+
+#docs #arch .fa.support{
+	color : #f4645f;
 }
 
 #docs #arch .fa:first-child{
@@ -32,9 +32,15 @@ body{
 	color: #bbc;
 }
 
+#docs h3 .fa.support{
+	color : #f4645f;
+}
+
 #docs h3 .fa:first-child{
 	margin-left: 0.5em;
 }
+
+
 
 #docs h3 .fa-desktop{
 	font-size: 0.67em;

@@ -80,10 +80,10 @@ rapid开发的工程需要安装Node.js环境来安装依赖和为工程提供�
 			port : 8080,
 			loading_dir : ["/app/actions/"],
 			
-			mapping : {
+			mapping : [{
 				url:"/welcome"
 				doAction : "index"
-			}
+			}]
 		}
 	});
 	

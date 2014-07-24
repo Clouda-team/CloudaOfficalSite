@@ -79,13 +79,22 @@ document.addEventListener("DOMContentLoaded", function(){
 								window.scrollTo(0,offset);
 							}, false);
 							h3.id = h3id;
+							
 							//render ico
 							var plat = h3.getAttribute("platform");
+							var plats = {};
+							plat.split(" ").forEach(function(key){
+								plats[key] = true;
+							});
+							var allplats = ["ios","android","web"];
 							if(plat){
 								var icos = "";
-								plat.split(" ").forEach(function(name){
-									if(platico[name]){
-										icos += platico[name];	
+								allplats.forEach(function(name){
+
+									if(platico[name] && plats[name]){
+										icos += platico[name].replace('class="fa ', 'class="fa support ');
+									}else if(platico[name]){
+										icos += platico[name]
 									}
 								});
 								h3.innerHTML += icos;

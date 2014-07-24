@@ -45,16 +45,15 @@ Jar中的`libext.Jar`是Runtime依赖的`zeus-sdk`、`frontia`、`galaxy`这三�
 	
 		* 动态本地
 		
-			<img src="/md/images/dynamic_local.png" height="450px">
-			
+		<img src="/md/images/dynamic_local.png" height="450px">		
 	
 		* 动态远程
 		
-			<img src="/md/images/dynamic_remote.png" height="300px">
+		<img src="/md/images/dynamic_remote.png" height="300px">
 			
 		* 静态方案
 		
-			<img src="/md/images/static.png" height="300px">
+		<img src="/md/images/static.png" height="300px">
 
 
 ## 配置AndroidManifest.xml 
@@ -170,7 +169,7 @@ Runtime**目前只支持Android 2.3以上版本**，请您再申请权限之前�
 
 ### 声明Push（如果需要支持push服务，那么是必须）
 
-如果您的项目工程中已经在AndroidManifest.xml声明或者集成了百度Push，在直接使用之前的代码即可，但是需确保百度Push的版本是`4.1`或者以上。
+如果您的项目工程中已经在AndroidManifest.xml声明或者集成了百度Push，直接使用即可，但是需确保百度Push的版本是`4.1`或者以上。
 
 如果您的项目工程中没有集成百度Push服务，请按照下面的方法修改AndroidManifest.xml：
 

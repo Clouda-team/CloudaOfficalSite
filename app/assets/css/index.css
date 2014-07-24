@@ -32,6 +32,7 @@
 
 #intro img {
 	vertical-align: middle;
+	width: 256px;
 }
 
 #intro h1 {
@@ -78,8 +79,12 @@
 	background-image: url("/assets/images/7.jpg");
 }
 
-#tank {
+#blendapi {
 	background-image: url("/assets/images/6.jpg");
+}
+
+#tank {
+	background-image: url("/assets/images/10.jpg");
 }
 
 .showcase {
@@ -119,6 +124,7 @@
 }
 
 .panel li {
+	vertical-align: top;
 	display: inline-block;
 	width: 24.5%;
 }
