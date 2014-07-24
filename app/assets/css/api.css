@@ -14,6 +14,10 @@
 	color: #bbc;
 }
 
+#docs #arch .fa.support{
+	color : #f4645f;
+}
+
 #docs #arch .fa:first-child{
 	margin-left: 0.5em;
 }
@@ -28,9 +32,15 @@
 	color: #bbc;
 }
 
+#docs h3 .fa.support{
+	color : #f4645f;
+}
+
 #docs h3 .fa:first-child{
 	margin-left: 0.5em;
 }
+
+
 
 #docs h3 .fa-desktop{
 	font-size: 0.67em;
