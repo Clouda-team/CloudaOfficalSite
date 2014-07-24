@@ -1,3 +1,30 @@
+
+#navi{
+	width: 100%;
+	background: rgba(255,255,255,0.1);
+	position: fixed;
+	top: 0;
+	z-index: 9999;
+	text-align: center;
+}
+
+#navi li{
+	padding: 14px;
+	display: inline-block;
+}
+
+#navi li a{
+	color: #fff;
+	font-weight: bold;
+	-webkit-transition: all .15s ease-in-out;
+	transition: all .15s ease-in-out;
+}
+
+#navi li a:hover{
+	color : #333;
+}
+
+
 #intro {
 	height: 100%;
 	min-height: 640px;
@@ -7,27 +34,6 @@
 	background-size: cover;
 	text-align: center;
 	font-family: Helvetica, STHeiti STXihei, Microsoft JhengHei, Microsoft YaHei, Tohoma, Arial;
-}
-
-#intro nav{
-	width: 100%;
-	background: rgba(255,255,255,0.1);
-}
-
-#intro nav li{
-	padding: 20px 12px;
-	display: inline-block;
-}
-
-#intro nav li a{
-	color: #fff;
-	font-weight: bold;
-	-webkit-transition: all .15s ease-in-out;
-	transition: all .15s ease-in-out;
-}
-
-#intro nav li a:hover{
-	color : #333;
 }
 
 #intro img {
@@ -71,20 +77,24 @@
 	text-decoration: underline;
 }
 
-#blendui {
+#blendUI {
 	background-image: url("/assets/images/8.jpg");
 }
 
-#rapid {
+#rapidjs {
 	background-image: url("/assets/images/7.jpg");
 }
 
-#blendapi {
+#blendAPI {
 	background-image: url("/assets/images/6.jpg");
 }
 
-#tank {
-	background-image: url("/assets/images/10.jpg");
+#runtime {
+	background-image: url("/assets/images/7.jpg");
+}
+
+#tankjs {
+	background-image: url("/assets/images/8.jpg");
 }
 
 .showcase {

@@ -143,7 +143,8 @@
     -moz-transform: translateX(0);
     -ms-transform: translateX(0);
     -o-transform: translateX(0);
-    transform: translateX(0)
+    transform: translateX(0);
+    text-transform: capitalize;
 }
 
 .ih-item.circle.effect13.from_left_and_right a:hover p, .ih-item.circle.effect13.from_left_and_right a.active p {
