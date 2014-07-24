@@ -82,8 +82,8 @@ clusters接受三种数据类型：对象、字符串数组、字符串。
 >  - 使用cluster不会影响`getAgent`函数的hash过程。如果两次调用`getAgent`传入的参数的hash结果相同，则以首次调用`getAgent`传入的参数
 为准
 >  - 每个cluster对象的属性将覆盖上层对象的对应属性。此外cluster接受额外的属性：
->  		- slave: 是否为从库，从库的连接不会被insert/select/update/delete等语句选中。默认为false。
->    	- forbidCount: 连接失败时屏蔽次数，如果当前库连接失败，在接下来的若干次请求中不会尝试连接此地址。默认为10
+>   - slave: 是否为从库，从库的连接不会被insert/select/update/delete等语句选中。默认为false。
+>   - forbidCount: 连接失败时屏蔽次数，如果当前库连接失败，在接下来的若干次请求中不会尝试连接此地址。默认为10
 >  - cluster无法覆盖maxAgents等上文提到的其它选项
 >  - 非slave连接被释放时，当有写操作在排队申请连接时将优先处理。
 
