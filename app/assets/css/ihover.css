@@ -1,8 +1,8 @@
 .ih-item {
     position: relative;
-    -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.15s ease-in-out;
+    -moz-transition: all 0.15s ease-in-out;
+    transition: all 0.15s ease-in-out;
     display: inline-block;
 }
 
@@ -82,6 +82,7 @@
 }
 
 .ih-item.circle.effect13 .info h3 {
+    font-family: "Microsoft Yahei";
     visibility: hidden;
     color: #fff;
     text-transform: uppercase;
@@ -89,9 +90,8 @@
     letter-spacing: 2px;
     font-size: 22px;
     margin: 0 auto;
-    padding: 60px 0 0 0;
+    padding: 58px 0 0 0;
     height: 110px;
-    text-shadow: 0 0 1px #fff,0 1px 2px rgba(0,0,0,0.3);
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out

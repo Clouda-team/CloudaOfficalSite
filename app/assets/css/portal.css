@@ -20,6 +20,8 @@
 	text-align: center;
 }
 
-#modules li a:hover{
-	opacity: 0.8;
+#modules li .ih-item:hover{
+	-webkit-transform : translateY(-15px);
+	-moz-transform : translateY(-15px);
+	transform : translateY(-15px);
 }
