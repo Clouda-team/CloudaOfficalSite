@@ -8,7 +8,7 @@ blend.apk为BlendUI在Android上得测试环境，如果需要线下调试或者
 
 blend.apk现在地址如下：
 
-<https://github.com/Clouda-team/BlendUI>
+![](/md/images/ios_runtime.png)
 
 ### 搭建线下调试环境
 
@@ -45,6 +45,7 @@ blend.apk现在地址如下：
 ### 下载IOS Project
 
 IOS需要下载一个Xcode的工程，在工程中调试BlendUI应用，Xcode工程下载地址如下：
+
 
 
 ### 配置URl
