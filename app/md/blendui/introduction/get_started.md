@@ -101,7 +101,7 @@
 
 下载blendui.apk并安装到Android移动端上，下载地址如下：
 
-<https://github.com/Clouda-team/BlendUI>
+![](/md/images/ios_runtime.png)
 
 安装完成后打开blendui应用，使用“扫码”扫描BlendUI开发应用的服务器URL地址即可查看应用。
 

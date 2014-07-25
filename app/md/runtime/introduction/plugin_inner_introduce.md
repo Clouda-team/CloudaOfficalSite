@@ -13,4 +13,4 @@
 * 云服务类
 * 触摸事件与手势处理类
 
-<font color=red>**注意：目前只支持Android系统**</font>
+<font color=red>**注意：目前只支持Android系统**</font>pub_plugin_inner
