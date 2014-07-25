@@ -1,6 +1,6 @@
 var server = rapid.use("rapid-httpserver");
 var https = require("https");
-var fetchInterval = 24 * 60 * 60 * 1000;
+var fetchInterval = 3 * 60 * 60 * 1000;
 
 var github = {
 	stars : 0,

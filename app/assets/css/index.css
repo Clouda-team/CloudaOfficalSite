@@ -27,7 +27,6 @@
 
 #intro {
 	height: 100%;
-	min-height: 640px;
 	background-color : #333;
 	background-image: url("/assets/images/9.jpg");
 	background-repeat: no-repeat;
@@ -38,7 +37,7 @@
 
 #intro img {
 	vertical-align: middle;
-	width: 256px;
+	width: 236px;
 }
 
 #intro h1 {
