@@ -150,7 +150,8 @@ ul, ol, dl{
     background-clip: padding-box;
     padding: 20px!important;
     white-space: pre;
-    overflow: scroll;
+    overflow-x: auto;
+    overflow-y: hidden;
     margin-top: 20px;
     margin-bottom: 20px
 }
