@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function(){
 							h3.id = h3id;
 							
 							//render ico
-							var plat = h3.getAttribute("platform");
+							var plat = h3.getAttribute("platform") || "";
 							var plats = {};
 							plat.split(" ").forEach(function(key){
 								plats[key] = true;
