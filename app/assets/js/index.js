@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function(){
 	if(flag){
 		var introbox = document.querySelector('#introbox');
 		introbox.classList.add("mask");
-		var rand = Math.floor(Math.random() * 29) + 1;
+		var rand = Math.floor(Math.random() * 22) + 1;
 		bgimg.src = "/assets/images/S" + rand + ".jpg";
 	} else {
 		bgimg.src = "/assets/images/a9.jpg";
