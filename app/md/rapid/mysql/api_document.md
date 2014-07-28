@@ -177,6 +177,117 @@ find支持以下查询条件表达式：
 
 尝试获取一个值，如果找不到，则返回ERR_NOT_FOUND
 
+返回：Promise对象
+
+<h3 class="api">QueryContext::insert</h3>
+
+    function QueryContext::insert(tableName:string, values:object|array, optional options:object, optional cb:function)
+
+插入记录到数据库。其中values为插入的值、值列表、子查询表达式，options为选项。
+
+options接受以下字段：
+
+ - ignore: 当PK|UK冲突时，忽略该记录，默认为false
+ - onDuplicate: 当ignore为false且PK|UK冲突时，执行update
+ - fields: 插入的字段名称。确定插入字段的方式为：
+   - 如果指定了fields，则以指定的fields执行`INSERT INTO tableName (fields) values (...)`
+   - 如果未指定fields，且values为对象数组，则以values[0]的keys作为fields
+   - 否则，如果values为对象，则执行`INSERT INTO tableName set ...`
+   - 否则，执行`INSERT into tableName values (...)`，
+   - 如果values为二维数组/对象数组，则执行多条插入
+ - subQuery: values类型为subQuery对象,执行`INSERT INTO tableName (fields) select xxx`形式插入。默认为false
+ 具体的subQuery格式参考`find`
+
+实例：
+
+     // INSERT into `test` set `name` = 'John'
+    db.insert('test', {name:'John'}).then(function(ret){
+       console.log(ret.insertId);
+    });
+    
+     // INSERT into test(name) values ('Tom')
+    db.insert('test', 'Tom', {fields:'name'}};
+    
+     // INSERT into test values (null,'Jack',123)
+    db.insert('test', [null, 'Jack',123]};
+    
+    // INSERT into test(name,gid) values('Jack',123)
+    db.insert('test', ['Jack',123], {fields:['name', 'gid']};
+    
+    // 这个例子和上一个等同（不在fields列表内的字段将被忽略）
+    db.insert('test', {name: 'Jack', gid: 123, fid: 789}, {fields:['name', 'gid']};
+    
+    // INSERT into test(name,gid) values('Tom',124),('Jerry',124)
+    db.insert('test', [['Tom',124], ['Jerry', 124]], {fields:['name', 'gid']};
+    
+    // 这个例子和上一个等同（以第一个对象的keys为准）
+    db.insert('test', [
+        {name: 'Tom', gid: 124},
+        {name: 'Jerry', gid: 125, fid: 789}
+    ]);
+    
+    // 这个例子和上一个等同
+    db.insert('test', [
+        {name: 'Tom', gid: 124, fid:789},
+        {name: 'Jerry', gid: 125, fid: 789}
+    ], {fields:['name', 'gid']});
+    
+    // 使用String对象代表函数、表达式
+    db.insert('test', {name: 'Tom', gid: Object('rand()*1000')});
+
+    // 子查询
+    db.insert('test', {
+        tableName: 'old_test',
+        fields: ['id', 'name', 'gid'],
+        where : {id : {$gt: 100}}
+    }, {
+        ignore: true,
+        subQuery: true,
+        fields: ['id', 'name', 'gid']
+    }
+    
+    // key冲突时，执行特定update
+    // INSERT into test set id=100,count=1 ON DUPLICATE KEY UPDATE count=values(count)+1
+    db.insert('test', {id: 100, count: 1}, {
+        onDuplicate: 'count=values(count)+1'
+    });
+
+返回：Promise对象
+
+<h3 class="api">QueryContext::update</h3>
+
+    function update(tableName:string, values:object|array, optional options:object, optional cb:function)
+
+执行update语句，其中values为更新的值，options为选项。
+
+update支持的选项有：
+
+  - fields: 更新的字段名称。
+  - where: 查询条件
+  
+
+实例：
+
+    db.update('test', 'Jerry', {
+        fields:['name'], where: {id: 1}
+    });
+    
+    db.update('test', {name:'Jerry', gid:1000}, {
+        where: {id: 1}
+    });
+    
+    db.update('test', ['Jerry', 1000], {
+        fields:['name', 'gid'], where: {id: 1}
+    });
+    
+    // 这个例子和上一个等同（不在fields列表内的字段将被忽略）
+    db.update('test', {name:'Jerry', gid:1000, fid:0}, {
+        fields:['name', 'gid'], where: {id: 1}
+    });
+
+
+返回：Promise对象
+
 <h3 class="api">Agent::prepare</h3>
 
 	function Agent::prepare(query:string, optional options:object)
