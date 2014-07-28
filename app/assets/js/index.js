@@ -1,9 +1,31 @@
 document.addEventListener("DOMContentLoaded", function(){
 
+
+	var showIndex = function(){
+		move("#introbox").duration(800).set("opacity",1).end();	
+	}
+
+	var flag = localStorage.getItem("nicebg");
+	var intro = document.querySelector('#intro');
+	var bgimg = document.createElement('img');
+
+	if(flag){
+		var introbox = document.querySelector('#introbox');
+		introbox.classList.add("mask");
+		var rand = Math.floor(Math.random() * 29) + 1;
+		bgimg.src = "/assets/images/S" + rand + ".jpg";
+	} else {
+		bgimg.src = "/assets/images/a9.jpg";
+	}
+
+	bgimg.onload = function(){
+		intro.style.backgroundImage = "url(" + bgimg.src + ")"; 
+		showIndex();
+	}
+
+	
 	var adjust = function(){
 		
-		move("#introbox").duration(800).set("opacity",1).end();
-
 		var sh = window.innerHeight < 640 ? 640 : window.innerHeight;
 		var ch = 466 || document.querySelector("#clouda").offsetHeight;
 		var mv = (sh - ch) / 2;
@@ -15,17 +37,21 @@ document.addEventListener("DOMContentLoaded", function(){
 			var offset = (sh - sermon.offsetHeight - 10) / 2;
 			move(sermon).duration(0).y(offset).end();
 		});
+
 	}
 
 	adjust();
-	window.addEventListener("resize", adjust, false);
+
+	window.addEventListener("resize", function(){
+		adjust();
+	}, false);
 	
 
 	$("#main").onepage_scroll({
 		sectionContainer: ".scrollpage",     // sectionContainer accepts any kind of selector in case you don't want to use section
-		easing: "ease",                  // Easing options accepts the CSS3 easing animation such "ease", "linear", "ease-in", 
+		easing: "cubic-bezier(0.25,0.1,0.25,1)",                  // Easing options accepts the CSS3 easing animation such "ease", "linear", "ease-in", 
 		                                // "ease-out", "ease-in-out", or even cubic bezier value such as "cubic-bezier(0.175, 0.885, 0.420, 1.310)"
-		animationTime: 800,             // AnimationTime let you define how long each section takes to animate
+		animationTime: 1200,             // AnimationTime let you define how long each section takes to animate
 		pagination: true,                // You can either show or hide the pagination. Toggle true for show, false for hide.
 		updateURL: false,                // Toggle this true if you want the URL to be updated automatically when the user scroll to each page.
 		beforeMove: function(index) {},  // This option accepts a callback function. The function will be called before the page moves.
