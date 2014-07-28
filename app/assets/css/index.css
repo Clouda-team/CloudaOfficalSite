@@ -1,7 +1,7 @@
 
 #navi{
+	background: rgba(255,255,255,0.15);
 	width: 100%;
-	background: rgba(255,255,255,0.1);
 	position: fixed;
 	top: 0;
 	z-index: 9999;
@@ -28,7 +28,7 @@
 #intro {
 	height: 100%;
 	background-color : #333;
-	background-image: url("/assets/images/9.jpg");
+	/*background-image: url("/assets/images/a9.jpg");*/
 	background-repeat: no-repeat;
 	background-size: cover;
 	text-align: center;
@@ -160,4 +160,10 @@
 
 #introbox {
 	opacity: 0;
+	height: 100%;
+	width: 100%;
+}
+
+#introbox.mask {
+	background: rgba(0,0,0,0.1);
 }
