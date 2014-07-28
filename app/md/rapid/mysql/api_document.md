@@ -6,7 +6,7 @@ rapid-mysql是用于rapid框架的mysql插件，对mysql库的重新封装，针
 
 使用方法如下：
 
-	var db = require('rapid-mysql').getAgent('mysql://user:password@host_or_ip:port/dbname');
+	var db = require('rapid-mysql').db('mysql://user:password@host_or_ip:port/dbname');
 
 	db.query('SELECT * from tbl where id=?', [id], function(err, rows){
 				...
@@ -21,9 +21,9 @@ rapid-mysql是用于rapid框架的mysql插件，对mysql库的重新封装，针
 
 ## API
 
-<h3 class="api"> getAgent </h3>
+<h3 class="api"> db </h3>
 
-	Static function getAgent(url:string | options:object)
+	Static function db(url:string | options:object)
 
 创建新的连接上下文/获取已有连接上下文，返回`Agent`对象。
 
@@ -55,7 +55,7 @@ rapid-mysql根据`hostname:port+user:password+dbname`来查找已创建的Agent�
 
 实例：
 	
-	var db = require('rapid-mysql').getAgent('mysql://root:root@localhost/test?maxRetries=1');
+	var db = require('rapid-mysql').db('mysql://root:root@localhost/test?maxRetries=1');
 
 #### 使用集群
 
@@ -69,8 +69,8 @@ clusters接受三种数据类型：对象、字符串数组、字符串。
 
 实例：
 	
-	var db = require('rapid-mysql').getAgent('mysql://root:root@localhost/test?clusters=192.168.0.1%7C192.168.0.2');
-	var db = require('rapid-mysql').getAgent({
+	var db = require('rapid-mysql').db('mysql://root:root@localhost/test?clusters=192.168.0.1%7C192.168.0.2');
+	var db = require('rapid-mysql').db({
     	port: 3306,
     	username: 'root',
     	password: 'root',
@@ -79,7 +79,7 @@ clusters接受三种数据类型：对象、字符串数组、字符串。
 
 > 温馨提示：
 
->  - 使用cluster不会影响`getAgent`函数的hash过程。如果两次调用`getAgent`传入的参数的hash结果相同，则以首次调用`getAgent`传入的参数
+>  - 使用cluster不会影响`db`函数的hash过程。如果两次调用`db`传入的参数的hash结果相同，则以首次调用`db`传入的参数
 为准
 >  - 每个cluster对象的属性将覆盖上层对象的对应属性。此外cluster接受额外的属性：
 >   - slave: 是否为从库，从库的连接不会被insert/select/update/delete等语句选中。默认为false。
@@ -92,6 +92,8 @@ clusters接受三种数据类型：对象、字符串数组、字符串。
 	function QueryContext::query(query:string, optional data:array, optional cb:function)
 
 从当前上下文获取连接并执行查询，返回`Promise`对象。
+
+`QueryContext` 是对Agent/Transaction等类的抽象，封装了数据操作相关的函数，具体的连接建立过程由派生类实现
 
 关于Promise的使用请参考[kriskowal/q](https://github.com/kriskowal/q)
 
@@ -121,12 +123,12 @@ clusters接受三种数据类型：对象、字符串数组、字符串。
 
 options接受以下字段：
 
-  - fields: 返回的字段列表，字符串或数组
-  - orderBy: 排序字段，默认为null
-  - desc: 是否降序排序，默认为null
-  - groupBy: 分组
+  - fields: 查询返回结果包含的字段列表，接受字符串或数组
+  - orderBy: 排序字段，接受字符串或数组，默认为null
+  - desc: 是否降序排序，默认为false
+  - groupBy: 分组字段，接受字符串或数组，默认为null
   - distinct: 是否返回值去重，默认为false,
-  - limit: 限制返回条数，默认为null：返回全部
+  - limit: 限制返回条数，接受数字或数组，默认为null：返回全部
   - progress: 是否逐条返回结果，默认为false
 
 > 温馨提示：options.progress为true时，cb将被忽略
@@ -175,9 +177,9 @@ find支持以下查询条件表达式：
 
 尝试获取一个值，如果找不到，则返回ERR_NOT_FOUND
 
-<h3 class="api">Agent::prepareStatement</h3>
+<h3 class="api">Agent::prepare</h3>
 
-	function Agent::prepareStatement(query:string, optional options:object)
+	function Agent::prepare(query:string, optional options:object)
 
 创建一个查询语句。查询语句可以被稍后执行，并允许对请求进行合并、缓存，返回`Statement对象`
 
@@ -199,18 +201,18 @@ find支持以下查询条件表达式：
 
 实例：
 
-	var stmt = db.prepareStatement('SELECT * from user where id=?');
+	var stmt = db.prepare('SELECT * from user where id=?');
 	
 
-<h3 class="api">Statement::query</h3>
+<h3 class="api">Statement</h3>
 
-	function Statement::query(optional data:array, optional cb:function, optional noCache:boolean)
+	function Statement(optional data:array, optional cb:function, optional noCache:boolean)
 
 执行Statement。如果statement启用了cache，且之前有命中的请求未到期或未完成，且noCache不为true，则返回之前缓存的结果，返回`Promise对象`
 
 实例：
 
-	stmt.query([userid]).then(function(results){...});
+	stmt([userid]).then(function(results){...});
 
 <h3 class="api">Agent::begin</h3>
 
