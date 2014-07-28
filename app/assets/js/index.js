@@ -11,7 +11,10 @@ document.addEventListener("DOMContentLoaded", function(){
 
 	if(flag){
 		var introbox = document.querySelector('#introbox');
+		var introtxt = document.querySelector('#introtxt');
 		introbox.classList.add("mask");
+		introtxt.classList.add("darkmask");
+
 		var rand = Math.floor(Math.random() * 23) + 1;
 		bgimg.src = "/assets/images/S" + rand + ".jpg";
 	} else {
