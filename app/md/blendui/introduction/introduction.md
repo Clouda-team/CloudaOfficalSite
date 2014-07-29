@@ -1,4 +1,4 @@
-# BlendUI概述
+# BlendUI简介
 
 BlendUI是Clouda+中的重要组成部分，他能让webapp的用户界面体验和交互能和Native媲美。操作性能是webapp中体验最薄弱的一环，具体而言，这包括：转场动画不流畅、DOM结构过于复杂导致卡顿，用Javascript实现固定头尾布局性能较差等。
 

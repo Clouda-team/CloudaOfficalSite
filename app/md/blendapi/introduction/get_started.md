@@ -17,11 +17,11 @@
 
 通过CDN公共库地址引入Blend API脚本：
 	
-	<script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8" src="http://apps.bdimg.com/Blendapi/lightapp.js"></script>
+	<script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8" src="http://apps.bdimg.com/blend/loader.js"></script>
 	
 如果页面是使用https加密链接的时，请内嵌如下代码：
 
-	<script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8" src="https://openapi.baidu.com/Blendapi/lightapp.js"></script>
+	<script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8" src="https://apps.bdimg.com/blend/loader.js"></script>
 	
 实例：
 
@@ -29,7 +29,7 @@
 		<html>
 			<head>
 		    	<title>Blend API代码示例</title>
-		    	<script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8" src="http://apps.bdimg.com/Blendapi/lightapp.js"></script>
+		    	<script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8" src="http://apps.bdimg.com/blend/loader.js"></script>
 		    </head>
 		    <body>
 		    </body>
@@ -52,7 +52,7 @@
 	<html>
     <head>
         <title>Blend API代码示例</title>
-        <script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8" src="http://apps.bdimg.com/Blendapi/lightapp.js"></script>
+        <script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8" src="http://apps.bdimg.com/blend/loader.js"></script>
     </head>
     <body>
         <img id="photo"></img>

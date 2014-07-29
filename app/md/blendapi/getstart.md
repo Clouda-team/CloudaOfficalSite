@@ -26,7 +26,7 @@
 
 在HTML页面中添加以下代码：
 
-    <script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8" src="http://apps.bdimg.com/Blendapi/lightapp.js"></script>
+    <script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8" src="http://apps.bdimg.com/blend/loader.js"></script>
 
 如果页面是使用https加密链接的时，请内嵌如下代码
 
