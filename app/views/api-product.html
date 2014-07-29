@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>cloudajs模块化加载页面</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<link rel="shortcut icon"  href="./images/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/global.min.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+</head>
+<body>
+<div id="copyMask"></div>
+<div id="wrapper">
+    <noscript><div id="noscript-tip">小提示：开启 Javascript 能获得更好的体验！</div></noscript>
+    <header id="header">
+	    <div class="cnt-wrapper">
+		      <h1><a id="home-lnk" href="/">Clouda</a></h1>
+		      <a class="button fghb-btn" href="https://github.com/brandnewera/sumeru" target="_blank">Fork me on GitHub</a>
+		      <div id="topsrh-box">
+			  <form id="topsrh-form" method="get" action="/search/docs">
+			    <input name="q" id="topsrh-q" placeholder="搜索Clouda文档"/>
+			  </form>
+			</div>
+		      <nav id="nav">
+		        <ul id="nav-list">
+		          <li><a class="" href="/lightapp">接入轻应用</a></li>
+		          <li><a class="" href="/tutorials">教程</a></li>
+		          <li><span id="topsrh-icon"></span><a class="" href="/docs">文档</a></li>
+		          <li><a class="" href="/cases">客户案例</a></li>  
+		          <li><a class="" href="/ui">UI</a></li>
+		        </ul>
+		      </nav>
+	    </div>
+	    <div class="clearfix"></div>	
+    </header>
+
+  	<div id="content">
+  		<div class='group'>
+  			<label class="select-all">全部选择<input type="checkbox" class="category-check" data-category="device" ></label>
+  			<h4>本地设备能力API</h4>
+			<div class="col-sm-13 apilist-container">
+	          <ul class="list-group apilist-ul">
+	            <li class="list-group-item">
+	            	<input type="checkbox" class="api-item" data-name="activity" >
+	            	<h5>调起应用 (Activity)</h5>
+	            	<p class="api-intro" >根据传递参数调起本地应用</p>
+	            </li>
+	            <li class="list-group-item">
+	            	<input type="checkbox" class="api-item" data-name="battery">
+	            	<h5>电池（Battery）</h5>
+	            	<p class="api-intro" >监听，获取电池状态信息</p>
+	            </li>
+	            <li class="list-group-item">
+	            	<input type="checkbox" class="api-item" data-name="connection">
+	            	<h5>网络连接状态(Connection)</h5>
+	            	<p class="api-intro" >网络状态信息</p>
+	            </li>
+	            <li class="list-group-item">
+	            	<input type="checkbox" class="api-item" data-name="device">
+	            	<h5>设备信息（Device）</h5>
+	            	<p class="api-intro" >设备信息</p>
+	            </li>
+	            <li class="list-group-item" >
+	            	<input type="checkbox" class="api-item" data-name="fs">
+	            	<h5>文件系统（FileSystem）</h5>
+	            	<p class="api-intro" >文件管理，支持文件上传</p>
+	            </li>
+	            <li class="list-group-item">
+	            	<input type="checkbox" class="api-item" data-name="globalization">
+	            	<h5>系统语言信息 (Globalization)</h5>
+	            	<p class="api-intro" >系统语言信息</p>
+	            </li>
+	            <li class="list-group-item">
+	            	<input type="checkbox" class="api-item" data-name="geolocation">
+	            	<h5>地理位置（Geolocation）</h5>
+	            	<p class="api-intro" >地理位置，能够监听，获取地理位置信息</p>
+	            </li>
+	            <li class="list-group-item">
+	            	<input type="checkbox" class="api-item" data-name="media">
+	            	<h5>本地媒体功能（Media）</h5>
+	            	<p class="api-intro" >本地媒体功能，能够调取调取本地照相、视频功能；拍摄、录制、拍照及读取本地图片文件，录制和回放指定路径的音频文件</p>
+	            </li>
+	            <li class="list-group-item">
+	            	<input type="checkbox" class="api-item" data-name="qr">
+	            	<h5>二维码（QRCode）</h5>
+	            	<p class="api-intro" >支持二维码、条形码的扫描与识别</p>
+	            </li>
+	          </ul>
+	        </div>
+		</div>
+		<div class='group'>
+  			<label class="select-all">全部选择<input type="checkbox" class="category-check" data-category="mbaas"></label>
+  			<h4>云服务类API</h4>
+			<div class="col-sm-13 apilist-container">
+	          <ul class="list-group apilist-ul"> 
+	           <!--  <li class="list-group-item">
+	            	<input type="checkbox" class="api-item" data-name="app">
+	            	<h5>轻应用（App）</h5>
+	            	<p class="api-intro" >轻应用相关接口，具有关注，检查是否关注等功能</p>
+	            </li> -->
+	            <li class="list-group-item">
+	            	<input type="checkbox" class="api-item" data-name="account">
+	            	<h5>账号（Account）</h5>
+	            	<p class="api-intro" >该接口提供账号登陆功能</p>
+	            </li>
+	            <li class="list-group-item">
+	            	<input type="checkbox" class="api-item" data-name="pay">
+	            	<h5>支付（Pay）</h5>
+	            	<p class="api-intro" >该接口提供支付功能</p>
+	            </li>
+	            <li class="list-group-item">
+	            	<input type="checkbox" class="api-item" data-name="socialshare">
+	            	<h5>社会化分享（Socialshare）</h5>
+	            	<p class="api-intro" >该接口提供新浪微博，QQ空间等社会化分享的功能</p>
+	            </li>
+	            <li class="list-group-item">
+	            	<input type="checkbox" class="api-item" data-name="push">
+	            	<h5>云推送（Push）</h5>
+	            	<p class="api-intro" >轻应用审核上线之后，经过开通权限，可以向用户推送全站广播消息和服务推送消息</p>
+	            </li>
+	          </ul>
+	        </div>
+		</div>
+		<div class="group">
+			<label class="select-all">全部选择<input type="checkbox" class="category-check" data-category="others"></label>
+			<h4>UI类API</h4>
+			<div class="col-sm-13 apilist-container">
+				<ul class="list-group apilist-ul">
+					<li class="list-group-item">
+		            	<input type="checkbox" class="api-item" data-name="blendui">
+		            	<h5>BlendUI</h5>
+		            	<p class="api-intro" >基于本地Native运行环境，让Javascript拥有操作Webview和Native控件的能力让你的web移动端交互流畅，体验无异于Native app</p>
+		            </li>
+				</ul>
+			</div>
+		</div>
+		<div class="group" style="margin-bottom:5px;">
+			<div class="btn btn-primary" id="down-btn">生成代码</div>
+			<span class="alert alert-warning" id="codeTip" style="display:none"></span>
+			<!-- <p >具体使用方法参考&nbsp;<a href="http://cloudajs.org/lightapp/docs/api" target="_blank" style="color:#428bca">《帮助文档》</a></p> -->
+
+	
+
+			<div class="code-box" style="display:none">
+			<span class="copy-span" id="copy_btn">复制代码</span>
+			<span class="copy-span" id="copy_tip" style="display:none">复制成功</span>
+<pre>
+</pre>
+<textarea id="code_pre" style="display:none"></textarea>
+
+			</div>
+		</div>
+		<div class="group">
+			<div class="use_tip">
+				<h5>使用方法</h5>
+				<p>1.&nbsp;在HTML页面中添加以下代码：</p>
+<pre>&lt;script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8" src="http://apps.bdimg.com/blend/loader.js"&gt;&lt;/script&gt;</pre>
+				<p>如果页面是使用https加密链接的时，请内嵌如下代码：</p>
+<pre>&lt;script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8" src="https://openapi.baidu.com/blend/loader.js"&gt;&lt;/script&gt;</pre>
+				<p>2.&nbsp;使用以上生成代码来注册需要的API，apikey为轻应用的APIKEY,获取方法参考&nbsp;<a href="http://cloudajs.org/lightapp/docs/dev_guide" target="_blank">开发指南</a></p>
+			</div>
+		</div>
+  	</div>
+
+  	
+
+  <footer id="footer">
+    <div id="copyright">©2014 Baidu <a href="http://www.baidu.com/duty/">使用百度前必读</a> <span>京ICP证030173号</span></div>
+  </footer>
+
+
+</div>
+
+
+
+
+<script src="/assets/js/lib/jquery-1.8.3.min.js"></script>
+
+<script src="/assets/js/lib/cpClipboard.js"></script>
+<script src="/assets/js/api-module.js"></script>
+
+
+</body>
+</html>
