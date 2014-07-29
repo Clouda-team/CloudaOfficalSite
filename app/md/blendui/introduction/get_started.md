@@ -26,7 +26,7 @@
 （2）使用Blend UI：
 
 	Blend.lightInit({
-		ak:xxxx, //轻应用apikey
+		ak:xxxx, //轻应用apikey，请参考《获取API Key》文档
 		module:["xxxx","blendui"]//根据需要添加模块到数组中即可
 	});
 	
@@ -48,7 +48,7 @@
     		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
     		
     		<script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8" src="https://apps.bdimg.com/blend/loader.js"></script>
-    		
+
 		</head>
 		<body>
 			<a class="testLink" href="http://m.baidu.com">百度首页</a>
