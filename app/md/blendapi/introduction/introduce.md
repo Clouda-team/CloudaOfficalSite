@@ -1,4 +1,4 @@
-# Blend API介绍
+# Blend API简介
 
 ## 概述
 

@@ -6,7 +6,7 @@
 
 当使用BlendUI开发完成应用后，可使用平台提供的打包平台将应用进行打包，打包地址如下：
 
-<http://www.baidu.com>
+<http://hybrid.baidu.com/lightui/new-pack.html>
 
 打包完成后会生成一个apk文件，开发者可将应用提交应用商店或者其他渠道下发即可。
 
@@ -16,7 +16,7 @@
 
 （1）下载BlendUI Xcode工程，下载地址如下：
 
-<http://www.baidu.com>
+<http://pan.baidu.com/s/1jGrAdLk>
 
 （2）下载完成后将工程导入Xcode，在工程目录下建立一个应用的目录，例如目录名为“hello”，并将BlendUI开发的工程文件拷贝到“hello”目录下，并在工程`BlendUISDK`目录下找到`BlendUI.m`文件，在文件中找到下面的代码
 
