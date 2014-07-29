@@ -175,9 +175,13 @@ find支持以下查询条件表达式：
 
 	function QueryContext::findOne(tableName:string, optional condition:object, optional options:object, optional cb:function)
 
-尝试获取一个值，如果找不到，则返回ERR_NOT_FOUND
+尝试获取一个值，如果找不到，则返回ERR_NOT_FOUND，返回：Promise对象
 
-返回：Promise对象
+实例：
+
+	db.findOne('test',{id:1}).then(function(obj){
+ 		// obj.id===1
+	});
 
 <h3 class="api">QueryContext::insert</h3>
 
