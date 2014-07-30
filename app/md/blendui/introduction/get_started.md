@@ -21,7 +21,7 @@
 	
 如果页面是使用https加密链接的时，请内嵌如下代码：
 
-	<script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8" src="https://apps.bdimg.com/blend/loader.js"></script>
+	<script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8" src="https://openapi.baidu.com/blend/loader.js"></script>
 
 （2）使用Blend UI：
 
