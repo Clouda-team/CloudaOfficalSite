@@ -44,6 +44,9 @@ rapid.config.define({
 			url : /^\/runtime(\/.*)?/,
 			doAction : "blendui"
 		},{
+			url : /^\/api-product\/?$/,
+			doAction : "api-product"
+		},{
 			url : /^\/$/,
 			doAction : "index"
 		},{
