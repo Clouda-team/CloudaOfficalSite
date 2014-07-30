@@ -59,7 +59,7 @@ rapid开发的工程需要安装Node.js环境来安装依赖和为工程提供�
 
 在`app`目录下新建`actions`目录并在`actions`目录下新建`welcome.js`文件，该文件描述工程的主要功能，内容如下：
 
-	var server = use("rapid-httpserver");
+	var server = rapid.use("rapid-httpserver");
 	
 	server.defineAction("index", function(default_request, default_response){
 		var req = default_request;
@@ -81,7 +81,7 @@ rapid开发的工程需要安装Node.js环境来安装依赖和为工程提供�
 			loading_dir : ["/app/actions/"],
 			
 			mapping : [{
-				url:"/welcome"
+				url:"/welcome",
 				doAction : "index"
 			}]
 		}
@@ -99,7 +99,7 @@ rapid开发的工程需要安装Node.js环境来安装依赖和为工程提供�
 	
 ## 浏览工程
 
-在浏览器中输入`http://localhost:8080`来浏览项目。
+在浏览器中输入`http://localhost:8080/welcome`来浏览项目。
 
 ![](/md/images/helloworlddemo.png)
 
