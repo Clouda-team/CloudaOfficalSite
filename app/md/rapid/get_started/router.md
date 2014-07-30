@@ -43,19 +43,17 @@ rapid的路由一般通过`/conf`目录下的文件中的`mapping`参数来配�
 	
 	rapid.config.define({
 		"rapid-httpserver" : {
+			
 			autoStart : true,
+			
 			loading_dir : ["/app/actions/"],
 			
 			mapping : [{
-					url : "/test",
-					doAction : "test"
-				},{
-					url : "index",
-					resource : "/app/views/index.html"
-				},{
-					defaultAction : "index"
-				}
-				
+				url : "/test",
+				doAction : "test"
+			},{
+				url : "index",
+				resource : "/app/views/index.html"
 			}]
 		}
 	});

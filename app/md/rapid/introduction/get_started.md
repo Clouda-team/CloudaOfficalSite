@@ -18,7 +18,7 @@ rapid开发的工程需要安装Node.js环境来安装依赖和为工程提供�
     	"name": "welcome",
     	"version": "0.0.0",
     	"description": "",
-    	"main": "index.js",
+    	"main": "start.js",
     	"scripts": {
         	"install" : "node ./node_modules/rapid-core/init.js"
     	},
@@ -61,9 +61,7 @@ rapid开发的工程需要安装Node.js环境来安装依赖和为工程提供�
 
 	var server = rapid.use("rapid-httpserver");
 	
-	server.defineAction("index", function(default_request, default_response){
-		var req = default_request;
-		var res = default_response;
+	server.defineAction("index", function(){
 		//渲染index.html
 		var content = this.render("index");
 		//发送到前端

@@ -1,10 +1,10 @@
 {
   "name": "CloudaOfficalSite",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Clouda+ Official Site",
   "main": "index.js",
   "scripts": {
-    "start": "node ./start.js",
+    "start": "node start.js",
     "install": "node ./node_modules/rapid-core/init.js"
   },
   "author": "huangxin03@baidu.com",
