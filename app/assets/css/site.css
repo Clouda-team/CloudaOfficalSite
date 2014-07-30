@@ -42,7 +42,12 @@ ul, ol, dl{
     top: -2px;
 }
 
+#logo a:hover {
+    text-decoration: none;
+}
+
 #logo a span {
+    color : #424b50;
     line-height: 28px;
     font-size: 16px;
     font-weight: 400;
