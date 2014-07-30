@@ -1,0 +1,122 @@
+.wrap{
+	width:75%;
+	margin: 10px auto;
+
+	background-color: #fff;
+}
+
+#content{padding-top: 12px}
+
+.group{
+	position: relative;
+	width:80%;
+	margin: 0 auto;
+}
+
+.group .select-all{
+	position: absolute;
+	top:0px;
+	right:0px;
+	display: inline-block;
+	vertical-align: middle;
+	height:21px;
+	line-height: 21px;
+}
+
+.select-all input[type="checkbox"]{
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0 5px;
+}
+
+.group h4{
+	/*border-bottom: solid 2px #dedede;*/
+	padding-bottom: 5px;
+}
+
+
+.apilist-container{
+	margin-top: 12px;
+}
+
+.apilist-container li{
+	/*vertical-align: middle;*/
+	padding-left: 30px;
+}
+
+.apilist-container li:hover{
+	background-color: #f4f8fa;
+	cursor: pointer;
+}
+
+.apilist-container li input{
+	position: absolute;
+	top:7px;
+	left:8px;
+
+}
+
+#down-btn{
+	margin-bottom: 15px;
+}
+
+
+.code-box{
+	position:relative;
+	background: #e5eaf0;
+	border: 2px dotted #cdd3df;
+	margin: 20px 0;
+	padding: 10px 15px 0 200px;
+	font-size: 110%;
+	line-height: 170%;
+	
+}
+
+.copy-span{
+	position:absolute;
+	top:1px;
+	right:60px;
+}
+
+.copy_btn{
+	cursor:pointer;
+}
+
+#codeTip{
+	vertical-align: middle;
+	display: inline-block;
+	padding: 12px;
+	margin:0 auto 15px 12px;
+}
+
+.clipboard-complete{
+	position:absolute;
+	top:1px;
+	right:3px;
+	color:#390;
+}
+
+.api-intro{
+	padding:10px 10px 0 10px;
+}
+
+
+.use_tip{
+	padding: 5px 0 30px;
+}
+
+
+.use_tip p{
+	padding: 10px 0;
+}
+
+.use_tip pre{
+	background-color: #f3f3f3;
+border: 1px solid #ccc;
+font-size: 13px;
+line-height: 19px;
+overflow: auto;
+padding: 6px 10px;
+border-radius: 3px;
+max-height: 500px;
+}

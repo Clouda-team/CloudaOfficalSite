@@ -768,7 +768,7 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
 
 解析url
 
-	var path = http://rapid:123456@www.example.com/path/index.html?query1=test&silly=willy#test=hash&chucky=cheese
+	var path = "http://rapid:123456@www.example.com/path/index.html?query1=test&silly=willy#test=hash&chucky=cheese"
 
 
 参数说明

@@ -15,10 +15,18 @@
 	
 ## 使用BlendUI
 
-使用Blend UI的方法如下：
+（1）通过CDN公共库地址引入Blend API脚本：
+	
+	<script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8" src="http://apps.bdimg.com/blend/loader.js"></script>
+	
+如果页面是使用https加密链接的时，请内嵌如下代码：
+
+	<script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8" src="https://apps.bdimg.com/blend/loader.js"></script>
+
+（2）使用Blend UI：
 
 	Blend.lightInit({
-		ak:xxxx, //轻应用apikey
+		ak:xxxx, //轻应用apikey，请参考《获取API Key》文档
 		module:["xxxx","blendui"]//根据需要添加模块到数组中即可
 	});
 	
@@ -37,9 +45,9 @@
 			<meta charset="utf-8">
     		<meta http-equiv="X-UA-Compatible" content="IE=edge">
     		<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport" />
-    		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
     		
-    		<script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8" src="http://apps.bdimg.com/cloudaapi/lightapp.js"></script>
+    		<script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8" src="https://apps.bdimg.com/blend/loader.js"></script>
+
 		</head>
 		<body>
 			<a class="testLink" href="http://m.baidu.com">百度首页</a>
@@ -53,9 +61,8 @@
 			<meta charset="utf-8">
     		<meta http-equiv="X-UA-Compatible" content="IE=edge">
     		<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport" />
-    		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
     		
-    		<script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8" src="http://apps.bdimg.com/cloudaapi/lightapp.js"></script>
+    		<script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8" src="https://apps.bdimg.com/blend/loader.js"></script>
 		</head>
 		<body>
 			<a class="testLink" href="http://m.baidu.com">百度首页</a>

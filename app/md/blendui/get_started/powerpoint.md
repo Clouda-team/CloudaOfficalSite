@@ -9,7 +9,7 @@
 
 在BlendUI中我们可以使用Slider来定义一个幻灯片，我们只需要配置相应的参数即可，格式如下：
 
-	slider = new Blend.Slider({
+	slider = new Blend.ui.Slider({
 		"id" : "",
 		"bgColor" : "#cccccc",
 		"images" : images //图片资源，json数组
@@ -28,7 +28,7 @@
    	window.onhashchange = function(e) {
     	var hash = location.hash.slice(1);
     	if (hash == "slider") {
-        	slider = new Blend.Slider({
+        	slider = new Blend.ui.Slider({
             	"id": "test",
             	"bgColor": "#cccccc",
             	"images": images,
@@ -77,7 +77,7 @@ Indicator为幻灯片下的指示小圆点，如果您需要在应用中幻灯�
    	window.onhashchange = function(e) {
     	var hash = location.hash.slice(1);
     	if (hash == "slider") {
-        	slider = new Blend.Slider({
+        	slider = new Blend.ui.Slider({
             	"id": "test",
             	"bgColor": "#cccccc",
             	"images": images,
@@ -128,7 +128,7 @@ Indicator为幻灯片下的指示小圆点，如果您需要在应用中幻灯�
    	window.onhashchange = function(e) {
     	var hash = location.hash.slice(1);
     	if (hash == "slider") {
-        	slider = new Blend.Slider({
+        	slider = new Blend.ui.Slider({
             	"id": "test",
             	"bgColor": "#cccccc",
             	"images": images,
@@ -157,7 +157,7 @@ BlendUI提供下面三个方法使开发者可以自由在slider间跳转。
 
 滚动到前一个页面
 
-	var slider = new Blend.Slider({
+	var slider = new Blend.ui.Slider({
     	"id": "slider",
     	"images": [
         	{"url":"http://*.com/old_07_02.jpg"},
@@ -171,7 +171,7 @@ BlendUI提供下面三个方法使开发者可以自由在slider间跳转。
 
 滚动到下一个页面
 
-	var slider = new Blend.Slider({
+	var slider = new Blend.ui.Slider({
     	"id": "slider",
     	"images": [
         	{"url":"http://*.com/old_07_02.jpg"},
@@ -185,7 +185,7 @@ BlendUI提供下面三个方法使开发者可以自由在slider间跳转。
 
 滚动到指定的index个页面
 
-	var slider = new Blend.Slider({
+	var slider = new Blend.ui.Slider({
     	"id": "slider",
     	"images": [
         	{"url":"http://*.com/old_07_02.jpg"},

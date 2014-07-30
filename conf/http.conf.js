@@ -38,6 +38,9 @@ rapid.config.define({
 			url : /^\/blend(\/.*)?/,
 			doAction : "blendui"
 		},{
+			url : "/blendapi/product",
+			doAction : "api-product"
+		},{
 			url : /^\/blendapi(\/.*)?/,
 			doAction : "blendapi"
 		},{
