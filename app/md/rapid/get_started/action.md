@@ -10,9 +10,7 @@ Action用来实现最终的业务功能。
 
 在rapid中通常使用`rapid-httpserver.defineAction(name,depends,handle)`方法来定义一个Action，实例如下：
 
-	rapid-httpserver.defineAction("index", function(default_request, default_response){
-		var req = default_request;
-		var res = default_response;
+	rapid-httpserver.defineAction("index", function(){
 		
 		this.send("Hello World!");
 	
