@@ -45,7 +45,6 @@
 			<meta charset="utf-8">
     		<meta http-equiv="X-UA-Compatible" content="IE=edge">
     		<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport" />
-    		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
     		
     		<script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8" src="https://apps.bdimg.com/blend/loader.js"></script>
 
@@ -62,7 +61,6 @@
 			<meta charset="utf-8">
     		<meta http-equiv="X-UA-Compatible" content="IE=edge">
     		<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport" />
-    		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
     		
     		<script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8" src="https://apps.bdimg.com/blend/loader.js"></script>
 		</head>
