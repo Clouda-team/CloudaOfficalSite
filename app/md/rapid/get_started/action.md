@@ -40,7 +40,7 @@ Action用来实现最终的业务功能。
 	define("config.rapid-httpserver",{
 		autoStart:true,
 		mapping:[{
-			defaultAction:function(){
+			doAction:function(){
 				this.send("Hello,World");
 			}
 		}]	

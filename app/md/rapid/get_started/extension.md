@@ -48,7 +48,7 @@ Extension用来实现http功能的包装，如Session，Cookie，fileupload，Fo
 			  .set("company","baidu", {
 			  	  expires : new Date(Date.now() + 1000000)
 			  });
-			  
+		this.send("set cookie done!");
 	});
 	
 	
