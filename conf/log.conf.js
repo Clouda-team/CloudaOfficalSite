@@ -2,7 +2,7 @@ rapid.config.define({
 
 	"rapid-log" : {
 
-		level : 'WARN',
+		level : 'DEV',
 
 		format : "JSON",
 
