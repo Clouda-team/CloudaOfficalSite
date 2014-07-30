@@ -44,6 +44,9 @@ console会打印出：
 
 	a is 1
 
+#### use(name,[handle]);
+取得name所指的资源, 当提供handle时,相当于wathc once = true. 未提供时将直接同步返回,如果资源不存在,将返回undefined
+
 #### remove(name)
 
 用于删除一个已定义的资源
@@ -137,6 +140,8 @@ console会打印出：
 <h3 class="rapid-core方法">rapid.use(module);</h3>
 
 同步返回module所表示的资源内容，如果不存在则返回undefined。
+
+***当使用requireDIR()载入文件时, 框架将检测rapid.use()方法的使用,直到所需资源存在,才对相应文件进行require操作,并同步返回.***
 
 >温馨提示: 
 

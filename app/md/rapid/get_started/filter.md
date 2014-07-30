@@ -46,13 +46,13 @@
 
 Filter定义完成后就可以在`config`中使用`filter`来使用，格式如下：
 
-	filter:{
+	filter:[{
         url:"/test",
         doFilter: "filterTest",
         params : {
         	key: "value"
         }
-   	}
+   	}]
 
 
 参数说明：
@@ -79,13 +79,13 @@ Filter定义完成后就可以在`config`中使用`filter`来使用，格式如�
 	define({
     	"config.rapid-httpserver":{
         	autoStart : true,
-        	filter:{
+        	filter:[{
         		url:"/test",
         		doFilter: "testFilter",
         		params : {
         			key: "value"
         		}
-        	},
+        	}],
         	defaultAction : function(){
             	this.send("Hello,World!");
         	}

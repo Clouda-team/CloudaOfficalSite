@@ -7,7 +7,7 @@ rapid-httpserver可以使用config来配置相应的信息。
 
 rapid-httpserver的配置格式如下：
 
-  	define({
+  	rapid.define({
       	"config.rapid-httpserver":{
     	}
   	});
@@ -35,7 +35,7 @@ rapid-httpserver包含以下配置项：
 
 实例：
 
-  	define({
+  	rapid.define({
       	"config.rapid-httpserver":{
           	autoStart : true,
           	defaultAction : function(){
@@ -62,7 +62,7 @@ rapid-httpserver包含以下配置项：
 
 实例：
 
-  	define({
+  	rapid.define({
       	"config.rapid-httpserver":{
          	autoStart : true,
           	port:8082,
@@ -90,7 +90,7 @@ rapid-httpserver包含以下配置项：
 
 实例：
 
-  	define({
+  	rapid.define({
       	"config.rapid-httpserver":{
           	autoStart : true,
           	port:8082,
@@ -165,7 +165,7 @@ rapid-httpserver包含以下配置项：
 
 实例：
 
-  	define({
+  	rapid.define({
       	"config.rapid-httpserver":{
           	autoStart : true,
 
@@ -227,7 +227,7 @@ rapid-httpserver包含以下配置项：
 
 实例：
 
-  	define({
+  	rapid.define({
       	"config.rapid-httpserver":{
           	autoStart : true,
           	filter:{
@@ -283,9 +283,7 @@ rapid-httpserver提供自定义`Extension`、`Filter`、`Action`的方法。
 
 实例：
 
-  	rapid-httpserver.defineAction("index", function(default_request, default_response){
-		var req = default_request;
-		var res = default_response;
+  	rapid-httpserver.defineAction("index", function(){
 
 		this.send("Hello World!");
 
@@ -322,7 +320,7 @@ httpVisitor表示每个请求的上下文对像，<font color=red>在使用框�
 
 实例：
 
-  	define({
+  	rapid.define({
       	"config.rapid-httpserver":{
           	autoStart : true,
           	defaultAction : function(){
@@ -340,7 +338,7 @@ httpVisitor表示每个请求的上下文对像，<font color=red>在使用框�
 
 实例：
 
-  	define({
+  	rapid.define({
       	"config.rapid-httpserver":{
           	autoStart : true,
           	defaultAction : function(){
@@ -356,7 +354,7 @@ httpVisitor表示每个请求的上下文对像，<font color=red>在使用框�
 
 实例：
 
-  	define({
+  	rapid.define({
       	"config.rapid-httpserver":{
           	autoStart : true,
           	defaultAction : function(){
@@ -380,7 +378,7 @@ httpVisitor表示每个请求的上下文对像，<font color=red>在使用框�
 
 实例：
 
-  	define({
+  	rapid.define({
       	"config.rapid-httpserver":{
           	autoStart : true,
           	defaultAction : function(){
@@ -404,7 +402,7 @@ httpVisitor表示每个请求的上下文对像，<font color=red>在使用框�
 
 实例：
 
-  	define({
+  	rapid.define({
       	"config.rapid-httpserver":{
           	autoStart : true,
           	defaultAction : function(){
@@ -428,11 +426,12 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
 
 实例：
 
-  	define({
+  	rapid.define({
       	"config.rapid-httpserver":{
           	autoStart : true,
           	defaultAction : function(){
               	this.setHeader("Content-Type","text/html");
+              	this.send("hello world");
           	}
   	});
 
@@ -445,11 +444,12 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
 
 实例：
 
-  	define({
+  	rapid.define({
       	"config.rapid-httpserver":{
           	autoStart : true,
           	defaultAction : function(){
               	this.setExpires(300000);
+              	this.send("hello world");
           	}
   	});
 
@@ -461,11 +461,12 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
 
 实例：
 
-  	define({
+  	rapid.define({
       	"config.rapid-httpserver":{
           	autoStart : true,
           	defaultAction : function(){
               	this.setMaxAge(30000);
+              	this.send("hello world");
           	}
   	}});
 
@@ -477,11 +478,12 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
 
 实例：
 
-  	define({
+  	rapid.define({
       	"config.rapid-httpserver":{
           	autoStart : true,
           	defaultAction : function(){
               	this.setNostore();
+              	this.send("hello world");
           	}
   	});
 
@@ -493,11 +495,12 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
 
 实例：
 
-  	define({
+  	rapid.define({
       	"config.rapid-httpserver":{
           	autoStart : true,
           	defaultAction : function(){
               	this.setNoCache();
+              	this.send("hello world");
           	}
   	});
 
@@ -509,7 +512,7 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
 
 实例：
 
-  	define({
+  	rapid.define({
       	"config.rapid-httpserver":{
           	autoStart : true,
           	defaultAction : function(){
@@ -525,7 +528,7 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
 
 实例：
 
-  	define({
+  	rapid.define({
       	"config.rapid-httpserver":{
           	autoStart : true,
           	defaultAction : function(){
@@ -545,7 +548,7 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
 
 实例：
 
-  	define({
+  	rapid.define({
       	"config.rapid-httpserver":{
           	autoStart : true,
           	defaultAction : function(){
@@ -561,11 +564,15 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
 
 实例：
 
-  	define({
+  	rapid.define({
       	"config.rapid-httpserver":{
           	autoStart : true,
           	defaultAction : function(){
-              	this.lookup("http://www.XXX.com");
+          	
+          		// return "text/html"
+              	var mimietype = this.lookup("http://www.XXX.com/index.html");
+              	
+              	this.send("hello world",200, mimietype);
           	}
   	}});
 
@@ -595,7 +602,7 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
 
 实例：
 
-  	define({
+  	rapid.define({
       	"config.rapid-httpserver":{
           	autoStart : true,
           	defaultAction : function(){
@@ -636,7 +643,7 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
 
 实例：
 
-  	define({
+  	rapid.define({
       	"config.rapid-httpserver":{
           	autoStart : true,
           	defaultAction : function(){
@@ -675,7 +682,7 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
 
 实例：
 
-  	define({
+  	rapid.define({
       	"config.rapid-httpserver":{
           	autoStart : true,
           	defaultAction : function(){
@@ -716,7 +723,7 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
 
   var path = require("path");
 
-  define({
+  rapid.define({
       "config.rapid-httpserver":{
           autoStart : true,
           defaultAction : function(){
@@ -754,7 +761,7 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
 
 实例：
 
-  	define({
+  	rapid.define({
       	"config.rapid-httpserver":{
           	autoStart : true,
           	defaultAction : function(){
@@ -808,7 +815,7 @@ httpResponse上setHeader的快捷方式，方法直接调用response的setHeader
 
 实例：
 
-    define({
+    rapid.define({
         "config.rapid-httpserver":{
             autoStart : true,
             defaultAction : function(){

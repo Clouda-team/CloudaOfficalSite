@@ -11,10 +11,10 @@ rapid的路由一般通过`/conf`目录下的文件中的`mapping`参数来配�
 	
 通过`mapping`的设定将请求与相应的Action做映射，框架不仅提供URL与Action的映射关系，也提供URL与静态资源之间的映射关系，方法如下：
 
-	mapping : {
+	mapping : [{
 		url : "test",
 		resource : "/app/views/index.html"
-	}
+	}]
 	
 `mapping`中也可以包含多组路由，格式如下：
 
@@ -118,7 +118,7 @@ rapid的路由一般通过`/conf`目录下的文件中的`mapping`参数来配�
 					url : /^\/favicon.ico$/,
 					resource : "/favicon.png"
 				},{
-					defaultAction : "index"
+					doAction : "index"
 				}
 				
 			}]

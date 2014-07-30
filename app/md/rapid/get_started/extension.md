@@ -28,9 +28,7 @@ Extension用来实现http功能的包装，如Session，Cookie，fileupload，Fo
 
 定义好Extension后，就可以在定义Filter和Action中使用，例如我们定义了一个名为“Cookies”的Extension，即可在Filter或者Action使用，方法如下：
 
-	httpd.defineFilter("testFilter",["cookies"],function(default_request,default_response,cookie){
-		var req = default_request;
-		var res = default_response;
+	httpd.defineFilter("testFilter",["cookies"],function(cookie){
 
 		cookie.set("name","huangxin")
 			  .set("age","17")
@@ -43,15 +41,14 @@ Extension用来实现http功能的包装，如Session，Cookie，fileupload，Fo
 
 或者
 
-	httpd.defineAction("testAction",["cookies"],function(default_request,default_response,cookie){
-		var req = default_request;
-		var res = default_response;
-
+	httpd.defineAction("testAction",["cookies"],function(cookie){
+	
 		cookie.set("name","John")
 			  .set("age","17")
 			  .set("company","baidu", {
 			  	  expires : new Date(Date.now() + 1000000)
 			  });
+			  
 	});
 	
 	
@@ -59,11 +56,11 @@ Extension用来实现http功能的包装，如Session，Cookie，fileupload，Fo
 
 为了方便开发者更好更快速的开发应用，我们在Extension中提供了内置的API，包括：cookie、session、url三部分，现在将详细介绍这些API的用法。
 
-### cookies
+### cookie
 
 设置Cookie, 如果没有相关key值，则创建一个key-value cookie。
 
-	Cookies.set(key, value [, options])
+	Cookie.set(key, value [, options])
 	
 参数说明：
 
@@ -206,10 +203,11 @@ Extension用来实现http功能的包装，如Session，Cookie，fileupload，Fo
 
 实例：
 
-    define({
+    rapid.define({
         "config.rapid-httpserver":{
             autoStart : true,
-            defaultAction : function(req，res){
+            defaultAction : function(){
+            	var req = this.request;
                 var path = this.url('path', req.url);
                 this.send(path);
             }
