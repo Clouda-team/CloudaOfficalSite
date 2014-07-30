@@ -108,14 +108,21 @@ ul, ol, dl{
     border-bottom: 1px solid #e5e5e5;
     box-shadow: 0 -5px 0 rgba(0,0,0,.03);
     padding: 6px 0.5%;
-    width: 99%;
-    height: 33px;
+    width: 100%;
+    height: 45px;
     min-width: 480px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .ft {
     text-align: center;
     padding: 1em 0;
+}
+
+.dark .ft{
+    color: #fff;
 }
 
 @media screen and (min-width: 1440px) {

@@ -1,13 +1,17 @@
+{% import "./hd.html" as hd %}
 <!DOCTYPE html>
 <html>
 <head>
 	<title>CloudaAPI/BlendAPI模块化加载页面</title>
-	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	{% include "./meta.html" %}
+	<link rel="stylesheet" type="text/css" href="/assets/css/site.css">
 	<link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="/assets/css/global.min.css">
-	<link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/old-global.min.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/old-main.css">
+	<link rel="stylesheet" href="/assets/css/font-awesome.min.css">
 </head>
-<body>
+<body class="dark">
+{{ hd.use("api") }}
 <div id="copyMask"></div>
 <div id="wrapper">
     <div id="content">
@@ -137,14 +141,12 @@
 			</div>
 		</div>
   	</div>
-  <footer id="footer">
-    <div id="copyright">©2014 Baidu <a href="http://www.baidu.com/duty/">使用百度前必读</a> <span>京ICP证030173号</span></div>
-  </footer>
+  	
 </div>
+
+{% include "./ft.html" %}
 <script src="/assets/js/jquery.min.js"></script>
 <script src="/assets/js/cpClipboard.js"></script>
 <script src="/assets/js/api-module.js"></script>
-
-
 </body>
 </html>

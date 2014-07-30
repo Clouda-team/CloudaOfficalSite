@@ -35,14 +35,14 @@ rapid.config.define({
 			url : /^\/rapid(\/.*)?/,
 			doAction : "rapid"
 		},{
-			url : /^\/blend(\/.*)?/,
-			doAction : "blendui"
-		},{
 			url : "/blendapi/product",
 			doAction : "api-product"
 		},{
 			url : /^\/blendapi(\/.*)?/,
 			doAction : "blendapi"
+		},{
+			url : /^\/blend(\/.*)?/,
+			doAction : "blendui"
 		},{
 			url : /^\/runtime(\/.*)?/,
 			doAction : "blendui"
