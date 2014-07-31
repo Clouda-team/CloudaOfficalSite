@@ -116,11 +116,11 @@
 
 如果需要直接使用浏览器中浏览，需要添加一下操作：
 
-（1）首先需要下载`crema.css`文件，下载地址如下
+（1）首先需要下载`crema.css`和图片资源，可进入github的res下载该资源
 
 <https://github.com/Clouda-team/BlendUI>
 
-（2）HTML中引入`crema.css`
+（2）HTML中引入`crema.css`资源
 
 	<link rel="stylesheet" href="crema.css">
 
@@ -128,20 +128,39 @@
 
 	<html>
 		<head>
-			<link rel="stylesheet" href="crema.css">
-			<script src="./BlendUI-0.0.1.min.js">\</script>
+            <meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport" />
+			<script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8" src="http://apps.bdimg.com/blend/loader.js"></script>
+            <link rel="stylesheet" href="crema.css" /> 
 		</head>
 		<body>
 			<div class="pages">
 				<div class="page">
 					<div class="page-content">
-						<a class="testLink" href="http://news.baidu.com">百度新闻</a>
+						<a class="testLink" href="b.html">打开b页面</a>
 					</div>
 				</div>
 			</div>
 		</body>
 	</html>
-
-修改后直接在浏览器中输入应用服务器的URL即可。
+ (4) b页面代码如下：
+ 
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport" />
+        </head>
+        <body>
+             <div class="pages">
+                <div class="page">
+                    <div class="page-content">
+                        bbbbbbbbbbbbbbbb
+                    </div>
+                </div>
+            </div>
+        </body>
+    </html>
+修改后直接在浏览器中输入应用服务器的URL即可,此修改兼容hybrid端,具体可[点击下载](http://blend001.duapp.com/blend.zip)。
+  
 
 
