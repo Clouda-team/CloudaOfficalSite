@@ -49,7 +49,7 @@
 		
 		
 		
-		var code_str = 'clouda.lightInit({\n\
+		var code_str = 'blend.lightInit({\n\
 	ak:apikey,\n\
 	module:['+ m +']\n\
 });';
