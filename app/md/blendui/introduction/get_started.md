@@ -8,17 +8,17 @@
 		<head>
 		</head>
 		<body>
-			<a href="http://m.baidu.com" target='_blank'>百度首页</a>
+			<a class="testLink" href="http://news.baidu.com">百度新闻</a>
 		</body>
 	</html>
 
-	
+
 ## 使用BlendUI
 
 （1）通过CDN公共库地址引入Blend API脚本：
-	
+
 	<script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8" src="http://apps.bdimg.com/blend/loader.js"></script>
-	
+
 如果页面是使用https加密链接的时，请内嵌如下代码：
 
 	<script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8" src="https://openapi.baidu.com/blend/loader.js"></script>
@@ -29,11 +29,11 @@
 		ak:xxxx, //轻应用apikey，请参考《获取API Key》文档
 		module:["xxxx","blendui"]//根据需要添加模块到数组中即可
 	});
-	
+
 	document.addEventListener("blendready",function(){
-	
+
 	});
-	
+
 
 实例：使用BlendUI中`Layer`加载helloworld.html中`a`标签的链接
 
@@ -45,15 +45,15 @@
 			<meta charset="utf-8">
     		<meta http-equiv="X-UA-Compatible" content="IE=edge">
     		<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport" />
-    		
-    		<script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8" src="https://apps.bdimg.com/blend/loader.js"></script>
+    		<script src="http://apps.bdimg.com/libs/zepto/1.1.3/zepto.min.js"></script>
 
+    		<script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8" src="https://apps.bdimg.com/blend/loader.js"></script>
 		</head>
 		<body>
-			<a class="testLink" href="http://m.baidu.com">百度首页</a>
+			<a class="testLink" href="http://news.baidu.com">百度新闻</a>
 		</body>
 	</html>
-	
+
 （2）加入BlendUI js代码完成使用BlendUI中`Layer`加载helloworld.html中`a`标签的链接的功能
 
 	<html>
@@ -61,43 +61,35 @@
 			<meta charset="utf-8">
     		<meta http-equiv="X-UA-Compatible" content="IE=edge">
     		<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport" />
-    		
+    		<script src="http://apps.bdimg.com/libs/zepto/1.1.3/zepto.min.js"></script>
     		<script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8" src="https://apps.bdimg.com/blend/loader.js"></script>
 		</head>
 		<body>
-			<a class="testLink" href="http://m.baidu.com">百度首页</a>
+			<a class="testLink" href="http://news.baidu.com">百度新闻</a>
 		</body>
 		<script>
 			Blend.lightInit({
 				ak:xxxx, //轻应用apikey
 				module:["blendui"]//根据需要添加模块到数组中即可
 			});
-			
-			document.addEventListener("blendready",function(){	
-				Blend.ui.layerInit("herfLayer",function(dom){
-					$(".testLink",dom).delegate("a","click",function(e){
-                		e.preventDefault();
-                	
-                		Blend.fire("herfLayer","top",{
-                    		url: this.href
-                		});
-            		});
-				
-				});
-			
-				var herfLayer;
-				Blend.ui.on("createHerfLayer",function(e){
-					if(herfLayer){
-                    	herfLayer.in();
-                	}else{
-                		herfLayer = new Blend.ui.Layer({
-                			"id" : "herfLayer",
-                			"url" : e['data'].url,
-                			"active" :true
-                		});
-                	}
-				})
-			});
+
+			document.addEventListener("blendready",function(){
+            	Blend.ui.layerInit("0",function(dom){
+                	var herfLayer;
+                	$(".testLink",dom).on("click",function(e){
+                    	e.preventDefault();
+                    	if(herfLayer){
+                        	herfLayer.in();
+                    	}else{
+                        	herfLayer = new Blend.ui.Layer({
+                            	"id" : "herfLayer",
+                            	"url" : this.href,
+                            	"active" :true
+                        	});
+                    	}
+                	});
+            	});
+        	});
 		</script>
 	</html>
 
@@ -131,7 +123,7 @@
 （2）HTML中引入`crema.css`
 
 	<link rel="stylesheet" href="crema.css">
-	
+
 （3）修改HTMl代码，在body中加入三个标签
 
 	<html>
@@ -143,7 +135,7 @@
 			<div class="pages">
 				<div class="page">
 					<div class="page-content">
-						<a class="testLink" href="http://m.baidu.com">百度首页</a>
+						<a class="testLink" href="http://news.baidu.com">百度新闻</a>
 					</div>
 				</div>
 			</div>
