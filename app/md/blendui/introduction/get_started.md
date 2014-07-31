@@ -38,7 +38,7 @@
 实例：使用BlendUI中`Layer`加载helloworld.html中`a`标签的链接
 
 
-（1）在HTMl中引入Blend脚本
+（1）在HTML中引入Blend脚本
 
 	<html>
 		<head>
@@ -124,7 +124,7 @@
 
 	<link rel="stylesheet" href="crema.css">
 
-（3）修改HTMl代码，在body中加入三个标签
+（3）修改HTML代码，在body中加入三个标签
 
 	<html>
 		<head>
