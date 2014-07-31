@@ -5,14 +5,14 @@ document.addEventListener("DOMContentLoaded", function(){
 		move("#introbox").duration(800).set("opacity",1).end();	
 	}
 
-	var flag = localStorage.getItem("nicebg");
+	var flag = !localStorage.getItem("nicebg");
 	var intro = document.querySelector('#intro');
 	var bgimg = document.createElement('img');
 
 	if(flag){
-		var introbox = document.querySelector('#introbox');
+		//var introbox = document.querySelector('#introbox');
 		var introtxt = document.querySelector('#introtxt');
-		introbox.classList.add("mask");
+		//introbox.classList.add("mask");
 		introtxt.classList.add("darkmask");
 
 		var rand = Math.floor(Math.random() * 23) + 1;
