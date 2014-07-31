@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function(){
 		move("#introbox").duration(800).set("opacity",1).end();	
 	}
 
-	localStorage && localStorage.clear();
+	localStorage.setItem("nicebg","");
 	var flag = !localStorage.getItem("nicebg");
 	var intro = document.querySelector('#intro');
 	var bgimg = document.createElement('img');
