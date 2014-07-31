@@ -8,7 +8,7 @@
  */
 var baidu = baidu||{};
 // var clipboard_url = 'http://localhost/clouda-site/lib/copyClipboard.swf';
-var clipboard_url = '/assets/build/js/lib/copyClipboard.swf';
+var clipboard_url = '/assets/js/copyClipboard.swf';
 
 
 baidu.more = baidu.more || { };
