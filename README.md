@@ -1,7 +1,10 @@
-clouda.com
+About
 ==========
 
-clouda.com是Clouda+的官网。
+这是[Clouda+官网](http://clouda.com)的源码仓库。
+
+Clouda+
+==========
 
 Clouda+是移动web应用开发整体解决方案，并特别针对百度轻应用场景进行了优化，旨在让webapp体验和交互媲美Native应用。
 
