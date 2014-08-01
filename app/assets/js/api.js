@@ -136,7 +136,8 @@ document.addEventListener("DOMContentLoaded", function(){
 
 		window.addEventListener("scroll", function(e){
 			
-			if(document.body.scrollTop >= (window.screen.availHeight + 100)){
+			var offtop = document.documentElement.scrollTop ||  document.body.scrollTop;
+			if(offtop >= (window.screen.availHeight + 100)){
 				gotop.style.display = "block";
 			} else {
 				gotop.style.display = "none";
