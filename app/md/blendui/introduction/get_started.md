@@ -47,7 +47,7 @@
     		<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport" />
     		<script src="http://apps.bdimg.com/libs/zepto/1.1.3/zepto.min.js"></script>
 
-    		<script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8" src="https://apps.bdimg.com/blend/loader.js"></script>
+    		<script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8" src="http://apps.bdimg.com/blend/loader.js"></script>
 		</head>
 		<body>
 			<a class="testLink" href="http://news.baidu.com">百度新闻</a>
@@ -62,7 +62,7 @@
     		<meta http-equiv="X-UA-Compatible" content="IE=edge">
     		<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport" />
     		<script src="http://apps.bdimg.com/libs/zepto/1.1.3/zepto.min.js"></script>
-    		<script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8" src="https://apps.bdimg.com/blend/loader.js"></script>
+    		<script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8" src="http://apps.bdimg.com/blend/loader.js"></script>
 		</head>
 		<body>
 			<a class="testLink" href="http://news.baidu.com">百度新闻</a>
