@@ -63,8 +63,8 @@
             });
             
             Blend.device.media.captureMedia({
-                mediaType : Blend.device.MEDIA_TYPE.IMAGE,
-                source : Blend.device.MEDIA_SOURCE.CAMERA,
+                mediaType : 0,
+                source : 0,
                 format : 'file',
                 onfail : function(err){},
                 onsuccess : function(mediaFile){
