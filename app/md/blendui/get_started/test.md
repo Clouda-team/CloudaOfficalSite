@@ -1,14 +1,19 @@
 # BlendUI调试
 
-## Android
+## 下载运行环境
 
-### 下载blend.apk
-
-blend.apk为BlendUI在Android上得测试环境，如果需要线下调试或者运行BlendUI开发的应用，需要先下载blend.apk并安装到测试的Android端上。
-
-blend.apk下载地址如下：
+下载blendui.apk并安装到Android移动端上，下载地址如下：
 
 ![](/md/images/ios_runtime.png)
+
+使用IOS终端扫描下面的二维码安装BlendUI测试运行应用：
+
+![](/md/images/iosdownload.png)
+
+
+## Android
+
+
 
 ### 搭建线下调试环境
 
