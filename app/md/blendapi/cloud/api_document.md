@@ -307,8 +307,8 @@ content | string | 分享内容摘要
 linkUrl | string(可选) | 分享的链接地址，默认为当前页面的地址
 imageUrl | string(可选) | 分享内容中网络图片的地址
 appid | string或number(可选) | web版本分享菜单若想显示微信好友，朋友圈，QQ好友分享icon需要传递此参数，web版本暂不支持这些分享功能，会直接跳转百度框中打开，进行分享，appid为该轻应用的appid
-onsuccess | function(msg){}  | 登录成功的回调函数
-onfail | function(msg){}  | 登录失败的回调函数
+onsuccess | function(msg){}  | 分享成功的回调函数
+onfail | function(msg){}  | 分享失败的回调函数
 
 #### 附录
 
