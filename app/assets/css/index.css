@@ -1,3 +1,10 @@
+@media screen and (max-width: 640px){
+  
+	#navi {
+		display: none;
+	}
+
+}
 
 #navi{
 	background: rgba(0,0,0,0.2);
@@ -135,7 +142,7 @@
 .panel li {
 	vertical-align: top;
 	display: inline-block;
-	width: 24.5%;
+	width: 24%;
 }
 
 .panel li h3 {
@@ -157,6 +164,7 @@
 	margin-bottom: 20px;
 	height: 105px;
 }
+
 
 #introbox {
 	opacity: 0;

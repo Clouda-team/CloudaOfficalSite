@@ -28,6 +28,12 @@ body, .onepage-wrapper, html {
   height: 100%;
 }
 
+@media screen and (max-width: 640px){
+  .onepage-pagination {
+    display: none;
+  }
+} 
+
 .onepage-pagination {
   position: absolute;
   right: 10px;

@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function(){
 	var adjust = function(){
 		
 		var sh = window.innerHeight < 640 ? 640 : window.innerHeight;
-		var ch = 466 || document.querySelector("#clouda").offsetHeight;
+		var ch = document.querySelector("#clouda").offsetHeight;
 		var mv = (sh - ch) / 2;
 		move("#clouda").duration(0).y(mv).end();
 
@@ -39,6 +39,7 @@ document.addEventListener("DOMContentLoaded", function(){
 		[].forEach.call(scs, function(sc){
 			var sermon = sc.querySelector(".sermon");
 			var offset = (sh - sermon.offsetHeight - 10) / 2;
+			offset = offset < 0 ? 0 : offset;
 			move(sermon).duration(0).y(offset).end();
 		});
 
@@ -51,6 +52,8 @@ document.addEventListener("DOMContentLoaded", function(){
 	}, false);
 	
 
+	
+		
 	$("#main").onepage_scroll({
 		sectionContainer: ".scrollpage",     // sectionContainer accepts any kind of selector in case you don't want to use section
 		easing: "cubic-bezier(0.25,0.1,0.25,1)",                  // Easing options accepts the CSS3 easing animation such "ease", "linear", "ease-in", 
