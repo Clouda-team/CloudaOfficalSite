@@ -45,7 +45,7 @@ console会打印出：
 	a is 1
 
 #### use(name,[handle]);
-取得name所指的资源, 当提供handle时,相当于wathc once = true. 未提供时将直接同步返回,如果资源不存在,将返回undefined
+取得name所指的资源, 当提供handle时,相当于watch once = true. 未提供时将直接同步返回,如果资源不存在,将返回undefined
 
 #### remove(name)
 
