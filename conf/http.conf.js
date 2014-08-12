@@ -47,7 +47,7 @@ rapid.config.define({
 			url : /^\/runtime(\/.*)?/,
 			doAction : "blendui"
 		},{
-			url :"/getHybrid",
+			url :/^\/getHybrid(\/)?/i,
 			doAction:"hybrid"
 		},{
 			url : /^\/$/,
