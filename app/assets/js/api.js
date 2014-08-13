@@ -52,14 +52,15 @@ document.addEventListener("DOMContentLoaded", function(){
 			var arch = document.createElement("ul");
 			arch.id = "arch";
 			[].forEach.call(h2s, function(h2){
-				var id = tools.randomID();
+				var id = h2.innerHTML.toLowerCase();//tools.randomID();
 				h2.id = id;
 				var li = document.createElement("li");
 				var a = document.createElement("a");
-				a.addEventListener("click", function(e){
-					var offset = document.querySelector("#" + id).offsetTop;
-					window.scrollTo(0,offset);
-				}, false);
+				// a.addEventListener("click", function(e){
+				// 	var offset = document.querySelector("#" + id).offsetTop;
+				// 	window.scrollTo(0,offset);
+				// }, false);
+				a.href = "#" + id;
 				a.innerHTML = h2.innerHTML;
 				li.appendChild(a);
 
@@ -77,6 +78,7 @@ document.addEventListener("DOMContentLoaded", function(){
 							h3lia.addEventListener("click", function(e){
 								var offset = document.querySelector("#" + h3id).offsetTop;
 								window.scrollTo(0,offset);
+								history.pushState("", document.title, window.location.pathname);
 							}, false);
 							h3.id = h3id;
 							
