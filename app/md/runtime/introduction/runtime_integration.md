@@ -21,9 +21,9 @@
 
 首先您需要选择Runtime的集成方案，Native和Remote中的一种，选择好集成方案后下载相应的Jar包，现在地址如下：
 
-<http://sdk.baidu.com/service/view/42>
+<http://bcs.duapp.com/runtimesdk/2_2/Baidu_Runtime_Android_2.2.0.rar>
 
-该链接下载的是一个zip包，包括了Runtime以及插件所需要的Jar包，结构如下：
+该链接下载的是一个rar包，包括了Runtime以及插件所需要的Jar包，结构如下：
 	
 ![](/md/images/jarpkg.png)
 
@@ -363,7 +363,11 @@ ERROR_MESSAGE_RUNTIME_ZIP_UNZIPING_OCCUR_ERROR | 解压runtime文件出现错误
     	};
 	}
 
-上面的代码开发完成后，我们可以运行一下工程，如果点击Button后可以看到下面的界面，表示您已经成功调起Runtime GUI。
+上面的代码开发完成后，我们下载GUI所需的资源，下载地址：
+
+<http://bcs.duapp.com/runtimesdk/2_2/runtime_gui_res.tar.gz>
+
+首先解压压缩包，然后将压缩包中的资源拷贝到工程相应地目录下，当这些操作完成后我们可以运行一下工程，如果点击Button后可以看到下面的界面，表示您已经成功调起Runtime GUI。
 
 <img src="/md/images/RuntimeGUI.jpeg" height="400px">	
 
