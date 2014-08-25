@@ -376,6 +376,11 @@ options：为object类型，其中包括以下参数：
             <td>string</td>            
             <td>防范CSRF攻击的安全认证参数。在轻应用服务器端按照如下规则生成：md5(nonce + 轻应用的Secret Key)</td>  
         </tr>
+		<tr>
+            <td>addShortcut</td>
+            <td>boolean(可选)</td>            
+            <td>是否将轻应用添加到手机桌面，true表示添加，默认是false，不添加到桌面</td>  
+        </tr>
         <tr>
             <td>onsuccess</td>
             <td>function(data){}</td>            
