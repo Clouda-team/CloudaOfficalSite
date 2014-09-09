@@ -48,6 +48,6 @@ Rapid框架中提供很简单的方法直接处理表单，方法如下：
 	 		if(content.name){
 	 			// dosomething..
 	 		}  	
-    	}
+    	})
 	});
 	

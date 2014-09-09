@@ -26,7 +26,7 @@ rapid允许给视图传递参数，视图(View)中默认使用`Swig`模板，方
 		this.render("index", {
 			name: "John",
 			age: 18
-		}
+		})
 	})
 
 
