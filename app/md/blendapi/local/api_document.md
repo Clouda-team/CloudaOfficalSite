@@ -238,6 +238,7 @@ onfail | function(err){}  | 操作失败，返回错误码信息
 
 网络连接状态类型可能的取值：
 
+
     Blend.device.CONNECTION_STATUS.UNKNOWN // 未知状态
     Blend.device.CONNECTION_STATUS.NONE // 断开状态
     Blend.device.CONNECTION_STATUS.WIFI // WIFI连通状态
@@ -246,6 +247,7 @@ onfail | function(err){}  | 操作失败，返回错误码信息
     Blend.device.CONNECTION_STATUS.CELL_4G // 移动数据4G连通状态
     Blend.device.CONNECTION_STATUS.CELL // 移动数据通连通状态
     Blend.device.CONNECTION_STATUS.ETHERNET // 以太网连通状态
+
 
 
 ## Device ##
@@ -430,7 +432,7 @@ onfail | function(err){} | 操作失败，返回错误码信息
 accuracy | float | 精确度(单位米)
 longitude | float | 经度
 latitude | float | 纬度
-coordtype | string | 坐标类型, 包括:<br/> Blend.device.COORDTYPE.BD 百度经纬度坐标<br/>Blend.device.COORDTYPE.GCJ 国测局经纬度坐标<br/>Blend.device.COORDTYPE.GPS GPS经纬度
+coordtype | string | 坐标类型,一共有三类, 包括:<br/> bd09ll (百度经纬度坐标)  <br/> gcj02ll (国测局经纬度坐标)<br/> wgs84ll (GPS经纬度)
 
 
 
@@ -550,8 +552,8 @@ onfail | function(err){} | 操作失败，返回错误码信息
     <tr>
         <td>source</td>
         <td>string</td>
-        <td>媒体文件来源，其值如下：：<br>
-        - Blend.device.MEDIA_SOURCE.CAMERA<br>
+        <td>媒体文件来源，其值如下：<br>
+         1(拍照) ;  2(相册)<br>
         </td>  
     </tr>
 </tbody>
@@ -619,8 +621,8 @@ onfail | function(err){} | 操作失败，返回错误码信息
 
 **扫描对象类型：**
 
-- Blend.device.QR_TYPE.QRCODE  ：二维码
-- Blend.device.QR_TYPE.BARCODE  ： 条形码
+- 1  ：二维码(Blend.device.QR_TYPE.QRCODE)
+- 2  ：条形码(Blend.device.QR_TYPE.BARCODE)
 
 **参数说明：**
 
