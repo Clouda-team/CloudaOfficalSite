@@ -417,3 +417,99 @@ layer
 
 layerGroup.destroy();
 </code></pre>
+
+
+<h3 class="method" platform="ios android">isScroll ( )</h3>
+isScroll判断是否可以滚动
+
+实例
+<pre><code>var layerGroup = new Blend.ui.LayerGroup({
+    id: "group",
+	layers: [{
+        "id": "first",
+        "url": "first.html",
+        "autoload": true
+    }, {
+        "id": "top",
+        "url": "top.html",
+        "autoload": true
+    }]
+});
+
+layerGroup.isScroll();
+</code></pre>
+
+
+<h3 class="method" platform="ios android">setScroll ( )</h3>
+setScroll
+
+<table>
+    <tbody>
+        <tr>
+            <th>参数</th>
+            <th>类型</th>
+            <th>说明</th>
+            <th>是否必须</th>
+        </tr>
+        <tr>
+          <th>true|false</th>
+          <th>Boolean</th>
+          <td>设置是否能手动滚动</td>
+          <td>是</td>
+        </tr>
+   <tbody>
+</table>
+
+实例
+<pre><code>var layerGroup = new Blend.ui.LayerGroup({
+    id: "group",
+	layers: [{
+        "id": "first",
+        "url": "first.html",
+        "autoload": true
+    }, {
+        "id": "top",
+        "url": "top.html",
+        "autoload": true
+    }]
+});
+
+layerGroup.setScroll(false);
+</code></pre>
+
+<h3 class="method" platform="ios android">toggleScroll ( )</h3>
+toggleScroll自动切换是否能手动切换;
+<!--
+<table>
+    <tbody>
+        <tr>
+            <th>参数</th>
+            <th>类型</th>
+            <th>说明</th>
+            <th>是否必须</th>
+        </tr>
+        <tr>
+          <th>true|false</th>
+          <th>Boolean</th>
+          <td>设置是否能手动滚动</td>
+          <td>是</td>
+        </tr>
+   <tbody>
+</table>
+-->
+实例
+<pre><code>var layerGroup = new Blend.ui.LayerGroup({
+    id: "group",
+	layers: [{
+        "id": "first",
+        "url": "first.html",
+        "autoload": true
+    }, {
+        "id": "top",
+        "url": "top.html",
+        "autoload": true
+    }]
+});
+
+layerGroup.toggleScroll();
+</code></pre>
