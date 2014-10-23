@@ -8,7 +8,7 @@
 
 - show()
 - hide()
-- setTheme()
+- setTheme(bgColor,wdColor)
 
 #### show #### 
 
