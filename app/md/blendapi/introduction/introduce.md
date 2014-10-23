@@ -1,8 +1,11 @@
 # Blend API简介
-`原clouda api 改名为 blend api`
-`原clouda api 接口调用仍然支持`
-`建议开发者逐步使用blend 命名空间`
+
 ## 概述
+
+ - <span style="background-color:yellow">原clouda api 改名为 blend api</span>      
+ - <span style="background-color:yellow">原clouda api 接口调用仍然支持</span>     
+ - <span style="background-color:yellow">建议开发者逐步使用blend 命名空间</span>
+
 
 Blend API能将移动设备的本地能力和百度的云服务融合（Blend）到webapp中，开发者可以使用熟悉的web API来顺畅地使用这些能力。
 
