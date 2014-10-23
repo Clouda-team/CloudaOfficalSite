@@ -26,11 +26,17 @@
 
 在HTML页面中添加以下代码：
 
-    <script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8" src="http://apps.bdimg.com/blend/loader.js"></script>
+    <script type="text/javascript" name="baidu-tc-cerfication" data-appid="{appid}"  src="http://apps.bdimg.com/cloudaapi/lightapp.js">
+</script>
 
 如果页面是使用https加密链接的时，请内嵌如下代码
 
-    <script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8" src="https://openapi.baidu.com/Blendapi/lightapp.js"></script>
+    <script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8" data-appid="{appid}" src="https://openapi.baidu.com/Blendapi/lightapp.js"></script>
+
+其中
+参数 | 类型 | 描述 
+------------ | ------------- | ------------
+appid | int | 轻应用的Appid,获取方法参考[轻应用管理](http://qing.baidu.com/)
 
 ## App信息注册API ##
 

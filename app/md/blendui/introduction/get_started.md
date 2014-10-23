@@ -17,11 +17,12 @@
 
 （1）通过CDN公共库地址引入Blend API脚本：
 
-	<script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8" src="http://apps.bdimg.com/blend/loader.js"></script>
+	<script type="text/javascript" name="baidu-tc-cerfication" data-appid="{appid}" src="http://apps.bdimg.com/cloudaapi/lightapp.js">
+</script>
 
 如果页面是使用https加密链接的时，请内嵌如下代码：
 
-	<script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8" src="https://openapi.baidu.com/blend/loader.js"></script>
+	<script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8" src="https://openapi.baidu.com/cloudaapi/lightapp.js"></script>
 
 （2）使用Blend UI：
 
@@ -47,7 +48,8 @@
     		<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport" />
     		<script src="http://apps.bdimg.com/libs/zepto/1.1.3/zepto.min.js"></script>
 
-    		<script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8" src="http://apps.bdimg.com/blend/loader.js"></script>
+    		<script type="text/javascript" name="baidu-tc-cerfication" data-appid="{appid}" src="http://apps.bdimg.com/cloudaapi/lightapp.js">
+</script>
 		</head>
 		<body>
 			<a class="testLink" href="http://news.baidu.com">百度新闻</a>
@@ -62,14 +64,15 @@
     		<meta http-equiv="X-UA-Compatible" content="IE=edge">
     		<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport" />
     		<script src="http://apps.bdimg.com/libs/zepto/1.1.3/zepto.min.js"></script>
-    		<script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8" src="http://apps.bdimg.com/blend/loader.js"></script>
+    		<script type="text/javascript" name="baidu-tc-cerfication" data-appid="{appid}" src="http://apps.bdimg.com/cloudaapi/lightapp.js">
+</script>
 		</head>
 		<body>
 			<a class="testLink" href="http://news.baidu.com">百度新闻</a>
 		</body>
 		<script>
 			Blend.lightInit({
-				ak:xxxx, //轻应用apikey
+				ak:'xxxx', //轻应用apikey
 				module:["blendui"]//根据需要添加模块到数组中即可
 			});
 
@@ -129,7 +132,8 @@
 	<html>
 		<head>
             <meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport" />
-			<script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8" src="http://apps.bdimg.com/blend/loader.js"></script>
+			<script type="text/javascript" name="baidu-tc-cerfication" data-appid="{appid}" src="http://apps.bdimg.com/cloudaapi/lightapp.js">
+</script>
             <link rel="stylesheet" href="crema.css" /> 
 		</head>
 		<body>

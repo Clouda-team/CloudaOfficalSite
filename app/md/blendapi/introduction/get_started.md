@@ -17,11 +17,12 @@
 
 通过CDN公共库地址引入Blend API脚本：
 	
-	<script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8" src="http://apps.bdimg.com/blend/loader.js"></script>
+	<script type="text/javascript" name="baidu-tc-cerfication" data-appid="{appid}"  src="http://apps.bdimg.com/cloudaapi/lightapp.js">
+</script>
 	
 如果页面是使用https加密链接的时，请内嵌如下代码：
 
-	<script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8" src="https://apps.bdimg.com/blend/loader.js"></script>
+	<script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8"  data-appid="{appid}" src="https://apps.bdimg.com/cloudaapi/lightapp.js"></script>
 	
 实例：
 
@@ -29,7 +30,8 @@
 		<html>
 			<head>
 		    	<title>Blend API代码示例</title>
-		    	<script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8" src="http://apps.bdimg.com/blend/loader.js"></script>
+		    	<script type="text/javascript" name="baidu-tc-cerfication" data-appid="{appid}" src="http://apps.bdimg.com/cloudaapi/lightapp.js">
+</script>
 		    </head>
 		    <body>
 		    </body>
