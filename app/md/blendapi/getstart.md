@@ -31,7 +31,7 @@
 
 如果页面是使用https加密链接的时，请内嵌如下代码
 
-    <script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8" data-appid="{appid}" src="https://openapi.baidu.com/Blendapi/lightapp.js"></script>
+    <script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8" data-appid="{appid}" src="https://openapi.baidu.com/cloudaapi/lightapp.js"></script>
 
 其中
 参数 | 类型 | 描述 
