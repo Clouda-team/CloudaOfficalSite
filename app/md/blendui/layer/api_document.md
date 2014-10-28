@@ -327,6 +327,124 @@ layer页面id
 });
 </code></pre>
 
+<h3 class="construct" platform="android">subLayer</h3>
+是否是子layer
+
+<table>
+    <tbody>
+        <tr>
+            <th>类型</th>
+            <th>说明</th>
+            <th>是否必须</th>
+        </tr>
+        <tr>
+            <th>Boolean</th>
+            <td>是否是子layer,默认不是</td>
+            <td>否</td>
+        </tr>
+   <tbody>
+</table>
+
+实例：
+<pre><code>
+var layer = new Blend.ui.Layer({
+	"url":"content.html",
+	"id":"contentLayer",
+	"active":true,
+	"subLayer":true
+});
+</code></pre>
+
+
+<h3 class="construct" platform="android">fixed</h3>
+如果是子layer，用fixed说明是否需要固定在页面上
+
+<table>
+    <tbody>
+        <tr>
+            <th>类型</th>
+            <th>说明</th>
+            <th>是否必须</th>
+        </tr>
+        <tr>
+            <th>Boolean</th>
+            <td> 如果subLayer==tuue, 是否fiexd到附属layer上面，默认false</td>
+            <td>否</td>
+        </tr>
+   <tbody>
+</table>
+
+实例：
+<pre><code>
+var layer = new Blend.ui.Layer({
+	"url":"content.html",
+	"id":"contentLayer",
+	"active":true,
+	"subLayer":true,
+	"fixed":true,
+});
+</code></pre>
+
+
+<h3 class="construct" platform="android ios">fx</h3>
+layer打开显示时的动画类型slide|fade|pop
+
+<table>
+    <tbody>
+        <tr>
+            <th>类型</th>
+            <th>说明</th>
+            <th>是否必须</th>
+        </tr>
+        <tr>
+            <th>Boolean</th>
+            <td>layer打开显示时的动画类型slide|fade|pop,默认是slide</td>
+            <td>否</td>
+        </tr>
+   <tbody>
+</table>
+
+实例：
+<pre><code>
+var layer = new Blend.ui.Layer({
+	"url":"content.html",
+	"id":"contentLayer",
+	"active":true,
+	'fx': 'pop',
+});
+</code></pre>
+
+
+<h3 class="construct" platform="android ios">fx</h3>
+layer打开显示时的动画时常
+
+<table>
+    <tbody>
+        <tr>
+            <th>类型</th>
+            <th>说明</th>
+            <th>是否必须</th>
+        </tr>
+        <tr>
+            <th>Boolean</th>
+            <td>[normal|quick|slow|number], 动画持续时间可以是字符串或者指的数值，默认为normal</td>
+            <td>否</td>
+        </tr>
+   <tbody>
+</table>
+
+实例：
+<pre><code>
+var layer = new Blend.ui.Layer({
+	"url":"content.html",
+	"id":"contentLayer",
+	"active":true,
+	'fx': 'pop',
+	"duration":"quick"
+});
+</code></pre>
+
+
 ## Method
 
 <h3 class="method" platform="ios android web">in ( )</h3>
@@ -498,4 +616,22 @@ console.log(layer.isActive());
 });
 
 layer.destroy();
+</code></pre>
+
+
+<h3 class="method" platform="android">setLayout( )</h3>
+如果是子layer,此可以设置layer的大小和位置
+
+实例
+<pre><code>var layer = new Blend.ui.Layer({
+	"url":"content.html"
+});
+
+layer.setLayout({
+    left: 30,
+    top: 180,
+    width: 250,
+    height: 200,
+});
+
 </code></pre>
