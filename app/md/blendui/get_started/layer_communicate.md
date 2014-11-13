@@ -5,7 +5,7 @@
 
 页面间借助“自定义事件”通信，被通知方用Blend.ui.on监听事件，通知方用Blend.ui.fire发送事件。
 
-## 实例
+## 示例
 
 例子中共有两个layer分上下同时显示，id分别为0和subLayerId。layer-0中有一个输入框和一个按钮，layer-subLayerId有一个显示框。点击layer-0内的按钮将输入框中的内容显示在layer-subLayerId上。
 
@@ -31,3 +31,6 @@
         });
     });
 });</code></pre>
+
+## 示例源码
+[在线获取源码](https://github.com/yunlongmain/blendui_doc_demo/tree/master/layer_communicate)
