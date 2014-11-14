@@ -15,15 +15,16 @@
 
 ## 使用BlendUI
 
-（1）通过CDN公共库地址引入Blend API脚本：
+（1）通过CDN公共库地址引入Blend API脚本和样式文件：
 
-	<script type="text/javascript" name="baidu-tc-cerfication" data-appid="{appid}" src="http://apps.bdimg.com/cloudaapi/lightapp.js">
-</script>
+	<script type="text/javascript" name="baidu-tc-cerfication" data-appid="{appid}" src="http://apps.bdimg.com/cloudaapi/lightapp.js"></script>
+	<link rel="stylesheet" href="http://apps.bdimg.com/cloudaapi/res/css/crema.css">
 
 如果页面是使用https加密链接的时，请内嵌如下代码：
 
 	<script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8" src="https://openapi.baidu.com/cloudaapi/lightapp.js"></script>
-
+	<link rel="stylesheet" href="https://openapi.baidu.com/cloudaapi/res/css/crema.css">
+	
 （2）使用Blend UI：
 
 	Blend.lightInit({
@@ -47,9 +48,9 @@
     		<meta http-equiv="X-UA-Compatible" content="IE=edge">
     		<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport" />
     		<script src="http://apps.bdimg.com/libs/zepto/1.1.3/zepto.min.js"></script>
-
-    		<script type="text/javascript" name="baidu-tc-cerfication" data-appid="{appid}" src="http://apps.bdimg.com/cloudaapi/lightapp.js">
-</script>
+    		
+			<script type="text/javascript" name="baidu-tc-cerfication" data-appid="{appid}" src="http://apps.bdimg.com/cloudaapi/lightapp.js"></script>
+        	<link rel="stylesheet" href="http://apps.bdimg.com/cloudaapi/res/css/crema.css">
 		</head>
 		<body>
 			<a class="testLink" href="http://news.baidu.com">百度新闻</a>
@@ -64,8 +65,8 @@
     		<meta http-equiv="X-UA-Compatible" content="IE=edge">
     		<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport" />
     		<script src="http://apps.bdimg.com/libs/zepto/1.1.3/zepto.min.js"></script>
-    		<script type="text/javascript" name="baidu-tc-cerfication" data-appid="{appid}" src="http://apps.bdimg.com/cloudaapi/lightapp.js">
-</script>
+    		<script type="text/javascript" name="baidu-tc-cerfication" data-appid="{appid}" src="http://apps.bdimg.com/cloudaapi/lightapp.js"></script>
+        	<link rel="stylesheet" href="http://apps.bdimg.com/cloudaapi/res/css/crema.css">
 		</head>
 		<body>
 			<a class="testLink" href="http://news.baidu.com">百度新闻</a>
@@ -117,54 +118,10 @@
 
 ### 浏览器浏览
 
-如果需要直接使用浏览器中浏览，需要添加一下操作：
+直接在浏览器中输入应用服务器的URL即可。
 
-（1）首先需要下载`crema.css`和图片资源，可进入github的res下载该资源
-
-<https://github.com/Clouda-team/BlendUI>
-
-（2）HTML中引入`crema.css`资源
-
-	<link rel="stylesheet" href="crema.css">
-
-（3）修改HTML代码，在body中加入三个标签
-
-	<html>
-		<head>
-            <meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport" />
-			<script type="text/javascript" name="baidu-tc-cerfication" data-appid="{appid}" src="http://apps.bdimg.com/cloudaapi/lightapp.js">
-</script>
-            <link rel="stylesheet" href="crema.css" /> 
-		</head>
-		<body>
-			<div class="pages">
-				<div class="page">
-					<div class="page-content">
-						<a class="testLink" href="b.html">打开b页面</a>
-					</div>
-				</div>
-			</div>
-		</body>
-	</html>
- (4) b页面代码如下：
- 
-    <html>
-        <head>
-            <meta charset="utf-8">
-            <meta http-equiv="X-UA-Compatible" content="IE=edge">
-            <meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport" />
-        </head>
-        <body>
-             <div class="pages">
-                <div class="page">
-                    <div class="page-content">
-                        bbbbbbbbbbbbbbbb
-                    </div>
-                </div>
-            </div>
-        </body>
-    </html>
-修改后直接在浏览器中输入应用服务器的URL即可,此修改兼容hybrid端,具体可[点击下载](http://blend001.duapp.com/blend.zip)。
+## 示例源码
+[在线获取源码](https://github.com/yunlongmain/blendui_doc_demo/tree/master/get_started)
   
 
 
