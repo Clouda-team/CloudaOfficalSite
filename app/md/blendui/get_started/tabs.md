@@ -9,7 +9,7 @@
 <pre><code>//html部分
 &ltdiv id="nav"&gt
 	&ltul&gt
-		&ltli id="tab1"&gt&lta href="tab1.html"&gtTab1&lt/a&gt&lt/li&gt
+		&ltli id="tab1" class="on"&gt&lta href="tab1.html"&gtTab1&lt/a&gt&lt/li&gt
 		&ltli id="tab2"&gt&lta href="tab2.html"&gtTab2&lt/a&gt&lt/li&gt
 	&lt/ul&gt
 &lt/div&gt
@@ -39,6 +39,9 @@
         margin: 0 auto;
         text-align: center;
     }
+    .on {
+        background-color: grey;
+    }
 &lt/style&gt</code></pre>
 
 >温馨提示：具体tabs的样式需求以用户设计为准，不作要求。
@@ -53,7 +56,6 @@
                 {
                     "id": "tab1",
                     "url": "tab1.html",
-                    "autoload": true,
                     "active":true
                 },
                 {
@@ -89,7 +91,6 @@
                 {
                     "id": "first",
                     "url": "first.html",
-                    "autoload": true,
                     "active":true
                 },
                 {
@@ -115,3 +116,6 @@
 });</code></pre>
 
 > 温馨提示：以上代码中通过为li添加class的方式，结合css样式来实现tab指示，实际效果以用户设计为准，如果要显示页面上方的tab按钮的话，要为LayerGroup设置top值。
+
+## 示例源码
+[在线获取源码](https://github.com/yunlongmain/blendui_doc_demo/tree/master/tabs)

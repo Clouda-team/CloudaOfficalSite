@@ -38,7 +38,7 @@
 
 ##加入下拉事件响应
 <pre><code>document.addEventListener("blendready", function() {
-    Blend.ui.LayerInit("contentLayerId",function(dom){
+    Blend.ui.layerInit("contentLayerId",function(dom){
         Blend.ui.on("layerPullDown",function(event){
             //监听下拉事件，自定义刷新操作
             setTimeout(function(){
@@ -49,7 +49,7 @@
         });
     });
 
-    Blend.ui.LayerInit("0", function(dom) {
+    Blend.ui.layerInit("0", function(dom) {
         var contentLayer = new Blend.ui.Layer({
             "id": "contentLayerId",
             "url": "content.html",
@@ -73,7 +73,7 @@
 
 一个实例：
 <pre><code>document.addEventListener("blendready", function() {
-    Blend.ui.LayerInit("0", function(dom) {
+    Blend.ui.layerInit("0", function(dom) {
         var contentLayer = new Blend.ui.Layer({
             "id": "contentLayerId",
             "url": "content.html",
@@ -86,7 +86,7 @@
         });
     });
 
-    Blend.ui.LayerInit("contentLayerId",function(dom){
+    Blend.ui.layerInit("contentLayerId",function(dom){
         Blend.ui.on("layerPullDown",function(event){
             setTimeout(function(){
                 $("#content", dom).prepend("刷新操作");
@@ -99,7 +99,7 @@
 ##LayerGroup页面内下拉刷新操作
 代码主要格式如下：
 <pre><code>document.addEventListener("blendready", function () {
-    Blend.ui.LayerInit("content", function (dom) {
+    Blend.ui.layerInit("content", function (dom) {
         Blend.ui.on("layerPullDown", function (event) {
             setTimeout(function () {
                 $("#page-content", dom).prepend("刷新操作");
@@ -107,7 +107,7 @@
             }, 2000);
         });
     });
-    Blend.ui.LayerInit("0", function (dom) {
+    Blend.ui.layerInit("0", function (dom) {
         var tabs = new Blend.ui.LayerGroup({
             id: "tab",
             layers: [
@@ -132,3 +132,8 @@
 });</code></pre>
 
 > LayerGroup与Layer页面下刷新操作基本一致，具体参数配置和使用方法见上面讲解。
+
+## 示例源码
+[在线获取Layer下拉刷新源码](https://github.com/yunlongmain/blendui_doc_demo/tree/master/layer_pullrefresh)
+
+[在线获取LayerGroup下拉刷新源码](https://github.com/yunlongmain/blendui_doc_demo/tree/master/layergroup_pullrefresh)

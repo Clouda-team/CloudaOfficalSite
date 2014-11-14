@@ -10,7 +10,7 @@
 在BlendUI中我们可以使用Slider来定义一个幻灯片，我们只需要配置相应的参数即可，格式如下：
 
 	slider = new Blend.ui.Slider({
-		"id" : "",
+		"id" : "sliderId",
 		"bgColor" : "#cccccc",
 		"images" : images //图片资源，json数组
 		"width" : 100,
@@ -20,27 +20,19 @@
 一个简单的实例：
 
 	var images = [{"url":"http://static.wenku.bdimg.com/topic/wapTopics/old_07_02.jpg"},
-                  {"url":"http://static.wenku.bdimg.com/topic/wapTopics/old_09_02.jpg"},
-                  {"url":"http://static.wenku.bdimg.com/topic/wapTopics/new_03_02.jpg"},
-                  {"url":'http://static.wenku.bdimg.com/topic/wapTopics/jingpinshichang.jpg'}
-    			];
-    var slider;
-   	window.onhashchange = function(e) {
-    	var hash = location.hash.slice(1);
-    	if (hash == "slider") {
-        	slider = new Blend.ui.Slider({
-            	"id": "test",
-            	"bgColor": "#cccccc",
-            	"images": images,
-            	"width" : 100,
-            	"height" : 200
-        	});
-    	}else {
-        	slider && slider.destroy();
-    	}
-	};
+                  {"url":"http://static.wenku.bdimg.com/topic/wapTopics/old_09_02.jpg"}];
+    document.addEventListener("blendready", function () {
+        slider = new Blend.ui.Slider({
+            "id": "sliderId",
+            "bgColor": "#cccccc",
+            "images": images,
+            "height": 200,
+            "top": 0,
+            "left": 0
+        });
+    });
 	
-> 温馨提示：这里定义的幻灯片并不会自动切换，需要手动slider切换各个item
+> 温馨提示：这里定义的幻灯片并不会自动切换，需要用户滑动切换各个页面
 	
 ## 加入Indicator
 
@@ -69,30 +61,22 @@ Indicator为幻灯片下的指示小圆点，如果您需要在应用中幻灯�
 一个实例：
 
 	var images = [{"url":"http://static.wenku.bdimg.com/topic/wapTopics/old_07_02.jpg"},
-                  {"url":"http://static.wenku.bdimg.com/topic/wapTopics/old_09_02.jpg"},
-                  {"url":"http://static.wenku.bdimg.com/topic/wapTopics/new_03_02.jpg"},
-                  {"url":'http://static.wenku.bdimg.com/topic/wapTopics/jingpinshichang.jpg'}
-    			];
-    var slider;
-   	window.onhashchange = function(e) {
-    	var hash = location.hash.slice(1);
-    	if (hash == "slider") {
-        	slider = new Blend.ui.Slider({
-            	"id": "test",
-            	"bgColor": "#cccccc",
-            	"images": images,
-            	"width" : 100,
-            	"height" : 200,
-            	hasIndicator:true,
-            	inactiveColor:"#ebebeb",
-            	activeColor:"#3c9c76",
-            	unitSize:6,
-            	unitSpace:3            	
-        	});
-    	}else {
-        	slider && slider.destroy();
-    	}
-	};
+                  {"url":"http://static.wenku.bdimg.com/topic/wapTopics/old_09_02.jpg"}];
+    document.addEventListener("blendready", function () {
+        slider = new Blend.ui.Slider({
+            "id": "test",
+            "bgColor": "#cccccc",
+            "images": images,
+            "height": 200,
+            "top": 0,
+            "left": 0,
+            hasIndicator: true,
+            inactiveColor: "#ebebeb",
+            activeColor: "#3c9c76",
+            unitSize: 16,
+            unitSpace: 10            
+        });
+    });
 	
 	
 ## 加入事件
@@ -104,54 +88,48 @@ Indicator为幻灯片下的指示小圆点，如果您需要在应用中幻灯�
 当我们手动翻页时触发，格式如下：
 
 	"slider" : function(e){
-		//手动翻页时打印当前幻灯片的编号
 		console.log(e.data.index);
 	}
 	
 ### tap
 
-当点击一个item时触发，格式如下：
+当点击一个页面时触发，格式如下：
 
 	"tap" : function(e){
-		//手动翻页时打印当前幻灯片的编号
 		console.log(e.data.index);
 	}
 	
 一个实例：
 
 	var images = [{"url":"http://static.wenku.bdimg.com/topic/wapTopics/old_07_02.jpg"},
-                  {"url":"http://static.wenku.bdimg.com/topic/wapTopics/old_09_02.jpg"},
-                  {"url":"http://static.wenku.bdimg.com/topic/wapTopics/new_03_02.jpg"},
-                  {"url":'http://static.wenku.bdimg.com/topic/wapTopics/jingpinshichang.jpg'}
-    			];
-    var slider;
-   	window.onhashchange = function(e) {
-    	var hash = location.hash.slice(1);
-    	if (hash == "slider") {
-        	slider = new Blend.ui.Slider({
-            	"id": "test",
-            	"bgColor": "#cccccc",
-            	"images": images,
-            	"width" : 100,
-            	"height" : 200,
-            	hasIndicator:true,
-            	inactiveColor:"#ebebeb",
-            	activeColor:"#3c9c76",
-            	unitSize:6,
-            	unitSpace:3, 
-            	"slider" : function(e){
-					//手动翻页时打印当前幻灯片的编号
-					console.log(e.data.index);
-				}           	
-        	});
-    	}else {
-        	slider && slider.destroy();
-    	}
-	};
+                  {"url":"http://static.wenku.bdimg.com/topic/wapTopics/old_09_02.jpg"}];
+    document.addEventListener("blendready", function () {
+        slider = new Blend.ui.Slider({
+            "id": "test",
+            "bgColor": "#cccccc",
+            "images": images,
+            "height": 200,
+            "top": 0,
+            "left": 0,
+            hasIndicator: true,
+            inactiveColor: "#ebebeb",
+            activeColor: "#3c9c76",
+            unitSize: 16,
+            unitSpace: 10,
+            "tap": function (e) {
+                //手动点击时打印当前幻灯片的编号
+                console.log(e.data.index);
+            },
+            "slider": function (e) {
+                //滑动时打印当前幻灯片的编号
+                console.log(e.data.index);
+            }
+        });
+    });
 
 ## Slider间跳转	
 
-BlendUI提供下面三个方法使开发者可以自由在slider间跳转。
+BlendUI提供下面三个方法使开发者可以自由在Slider间跳转。
 
 ### prev()
 
@@ -195,3 +173,5 @@ BlendUI提供下面三个方法使开发者可以自由在slider间跳转。
 
 	slider.sliderTo(0);
 	
+## 示例源码
+[在线获取源码](https://github.com/yunlongmain/blendui_doc_demo/tree/master/slider)
