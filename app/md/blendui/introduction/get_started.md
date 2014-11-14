@@ -15,15 +15,16 @@
 
 ## 使用BlendUI
 
-（1）通过CDN公共库地址引入Blend API脚本：
+（1）通过CDN公共库地址引入Blend API脚本和样式文件：
 
-	<script type="text/javascript" name="baidu-tc-cerfication" data-appid="{appid}" src="http://apps.bdimg.com/cloudaapi/lightapp.js">
-</script>
+	<script type="text/javascript" name="baidu-tc-cerfication" data-appid="{appid}" src="http://apps.bdimg.com/cloudaapi/lightapp.js"></script>
+	<link rel="stylesheet" href="http://apps.bdimg.com/cloudaapi/res/css/crema.css">
 
 如果页面是使用https加密链接的时，请内嵌如下代码：
 
 	<script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8" src="https://openapi.baidu.com/cloudaapi/lightapp.js"></script>
-
+	<link rel="stylesheet" href="https://openapi.baidu.com/cloudaapi/res/css/crema.css">
+	
 （2）使用Blend UI：
 
 	Blend.lightInit({
