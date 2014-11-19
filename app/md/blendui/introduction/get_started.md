@@ -104,7 +104,7 @@
 
 下载blendui.apk并安装到Android移动端上，下载地址如下：
 
-![](/md/images/ios_runtime.png)
+<img src="/md/images/ios_runtime.png" class="download-pic">
 
 安装完成后打开blendui应用，使用“扫码”扫描BlendUI开发应用的服务器URL地址即可查看应用。
 
@@ -112,7 +112,7 @@
 
 使用IOS终端扫描下面的二维码安装BlendUI测试运行应用
 
-![](/md/images/iosdownload.png)
+<img src="/md/images/iosdownload.png" class="download-pic">
 
 安装完成后打开blendui应用，使用“扫码”扫描BlendUI开发应用的服务器URL地址即可查看应用。
 
