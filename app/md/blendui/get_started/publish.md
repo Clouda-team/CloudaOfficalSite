@@ -8,7 +8,7 @@
 
 
 
-<http://hybrid.baidu.com/beta>
+<http://hybrid.baidu.com/runtime>
 
 打包完成后会生成一个apk文件，开发者可将应用提交应用商店或者其他渠道下发即可。
 
