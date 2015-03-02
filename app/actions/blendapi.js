@@ -30,7 +30,7 @@ server.defineAction("blendapi", function(default_request, default_response){
 		var cached = cache.get(mdpath);
 		var html = cached ? cached : marked(md);
 
-		var content = visitor.render("api", {
+		var content = visitor.render("new/doc", {
 			proj : proj,
 			doc : doc,
 			ctnt : html

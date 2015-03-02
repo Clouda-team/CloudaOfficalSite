@@ -1,0 +1,16 @@
+{
+  "name": "blendapi",
+  "version": "1.0.0",
+  "description": "blend 官方文档",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "device": "src/blendapi/device/",
+  "mbass": "src/blendapi/mbass/",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "grunt-contrib-concat": "^0.5.0"
+  }
+}

@@ -18,11 +18,11 @@
 
 2. 下载开发轻应用插件所需Jar包，下载地址：
 
-	<http://sdk.baidu.com/service/view/42>
+	<http://bcs.duapp.com/runtimesdk/2_2/Baidu_Runtime_Android_2.2.0.rar>
 	
 	该链接下载的是一个zip包，包括了轻应用Runtime以及插件所需要的Jar包，结构如下：
 	
-	![](./images/jarpkg.png)
+	![](/md/images/jarpkg.png)
 	
 	下载完zip包后，找到“插件开发”，通过**“右键 -> Properties -> Java Build Path -> Libraries -> Add External Jars” **的方式引入Jar包。
 
@@ -57,34 +57,37 @@
 		
 		PluginResult对象，Java端可以通过PluginResult对象将执行的结果信息反馈到JS端，目前我们提供同步（sync）和异步（async）的方法返回结果信息
 	
-		**PluginResult**的详细说明如下：
+**PluginResult**的详细说明如下：
 		
-		- public PluginResult(Status status)
-		- public PluginResult(Status status, String message)
-		- public PluginResult(Status status, JSONArray message)
-		- public PluginResult(Status status, JSONObject message)
-		- public PluginResult(Status status, int i)
-		- public PluginResult(Status status, float f)
-		- public PluginResult(Status status, boolean b)
+		public PluginResult(Status status)
+		public PluginResult(Status status, String message)
+		public PluginResult(Status status, JSONArray message)
+		public PluginResult(Status status, JSONObject message)
+		public PluginResult(Status status, int i)
+		public PluginResult(Status status, float f)
+		public PluginResult(Status status, boolean b)
 		
-		**Status定义如下**：
 		
-			public enum Status {
-				NO_RESULT,
-				OK,
-				CLASS_NOT_FOUND_EXCEPTION,
-				ILLEGAL_ACCESS_EXCEPTION,
-				INSTANTIATION_EXCEPTION,
-				MALFORMED_URL_EXCEPTION,
-				IO_EXCEPTION,
-				INVALID_ACTION,
-				JSON_EXCEPTION,
-				ERROR
-			}
-	
-	【实例】
+**Status定义如下**：
+		
+		
+		public enum Status {
+			NO_RESULT,
+			OK,
+			CLASS_NOT_FOUND_EXCEPTION,
+			ILLEGAL_ACCESS_EXCEPTION,
+			INSTANTIATION_EXCEPTION,
+			MALFORMED_URL_EXCEPTION,
+			IO_EXCEPTION,
+			INVALID_ACTION,
+			JSON_EXCEPTION,
+			ERROR
+		}
 
-	获取手机当前亮度值的轻应用插件Java端示例如下（实例中以同步方式（sync）反馈信息）：
+	
+【实例】
+
+获取手机当前亮度值的轻应用插件Java端示例如下（实例中以同步方式（sync）反馈信息）：
 
 		import com.baidu.sumeru.nuwa.api.Plugin；
 		import com.baidu.sumeru.nuwa.api.PluginResult；
@@ -107,15 +110,18 @@
          			return new PluginResult(PluginResult.Status.ERROR, e.getMessage());
      			}
      			return new PluginResult(PluginResult.Status.ERROR, "err unknown");
- 			}
- 		}
+			}
+		}
+
  		
- 	如何使用args和callbackId的示例如下：
+如何使用args和callbackId的示例如下：
  	
- 		import com.baidu.sumeru.nuwa.api.Plugin；
+ 		
+		import com.baidu.sumeru.nuwa.api.Plugin；
 		import com.baidu.sumeru.nuwa.api.PluginResult；
  		 
- 		public class PluginDemo extends Plugin{
+ 		
+		public class PluginDemo extends Plugin{
 			public PluginResult execute(String action, JSONArray args, String callbackId) {
     			try {
 					if (action.equals("getBrightness")){
@@ -138,8 +144,8 @@
 					e.printStackTrace();
 					return new PluginResult(PluginResult.Status.ERROR, e.getMessage());
 				}
-		}
- 	}	
+			}
+		}	
  
  4. 运行工程，导出生成的.apk文件并重命名（文件位于项目工程`/bin`目录下），示例中插件名为pluginDemo.apk。
  
@@ -214,10 +220,10 @@
 		
 3. 编写插件的测试页面并将测试页面存放在服务器或者本地的SD卡中，插件测试页面的编写方法如下：
 
-	（1）在html页面加入如下监听器实现动态加载插件
+（1）在html页面加入如下监听器实现动态加载插件
 	
 		<script type="text/javascript">
-  			document.addEventListener('runtimeready', function(){
+			document.addEventListener('runtimeready', function(){
     			nuwa.pm.bindAk('abc');
     			nuwa.pm.absorb("pluginDemo", function (inst){
         			inst.on('error', function(err){
@@ -234,36 +240,38 @@
 
 	absorb函数的第一个参数为插件的名称，本例中的插件名称为’pluginDemo’，开发者需要指定为自己的插件名称。
 
-	（2）编写消息响应函数
+（2）编写消息响应函数
 	
 		function startDemo() {
-  			var successCallback = function(resultText) {
+			var successCallback = function(resultText) {
 	  		console.log("startDemo successCallback");
 	  		console.log("resultText = " + resultText);
-  		};
-  		var cancelCallback  = function() {
+		};
+		var cancelCallback  = function() {
 	  		console.log("startDemo cancelCallback ");
-  		};
-  		var errorCallback  = function(code) {
+		};
+		var errorCallback  = function(code) {
 	  		console.log("startDemo errorCallback ");
 	  		console.log("code = " + code);
-  		};
-  		var plgDemo = nuwa.require('plgDemo');
-  	    	plgDemo.start(successCallback, cancelCallback , errorCallback );
-  		}
+		};
+		var plgDemo = nuwa.require('plgDemo');
+			plgDemo.start(successCallback, cancelCallback , errorCallback );
+		}
   		
-  	（3）在html中添加按钮来触发startDemo函数
-  		<body>
+（3）在html中添加按钮来触发startDemo函数
+
+		<body>
 			……
-  			<button onclick="startDemo()">start demo</button>
+          <button onclick="startDemo()">start demo</button>
     		……
 		</body>
+
 4. 通过下面链接获取插件调试的demo
 
-	<http://sdk.baidu.com/service/view/42>
+	<http://bcs.duapp.com/runtimesdk/2_2/Baidu_Runtime_Android_2.2.0.rar>
 	
 	该链接下载的是一个zip包，解压zip包找到下图中红色标注的apk。
 	
-	![](./images/plugindemo.png)
+	![](/md/images/plugindemo.png)
 	
 5. 用第4步中的demo加载第三步的测试页面的url（如果测试页面放在服务器上）或者sd卡本地路径，来测试插件是否可以正常使用。

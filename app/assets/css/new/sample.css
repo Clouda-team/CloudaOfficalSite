@@ -1,0 +1,151 @@
+.wrapper{
+	background-color: #f6f6f6;
+	padding-top: 20px;
+	padding-bottom: 67px;
+}
+
+.sample-content-outer{
+	width:1200px;
+	min-width: 1200px;
+	margin: 0px auto;
+	overflow: hidden;
+}
+
+.sample-content-outer aside{
+	width:278px;
+	float: left;
+	background-color: #fff;
+	border:solid 1px #dcdcdc;
+	padding-bottom: 40px;
+}
+
+.sample-nav dt{
+	margin-left: 30px;
+	height: 42px;
+	line-height: 42px;
+	font-size: 16px;
+	color:#555;
+}
+
+.sample-nav dd{
+	height: 30px;
+	line-height: 30px;
+	font-size: 14px;
+	color:#888;
+	padding-left: 47px;
+	margin: 0;
+	cursor: pointer;
+}
+
+.sample-nav dd:hover{
+	background-color: #f6f6f6;
+	color:#3282e1;
+}
+.sample-content-outer article{
+	width:838px;
+	float:right;
+	border:solid 1px #ddd;
+	background-color: #fff;
+	padding: 30px;
+}
+
+.sample-title{
+	border-bottom: solid 1px #e8e8e8;
+	padding-bottom: 10px;
+	margin-bottom: 11px;
+}
+
+.sample-title span{
+	color:#555;
+	font-size: 24px;
+}
+
+.sample-paragraph{
+	margin-bottom: 30px;
+}
+.sample-paragraph p{
+	font-size: 14px;
+	color:#999;
+	line-height: 26px;
+}
+
+
+.sample-demo{
+	overflow: hidden;
+		margin-bottom: 30px;
+}
+
+
+
+.sample-demo .sample-demo-inner:first-child{
+	margin-right: 45px;
+	float: left;
+}
+
+.sample-demo .sample-demo-inner:last-child{
+	float: right;
+}
+
+.sample-demo-inner img{
+	width:270px;
+	height:457px;
+	border: solid 1px #c3c3c3;
+}
+
+.sample-demo-text{
+	width:520px;
+}
+
+.sample-demo-text h3{
+	margin: 0;
+	font-size: 16px;
+	color:#555;
+}
+
+.sample-demo-text p{
+	font-size: 14px;
+	color:#999;
+	line-height: 26px;
+}
+.sample-demo-text pre{
+	display: none;
+	float:left;
+	margin: 0;
+	background-color: #f4fbff;
+	border:solid 1px #49abfa;
+	margin-top: 20px;
+	width:503px;
+	max-height: 243px;
+	overflow: auto;
+	padding-left: 15px;
+	padding-top: 15px;
+	font-family: "Helvetica, STHeiti STXihei, Microsoft JhengHei, Microsoft YaHei, Tohoma, Arial";
+}
+
+.sample-demo-text pre code{
+	font-family: "Helvetica, STHeiti STXihei, Microsoft JhengHei, Microsoft YaHei, Tohoma, Arial";
+	color:#666;
+	font-size: 12px;
+}
+
+.showcode-btn{
+	display: block;
+	float: left;
+	clear: both;
+	width: 90px;
+	height: 30px;
+	line-height: 30px;
+	color:#fff;
+	background-color: #409ae3;
+	text-align: center;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.showcode-btn:hover{
+	background-color: #0078da;
+};
+
+.code-show{ 
+	background-color: #0078da;
+}

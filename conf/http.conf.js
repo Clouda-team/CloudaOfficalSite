@@ -4,18 +4,35 @@ rapid.config.define({
 
 		autoStart : true,
 
-		loading_dir : ["/app/actions/"],
+		loading_dir : ["/app/actions/","/app/filters/"],
 
 		gzip : true,
 
 		port : 18080,
 
 		/* "Cache-Control" : "max-age:31536000" */
-		filter : [{
+		
+
+		filters : [{
+			url:/^(.*)$/,
+			doFilter:"needRedirect"
+		},{
 			url : /^\/assets\/(.*)/,
 			doFilter : "addHeaders",
 			params : {
 				"Cache-Control" : "max-age:31536000"
+			}
+		},{
+			url:/^\/(applist|appinfo)(\/.*)?/i,
+			doFilter:"isLogin"
+		},{
+			url:/^(.*)$/,
+			doFilter:"isDeveloper"
+		},{
+			url:/^(.*)$/,
+			doFilter:"getAccessToken",
+			params:{
+
 			}
 		}],
 
@@ -39,19 +56,46 @@ rapid.config.define({
 			doAction : "api-product"
 		},{
 			url : /^\/blendapi(\/.*)?/,
-			doAction : "blendapi"
+			doAction : "blend"
+		},{
+			url : /^\/blendui(\/.*)?/,
+			doAction : "blend"
 		},{
 			url : /^\/blend(\/.*)?/,
-			doAction : "blendui"
+			doAction : "blend"
 		},{
 			url : /^\/runtime(\/.*)?/,
-			doAction : "blendui"
+			doAction : "runtime"
 		},{
 			url :/^\/getHybrid(\/)?/i,
 			doAction:"hybrid"
 		},{
+			url:/^\/other\/jump/i,
+			resource:"/app/views/other/jump.html"
+		},{
+			url:/^\/proxy(\/.*)?/i,
+			doAction:"proxy"
+		},{
+			url:/^\/index(\/.*)?/i,
+			doAction:"index"
+		},{
+			url:/^\/applist(\/.*)?$/i,
+			doAction:"applist"
+		},{
+			url:/^\/appinfo(\/.*)?$/i,
+			doAction:"appinfo"
+		},{
+			url:/^\/sample(\/)?$/i,
+			doAction:"sample"
+		},{
+			url:/^\/history(\/.*)?$/i,
+			doAction:"history"
+		},{
 			url : /^\/$/,
 			doAction : "index"
+		},{
+			url : /^\/noIE/,
+			doAction : "noIE"
 		},{
 			url : /^\/404/,
 			doAction : "404"

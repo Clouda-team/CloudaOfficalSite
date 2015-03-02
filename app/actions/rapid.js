@@ -29,7 +29,7 @@ server.defineAction("rapid", function(default_request, default_response, cookie)
 		var cached = cache.get(mdpath);
 		var html = cached ? cached : marked(md);
 
-		var content = visitor.render("api", {
+		var content = visitor.render("new/doc", {
 			proj : proj,
 			mod : mod,
 			doc : doc,

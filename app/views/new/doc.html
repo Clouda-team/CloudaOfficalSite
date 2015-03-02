@@ -1,0 +1,40 @@
+{% import "./topbar.html" as topbar%}
+{% import "./topnav.html" as topnav%}
+{% import "./doc-nav.html" as docnav %}
+<!DOCTYPE html>
+<html>
+<head>
+	{% include "../meta.html" %}
+	<title>Clouda+ Docs</title>
+    <link rel="stylesheet" href="/assets/css/site.css">
+    <link rel="stylesheet" href="/assets/css/markdown.css">
+    <link rel="stylesheet" href="/assets/css/api.css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+     <link rel="stylesheet" href="/assets/css/new/doc.css">
+</head>
+<body class="light">
+    {{ topbar.use("api") }}
+    {{ topnav.use("api") }}
+    <div class="wrapper">
+        <div class="doc-content-outer">
+            <aside>
+                
+                {{ docnav.use(proj,mod, doc) }}
+            </aside>
+            <article>
+                <div class="article-wrapper markdown" id="docs">
+                    {{ ctnt }}
+                </div>
+                
+            </article>
+            <div style="height:0;clear:both;"></div>
+        </div>
+    </div>
+
+    {% include "./footer.html" %}
+    <script src="/assets/js/prettify.min.js"></script>
+    <script src="/assets/js/url.js"></script>
+    <script src="/assets/js/api.js"></script>
+    <script src="/assets/js/statistics.js"></script>
+</body>
+</html>

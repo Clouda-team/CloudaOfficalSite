@@ -1,7 +1,7 @@
 About
 ==========
 
-这是[Clouda+官网](http://clouda.com)的源码仓库。
+这是[Clouda+官网](http://clouda.baidu.com)的源码仓库。
 
 Clouda+
 ==========

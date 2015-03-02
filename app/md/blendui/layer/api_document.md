@@ -8,10 +8,10 @@
 
 Layer的配置格式如下：
 
-<pre><code>var layer = new Blend.ui.Layer({"options":"values"});</code></pre>
+<pre><code>var layer = new Blend.ui.Layer({"xxx":"xxx"});// 传入创建Layer的参数键值对，具体参见以下文档</code></pre>
 另一种格式如下：
 <pre><code>var Layer = Blend.ui.Layer;
-var layer = new Layer({"options":"values"});</code></pre>
+var layer = new Layer({"xxx":"xxx"});</code></pre>
 
 > 开发者可自行选定使用格式，以下统一以第一种格式展示代码
 
@@ -415,8 +415,8 @@ var layer = new Blend.ui.Layer({
 </code></pre>
 
 
-<h3 class="construct" platform="android ios">fx</h3>
-layer打开显示时的动画时常
+<h3 class="construct" platform="android ios">duration</h3>
+layer打开显示时的动画时长
 
 <table>
     <tbody>

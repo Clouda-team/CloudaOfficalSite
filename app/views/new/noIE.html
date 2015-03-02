@@ -1,0 +1,419 @@
+
+{% import "./topnav.html" as topnav%}
+<!DOCTYPE html>
+<html>
+<head>
+	{% include "../meta.html" %}
+	<title>Clouda+</title>
+	<link rel="stylesheet" href="/assets/css/site.css">
+
+	<style type="text/css">
+
+.clouda-topbar{
+    height:39px;
+    background-color: #363842;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.clouda-content-outside{
+    width:100%;
+    min-width: 1200px;
+    height: 39px;
+    margin: 0 auto;
+    position: fixed;
+    top:0;
+    right:0;
+}
+
+.clouda-content-inner{
+
+    padding: 13px 0 14px;
+    width: 1200px;
+    margin: 0 auto;
+
+}
+
+.clouda-content-outside::before ,.clouda-content-outside:after{
+    display: table;
+    content: "";
+    line-height: 0;
+}
+
+.clouda-user-nav{
+    list-style: none;
+    float:right;
+}
+
+.clouda-user-itme{
+    float: left;
+    height: 12px;
+    line-height: 12px;
+    border-left: solid 1px #575a6a;
+    padding: 0 16px;
+}
+
+.clouda-user-itme:first-child{
+    padding-left: 0;
+    border-left: none;
+}
+
+.clouda-user-itme:last-child{
+    padding-right: 0;
+}
+
+.clouda-user-itme a{
+    text-decoration: none;
+    color:#fff;
+    font-size: 12px;
+}
+
+.clouda-user-itme a:hover{
+    color:#62aaff;
+}
+
+.clouda-user-info span{
+    font-size: 12px;
+    color:#fff;
+}
+
+
+#cloudaUserName{
+    color:#62aaff;
+}
+/**/
+
+.clouda-page-nav{
+    height: 76px;
+    width:100%;
+    background-color: #3282e1;
+    position: fixed;
+    top:39px;
+    right:0;
+    z-index: 100;
+
+}
+.clouda-page-nav-wrapper{
+    height: 76px;
+    width: 100%;
+    min-width:1200px;
+    position: fixed;
+    top:39px;
+    right:0;
+}
+
+.clouda-page-nav-outer{
+    margin: 0 auto;
+    width:1200px;
+    position: relative;
+}
+
+@media screen and (min-width:701px) and (max-width:1119px){
+    .clouda-page-nav-outer{
+        width:100%;
+    }
+
+    .clouda-page-nav-wrapper{
+        min-width: 100%;
+    }
+}
+
+@media screen and (max-width:700px){
+    .clouda-page-nav-outer{
+        width:700px;
+    }
+
+    .clouda-page-nav-wrapper{
+        min-width: 700px;
+    }
+}
+
+.page-nav-logo{
+    height:76px;
+    line-height: 76px;
+    float:left;
+    display:table-cell;
+}
+
+.page-nav-logo a{
+    height: 40px;
+    display: inline-block;
+    width: 130px;
+    background: url(/assets/images/1/clouda-logo.png) no-repeat;
+    margin-top: 19px;
+
+}
+.page-nav-ul-wrapper{
+    height:76px;
+    line-height: 76px;
+    float:right;
+}
+.page-nav-ul{
+    display: inline-block;
+
+}
+
+.page-nav-ul>li{
+    float:left;
+    padding: 0 29px;
+}
+.page-nav-ul>li:last-child{
+    padding-right: 0;
+}
+
+.page-nav-ul>li a{
+    font-size: 16px;
+    color:#9ac8ff;
+
+}
+
+.page-nav-ul>li a:hover{
+    color:#fff;
+}
+
+.doc-nav-ul{
+    position: absolute;
+    top: 55px;
+    padding-bottom: 14px;
+    background-color: #468ee4;
+    z-index: 1;
+    width:104px;
+}
+
+.doc-nav-ul li{
+    height: 35px;
+    line-height: 35px;
+    text-align: left;
+    padding-left: 24px;
+}
+
+.page-nav-ul li.doc-li{
+    text-align: center;
+    width: 104px;
+    padding: 0 0;
+}
+
+.doc-nav-ul li a{
+    color:#9ac8ff;
+}
+
+.doc-nav-ul li a:hover{
+    color: #fff;
+}
+.pagesofnav{
+    padding-right: 25px;
+    
+    background: transparent url(/assets/images/1/nav-arrows.png) no-repeat 40px -14px;
+}
+
+
+
+.pagesofnav-hover{
+    background: transparent url(/assets/images/1/nav-arrows.png) no-repeat 40px 5px;
+
+}
+
+.doc-nav-wrapper:hover{
+    background-color: #468ee4;
+}
+
+
+/**/
+.notsupport {
+    width: 1240px;
+    text-align: center;
+    padding-left: 80px;
+    padding-top: 145px;
+    height: 100%;
+    position: relative;
+    margin:0 auto;
+}
+
+.notsupport .imgshow,.notsupport a {
+    background: url(/assets/images/1/no-support.png) no-repeat
+}
+
+.notsupport p {
+    z-index: 5;
+    position: relative
+}
+
+.notsupport .imgshow {
+    display: block;
+    width: 208px;
+    height: 144px;
+    position: absolute;
+    z-index: 3;
+    top: 110px;
+    left: 324px
+}
+
+.notsupport .prompFont {
+    font-family: "Microsoft YaHei", STSong;
+    font-size: 20px;
+    font-weight: 400
+}
+
+.notsupport .sujest {
+    height: 60px;
+    line-height: 60px;
+    font-size: 14px;
+    color: #666;
+}
+
+.notsupport .sujest a {
+    display: inline-block;
+    height: 100%;
+    padding-left: 58px;
+    width: 60px;
+    color:#0066cc;
+}
+
+.notsupport .sujest .chrome {
+    background-position: -200px -90px
+}
+
+.notsupport .sujest .firefox {
+    background-position: -265px -8px
+}
+
+</style>
+<script type="text/javascript" src="http://passport.baidu.com/passApi/js/uni_login_wrapper.js?cdnversion=201410221525"/></script>
+<!-- <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script> -->
+<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript">
+    if (/\bAppleWebKit\b/.test(navigator.userAgent)) {
+        location.href = '/';
+    }
+</script>
+</head>
+
+<body>
+<div class="clouda-topbar">
+    <div class="clouda-content-outside">
+        <div class="clouda-content-inner">
+            <ul class="clouda-user-nav" id="cloudaUserNav">
+                
+            </ul>
+        </div>
+         
+    </div>
+    
+</div>
+<div style="width:100%;height:39px;"></div>
+<!-- {{topnav.use()}} -->
+
+<div class="clouda-page-nav">
+    <div class="clouda-page-nav-wrapper">
+        <div class="clouda-page-nav-outer">
+        <div class="page-nav-logo">
+            <a href="/"></a>
+        </div>
+        <div class="page-nav-ul-wrapper">
+            <ul class="page-nav-ul">
+                <li><a href="/">首页</a></li>
+                <li><a href="/portal">文档</a></li>
+                <!-- <li class="doc-li">
+                    <div class="doc-nav-wrapper" id="docNavWrapper">
+                        <a href="javascript:void(0);" class="pagesofnav" id="a_doc">文档</a>
+                        <ul class="doc-nav-ul" style="display:none">
+                            <li><a href="/portal">简介</a></li>
+                            <li><a href="/blend/introduction/introduction">Blend</a></li>
+                            <li><a href="/runtime/introduction/introduce">Runtime</a></li>
+                            <li><a href="/rapid/introduction/rapid_introduction/">RapidJS</a></li>  
+                        </ul>
+                    </div>
+                </li> -->
+                <li><a href="/sample" id="a_sample">实例</a></li>
+                <li><a href="https://github.com/Clouda-team"  target="_blank">Github</a></li>
+            </ul>
+        </div>
+        <div style="height:0;clear:both;"></div>
+        </div>
+    </div>
+</div>
+<div style="height:76px;"></div>
+
+
+
+<div class="notsupport">
+    <span class="imgshow"></span>
+    <p class="prompFont">您所使用的浏览器太古老了，忘掉IE吧~~~</p>
+    <p class="sujest">
+        请使用<a target="_blank"
+            href="http://www.google.com/intl/zh-CN/chrome/browser/"
+            class="chrome">chrome</a>或<a target="_blank"
+            href="http://www.firefox.com.cn/" class="firefox">firefox</a>浏览器访问
+    </p>
+</div>
+
+{% include "./footer.html" %}
+
+
+<script type="text/javascript">
+
+    var access_token = "{{access_token}}";
+    
+    // var host = "http://cq01-rdqa-dev046.cq01.baidu.com:8020";
+    var host = "http://"+window.location.host;
+
+    var instance = passport.pop.init({
+        apiOpt: {
+            staticPage: host+'/other/jump.html',//jump地址，注意大小写
+            product: 'clouda',//产品线标志，原tpl
+            u: window.location.href,//登录成功跳转地址
+            memberPass: true,//记住登录状态，原isMen
+            safeFlag: 0
+        },
+        cache: true,    //缓存
+        img: '/assets/images/1/denglu.png', //产品图片
+        forgetLink: 'passport.baidu.com/?getpass_index',//忘记密码
+        registerLink: 'passport.baidu.com/v2/?reg&tpl=&u='+host,//注册链接
+        //authsite: ['tsina','renren','qzone','tqq','fetion'],//合作登录
+        tangram: true, //如果页面不是使用的tangram2.0， 则此处配置成true,否则配置成false
+        onLoginSuccess: function(args){
+            //登录成功后，执行回调函数，在跳转到U之前触发
+        }
+    });
+
+    //绑定事件
+    $(document).on('click','#cloudaUserLogin', function(event) {
+        event.preventDefault();
+        instance.show();//显示浮层
+    });
+
+
+    $.ajax({
+        type:"GET",
+        url:"/proxy/getUserInfo",
+        dataType:"json",
+        success:function(data){
+
+           
+            console.log(data);
+            var html="";
+            if(data.uid){ 
+                //已登录
+                html = '<li class="clouda-user-itme"><a id="myApps" href="/applist">我的应用</a></li><li class="clouda-user-itme clouda-user-info"><span>欢迎你, </span><span id="cloudaUserName">'+ data.displayname+'</span></li><li class="clouda-user-itme"><a href="http://passport.baidu.com/?logout&tpl=clouda&u='+host+'">退出</a></li>';
+
+
+            }else{
+                //未登录
+                html = '<li class="clouda-user-itme"><a id="myApps" href="/applist">我的应用</a></li><li class="clouda-user-itme"><a href="javascript:void(0);" id="cloudaUserLogin">登录</a></li><li class="clouda-user-itme"><a href="https://passport.baidu.com/v2/?reg&tpl=clouda&color=blue&u='+host+'">注册</a></li>';
+            }
+
+            $("#cloudaUserNav").append(html);
+        },
+        error:function(msg){
+            var html = '<li class="clouda-user-itme"><a id="myApps" href="/applist">我的应用</a></li><li class="clouda-user-itme"><a href="javascript:void(0);" id="cloudaUserLogin">登录</a></li><li class="clouda-user-itme"><a href="https://passport.baidu.com/v2/?reg&tpl=clouda&color=blue&u='+host+'">注册</a></li>';
+            $("#cloudaUserNav").append(html);
+        }
+    });
+
+</script>
+
+</body>
+</html>

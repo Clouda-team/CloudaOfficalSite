@@ -108,13 +108,7 @@
 
 安装完成后打开blendui应用，使用“扫码”扫描BlendUI开发应用的服务器URL地址即可查看应用。
 
-### IOS端浏览
 
-使用IOS终端扫描下面的二维码安装BlendUI测试运行应用
-
-<img src="/md/images/iosdownload.png" class="download-pic">
-
-安装完成后打开blendui应用，使用“扫码”扫描BlendUI开发应用的服务器URL地址即可查看应用。
 
 ### 浏览器浏览
 

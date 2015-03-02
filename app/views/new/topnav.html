@@ -1,0 +1,203 @@
+{% macro use(param) %}
+<style type="text/css">
+.clouda-page-nav{
+	height: 76px;
+	width:100%;
+	background-color: #3282e1;
+	/*position: fixed;
+	top:39px;
+	right:0;
+	z-index: 100;
+*/
+min-width: 1200px;
+}
+.clouda-page-nav-wrapper{
+	height: 76px;
+	width: 100%;
+	min-width:1200px;
+	/*position: fixed;
+	top:39px;
+	right:0;*/
+}
+
+.clouda-page-nav-outer{
+	margin: 0 auto;
+	width:1200px;
+	position: relative;
+}
+
+@media screen and (min-width:701px) and (max-width:1119px){
+	.clouda-page-nav-outer{
+		width:100%;
+	}
+
+	.clouda-page-nav-wrapper{
+		min-width: 100%;
+	}
+}
+/*
+@media screen and (max-width:700px){
+	.clouda-page-nav-outer{
+		width:700px;
+	}
+
+	.clouda-page-nav-wrapper{
+		min-width: 700px;
+	}
+}*/
+
+.page-nav-logo{
+	height:76px;
+	line-height: 76px;
+	float:left;
+	display:table-cell;
+}
+
+.page-nav-logo a{
+	height: 40px;
+	display: inline-block;
+	width: 130px;
+	background: url(/assets/images/1/clouda-logo.png) no-repeat;
+	vertical-align: middle;
+}
+.page-nav-ul-wrapper{
+	height:76px;
+	line-height: 76px;
+	float:right;
+}
+.page-nav-ul{
+	display: inline-block;
+
+}
+
+.page-nav-ul>li{
+	float:left;
+	padding: 0 29px;
+}
+.page-nav-ul>li:last-child{
+	padding-right: 0;
+}
+
+.page-nav-ul>li a{
+	font-size: 16px;
+	color:#9ac8ff;
+
+}
+
+.page-nav-ul>li a:hover{
+	color:#fff;
+}
+
+.doc-nav-ul{
+	position: absolute;
+	top: 55px;
+	padding-bottom: 14px;
+	background-color: #468ee4;
+	z-index: 1;
+	width:104px;
+}
+
+.doc-nav-ul li{
+	height: 35px;
+	line-height: 35px;
+	text-align: left;
+	padding-left: 24px;
+}
+
+.page-nav-ul li.doc-li{
+	text-align: center;
+	width: 104px;
+	padding: 0 0;
+}
+
+.doc-nav-ul li a{
+	color:#9ac8ff;
+}
+
+.doc-nav-ul li a:hover{
+	color: #fff;
+}
+.pagesofnav{
+	padding-right: 25px;
+	
+	background: transparent url(/assets/images/1/nav-arrows.png) no-repeat 40px -14px;
+}
+
+
+
+.pagesofnav-hover{
+	background: transparent url(/assets/images/1/nav-arrows.png) no-repeat 40px 5px;
+
+}
+
+.doc-nav-wrapper:hover{
+	background-color: #468ee4;
+}
+
+
+</style>
+<div class="clouda-page-nav">
+	<div class="clouda-page-nav-wrapper">
+		<div class="clouda-page-nav-outer">
+		<div class="page-nav-logo">
+			<a href="/"></a>
+		</div>
+		<div class="page-nav-ul-wrapper">
+			<ul class="page-nav-ul">
+				<li><a href="/">首页</a></li>
+				<li class="doc-li">
+					<div class="doc-nav-wrapper" id="docNavWrapper">
+						<a href="javascript:void(0);" class="pagesofnav" id="a_doc">文档</a>
+						<ul class="doc-nav-ul" style="display:none">
+							<li><a href="/portal">简介</a></li>
+							<li><a href="/blend/introduction/introduction">Blend</a></li>
+							<li><a href="/runtime/introduction/introduce">Runtime</a></li>
+							<li><a href="/rapid/introduction/rapid_introduction/">RapidJS</a></li>	
+						</ul>
+					</div>
+				</li>
+				<li><a href="/sample" id="a_sample">实例</a></li>
+				<li><a href="https://github.com/Clouda-team"  target="_blank">Github</a></li>
+			</ul>
+		</div>
+		<div style="height:0;clear:both;"></div>
+		</div>
+	</div>
+</div>
+<!-- <div style="height:76px;"></div> -->
+
+
+<script type="text/javascript">
+;(function(){
+
+	//高亮
+	var path = window.location.pathname;
+	
+	var page = path.split("/")[1];
+	if(page==="portal"||page==="rapid"||page==="blend"||page==="blendui"||page==="blendapi"||page==="runtime"){
+		console.log(page);
+		$("#a_doc").css("color","#fff").addClass('pagesofnav-hover');
+	}else if(page === "sample"){
+		$("#a_sample").css("color","#fff");
+	}else{
+
+	}
+
+	$("#docNavWrapper").hover(function(){
+		$(this).find(".doc-nav-ul").show();
+		
+		$("#a_doc").css("color","#fff").addClass('pagesofnav-hover');
+	
+	},function(){
+		$(this).find(".doc-nav-ul").hide();
+		if(page==="portal"||page==="rapid"||page==="blend"||page==="blendui"||page==="blendapi"||page==="runtime"){
+			$("#a_doc").css("color","#fff");
+		}else{
+			$("#a_doc").css("color","#9ac8ff").removeClass('pagesofnav-hover');
+		}
+
+
+	});
+})();
+</script>
+{% endmacro%}

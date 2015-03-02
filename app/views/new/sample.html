@@ -1,0 +1,280 @@
+{% import "./topbar.html" as topbar%}
+{% import "./topnav.html" as topnav%}
+<!DOCTYPE html>
+<html>
+<head>
+	{% include "../meta.html" %}
+	<title>Clouda+</title>
+	<link rel="stylesheet" href="/assets/css/site.css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/css/api.css">
+	<link rel="stylesheet" href="/assets/css/new/sample.css">
+
+</head>
+<body>
+{{ topbar.use()}}
+{{ topnav.use()}}
+<div class="wrapper" id="_wrapper">
+	<div class="sample-content-outer">
+		<aside id="aside">
+			<div class="sample-nav">
+				<dt>BlendUI</dt>
+				<dd  data-place="_layergroup">layergroup</dd>
+				<dd  data-place="_wenku">百度文库</dd>
+			</div>
+			<div class="sample-nav">
+				<dt>BlendAPI</dt>
+				<dd  data-place="_activity">调起本地应用</dd>
+				<dd  data-place="_screen">截屏分享</dd>
+				<dd  data-place="_photo">手机拍照，相册</dd>
+			</div>
+			<!-- <div class="sample-nav">
+				<dt>Runtime</dt>
+				<dd>hehhehe</dd>
+			</div> -->
+		</aside>
+		<article>
+			<div class="sample-title">
+				<span>BlendUI</span>
+			</div>
+
+			<div class="sample-paragraph">
+				<p>BlendUI使用Native技术来扩展Javascript，同时我们选择了最易于理解的方式：让Javascript能像操作DOM那样操作多个webview，以及在webview中嵌入Native组件。<br>
+				多Webview控制能力。让一个Webapp拆到多个webview中运行，并能用Javascript来调度，解决了页面过大导致卡顿的问题，同时，webview的转场动画由Native代码实现，也解决了转场动画不流畅的问题。<br>
+				Native组件嵌入能力。能将Native控件嵌入Webview中，这样就能让页面中那些性能较差的部分用Native来实现，以最大化地提高体验和交互。<br>
+				BlendUI只在最基础的部分使用Native，BlendUI的核心消息机制类似传统的web事件，而所有BlendUI组件都可以采用完完全全的web来编写。总之，我们保持了所有web的风格和灵活性。</p>
+			</div>
+			<div class="sample-demo" id="_layergroup">
+				<div class="sample-demo-inner">
+					<img src="/assets/images/gif/layergroup.gif"></img>
+				</div>
+				<div class="sample-demo-inner">
+					<div class="sample-demo-text">
+						<h3>layergroup</h3>
+						<p>示例展示了页面切换和下拉刷新功能。BlendUI提供了相关页面切换接口供开发者使用;用户可以在页面上自定义下拉刷新样式和定义下拉操作，方便用户刷新获取页面内容。在BlendUI中我们既可以在Layer页面内也可以在LayerGroup页面内使用下拉刷新功能。</p>
+       					<span class="showcode-btn">实例代码</span>
+       					<pre><code>var tabs = new Blend.ui.LayerGroup({
+	id: "tab",
+	layers: [{
+		    id: 'group1',
+		    url: '/samples/group1.html',
+		    "active":true,
+		    'autoload': true,
+		    "pullToRefresh":true,
+		    "pullBgColor":"ff0000"
+		},
+		... //省略group2，group3定义
+	]
+}];
+//定义下拉刷新事件
+Blend.ui.on("layerPullDown",function(event){
+    setTimeout(function(){
+        $("#rcmd",dom).prepend('&lt;li&gt;&lt;a href="#" class="item-link item-content"&gt;&lt;div class="item-inner"&gt;&lt;div class="item-title"&gt;测试下拉刷新&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;&lt;/li&gt;');
+        Blend.ui.layerStopRefresh("group1");
+    },500);
+});</code></pre>
+       					
+					</div>
+				</div>
+			</div>
+			<div class="sample-demo" id="_wenku">
+				<div class="sample-demo-inner">
+					<div class="sample-demo-text">
+						<h3>百度文库</h3>
+						<p>百度文库集成了BlendUI，实现流畅的页面切换。</p>
+       					
+       					
+					</div>
+				</div>
+				<div class="sample-demo-inner">
+					<img src="/assets/images/gif/wenku.gif"></img>
+
+				</div>
+			</div>
+			<div class="sample-title">
+				<span>BlendAPI</span>
+			</div>
+			<div class="sample-paragraph">
+				<p>BWebapp的一大困境在于可供web调用的API远不如Native的完善。比如手机是3G还是wifi网络，电量情况，通讯录读取等，这些局限给手机web开发者带来了功能完备性的障碍。而Blend API弥补了这一鸿沟，它能让webapp的API更完备，让API的性能速度得到提升，暴露给开发者的都是通过统一、标准化的web API。<br>更为重要的是，Blend API内置于拥有极大装机量的百度搜索app，使得轻应用开发者能在数亿用户的手机上直接使用这些本地能力，并且拥有破壳检索、自动升级免安装等优势功能。</p>
+			</div>
+
+			<div class="sample-demo" id="_activity">
+				<div class="sample-demo-inner">
+					<div class="sample-demo-text">
+						<h3>调起本地应用</h3>
+
+						<p>根据传递的参数来调起手机应用,具体可以参考android调起应用参数<a href="http://developer.android.com/reference/android/content/Intent.html" target="_blank">intent</a></p>
+						<span class="showcode-btn">实例代码</span>
+       					<pre style="max-height:335px;"><code>
+var intent_cal  =  {
+    action: "android.intent.action.EDIT",
+    type: "vnd.android.cursor.item/event",
+    title: "Some title",
+    description: "Some description",
+    beginTime: 1384676947757,
+    endTime: 1384680547757
+};
+Blend.device.activity.start({
+	onsuccess: function(data){
+		$("#api",dom).val(JSON.stringify(data));
+		Tips.show(dom,{text:"调用成功"})
+	},
+	onfail: function(data){
+		$("#api",dom).val(JSON.stringify(data));
+		Tips.show(dom,{text:"调用失败"})
+	},
+	intent:intent
+});
+       					</code></pre>
+       					
+					</div>
+				</div>
+				<div class="sample-demo-inner">
+					<img src="/assets/images/gif/activity.gif"></img>
+
+				</div>
+			</div>
+			<div class="sample-demo" id="_screen">
+				<div class="sample-demo-inner">
+					<img src="/assets/images/gif/screen.gif"></img>
+				</div>
+				<div class="sample-demo-inner">
+					<div class="sample-demo-text">
+						<h3>截屏分享</h3>
+						<p>示例展示了调用手机的上的截屏和分享能力。</p>
+       					<span class="showcode-btn">实例代码</span>
+       					<pre><code>
+Blend.device.screen.shareScreen({
+	onsuccess: function(data){
+		$("#api",dom).val(JSON.stringify(data));
+	},
+	onfail: function(data){
+		$("#api",dom).val(JSON.stringify(data));
+	}
+});
+       					</code></pre>
+       					
+					</div>
+				</div>
+			</div>
+			<div class="sample-demo" id="_photo">
+				<div class="sample-demo-inner">
+					<img src="/assets/images/gif/photo.gif"></img>
+				</div>
+				<div class="sample-demo-inner">
+					<div class="sample-demo-text">
+						<h3>手机拍照，相册</h3>
+						<p>启动手机摄像头进行拍照，或者从相册选取响应的照片，以base64的形式返回照片数据。并提供了按照宽高进行压缩的功能。</p>
+       					<span class="showcode-btn">实例代码</span>
+       					<pre><code>
+$("#imageurl",dom).click(function(){
+	Blend.device.media.captureMedia({
+		onsuccess:function(data){
+			$("#api",dom).val(JSON.stringify(data));
+			$("#media",dom).attr({src:"data:"+data.type+";base64,"+data.base64});
+		},
+		onfail: function(data){
+			$("#api",dom).val(JSON.stringify(data));
+		},
+		mediaType: Blend.device.MEDIA_TYPE.IMAGE,
+		source: 0,
+		base64: true,
+		quality: 90,
+		width: 260,
+		height: 280
+	});
+});
+       					</code></pre>
+       					
+					</div>
+				</div>
+			</div>
+			<!-- <div class="sample-title">
+				<span>Runtime</span>
+			</div> -->
+		</article>
+	</div>
+</div>
+
+
+{% include "./footer.html" %}
+
+<script type="text/javascript">
+;(function(){
+
+	$(".showcode-btn").click(function(){
+		if($(this).hasClass('code-show')){
+			$(this).closest('.sample-demo-text').find('pre').hide();
+			$(this).removeClass("code-show");
+		}else{
+			$(this).closest('.sample-demo-text').find('pre').show();
+			$(this).addClass("code-show");
+		}
+	});
+
+/*
+
+	$("#_layergroup").click(function(){
+		$("body").scrollTop(310);
+	});
+
+	$("#_wenku").click(function(){
+		$("body").scrollTop(810);
+	});
+
+	$("#_activity").click(function(){
+		$("body").scrollTop(1510);
+	});
+
+	$("#_screen").click(function(){
+		$("body").scrollTop(2010);
+	});
+
+	$("#_photo").click(function(){
+		$("body").scrollTop(2510);
+	});
+*/
+
+	$(".sample-nav dd").click(function(e){
+
+		e.preventDefault();
+		var place = $(this).data('place');
+
+		var offset = document.querySelector("#" + place).offsetTop;
+		window.scrollTo(0,offset-115);
+
+	});
+
+	var goTop = function(){
+		if(document.querySelector("#gotop")) return console.log("duplicate id: gotop");
+		
+		var gotop = document.createElement("div");
+		gotop.id = "gotop";
+		gotop.innerHTML = '<i class="fa fa-arrow-up"></i>';
+		
+		document.body.appendChild(gotop);
+
+		gotop.addEventListener("click", function(){
+
+			window.scroll(0,0);
+
+		}, false);
+
+		window.addEventListener("scroll", function(e){
+			
+			var offtop = document.documentElement.scrollTop ||  document.body.scrollTop;
+			if(offtop >= (window.screen.availHeight )){
+				gotop.style.display = "block";
+			} else {
+				gotop.style.display = "none";
+			}
+
+		}, false);
+	}
+	goTop();
+
+
+})();
+</script>
+</body>
+</html>

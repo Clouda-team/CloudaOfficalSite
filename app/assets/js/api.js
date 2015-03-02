@@ -16,7 +16,18 @@ document.addEventListener("DOMContentLoaded", function(){
 	var pres = document.querySelectorAll("pre");
 	if(pres.length){
 		[].forEach.call(pres, function(pre){
-			pre.classList.add("prettyprint");
+			if(pre.classList){
+				pre.classList.add("prettyprint");
+			}else{
+				var classNames = [];
+				if(pre.className){
+					classNames = pre.className.split(/\s+/);
+					classNames.push("prettyprint");
+					pre.className = classNames.join(" ");
+				}else{
+					pre.className = "prettyprint";
+				}
+			}
 		});	
 		prettyPrint();
 	}
@@ -52,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function(){
 			var arch = document.createElement("ul");
 			arch.id = "arch";
 			[].forEach.call(h2s, function(h2){
-				var id = h2.innerHTML.toLowerCase();//tools.randomID();
+				var id = h2.innerHTML.toLowerCase().replace(".","").replace(/\s+/g,"");//tools.randomID();
 				h2.id = id;
 				var li = document.createElement("li");
 				var a = document.createElement("a");
@@ -63,6 +74,21 @@ document.addEventListener("DOMContentLoaded", function(){
 				a.href = "#" + id;
 				a.innerHTML = h2.innerHTML;
 				li.appendChild(a);
+				a.addEventListener("click", function(e){
+					e.preventDefault();
+					var offset;
+					try{
+						offset = document.querySelector("#" + id).offsetTop;
+					}catch(e){
+						offset = document.querySelector("h2[id='"+id+"']").offsetTop;
+					}
+					
+					// window.scrollTo(0,offset);
+					//window.scrollTo(0,offset-115);
+					window.scrollTo(0,offset-39);
+
+					//history.pushState("", document.title, window.location.pathname);
+				}, false);
 
 				if(renderH3){
 					var sel = h2.innerText || h2.textContent;
@@ -77,7 +103,8 @@ document.addEventListener("DOMContentLoaded", function(){
 							h3li.appendChild(h3lia);
 							h3lia.addEventListener("click", function(e){
 								var offset = document.querySelector("#" + h3id).offsetTop;
-								window.scrollTo(0,offset);
+								// window.scrollTo(0,offset);
+								window.scrollTo(0,offset-115);
 								history.pushState("", document.title, window.location.pathname);
 							}, false);
 							h3.id = h3id;
@@ -114,7 +141,7 @@ document.addEventListener("DOMContentLoaded", function(){
 			docs.insertBefore(arch, h1.nextSibling);
 		}
 	}
-	if(url(3) === "api_document" || url(3) === "runtime"){
+	if(url(3) === "api_document" || url(3) === "runtime" ||url(3) === "api_runtime"||url(3) === "api_kuang"){
 		archive(true);	
 	} else {
 		archive();
@@ -139,7 +166,7 @@ document.addEventListener("DOMContentLoaded", function(){
 		window.addEventListener("scroll", function(e){
 			
 			var offtop = document.documentElement.scrollTop ||  document.body.scrollTop;
-			if(offtop >= (window.screen.availHeight + 100)){
+			if(offtop >= (window.screen.availHeight + 100-150)){
 				gotop.style.display = "block";
 			} else {
 				gotop.style.display = "none";

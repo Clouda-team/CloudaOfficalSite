@@ -1,0 +1,127 @@
+.wrapper{
+	background-color: #f6f6f6;
+	padding-top: 20px;
+	padding-bottom: 67px;
+	min-width: 1200px;
+}
+.wrapper *{
+	/*font-family: "Microsoft YaHei";*/
+}
+.content-outer{
+	width:1200px;
+	min-width: 1200px;
+	margin: 0px auto;
+	background-color: #fff;
+	border: solid 1px #dcdcdc;	
+}
+
+.content-inner{
+	border-bottom:solid 1px #e8e8e8;
+}
+
+.content-inner:last-child{
+	border-bottom: none;
+}
+.content-intro{
+	width: 1040px;
+	margin: 0 auto;
+	padding-bottom: 55px;
+}
+
+.content-intro span{
+	display: block;
+	height:100px;
+	line-height: 100px;
+	margin: 0 auto;
+	/*font-family: "Microsoft YaHei";*/
+	font-size: 24px;
+	color:#555;
+	text-align: center;
+}
+
+.content-intro p{
+	margin: 0;
+	/*font-family: "Microsoft YaHei";*/
+	font-size: 14px;
+	line-height: 26px;
+	color:#999;
+}
+
+.content-part{
+	width:820px;
+	margin: 0 auto;
+}
+
+
+.content-part .content-part-name{
+	display: block;
+	height:100px;
+	line-height: 100px;
+	margin: 0 auto;
+	/*font-family: "Microsoft YaHei";*/
+	font-size: 24px;
+	text-align: center;
+}
+
+span.content-part-rapid{
+	color:#56b864;
+}
+
+span.content-part-blend{color:#ff8500;}
+span.content-part-runtime{color:#0078da;}
+
+.content-part-half{
+	width:360px;
+	float:left;
+}
+
+.content-part-intro{
+	margin-right: 100px;
+}
+
+.content-part-half span{
+	display: block;
+	border-bottom:solid 1px #e8e8e8;
+	height:25px;
+	line-height: 16px;
+	/*font-family: "Microsoft YaHei";*/
+	font-size: 16px;
+	color:#555;
+}
+
+.content-part-half p{
+	margin: 0;
+	padding-top: 5px;
+	line-height: 24px;
+	/*font-family: "Microsoft YaHei";*/
+	font-size: 14px;
+	color:#999;
+}
+
+.content-part-links{
+	overflow: hidden;
+	width:396px;
+	margin: 0 auto;
+	padding-top: 35px;
+	padding-bottom: 50px;
+}
+.content-part-links a{
+	display: block;
+	float:left;
+	width:112px;
+	height:39px;
+	line-height: 39px;
+	border-bottom-style: solid;
+	border-bottom-width:  3px;
+	color:#fff;
+	text-align: center;
+	margin-right: 30px;
+}
+
+.content-part-links a:last-child{
+	margin-right: 0;
+}
+
+a.link-rapid{background-color: #56b864;border-bottom-color:#2b9236 ;}
+a.link-blend{background-color: #ff8500;border-bottom-color:#ff5e00 ;}
+a.link-runtime{background-color: #0078da;border-bottom-color:#005ad3 ;}

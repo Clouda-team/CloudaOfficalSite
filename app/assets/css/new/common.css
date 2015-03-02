@@ -1,0 +1,19 @@
+.wrapper{
+	background-color: #f6f6f6;
+	padding-top: 20px;
+	padding-bottom: 67px;
+	height:100%;
+	min-width: 1200px;
+}
+
+.wrapper *{
+	/*font-family: "Microsoft YaHei";*/
+}
+
+.content-outer{
+	width:1200px;
+	min-width: 1200px;
+	margin: 0px auto;
+	background-color: #fff;
+	border: solid 1px #dcdcdc;	
+}

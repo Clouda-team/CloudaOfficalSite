@@ -1,0 +1,150 @@
+{% import "./topbar.html" as topbar%}
+{% import "./topnav.html" as topnav%}
+<!DOCTYPE html>
+<html>
+<head>
+	{% include "../meta.html" %}
+    <title>Clouda+</title>
+    <link rel="stylesheet" href="/assets/css/site.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/new/common.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/new/appinfo.css">
+    <style type="text/css">
+
+    </style>
+</head>
+<body>
+{{ topbar.use()}}
+{{topnav.use()}}
+<div class="wrapper">
+    <div class="content-outer">
+        <div class="content-inner content-appinfo">
+            {%if isLogin%}
+                {%if !appinfo%}
+                <div class="error_tip">
+                    <span></span>
+                    <p>对不起，不存在该应用！</p>
+                </div>
+            {%else%}
+                <div class="appinfo-detail">
+                    <div class="appinfo-icon">
+                        <img src="{%if appinfo.app_logo%}{{appinfo.app_logo}}{%else%}/assets/images/1/app-logo-default.png{%endif%}">
+                    </div>
+                    <div class="appinfo-info">
+                        <ul class="appinfo-ul">
+                            <li><span>名称:</span><span class="appinfo-val">{{appinfo.app_name}}</span></li>
+                            <li><span>ID:</span><span class="appinfo-val">{{appinfo.app_id}}</span></li>
+                            <li><span>API Key:</span><span class="appinfo-val">{{appinfo.api_key}}</span></li>
+                            <li><span>Secret Key:</span><span class="appinfo-val">{{appinfo.secret_key}}</span></li>
+                            <li><span>创建时间:</span><span class="appinfo-val">{{appinfo.create_time}}</span></li>
+                            <li><span>更新时间:</span><span class="appinfo-val">{{appinfo.last_modify_time}}</span></li>
+                            <li><span>应用技术:</span><span class="appinfo-val"><input type="checkbox" id="regRuntime" {%if appinfo['runtime_register'] %}checked{%endif%} data-appid="{{appinfo.app_id}}">Runtime</span><em id="regTip" class="reg-success" style="display:none">成功启用Runtime</em></li>
+                        </ul>
+                        <div>
+                            <a href="/applist" class="back-applist">返回应用列表</a>
+                        </div>
+                    </div>
+                </div>
+            {%endif%}
+            {%else%}
+                <div class="error_tip">
+                    <span></span>
+                    <p>请先登录！</p>
+                </div>
+            {%endif%}
+            
+            
+        </div>
+       
+    </div>
+</div>
+
+
+{% include "./footer.html" %}
+
+<script type="text/javascript">
+var access_token = "{{access_token}}";
+var isDeveloper = "{{isDeveloper}}";
+var isLogin = "{{isLogin}}";
+
+;(function(){
+
+    if(isLogin=="0"){
+        var interID = setInterval(function(){
+            var login_btn = $("#cloudaUserLogin");
+            if(login_btn){
+                login_btn.trigger("click");
+                clearInterval(interID);
+            }
+        },500);
+    }
+
+
+    $("#regRuntime").on('click',function(){
+        var app_id = $(this).data('appid');
+        var data={
+            access_token:access_token,
+            app_id:app_id,
+            app_name:""
+        }
+        console.log(document.getElementById("regRuntime").checked);
+        if(document.getElementById("regRuntime").checked){
+            data['method']="register";
+        }else{
+            data['method']="unregister";
+        }
+
+        var method = data['method'];
+
+        $.ajax({
+            url:"/proxy/regRuntime?method="+data['method']+"&app_id="+data['app_id']+"&access_token="+data['access_token'],
+            method:"GET",
+            dataType:"json",
+            success:function(data){
+                $("#regTip").removeClass().text("");
+                var text = "";
+                
+                if(!data.error_code){
+                    if(method === "register"){
+                        text = "成功启用Runtime";
+                    }else if(method==="unregister"){
+                        text = "成功停用Runtime";
+                    }
+                    $("#regTip").addClass("reg-success").text(text).show();
+
+                    setTimeout(function(){
+                        $("#regTip").hide();
+                    },2000);  
+                }else{
+                    if(method === "register"){
+                        text = "启用Runtime失败";
+                    }else if(method==="unregister"){
+                        text = "停用Runtime失败";
+                    }
+                    $("#regTip").addClass("reg-fail").text(text).show();
+
+                    setTimeout(function(){
+                        $("#regTip").hide();
+                    },2000);
+                }
+                
+            },
+            error:function(e){
+                console.error(e);
+            }
+
+        });
+
+    });
+
+
+
+
+})();
+
+
+
+
+
+</script>
+</body>
+</html>

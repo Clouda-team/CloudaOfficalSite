@@ -1,5 +1,5 @@
-{% import "./hd.html" as hd %}
 {% import "./nav.html" as nav %}
+{% import "./topbar.html" as topbar%}
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
 </head>
 <body class="light">
+    {{ topbar.use()}}
     {{ hd.use("api") }}
     <section class="bd">
         <div class="vp">

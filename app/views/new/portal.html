@@ -1,0 +1,92 @@
+{% import "./topbar.html" as topbar%}
+{% import "./topnav.html" as topnav%}
+
+<!DOCTYPE html>
+<html>
+<head>
+	{% include "../meta.html" %}
+	<title>Clouda+</title>
+	<link rel="stylesheet" href="/assets/css/site.css">
+	<link rel="stylesheet" href="/assets/css/new/portal.css">
+</head>
+<body>
+{{ topbar.use()}}
+{{ topnav.use()}}
+<div class="wrapper">
+	<div class="content-outer">
+		<div class="content-inner">
+			<div class="content-intro">
+				<span>Clouda+的设计思想</span>
+				<p>Clouda+是移动web应用开发整体解决方案，并特别针对百度轻应用场景进行了优化，旨在让webapp体验和交互媲美Native应用。<br><br>我们认为，开发webapp应该是愉悦的，并且让使用者也能愉快而流畅的完成交互。Clouda+努力剔除开发过程中的痛苦，因此，我们帮助开发者完成流畅的动画、减少DOM层级、让布局更容易（Blend UI），将设备能力暴露给web（Blend API），让webapp能像Native App一样安装、更新和接受推送（Runtime），用熟悉的Javascript完成服务端开发（Rapidjs）并且能轻松地管理Nodejs运行环境（Tankjs）。我们不拘泥于固定的语言和技术，只要有技术对提升Webapp的体验有帮助，它们就能为我们所用。<br><br>Clouda+是解耦的，易于理解的。刚才提到的那些组成部分联合起来，能像覆盖整个轻应用的所有开发环节，如果你有更加趁手的技术，也可以只使用其中一部分组件，它们同样能很好地为你工作。<br><br>Clouda+的伸缩性很强。它能覆盖开发者从业务搭建之初，到产品成长、成熟的整个迭代过程，从设计之初便在系统的延展性及适用方式上做了大量考虑。</p>
+			</div>
+		</div>
+		
+		<div class="content-inner">
+			<div class="content-part">
+				<span class="content-part-blend content-part-name">Blend</span>
+				<div class="content-layout">
+					<div class="content-part-intro content-part-half">
+						<span>介绍</span>
+						<p>Blend由BlendUI和BlendAPI两部分组成。主要解决了webapp的两大难题，UI交互不流畅和无法调用设备能力。</p>
+					</div>
+					<div class="content-part-situation content-part-half">
+						<span>使用场景</span>
+						<p>BlendUI让Javascript拥有操作Webview和Native控件的能力，让你的web移动端交互流畅，体验无异于Native app。BlendAPI让webapp拥有移动设备的原生能力和百度云服务能力。</p>
+					</div>
+					<div style="height:0;clear:both;"></div>
+				</div>
+				<div class="content-part-links">
+					<a class="link-blend" href="/blend/introduction/introduction">快速入门</a>
+					<a class="link-blend" href="/blendui/define_event/api_document">BlendUI手册</a>
+					<a class="link-blend" href="/blendapi/local/api_runtime">BlendAPI手册</a>
+				</div>
+			</div>
+		</div>
+		<div class="content-inner">
+			<div class="content-part">
+				<span class="content-part-runtime content-part-name">Runtime</span>
+				<div class="content-layout">
+					<div class="content-part-intro content-part-half">
+						<span>介绍</span>
+						<p>Runtime为轻应用在移动终端上可以安全、稳定、高效的运行提供运行环境，可以快速地让轻应用获得与Native应用一样的能力，并提供权限管理，生命周期管理等APP管理功能。</p>
+					</div>
+					<div class="content-part-situation content-part-half">
+						<span>使用场景</span>
+						<p>当应用需要集成Runtime时，我们为您提供三套集成方案：静态方案、动态远程方案、动态本地方案；同时还提供了一套方便快捷的插件机制，被称作“轻应用插件”。</p>
+					</div>
+					<div style="height:0;clear:both;"></div>
+				</div>
+				<div class="content-part-links">
+					<a class="link-runtime" href="/runtime/introduction/introduce">Runtime简介</a>
+					<a class="link-runtime" href="/runtime/introduction/runtime">集成指南</a>
+					<a class="link-runtime" href="/runtime/introduction/plugin_inner_introduce">插件开发</a>
+				</div>
+			</div>
+		</div>
+		<div class="content-inner">
+			<div class="content-part">
+				<span class="content-part-rapid content-part-name">Rapid JS</span>
+				<div class="content-layout">
+					<div class="content-part-intro content-part-half">
+						<span>介绍</span>
+						<p>基于Nodejs的、专门为灵活多变的web业务而设计的服务端开源开发框架。其目标是支撑开发者从业务搭建之初，到产品成长、成熟的整个迭代过程，RapidJS从设计之初便在系统的延展性及适用方式上做了大量考虑。</p>
+					</div>
+					<div class="content-part-situation content-part-half">
+						<span>使用场景</span>
+						<p>RapidJS是一款基于Nodejs的、专门为灵活多变的web业务而设计的服务端开源开发框架。其目标是支撑开发者从业务搭建之初，到产品成长、成熟的整个迭代过程。</p>
+					</div>
+					<div style="height:0;clear:both;"></div>
+				</div> 
+				<div class="content-part-links">
+					<a class="link-rapid" href="/rapid/introduction/get_started">快速开始</a>
+					<a class="link-rapid" href="/rapid/deep_learn/form">深度历练</a>
+					<a class="link-rapid" href="/rapid/core/api_document">API文档</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% include "./footer.html" %}
+</body>
+</html>

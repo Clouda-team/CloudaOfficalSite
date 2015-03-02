@@ -55,10 +55,10 @@ function fetchGithubStars (org){
 fetchGithubStars("Clouda-team");
 setInterval(function(){ fetchGithubStars("Clouda-team"); }, fetchInterval);
 
-server.defineAction("index", function(){
+// server.defineAction("index", function(){
 
-	var content = this.render("index", github);
+// 	var content = this.render("index", github);
 
-	this.send(content);
+// 	this.send(content);
 	
-});
+// });

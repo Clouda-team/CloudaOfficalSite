@@ -1,4 +1,4 @@
-# 获取API Key
+# 申请权限
 
 （1）进入[百度开放云平台](http://developer.baidu.com)
 

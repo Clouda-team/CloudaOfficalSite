@@ -1,4 +1,6 @@
 {% import "./hd.html" as hd %}
+{% import "./new/topbar.html" as topbar%}
+{% import "./new/topnav.html" as topnav%}
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,8 +12,9 @@
 	<link rel="stylesheet" type="text/css" href="/assets/css/old-main.css">
 	<link rel="stylesheet" href="/assets/css/font-awesome.min.css">
 </head>
-<body class="dark">
-{{ hd.use("api") }}
+<body style="background-color:#f6f6f6">
+{{ topbar.use("api") }}
+{{ topnav.use() }}
 <div id="copyMask"></div>
 <div id="wrapper">
     <div id="content">
@@ -64,6 +67,11 @@
 	            	<input type="checkbox" class="api-item" data-name="qr">
 	            	<h5>二维码（QRCode）</h5>
 	            	<p class="api-intro" >支持二维码、条形码的扫描与识别</p>
+	            </li>
+	            <li class="list-group-item">
+	            	<input type="checkbox" class="api-item" data-name="keyboard">
+	            	<h5>键盘（KeyBoard）</h5>
+	            	<p class="api-intro" >支持监听键盘的弹出和收起事件</p>
 	            </li>
 	          </ul>
 	        </div>
@@ -136,17 +144,17 @@
 			<div class="use_tip">
 				<h5>使用方法</h5>
 				<p>1.&nbsp;在HTML页面中添加以下代码：</p>
-<pre>&lt;script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8" data-appid="{appid}"  src="http://apps.bdimg.com/cloudaapi/lightapp.js"&gt;&lt;/script&gt;</pre>
+<pre>&lt;script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8" data-appid="{appid}" src="http://apps.bdimg.com/cloudaapi/lightapp.js"&gt;&lt;/script&gt;</pre>
 				<p>如果页面是使用https加密链接的时，请内嵌如下代码：</p>
-<pre>&lt;script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8"  data-appid="{appid}"  src="https://openapi.baidu.com/cloudaapi/lightapp.js"&gt;&lt;/script&gt;</pre>
-				<p>2.&nbsp;使用以上生成代码来注册需要的API，apikey为轻应用的APIKEY和 APPID,获取方法参考&nbsp;<a href="http://cloudajs.org/lightapp/docs/dev_guide" target="_blank">开发指南</a></p>
+<pre>&lt;script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8" data-appid="{appid}" src="https://openapi.baidu.com/cloudaapi/lightapp.js"&gt;&lt;/script&gt;</pre>
+				<p>2.&nbsp;使用以上生成代码来注册需要的API，apikey为轻应用的APIKEY和APPID,获取方法参考&nbsp;<a href="http://cloudajs.org/lightapp/docs/dev_guide" target="_blank">开发指南</a></p>
 			</div>
 		</div>
   	</div>
   	
 </div>
 
-{% include "./ft.html" %}
+{% include "./new/footer.html" %}
 <script src="/assets/js/jquery.1.8.3.min.js"></script>
 <script src="/assets/js/cpClipboard.js"></script>
 <script src="/assets/js/api-module.js"></script>

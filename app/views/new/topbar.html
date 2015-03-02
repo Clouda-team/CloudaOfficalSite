@@ -1,0 +1,176 @@
+{% macro use(param) %}
+<style type="text/css">
+
+.clouda-topbar{
+    height:39px;
+    background-color: #363842;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.clouda-content-outside{
+    width:100%;
+    min-width: 1200px;
+    height: 39px;
+    margin: 0 auto;
+    position: fixed;
+    top:0;
+    right:0;
+}
+
+.clouda-content-inner{
+
+    padding: 13px 0 14px;
+    width: 1200px;
+    margin: 0 auto;
+
+}
+
+.clouda-content-outside::before ,.clouda-content-outside:after{
+    display: table;
+    content: "";
+    line-height: 0;
+}
+
+.clouda-user-nav{
+    list-style: none;
+    float:right;
+}
+
+.clouda-user-itme{
+    float: left;
+    height: 12px;
+    line-height: 12px;
+    border-left: solid 1px #575a6a;
+    padding: 0 16px;
+}
+
+.clouda-user-itme:first-child{
+    padding-left: 0;
+    border-left: none;
+}
+
+.clouda-user-itme:last-child{
+    padding-right: 0;
+}
+
+.clouda-user-itme a{
+    text-decoration: none;
+    color:#fff;
+    font-size: 12px;
+}
+
+.clouda-user-itme a:hover{
+    color:#62aaff;
+}
+
+.clouda-user-info span{
+    font-size: 12px;
+    color:#fff;
+}
+
+
+#cloudaUserName{
+    color:#62aaff;
+}
+
+</style>
+
+<div class="clouda-topbar">
+    <div class="clouda-content-outside">
+        <div class="clouda-content-inner">
+            <ul class="clouda-user-nav" id="cloudaUserNav">
+                
+            </ul>
+        </div>
+         
+    </div>
+    
+</div>
+<div style="width:100%;height:39px;"></div>
+
+<script type="text/javascript">
+
+
+        if(navigator.userAgent.indexOf("MSIE 6.0")>=0){   
+            window.location.href="/noIE";
+        }   
+        if(navigator.userAgent.indexOf("MSIE 7.0")>=0){  
+            window.location.href="/noIE";
+        }   
+        if(navigator.userAgent.indexOf("MSIE 8.0")>=0){
+            window.location.href="/noIE";
+        }   
+        if(navigator.userAgent.indexOf("MSIE 9.0")>=0){  
+            //alert("ie9");  
+        }  
+
+</script>
+
+<script type="text/javascript" src="http://passport.baidu.com/passApi/js/uni_login_wrapper.js?cdnversion=201410221525"/></script>
+<!-- <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script> -->
+<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+    var access_token = "{{access_token}}";
+    
+    // var host = "http://cq01-rdqa-dev046.cq01.baidu.com:8020";
+    var host = "http://"+window.location.host;
+   
+    var instance = passport.pop.init({
+        apiOpt: {
+            staticPage: host+'/other/jump.html',//jump地址，注意大小写
+            product: 'clouda',//产品线标志，原tpl
+            u: window.location.href,//登录成功跳转地址
+            memberPass: true,//记住登录状态，原isMen
+            safeFlag: 0
+        },
+        cache: true,    //缓存
+        img: '/assets/images/1/denglu.png', //产品图片
+        forgetLink: 'passport.baidu.com/?getpass_index',//忘记密码
+        registerLink: 'passport.baidu.com/v2/?reg&tpl=&u='+host,//注册链接
+        //authsite: ['tsina','renren','qzone','tqq','fetion'],//合作登录
+        tangram: true, //如果页面不是使用的tangram2.0， 则此处配置成true,否则配置成false
+        onLoginSuccess: function(args){
+            //登录成功后，执行回调函数，在跳转到U之前触发
+        }
+    });
+
+    //绑定事件
+    $(document).on('click','#cloudaUserLogin', function(event) {
+        event.preventDefault();
+        instance.show();//显示浮层
+    });
+
+
+    $.ajax({
+        type:"GET",
+        url:"/proxy/getUserInfo",
+        dataType:"json",
+        success:function(data){
+            console.log(data);
+            var html="";
+            if(data.uid){
+                //已登录
+                html = '<li class="clouda-user-itme"><a id="myApps" href="/applist">我的应用</a></li><li class="clouda-user-itme clouda-user-info"><span>欢迎你, </span><span id="cloudaUserName">'+ data.displayname+'</span></li><li class="clouda-user-itme"><a href="http://passport.baidu.com/?logout&tpl=clouda&u='+host+'">退出</a></li>';
+
+
+            }else{
+                //未登录
+                html = '<li class="clouda-user-itme"><a id="myApps" href="/applist">我的应用</a></li><li class="clouda-user-itme"><a href="javascript:void(0);" id="cloudaUserLogin">登录</a></li><li class="clouda-user-itme"><a href="https://passport.baidu.com/v2/?reg&tpl=clouda&color=blue&u='+host+'">注册</a></li>';
+            }
+
+            $("#cloudaUserNav").append(html);
+        },
+        error:function(msg){
+            var html = '<li class="clouda-user-itme"><a id="myApps" href="/applist">我的应用</a></li><li class="clouda-user-itme"><a href="javascript:void(0);" id="cloudaUserLogin">登录</a></li><li class="clouda-user-itme"><a href="https://passport.baidu.com/v2/?reg&tpl=clouda&color=blue&u='+host+'">注册</a></li>';
+            $("#cloudaUserNav").append(html);
+        }
+    });
+
+</script>
+
+{% endmacro %}

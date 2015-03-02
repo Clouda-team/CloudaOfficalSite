@@ -1,0 +1,221 @@
+{% import "./topbar.html" as topbar%}
+<!DOCTYPE html>
+<html>
+<head>
+	{% include "../meta.html" %}
+	<title>Clouda+</title>
+	<link rel="stylesheet" href="/assets/css/site.css">
+	<link rel="stylesheet" href="/assets/css/new.css">
+
+</head>
+
+<body>
+	{{ topbar.use()}}
+
+	<div class="clouda-banner-wrapper">
+		<div class="clouda-nav">
+			<div class="nav-logo-wrapper">
+				<a href=""></a>
+			</div>
+			<div class="nav-menu-wrapper">
+				<ul>
+					<li><a href="">首页</a></li>
+					<li><a href="/portal">文档</a></li>
+					<li><a href="/sample">实例</a></li>
+					<!-- <li><a href="">交流</a></li> -->
+					<li><a href="https://github.com/Clouda-team" target="_blank">Github</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="clouda-banner-inner">
+			<div class="txt-show">
+				<h2>Clouda+</h2>
+				<p class="module-versions">
+					<span><a href="/blend/introduction/introduction">Blend&nbsp;&nbsp;<em>1.1</em></a>
+						<sup>new</sup>
+					</span>
+					<span><a href="/runtime/introduction/introduce">Runtime&nbsp;&nbsp;<em>2.7</em></a></span>
+					<span><a href="/rapid/introduction/rapid_introduction/">Rapid&nbsp;&nbsp;<em>1.0</em></a></span>
+				</p>
+
+				<p>移动web应用开发整体解决方案，特别为直达号设计，让你的webapp体验和交互媲美Native应用！</p>
+				
+				<div class="banner-icon-inner">
+					<div class="clouda-banner-icon banner-icon-rapid"></div>
+					<div class="banner-lines banner-line1" id="bannerLine1" style="width:0"></div>
+					<div class="clouda-banner-icon banner-icon-blend"></div>
+					<div class="banner-lines banner-line1" id="bannerLine2" style="width:0"></div>
+					<div class="clouda-banner-icon banner-icon-runtime"></div>
+					<div class="banner-lines banner-line2" id="bannerLine3" style="width:0"></div>
+				</div>
+			</div>
+			<div class="demo-show" id="demoShow" style="display:none">
+				<div class="demo-phone-outer">
+					<!-- <img src="http://www.idangero.us/framework7/i/feats/swipe-back.gif" class="demo-phone-inner">
+					</img> -->
+					<img src="/assets/images/1/demo.png" class="demo-phone-inner">
+					</img>
+				</div>
+				<div class="demo-qrcode-wrapper" data-see="0">
+					<div class="qrcode-hide" id="qrcodeHide">
+						<p>扫码下载预览</p>
+					</div>
+					<div class="qrcode-show" style="display:none">
+						<div class="qrcode-img"></div>
+						<p>仅限安卓手机</p>
+					</div>
+					<div class="qrcode-arrow" id="qrcodeArrow">
+						<a href="javascript:void(0);" class="arrow-show" id="showQrcode"></a>
+					</div>
+				</div>
+			</div>
+			<div style="clear:both"></div>
+		</div>
+	</div>
+	<div class="clouda-intro-wrapper">
+		<div class="section-title">
+			<span>Clouda+组成部分</span>
+		</div>
+		<div class="clouda-intro-inner">
+			<ul class = "clouda-intro-nav">
+				<li class="clouda-intro-item">
+					<span class="module-icon icon-blend"></span>
+					<span class="module-name module-blend">Blend</span>
+					<span class="module-intro">Blend是一套JavaScript的API，将Native的端能力和百度的云服务融合（Blend）到webapp中。</span>
+					<div class="doc-btns">
+						<a class="doc-btn btn-blend" href="/blendui/introduction/introduction">Blend 文档</a>
+						<a class="doc-btn btn-blend" href="/sample">实例展示</a>
+					</div>
+				</li>
+				<li class="clouda-intro-item">
+					<span class="module-icon icon-runtime"></span>
+					<span class="module-name module-runtime">Runtime</span>
+					<span class="module-intro">Runtime在移动终端上为webapp提供安全、稳定、高效的运行环境并且提供了一套灵活的插件机制，让webapp具有和本地应用一样的能力。</span>
+					<div class="doc-btns">
+						<a class="doc-btn btn-runtime" href="/runtime/introduction/introduce">Runtime 文档</a>
+						<a class="doc-btn btn-runtime" href="/runtime/dabao/intruduction">打包平台</a>
+					</div>
+				</li>
+				<li class="clouda-intro-item">
+					<span class="module-icon icon-rapid"></span>
+					<span class="module-name module-rapid">Rapid JS</span>
+					<span class="module-intro">基于Nodejs的服务端开发框架，为移动而生，让移动web开发简单、灵活、扩展能力强。</span>
+					<div class="doc-btns">
+						<a class="doc-btn btn-rapid" href="/rapid/introduction/rapid_introduction/">Rapid JS 文档</a>
+						<a class="doc-btn btn-rapid" href="https://github.com/Clouda-team/rapid-core">Source code</a>
+					</div>
+				</li>
+				<div style="clear:both"></div>
+			</ul>
+		</div>
+	</div>
+	<div class="clouda-sample-wrapper">
+		<div class="section-title">
+			<span>成功案例</span>
+		</div>
+		<div class="clouda-sample-inner">
+			<ul class="clouda-sample-nav">
+				<li class="clouda-sample-item">
+					<img class="sample-img" src="/assets/images/1/demo/demo-tieba.png">
+					<p class="sample-title">百度贴吧</p>
+				</li>
+				<li class="clouda-sample-item">
+					<img class="sample-img" src="/assets/images/1/demo/demo-wenku.png">
+					<p class="sample-title">百度文库</p>
+				</li>
+				<li class="clouda-sample-item">
+					<img class="sample-img" src="/assets/images/1/demo/demo-haidilao.png">
+					<p class="sample-title">海底捞</p>
+				</li>
+				<li class="clouda-sample-item">
+					<img class="sample-img" src="/assets/images/1/demo/demo-jj.png">
+					<p class="sample-title">JJ斗地主</p> 
+				</li>
+				<li class="clouda-sample-item">
+					<!-- <i class="sample-img"></i> -->
+					<img class="sample-img" src="/assets/images/1/demo/demo-jingdiantong.png">
+					<p class="sample-title">景点通</p> 
+				</li>
+				<li class="clouda-sample-item">
+					<img class="sample-img" src="/assets/images/1/demo/demo-zuile.png">
+					<p class="sample-title">醉了阅读</p>
+				</li>
+				
+			</ul>
+		</div>
+	</div>
+	<div class="clouda-message-wrapper">
+		<div class="message-item message-activity">
+			<p class="h-font">动态</p>
+			<ul class="message-nav">
+				<li class="">
+					<span>2014.11.26</span>
+					<a>Clouda+官网全面升级开放</a>
+				</li>
+				<li>
+					<span>2015.01.21</span>
+					<a href="/blend/introduction/changelog">Blend1.1 发布</a>
+				</li>
+			</ul>
+		</div>
+		<div class="message-item message-notification">
+			<p class="h-font">活动</p>
+			<ul class="message-nav">
+				<li class="">
+					<span>2014.08.02</span>
+					<a href="http://developer.baidu.com/marketsupport/hackathon" target="_blank">百度轻应用hackathon</a>
+				</li>
+				<!-- <li>
+					<span>2014.03.20</span>
+					<a href="">接入轻应用赢取BAE优惠券</a>
+				</li> -->
+			</ul>
+		</div>
+		<div style="clear:both;height:0;"></div>
+	</div>
+	{% include "./footer.html" %}
+	
+	<script src="/assets/js/statistics.js"></script>
+	<script type="text/javascript">
+		;(function(){
+
+			// animate
+			$("#bannerLine1").animate({width:"39px"},300,function(){
+				$("#bannerLine2").animate({width:"39px"},300,function(){
+					$("#bannerLine3").animate({width:"294px"},1300,function(){
+						$("#demoShow").fadeIn();
+					});
+				})
+			});
+
+		
+
+			$("#qrcodeArrow").on('click',function(){
+				var that = $(this);
+				var a = $('#showQrcode');
+				var wrapper = that.closest(".demo-qrcode-wrapper");
+				if(a.hasClass("arrow-hide")){
+					a.removeClass().addClass("arrow-show");
+					wrapper.find(".qrcode-show").hide();
+					wrapper.find(".qrcode-hide").show();
+				}else{
+					a.removeClass().addClass("arrow-hide");
+					wrapper.find(".qrcode-show").show();
+					wrapper.find(".qrcode-hide").hide();
+				}
+			});
+
+			$("#qrcodeHide").on('click',function(){
+				var wrapper = $(this).closest(".demo-qrcode-wrapper");
+
+				wrapper.find(".qrcode-show").show();
+				wrapper.find(".qrcode-hide").hide();
+
+				$("#showQrcode").removeClass().addClass("arrow-hide");
+
+			})
+
+		})();
+	</script>
+</body>
+</html>

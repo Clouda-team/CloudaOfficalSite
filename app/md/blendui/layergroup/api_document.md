@@ -479,7 +479,7 @@ layerGroup.setScroll(false);
 
 <h3 class="method" platform="ios android">toggleScroll ( )</h3>
 toggleScroll自动切换是否能手动切换;
-<!--
+
 <table>
     <tbody>
         <tr>
@@ -496,7 +496,7 @@ toggleScroll自动切换是否能手动切换;
         </tr>
    <tbody>
 </table>
--->
+
 实例
 <pre><code>var layerGroup = new Blend.ui.LayerGroup({
     id: "group",

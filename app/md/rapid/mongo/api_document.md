@@ -1,4 +1,4 @@
-# rapid-simple-mondo
+# rapid-simple-mongo
 
 ## 概述
 

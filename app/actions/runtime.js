@@ -13,10 +13,14 @@ server.defineAction("runtime", function(default_request, default_response){
 	var visitor = this;
 
 	var sep = this.url("seppath", req.url);
-	var proj = sep[0] || "";
-	var doc = (sep[1] || "portal") + ".md";
+	/*var proj = sep[0] || "";
+	var doc = (sep[1] || "portal") + ".md";*/
 
-	var mdpath = path.join(USER_DIR, mddir, proj, doc);
+	var proj = sep[0];
+	var mod = sep[1];
+	var doc = sep[2];
+
+	var mdpath = path.join(USER_DIR, mddir, proj,mod, doc+".md");
 
 	var cached = cache.get(mdpath);
 	if(cached){
@@ -33,8 +37,9 @@ server.defineAction("runtime", function(default_request, default_response){
 
 		var md = fs.readFileSync(mdpath).toString();
 
-		var content = visitor.render("api", {
+		var content = visitor.render("new/doc", {
 			proj : proj,
+			mod:mod,
 			doc : doc,
 			ctnt : marked(md)
 		}, {

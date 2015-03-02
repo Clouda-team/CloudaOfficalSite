@@ -1,0 +1,216 @@
+{# Dynamically Generate #}
+{% macro use(proj, mod, doc) %}
+
+
+<div class="nav-tab-wrapper">
+    <a href="/blend/introduction/introduction" class="tab-blend {% if proj === "blend"|| proj === "blendui"|| proj === "blendapi" %}tab-blend-active{% endif %}">Blend</a>
+    <a href="/runtime/introduction/introduce" class="tab-runtime {% if proj === "runtime"%}tab-runtime-active{% endif %}">Runtime</a>
+    <a href="/rapid/introduction/rapid_introduction/" class="tab-rapid {% if proj === "rapid"%}tab-rapid-active{% endif %}">RapidJS</a>
+</div>
+<div class="nav-content-wrapper">
+    {% if (proj === "rapid" || proj === "404") %}
+    <dl {% if mod === "introduction"%}class="rapid-cur"{% endif %}>
+        <div class="doc-part doc-part-rapid">
+        <dt><a>序言</a></dt>
+         <!-- <dt><a>序言</a><em class="open"></em></dt> -->
+        <dd><a href="/rapid/introduction/rapid_introduction/">简介</a></dd>
+        <dd><a href="/rapid/introduction/get_started">快速入门</a></dd>
+        </div>
+    </dl>
+    <dl {% if mod === "get_started" %}class="rapid-cur"{% endif %}>
+        <div class="doc-part doc-part-rapid">
+        <dt><a>开始学习</a></dt>
+        <dd><a href="/rapid/get_started/config">配置</a></dd>
+        <dd><a href="/rapid/get_started/router">路由</a></dd>
+        <dd><a href="/rapid/get_started/request_response">Request流程</a></dd>
+        <dd><a href="/rapid/get_started/view">View</a></dd>
+        <dd><a href="/rapid/get_started/action">Action</a></dd>
+        <dd><a href="/rapid/get_started/filter">Filter</a></dd>
+        <dd><a href="/rapid/get_started/extension">Extension</a></dd>
+        </div>
+    </dl>
+    <dl {% if mod === "deep_learn" %}class="rapid-cur"{% endif %}>
+        <div class="doc-part doc-part-rapid">
+        <dt><a>深度历险</a></dt>
+        <dd><a href="/rapid/deep_learn/form">表单处理</a></dd>
+        <dd><a href="/rapid/deep_learn/csrf">CSRF</a></dd>
+        </div>
+    </dl>
+    <dl {% if doc === "api_document" %}class="rapid-cur"{% endif %}>
+        <div class="doc-part doc-part-rapid">
+        <dt><a>API手册</a></dt>
+        <dd><a href="/rapid/core/api_document">Core</a></dd>
+        <dd><a href="/rapid/httpserver/api_document">Httpserver</a></dd>
+        <dd><a href="/rapid/mysql/api_document">Mysql</a></dd>
+        <dd><a href="/rapid/mongo/api_document">Mongo</a></dd>
+        </div>
+    </dl>
+    {%endif%}
+
+    {% if (proj === "blendui" || proj === "blendapi" || proj === "blend" || proj === "404") %}
+
+<!--    <div class="blend-tab-wrapper">
+        <a id="blenduiTab" class="blend-tabs {%if proj==='blend' || proj==='blendui'%}blend-tabs-active{%endif%}" href="/blendui/introduction/introduction">BlendUI</a>
+        <a id="blendapiTab" class="blend-tabs {%if proj==='blendapi'%}blend-tabs-active{%endif%}" href="/blendapi/introduction/introduce">BlendAPI</a>
+    </div> -->
+    
+
+        
+      <!--   <dl {% if (proj === "blendui" && mod==="introduction")||proj === "blend" %}class="blend-cur"{% endif %}>
+            <div class="doc-part doc-part-blend">
+            <dt><a>序言</a></dt>
+            <dd><a href="/blend/introduction/introduction">快速入门</a></dd>
+            <dd><a href="/blendui/introduction/get_api_key">获取API Key</a></dd>
+            <dd><a href="/blendui/introduction/get_help">获取支持</a></dd>
+            </div>
+        </dl>  -->
+
+        {# BlendUI #}
+        <dl {% if proj === "blendui" && mod ==="get_started" || proj === "blendui" && mod ==="introduction" %}class="blend-cur"{% endif %}>
+            <div class="doc-part doc-part-blend">
+            <dt><a>开始学习</a></dt>
+            <dd><a href="/blendui/introduction/introduction">快速入门</a></dd>
+            <dd><a href="/blendui/get_started/define_event">自定义事件</a></dd>
+            <!-- <dd><a href="/blendui/get_started/deploy">文件部署</a></dd> -->
+            <dd><a href="/blendui/get_started/layer_communicate">页面间通信</a></dd>
+            <dd><a href="/blendui/get_started/page_change">页面间切换</a></dd>
+            <dd><a href="/blendui/get_started/preload">页面预加载</a></dd>
+            <!-- <dd><a href="/blendui/get_started/loading_page">Loading</a></dd> -->
+            <dd><a href="/blendui/get_started/powerpoint">幻灯片</a></dd>
+            <dd><a href="/blendui/get_started/tabs">Tabs</a></dd>
+            <dd><a href="/blendui/get_started/refresh">下拉刷新</a></dd>
+            <dd><a href="/blendui/introduction/get_api_key">获取API Key</a></dd>
+            <dd><a href="/blendui/get_started/test">应用调试</a></dd>
+            <dd><a href="/blendui/get_started/publish">打包发布</a></dd>
+            <dd><a href="/blendui/introduction/get_help">获取支持</a></dd>
+            </div>
+        </dl>
+
+        <dl {% if proj === "blendui" && doc ==="api_document"%}class="blend-cur"{% endif %}>
+            <div class="doc-part doc-part-blend">
+            <dt><a>Blend UI手册</a></dt>
+            <dd><a href="/blendui/define_event/api_document">自定义事件</a></dd>
+            <dd><a href="/blendui/page_control/api_document">页面控制</a></dd>
+            <dd><a href="/blendui/layer/api_document">Layer</a></dd>
+            <dd><a href="/blendui/layergroup/api_document">LayerGroup</a></dd>
+            <dd><a href="/blendui/slider/api_document">Slider</a></dd>
+            <dd><a href="/blendui/footbar/api_document">Footbar</a></dd>
+            </div>
+        </dl>
+
+        {#Blend API#}
+        <dl {% if  doc ==="api_kuang"|| doc ==="api_runtime" %}class="blend-cur"{% endif %}>
+            <div class="doc-part doc-part-blend">
+            <dt><a>Blend API手册</a></dt>
+            <!-- <dd><a href="/blendapi/local/api_document">本地端能力</a></dd>
+            <dd><a href="/blendapi/cloud/api_document">云能力</a></dd> -->
+            <dd><a href="/blendapi/local/api_kuang">本地端能力(手机百度)</a></dd>
+            <dd><a href="/blendapi/cloud/api_kuang">云能力(手机百度)</a></dd>
+            <dd><a href="/blendapi/local/api_runtime">本地端能力(Runtime)</a></dd>
+            <dd><a href="/blendapi/cloud/api_runtime">云能力(Runtime)</a></dd>
+            
+            <!-- <dd><a href="/blendapi/touch/api_document">手势库</a></dd> -->
+            </div>
+        </dl>
+
+        <dl>
+            <div class="doc-part doc-part-blend">
+            <dd><a href="http://hybrid.baidu.com/runtime" target="_blank">》打包平台</a></dd>
+            </div>
+        </dl>
+
+    {%endif%}
+
+
+    {% if proj === "runtime" %}
+        {# Runtime #}
+        <dl {% if doc === "introduce" ||doc === "get_api_key" ||doc === "runtime_word" ||doc === "runtime_quick_start"  %}class="runtime-cur"{% endif %}>
+        <div class="doc-part doc-part-runtime">
+        <dt><a>序言</a></dt>
+        <dd><a href="/runtime/introduction/introduce">简介</a></dd>
+        <dd><a href="/runtime/introduction/runtime_word">名词解释</a></dd>
+        <dd><a href="/runtime/introduction/get_api_key">如何获取API Key</a></dd>
+        <dd><a href="/runtime/introduction/runtime_quick_start">快速体验 Runtime</a></dd>
+        </div>
+        </dl>
+        <dl {% if doc === "runtime"|| doc === "runtime_integration"||doc === "senor_runtime" %}class="runtime-cur"{% endif %}>
+        <div class="doc-part doc-part-runtime">
+        <dt><a>集成指南</a></dt>
+        <dd><a href="/runtime/introduction/runtime">集成方案</a></dd>
+        <dd><a href="/runtime/introduction/runtime_integration">集成步骤</a></dd>
+        <dd><a href="/runtime/introduction/senor_runtime">高级方法</a></dd>
+        </div>
+        </dl>
+        <dl {% if doc === "plugin_inner_introduce" ||doc === "plugin_inner_dev" ||doc === "plugin_inner_pub" ||doc === "plugin_inner_faq"  ||doc === "plugin_inner_appendix"%}class="runtime-cur"{% endif %}>
+        <div class="doc-part doc-part-runtime">
+        <dt><a>Runtime插件开发</a></dt>
+        <dd><a href="/runtime/introduction/plugin_inner_introduce">简介</a></dd>
+        <dd><a href="/runtime/introduction/plugin_inner_dev">开发指南</a></dd>
+        <dd><a href="/runtime/introduction/plugin_inner_pub">插件发布</a></dd>
+        <dd><a href="/runtime/introduction/plugin_inner_faq">常见问题</a></dd>
+        <dd><a href="/runtime/introduction/plugin_inner_appendix">附录</a></dd>
+        </div>
+        </dl>
+        <dl {% if mod === "dabao"%}class="runtime-cur"{% endif %}>
+        <div class="doc-part doc-part-runtime">
+            <dt><a>打包平台</a></dt>
+            <dd><a href="/runtime/dabao/intruduction">打包平台介绍</a></dd>
+            <dd><a href="/runtime/dabao/ways">打包方式</a></dd>
+            <dd><a href="/runtime/dabao/started">在线轻应用打包</a></dd>
+            <dd><a href="/runtime/dabao/started_local">本地上传资源打包</a></dd>
+            <dd><a href="/runtime/dabao/faq">FAQ</a></dd>
+            <dd><a href="http://hybrid.baidu.com/runtime" target="_blank">》打包平台</a></dd>
+        </div>
+        </dl>
+    {% endif %}
+
+    
+    <dl>
+        <div class="doc-part doc-common">
+        <dt><a href="">历史版本</a></dt>
+        <dd><a href="/blend/introduction/changelog">更新日志</a></dd>
+        <dd><a href="/history/blend1.0/blend/introduction/introduction">Blend1.0</a></dd>
+        </div>
+    </dl>
+    
+    
+    
+    <div class="feedback-wrapper">
+        {%if proj==="blend" || proj==="blendui" || proj==="blendapi"%}
+            <a href="https://github.com/Clouda-team/BlendUI/issues/new" target="_blank">问题反馈</a>
+        {%endif%}
+        {%if proj==="rapid"%}
+            <a href="https://github.com/Clouda-team/rapid-core/issues" target="_blank">问题反馈</a>
+        {%endif%}
+    </div>
+
+</div>
+<script type="text/javascript">
+;(function(){
+    var path = window.location.pathname;
+    var path_arr= path.split("/");
+    var proj = path_arr[1];
+    var real_path = path_arr[0]+"/"+path_arr[1]+"/"+path_arr[2]+"/"+path_arr[3];
+    var aLinks = $(".nav-content-wrapper dd a");
+
+    var href;
+    var reg;
+    for(var i=0,len=aLinks.length;i<len;i++){
+        var that = $(aLinks[i]);
+        href = that.attr("href");
+
+        reg = new RegExp("^"+href+"$",'g');
+
+        if(reg.test(path) || href == real_path){
+
+            if(proj === "rapid"){that.css("color","#56b864");}
+            if(proj === "blendui"||proj==="blendapi"||proj==="blend"){that.css("color","#ff8500");}
+            if(proj === "runtime"){that.css("color","#0078da");}
+            break;
+        }
+    }
+
+})();
+</script>
+
+{% endmacro %}

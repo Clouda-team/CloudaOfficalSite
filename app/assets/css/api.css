@@ -1,6 +1,6 @@
 #docs {
-	margin-top: 20px;
-	margin-left: 210px;
+	/*margin-top: 20px;*/
+	/*margin-left: 210px;*/
 	border: 1px solid #eee;
 	background-color: #fff;
 	line-height: 1.5;
@@ -135,7 +135,7 @@
 	width: 40px;
 	height: 40px;
 	border-radius: 6px;
-	background-color: #333;
+	background-color: #b7b7b7;
 	color: #fff;
 	text-align: center;
 	cursor: pointer;

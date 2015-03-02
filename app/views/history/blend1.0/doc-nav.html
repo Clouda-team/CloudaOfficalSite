@@ -1,0 +1,144 @@
+{# Dynamically Generate #}
+{% macro use(proj, mod, doc) %}
+
+<style type="text/css">
+    div.module-title{
+        height:35px;
+        line-height: 35px;
+        padding-left:30px;
+    }
+
+    div.module-title span{
+        font-size: 16px;
+        padding-right: 10px;
+    }
+
+    div.module-title a{
+        font-size: 12px;
+        color: #0066cc
+    }
+</style>
+
+<div class="nav-content-wrapper">
+
+    <div class="module-title">
+        <span style="color:#ff8500">Blend1.0</span> <a href="/blend/introduction/introduction">返回最新</a>
+    </div>
+
+    <div class="blend-tab-wrapper">
+        <a id="blenduiTab" class="blend-tabs {%if proj==='blend' || proj==='blendui'%}blend-tabs-active{%endif%}" href="/history/blend1.0/blendui/introduction/introduction">BlendUI</a>
+        <a id="blendapiTab" class="blend-tabs {%if proj==='blendapi'%}blend-tabs-active{%endif%}" href="/history/blend1.0/blendapi/introduction/introduce">BlendAPI</a>
+    </div>
+    {# BlendUI #}
+        
+        {% if proj === "blendui" || proj==="blend"%}
+        <dl {% if (proj === "blendui" && mod==="introduction")||proj === "blend" %}class="blend-cur"{% endif %}>
+            <div class="doc-part doc-part-blend">
+            <dt><a>序言</a></dt>
+            <dd><a href="/history/blend1.0/blendui/introduction/introduction">简介</a></dd>
+            <dd><a href="/history/blend1.0/blendui/introduction/get_started">快速入门</a></dd>
+            <dd><a href="/history/blend1.0/blendui/introduction/get_api_key">获取API Key</a></dd>
+            <dd><a href="/history/blend1.0/blendapi/product">生成Module</a></dd>
+            <dd><a href="/history/blend1.0/blendui/introduction/get_help">获取支持</a></dd>
+            </div>
+        </dl>
+
+        <dl {% if proj === "blendui" && mod ==="get_started" %}class="blend-cur"{% endif %}>
+            <div class="doc-part doc-part-blend">
+            <dt><a>开始学习</a></dt>
+            <dd><a href="/history/blend1.0/blendui/get_started/define_event">自定义事件</a></dd>
+            <!-- <dd><a href="/blendui/get_started/deploy">文件部署</a></dd> -->
+            <dd><a href="/history/blend1.0/blendui/get_started/layer_communicate">页面间通信</a></dd>
+            <dd><a href="/history/blend1.0/blendui/get_started/page_change">页面间切换</a></dd>
+            <dd><a href="/history/blend1.0/blendui/get_started/preload">页面预加载</a></dd>
+            <!-- <dd><a href="/blendui/get_started/loading_page">Loading</a></dd> -->
+            <dd><a href="/history/blend1.0/blendui/get_started/powerpoint">幻灯片</a></dd>
+            <dd><a href="/history/blend1.0/blendui/get_started/tabs">Tabs</a></dd>
+            <dd><a href="/history/blend1.0/blendui/get_started/refresh">下拉刷新</a></dd>
+            <dd><a href="/history/blend1.0/blendui/get_started/test">应用调试</a></dd>
+            <dd><a href="/history/blend1.0/blendui/get_started/publish">应用发布</a></dd>
+            </div>
+        </dl>
+
+        <dl {% if proj === "blendui" && doc ==="api_document"%}class="blend-cur"{% endif %}>
+            <div class="doc-part doc-part-blend">
+            <dt><a>API手册</a></dt>
+            <dd><a href="/history/blend1.0/blendui/define_event/api_document">自定义事件</a></dd>
+            <dd><a href="/history/blend1.0/blendui/page_control/api_document">页面控制</a></dd>
+            <dd><a href="/history/blend1.0/blendui/layer/api_document">Layer</a></dd>
+            <dd><a href="/history/blend1.0/blendui/layergroup/api_document">LayerGroup</a></dd>
+            <dd><a href="/history/blend1.0/blendui/slider/api_document">Slider</a></dd>
+            <dd><a href="/history/blend1.0/blendui/footbar/api_document">Footbar</a></dd>
+            </div>
+        </dl>
+        {%endif%}
+
+        {# Blend API #}
+        
+        {% if proj === "blendapi"%}
+        <dl {% if proj === "blendapi" && mod ==="introduction"%}class="blend-cur"{% endif %}>
+            <div class="doc-part doc-part-blend">
+            <dt><a>序言</a></dt>
+            <dd><a href="/history/blend1.0/blendapi/introduction/introduce">简介</a></dd>
+            <dd><a href="/history/blend1.0/blendapi/introduction/get_started">快速入门</a></dd>
+            <dd><a href="/history/blend1.0/blendapi/introduction/get_api_key">获取API Key</a></dd>
+            <dd><a href="/history/blend1.0/blendapi/introduction/get_author">申请权限</a></dd>
+            <dd><a href="/history/blend1.0/blendapi/product">生成Module</a></dd>
+            </div>
+        </dl>
+        <dl {% if proj === "blendapi" && doc ==="api_document"%}class="blend-cur"{% endif %}>
+            <div class="doc-part doc-part-blend">
+            <dt><a>API手册</a></dt>
+            <dd><a href="/history/blend1.0/blendapi/local/api_document">本地端能力</a></dd>
+            <dd><a href="/history/blend1.0/blendapi/cloud/api_document">云能力</a></dd>
+            <!-- <dd><a href="/blendapi/touch/api_document">手势库</a></dd> -->
+            </div>
+        </dl>
+        {%endif%}
+        <dl>
+            <div class="doc-part doc-part-blend">
+            <dd><a href="http://hybrid.baidu.com/runtime" target="_blank">》打包平台</a></dd>
+            </div>
+        </dl>
+
+    
+    <div class="feedback-wrapper">
+        {%if proj==="blend" || proj==="blendui" || proj==="blendapi"%}
+            <a href="https://github.com/Clouda-team/BlendUI/issues/new" target="_blank">问题反馈</a>
+        {%endif%}
+        {%if proj==="rapid"%}
+            <a href="https://github.com/Clouda-team/rapid-core/issues" target="_blank">问题反馈</a>
+        {%endif%}
+      
+    </div>
+
+</div>
+<script type="text/javascript">
+;(function(){
+    var path = window.location.pathname;
+    var path_arr= path.split("/");
+    var proj = path_arr[1];
+    var real_path = path_arr[0]+"/"+path_arr[1]+"/"+path_arr[2]+"/"+path_arr[3];
+    var aLinks = $(".nav-content-wrapper dd a");
+
+    var href;
+    var reg;
+    for(var i=0,len=aLinks.length;i<len;i++){
+        var that = $(aLinks[i]);
+        href = that.attr("href");
+
+        reg = new RegExp("^"+href+"$",'g');
+
+        if(reg.test(path) || href == real_path){
+
+            if(proj === "rapid"){that.css("color","#56b864");}
+            if(proj === "blendui"||proj==="blendapi"){that.css("color","#ff8500");}
+            if(proj === "runtime"){that.css("color","#0078da");}
+            break;
+        }
+    }
+
+})();
+</script>
+
+{% endmacro %}

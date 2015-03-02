@@ -1,5 +1,7 @@
 {% import "./hd.html" as hd %}
 {% import "./nav.html" as nav %}
+{% import "./new/topbar.html" as topbar%}
+{% import "./new/topnav.html" as topnav%}
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +14,9 @@
     <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
 </head>
 <body>
-	{{ hd.use("api") }}
+	{{ topbar.use() }}
+    {{ topnav.use() }}
+   <!--  {{ hd.use("api") }} -->
 	<section class="bd">
         <div class="vp">
             <aside id="menu">

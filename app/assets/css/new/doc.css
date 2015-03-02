@@ -1,0 +1,184 @@
+.doc-content-outer{
+	width:1200px;
+	margin: 0 auto;
+	padding-top:20px;
+	padding-bottom: 70px;
+}
+
+.doc-content-outer>aside{
+	width:288px;
+	float:left;
+}
+
+.doc-content-outer>article{
+	width:898px;
+	float:right;
+	
+	background-color: #fff;
+}
+
+.article-wrapper{
+	padding: 40px 30px; 
+	border:solid 1px #dcdcdc;
+}
+
+
+/***  doc nav  ***/
+
+.nav-tab-wrapper{
+	width:100%;
+	height: 39px;
+}
+.nav-tab-wrapper a{
+	display: block;
+	float:left;
+	width: 88px;
+	height:39px;
+	line-height: 39px;
+	text-align: center;
+	margin-right: 11px;
+}
+
+a.tab-rapid{background-color: #80ca8b;color:#fff;margin-right: 0}
+a.tab-blend{background-color: #ffa440;color:#fff;}
+a.tab-runtime{background-color: #409ae3;color:#fff;}
+
+a.tab-rapid:hover{background-color: #56b864;color:#fff;}
+a.tab-blend:hover{background-color: #ff8500;color:#fff;}
+a.tab-runtime:hover{background-color: #0078da;color:#fff;}
+
+a.tab-rapid-active{background-color: #fff;color:#56b864;border: solid 1px #dedede;border-bottom:none}
+a.tab-blend-active{background-color: #fff;color:#ff8500;border: solid 1px #dedede;border-bottom:none}
+a.tab-runtime-active{background-color: #fff;color:#0078da;border: solid 1px #dedede;border-bottom:none}
+
+.nav-content-wrapper{
+	border:solid 1px #dedede;
+	background-color: #fff;
+	padding-top: 20px;
+}
+
+.nav-content-wrapper *{
+	/*font-family: "Microsoft YaHei";*/
+}
+
+.nav-content-wrapper dl{
+	padding-left: 30px;
+	margin-left: -1px;
+	margin-bottom: 20px;
+}
+
+.nav-content-wrapper dl:last-child{
+	margin-bottom:129px;
+}
+
+.nav-content-wrapper dl.rapid-cur{border-left: solid 4px #56b864}
+.nav-content-wrapper dl.blend-cur{border-left: solid 4px #ff8500}
+.nav-content-wrapper dl.runtime-cur{border-left: solid 4px #0078da}
+
+.doc-part{
+	padding-bottom: 12px;
+	margin-right: 30px;
+	border-bottom: solid 1px #e8e8e8;
+}
+
+.nav-content-wrapper dl dt{
+	height: 27px;
+	line-height: 16px;
+	position: relative;
+}
+
+.nav-content-wrapper dl dt em{
+	position: absolute;
+	width: 15px;
+	height: 8px;
+	top:8px;
+	right: 5px;
+}
+
+.nav-content-wrapper dl dt em.close{
+	background: transparent url(/assets/images/1/nav-tab-arrow.png) no-repeat 0px 0px;
+}
+.nav-content-wrapper dl dt em.open{
+	background: transparent url(/assets/images/1/nav-tab-arrow.png) no-repeat 0px -11px;
+}
+
+.nav-content-wrapper dl dt a{
+	font-size: 16px;
+	color:#555;
+}
+
+.nav-content-wrapper  dd{
+	height: 30px;
+	line-height: 30px;
+	margin-left: 16px;
+}
+
+.nav-content-wrapper  dd a{
+	font-size: 14px;
+	color:#888;
+}
+
+.doc-part-rapid dd a:hover{color:#56b864;}  
+.doc-part-blend dd a:hover{color:#ff8500;}  
+.doc-part-runtime dd a:hover{color:#0078da;}  
+
+
+.nav-content-wrapper>h2{
+	padding-left: 15px;
+	
+}
+.nav-content-wrapper>h2 a{
+	color:#666;
+}
+
+.nav-content-wrapper>h3{
+	padding-left: 15px;
+}
+.nav-content-wrapper>h3 a{
+	color:#666;
+}
+
+.blend-tab-wrapper{
+	overflow: hidden;
+	padding-bottom: 12px;
+}
+.blend-tab-wrapper .blend-tabs{
+	display: block;
+	width: 100px;
+	height:40px;
+	line-height: 40px;
+	float:left;
+	text-align: center;
+	font-size: 16px;
+	color: #888;
+	cursor: pointer;
+}
+
+#blenduiTab{
+	margin-left: 29px;
+}
+#blendapiTab{
+	margin-left: 15px;
+}
+
+.blend-tab-wrapper .blend-tabs-active{
+	background-color: #f6f6f6;
+	color: #333;
+}
+
+.feedback-wrapper{
+	height: 60px;
+	line-height: 60px;
+	padding-left: 28px;
+}
+
+.feedback-wrapper a{
+	padding-left: 20px;
+	color:#888;
+	background: transparent url(/assets/images/1/feedback.png) no-repeat -5px -2px;
+}
+
+img.download-pic{
+	width: 200px;
+	height: 200px;
+}

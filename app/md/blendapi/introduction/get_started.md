@@ -17,12 +17,11 @@
 
 通过CDN公共库地址引入Blend API脚本：
 	
-	<script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8" data-appid="{appid}"  src="http://apps.bdimg.com/cloudaapi/lightapp.js">
-</script>
+	<script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8" src="http://apps.bdimg.com/blend/loader.js"></script>
 	
 如果页面是使用https加密链接的时，请内嵌如下代码：
 
-	<script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8"  data-appid="{appid}" src="https://openapi.baidu.com/cloudaapi/lightapp.js"></script>
+	<script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8" src="https://apps.bdimg.com/blend/loader.js"></script>
 	
 实例：
 
@@ -30,8 +29,7 @@
 		<html>
 			<head>
 		    	<title>Blend API代码示例</title>
-		    	<script type="text/javascript" name="baidu-tc-cerfication" data-appid="{appid}" src="http://apps.bdimg.com/cloudaapi/lightapp.js">
-</script>
+		    	<script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8" src="http://apps.bdimg.com/blend/loader.js"></script>
 		    </head>
 		    <body>
 		    </body>
@@ -41,18 +39,10 @@
 
 从百度开放云平台上获取API Key并初始化Blend api，可以使用如下方法:
 
-	clouda.lightInit({
+	Blend.lightInit({
         ak:apikey,//从百度开放云平台获取
         module:["app","account"]//根据勾选的模块生成
-    },callback);
-
-#### 参数列表
-参数名 | 参数说明 
----------- | ------------- 
-ak |  从百度开放云平台获取
-module |  根据勾选的模块生成
-callback |  (可选) 端能力js加载完成后执行的函数，能力加载完成前也可用，但不建议这样做，<span style="background-color:yellow">建议在callback中执行</span>
-
+    });
     
 ## 使用Blend api
 

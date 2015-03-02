@@ -12,10 +12,26 @@ Runtime为轻应用在移动终端上可以安全、稳定、高效的运行提�
 
 当您想在应用中集成Runtime时，需要在您的应用中提供用户进入Runtime的入口，入口的方式您可以根据应用实际情况来设计（任意方式都可以），下面是几种入口的展现方式（仅供参考）:
 
-<img src="/md/images/pic1.png" height="400px">
+	
+<figure style="margin:0;padding:0">
+  <p style="margin:0">手机百度集成效果展示：</p>
+  <img src="/md/images/runtime/1.1.2.1.png" height="400px">
+</figure>
+
+<figure style="margin:0;padding:0">
+  <p style="margin:0">网盘集成效果展示：</p>
+  <img src="/md/images/runtime/1.1.2.2.png" height="400px">
+</figure>
+
+<figure style="margin:0;padding:0">
+  <p style="margin:0">易平台集成效果展示：</p>
+  <img src="/md/images/runtime/1.1.2.3.png" height="400px">
+</figure>
+
+
 
 #### Runtime GUI
 
 Runtime是轻应用运行的一个容器，Runtime不仅仅支持加载和显示轻应用，还支持轻应用组件的加载和管理，并为用户提供了可视化的界面（GUI默认，目前不可更改）方便用户操作和选择自己需要的轻应用，GUI的组成如下图：
 
-<img src="/md/images/RuntimeGUI.jpeg" height="400px">
+<img src="/md/images/runtime/1.1.3.png" height="400px">

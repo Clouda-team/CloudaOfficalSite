@@ -1,0 +1,218 @@
+{% import "./topbar.html" as topbar%}
+{% import "./topnav.html" as topnav%}
+<!DOCTYPE html>
+<html>
+<head>
+	{% include "../meta.html" %}
+	<title>Clouda+</title>
+	<link rel="stylesheet" href="/assets/css/site.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/new/common.css">
+    <link rel="stylesheet" href="/assets/css/new/applist.css">
+</head>
+<body>
+{{ topbar.use()}}
+{{ topnav.use()}}
+
+<div class="wrapper">
+    <div class="content-outer">
+        {% if isLogin == 0%}
+            <div class="content-inner content-empty">
+                <div class="empty-tip-wrapper">
+                    <span></span>
+                    <p class="p2">
+                        请登录后查看应用列表 ^_^
+                    </p>
+                </div>            </div>
+        {%elseif isDeveloper == 0%}
+            <div class="content-inner content-empty">
+                <div class="empty-tip-wrapper">
+                    <span></span>
+                    <p class="p1">尊敬的开发者，您的账号还没有<a href="http://developer.baidu.com/user/reg">验证</a></p>
+                    <p class="p2">请您先前往：<a href="http://developer.baidu.com">http://developer.baidu.com</a> 验证身份并创建自己的应用后；</p>
+                    <p class="p2">再回到此页面进行<a href="javascript:history.go(0);">刷新</a>。</p>
+                </div>
+            </div>
+        {%else%}
+        <div class="content-inner content-tip">
+            <span>去开放云<a href="http://developer.baidu.com/console#app/create">创建工程</a>后，请返回并<a href="javascript:history.go(0);">刷新</a>当前页</span>
+        </div>
+        <div class="content-inner content-table">
+            
+            <div class="applist-table" id="applistTable">
+                <div class="applist-item applist-table-head">
+                    <span>应用名称</span>
+                    <span>使用技术</span>
+                    <span>创建时间</span>
+                </div>
+                <div class="applist-empty" id="applistEmpty" style="display:none">
+                    <span></span>
+                    <p class="p1">尊敬的开发者，您还没有创建应用；</p>
+                    <p class="p2">现在就去<a href="http://developer.baidu.com/console#app/create" target="_blank">创建应用</a>吧</p>
+                </div>
+                
+                
+            </div>
+            
+   
+        </div>
+        <div class="content-inner" >
+            <div class="" id="pageSection" data-cur="1">
+                
+                <a href="" class="pageCtrl lastPage" data-ctrl="last">上一页</a>
+                <span class="total-page">共有<em></em>页</span>
+                <span class="cur-page">当前为第<em>1</em>页</span>
+                <a href="" class="pageCtrl nextPage" data-ctrl="next">下一页</a>
+            </div>
+        </div>
+            
+        {%endif%}
+
+    
+       
+    </div>
+</div>
+
+
+
+
+
+
+{% include "./footer.html" %}
+
+<script type="text/javascript">
+var access_token = "{{access_token}}";
+var isDeveloper = "{{isDeveloper}}";
+var isLogin = "{{isLogin}}";
+
+;(function(){
+
+    var PAGE_SIZE = 10;
+
+    var applist = {};
+    var total;
+    var cur_page;
+
+    if(isLogin=="0"){
+        var interID = setInterval(function(){
+            var login_btn = $("#cloudaUserLogin");
+            if(login_btn){
+                login_btn.trigger("click");
+                clearInterval(interID);
+            }
+        },500);
+    }
+    
+    if(isDeveloper == "0"){
+        return;
+    }
+
+	$.ajax({
+        type:"GET",
+        url:"/proxy/getAppList?access_token="+access_token+"&page=0&pagesize="+PAGE_SIZE,
+        dataType:"json",
+        success:function(data){
+            console.log(data);
+            if(!data.error_code){
+            	
+                var tmp_total = data.response_params.total;
+                total = tmp_total%PAGE_SIZE==0?tmp_total/PAGE_SIZE:Math.floor(tmp_total/PAGE_SIZE)+1;
+
+                $('.total-page>em').text(total);
+                if(total==1){
+                    $('.lastPage, .nextPage').hide();
+                }
+
+                applist = data.response_params.app_list;
+                showlist(applist,1);
+            }else{
+            	// $("#total").html("fail");
+            }
+            
+        },
+        error:function(msg){
+           
+        }
+    });
+
+    function showlist(applist,pageNo){
+       
+        var len = applist.length;
+        var pageSize = 50;
+        var pages = len%pageSize==0?len/pageSize:Math.floor(len/pageSize)+1;
+
+        var html = "";
+
+        if(!len){
+            //no app
+
+            $(".applist-table-body").remove();
+            $("#applistEmpty").show();
+
+        }else{
+            $(".applist-table-body").remove();
+
+            for(var i=pageSize*(pageNo-1);i<len&&i<pageSize*pageNo;i++){
+         
+                html = html + '<div class="applist-item applist-table-body">'
+                            +   '<span class="td-name">'
+                            +       '<img src="'+(applist[i].app_logo?applist[i].app_logo:'/assets/images/1/app-logo-default.png')+'">'
+                            +       '<a href="/appinfo?app_id='+applist[i].app_id+'" class="go-appinfo">'+applist[i].app_name+'</a>'
+                            +   '</span>'
+                            +   '<span class="td-tech">'+(applist[i].runtime_register!=0?"Runtime":"")+'</span>'
+                            +   '<span class="td-time">'+applist[i].create_time+'</span>'
+                            + '</div>';
+                
+            }
+            $("#applistTable").append(html);
+        }
+
+    }
+
+    //翻页
+
+    $(document).on('click',".pageCtrl",function(e){
+        e.preventDefault();
+
+        var cur = $(this).closest("#pageSection").data('cur');
+        var ctrl = $(this).data('ctrl');
+
+        var page = (ctrl=="next")?cur+1:cur-1;
+        if(page<=0 || page>total){
+            return;
+        }
+
+        $("#pageSection").data('cur',page); 
+
+        $.ajax({
+            type:"GET",
+            url:"/proxy/getAppList?access_token="+access_token+"&page="+(page-1)+"&pagesize="+PAGE_SIZE,
+            dataType:"json",
+            success:function(data){
+                console.log(data);
+                if(!data.error_code){
+                    
+                    $('.cur-page>em').text(page);
+
+                    var applist = data.response_params.app_list;
+                    showlist(applist,1);
+                }else{
+                    // $("#total").html("fail");
+                }
+                
+            },
+            error:function(msg){
+               
+            }
+        });
+
+    });
+    
+
+
+
+
+})();	
+
+</script>
+</body>
+</html>

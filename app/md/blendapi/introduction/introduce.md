@@ -2,11 +2,6 @@
 
 ## 概述
 
- - <span style="background-color:yellow">原clouda api 改名为 blend api</span>      
- - <span style="background-color:yellow">原clouda api 接口调用仍然支持</span>     
- - <span style="background-color:yellow">建议开发者逐步使用blend 命名空间</span>
-
-
 Blend API能将移动设备的本地能力和百度的云服务融合（Blend）到webapp中，开发者可以使用熟悉的web API来顺畅地使用这些能力。
 
 Webapp的一大困境在于可供web调用的API远不如Native的完善。比如手机是3G还是wifi网络，电量情况，通讯录读取等，这些局限给手机web开发者带来了功能完备性的障碍。而Blend API弥补了这一鸿沟，它能让webapp的API更完备，让API的性能速度得到提升，暴露给开发者的都是通过统一、标准化的web API。

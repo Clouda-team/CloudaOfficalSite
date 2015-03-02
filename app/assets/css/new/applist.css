@@ -1,0 +1,190 @@
+.content-empty{
+	height:501px;
+	text-align: center;
+}
+
+.empty-tip-wrapper{
+	padding-top: 120px;
+
+}
+
+.empty-tip-wrapper span{
+	display: block;
+	width:100px;
+	height:90px;
+	background: transparent url(/assets/images/1/sad.png) no-repeat; 
+	margin: 0 auto;
+}
+
+.empty-tip-wrapper p>a{
+	color:#409ae3;
+}
+.empty-tip-wrapper p>a:hover{
+	text-decoration: underline;
+}
+
+.empty-tip-wrapper .p1{
+	font-size: 18px;
+	color:#555;
+}
+
+
+.empty-tip-wrapper .p2{
+	font-size: 14px;
+	color:#999;
+}
+
+.content-tip{
+	height:74px;
+	line-height: 74px;
+	padding-left: 78px;
+}
+
+.content-tip span{
+	font-size: 14px;
+	color:#999;
+}
+
+
+.content-tip span>a{
+	color:#409ae3;
+}
+
+.content-tip span>a:hover{
+	text-decoration: underline;
+}
+
+.content-table{
+	width:1040px;
+	margin-left: 78px;
+	padding-bottom: 40px;
+}
+
+.applist-table{
+	width: 100%;
+	border:solid 1px #dcdcdc;
+}
+
+.applist-item{
+	height:40px;
+	border-bottom: solid 1px #dcdcdc;
+}
+
+.applist-item:last-child{border-bottom: none}
+
+.applist-table-head{
+	background-color: #f6f6f6;
+}
+
+.applist-table-body:hover{
+	background-color: #e9f7ff;
+}
+
+
+.applist-table-body:nth-child(even){background-color: #fff}
+.applist-table-body:nth-child(odd){background-color: #f8f8f8}
+
+.applist-item>span{
+	display: inline-block;
+	height: 40px;
+	line-height:40px;
+	border-right:solid 1px #dcdcdc;
+	float:left;
+}
+
+.applist-item>span:nth-child(1){width:288px;}
+.applist-item>span:nth-child(2){width:379px;}
+.applist-item>span:nth-child(3){width:369px;border-right:none;}
+
+.applist-table-head>span{
+	text-align: center;
+	font-size: 14px;
+	color:#333;
+	font-weight: bold;
+}
+
+span.td-name img{
+	width:32px;
+	height:32px;
+	margin:4px 13px 0 46px;
+	float:left;
+}
+
+span.td-name a{
+	float:left;
+	font-size: 12px;
+	color:#409ae3;
+}
+
+span.td-name a:hover{
+	text-decoration: underline;
+}
+
+
+span.td-tech{
+	text-align: center;
+	font-size: 12px;
+	color:#666;
+}
+
+span.td-time{
+	text-align: center;
+	font-size: 12px;
+	color:#999; 
+}
+
+.applist-empty{
+	text-align: center;
+	padding-top: 48px;
+}
+
+.applist-empty span{
+	display: block;
+	width:100px;
+	height:90px;
+	background: transparent url(/assets/images/1/sad.png) no-repeat; 
+	margin: 0 auto;
+
+}
+
+.applist-empty .p1{
+	font-size: 18px;
+	color: #555;
+}
+
+.applist-empty .p2{
+	font-size: 14px;
+	color: #666;
+}
+
+.applist-empty>p a{
+	color:#409ae3;
+}
+
+.applist-empty>p a:hover{
+	text-decoration: underline;
+}
+
+#pageSection{
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+
+#pageSection a{
+	color:#666; 
+	font-size: 12px;
+}
+
+#pageSection a:hover{
+	color:#409ae3; 
+}
+#pageSection span{
+	font-size: 12px;
+	margin: 0 5px;
+}
+
+#pageSection span>em{
+	font-style: normal;
+	padding: 0 3px;
+}
