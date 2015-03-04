@@ -122,7 +122,7 @@ section.clouda-message-wrapper{
 	height:111px;
 	border:solid 1px #dee1e4;
 	margin: 5px 0 5px 10px;
-	background: transparent url(/assets/images/1/qrcode.png) no-repeat;
+	background: transparent url(/assets/images/1/qrcode.png?v=1) no-repeat;
 	background-size: 100%;
 }
 
