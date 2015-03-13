@@ -2,7 +2,7 @@
 
 ## 概述
 
-Blend是一套JavaScript的API，在[手机百度](http://xbox.m.baidu.com/wuxian/)或者[百度rutnime](http://clouda.baidu.com/runtime/introduction/introduce)环境下，将Native的端能力和百度的云服务融合（Blend）到webapp中。
+Blend将Native的端能力和百度的云服务融合（Blend）到webapp中，同时提供Native组件、离线存储等强大的端能力，让你的webapp如虎添翼。
 
 Blend提供以下能力：
 
@@ -40,16 +40,12 @@ Blend能力按照模块划分，需要统一引入百度直达号的loader脚本
 1. apikey是运用百度云能力必须申请的ak, 可点击进入[获取API Key](/blendui/introduction/get_api_key "获取API Key")申请;
 
 - module模块名字，Blend的ui能力、本地设备能力和云能力按照module分别加载使用，如ui能力直接用`module:["blendui"]`;
-具体如下，可点击链接进入各个API：
+目前已提供的能力如下：
 
 ######界面交互UI能力：
 
-<!-- 
-- [BlendUI](http://clouda.com) `blendui`
 
--->
-
-- BlendUI `blendui`
+BlendUI
 
 ######本地设备能力模块：
 <!--	  
@@ -77,8 +73,11 @@ Blend能力按照模块划分，需要统一引入百度直达号的loader脚本
 <!-- 
 - [离线缓存](http://clouda.com)  `cache`
  -->
-		
 
+
+加速器，调起应用，电池， 指南针，网络检测，手机通讯录，设备信息，文件系统，地理位置，系统语言信息，陀螺仪，拦截器，键盘，本地存储，本地媒体功能 ，横竖屏切换，二维码，截频分享，数据存储，离线缓存
+
+<!--
 - 加速器  `accelerometer` 
 - 调起应用  `activity`
 - 电池  `battery` 
@@ -99,7 +98,9 @@ Blend能力按照模块划分，需要统一引入百度直达号的loader脚本
 - 截频分享  `screen` 
 - 数据存储 `database`
 
-#####百度云能力模块：
+-->
+
+######百度云能力模块：
 
 <!--
 - [百度账号](http://clouda.com)  `account` 
@@ -120,6 +121,7 @@ Blend能力按照模块划分，需要统一引入百度直达号的loader脚本
 - [订阅](http://clouda.com)  `subscribe` 
 -->
 
+<!--
 - 百度账号  `account` 
 - 轻支付  `pay` 
 - 社会化分享  `socialshare` 
@@ -130,7 +132,9 @@ Blend能力按照模块划分，需要统一引入百度直达号的loader脚本
 - 云播放  `player`
 - 语音识别  `vtt`
 - 文本转语音  `tts`
+-->
 
+百度账号，轻支付，社会化分享，云推送，应用订阅，人脸识别，个人云存储 ，云播放，语音识别，文本转语音
 
 ## 简单实例
 
@@ -208,4 +212,25 @@ Blend能力按照模块划分，需要统一引入百度直达号的loader脚本
 	        url: $(this).data('link')
 	    });
 		
-		
+
+5.离线缓存
+
+Blend实现的是一套可编程的离线缓存方案。其主要通过对本地数据库操作、文件存储操作、http请求拦截而实现的。简单使用如下：
+
+(1) 在head中间加入：
+
+	<script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8" src="http://apps.bdimg.com/cloudaapi/lightapp.js"></script>
+	<meta name="Cache-Type" content="text/css;text/js;image/gif"> 
+
+该meta标签代表需要缓存该页面的所有的css文件、js文件、gif图片文件。
+
+(2) 在初始化Blend时加入cache组件，在加入组件后做下cache的初始化
+
+	Blend.lightInit({
+		ak:'xxx', /*ak是用户在百度开发者平台申请的appKey*/
+		module:['cache']
+	},function(){
+		Blend.device.cache.init();
+	});
+
+在页面中加入这段代码即表示离线缓存本地css、js、gif资源，当然如果需要缓存如：png\jpg 等图片，也可以在content中加入 `image/png;image/jpg`（注意：使用该缓存会自动将本页面缓存为非常态离线缓存）。其他细节参看[离线与缓存](/blendui/introduction/storage_note)一节。
