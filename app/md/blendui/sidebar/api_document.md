@@ -145,14 +145,14 @@ Layer.addSidebar('baidulayer',{
 </table>
 
 实例:
-<pre><code>var Layer = Blend.ui.Layer;
-Layer.showSidebar();
-</code></pre>
+	var Layer = Blend.ui.Layer;
+	Layer.showSidebar();
+
 
 
 ## 侧边栏隐藏
 
-<pre><code>Blend.ui.Layer.hideSidebar(layerId);</code></pre>
+	Blend.ui.Layer.hideSidebar(layerId);
 
 参数：
 
@@ -173,15 +173,16 @@ Layer.showSidebar();
         </tr>
    <tbody>
 </table>
+
 实例:
-<pre><code>var Layer = Blend.ui.Layer;
-Layer.hideSidebar();
-</code></pre>
+	
+	var Layer = Blend.ui.Layer;
+	Layer.hideSidebar();
 
 
-## 侧边栏销毁
+##侧边栏销毁
 
-<pre><code>Blend.ui.Layer.destorySidebar(layerId);</code></pre>
+	Blend.ui.Layer.destorySidebar(layerId);
 
 <table>
     <tbody>
@@ -204,6 +205,6 @@ Layer.hideSidebar();
 要销毁侧边栏的layer的id，可省略， 默认为当前layer的id；
 
 实例:
-<pre><code>var Layer = Blend.ui.Layer;
-Layer.destorySidebar();
-</code></pre>
+	var Layer = Blend.ui.Layer;
+	Layer.destorySidebar();
+

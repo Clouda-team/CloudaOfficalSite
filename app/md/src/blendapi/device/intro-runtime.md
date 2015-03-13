@@ -18,15 +18,12 @@ Runtime是一个与框类似的webapp运行环境，可以提供出色的Native 
 - 系统语言信息 (Globalization)
 - 地理位置（Geolocation）
 - 陀螺仪感应器 (Gyroscope)
-<!-- - 键盘（Keyboard）-->
 - 本地媒体功能（Media）
 - 设备通知 (Notification)
 - 二维码（QRCode）
 - 截屏分享 （Screen)
--    数据存储(database)
--    拦截器（Interceptor）
+- 数据存储(database)
+- 拦截器（Interceptor）
+- 缓存(Cache)
 
-
-<!--
--    缓存(Cache)
--->
+<!-- - 键盘（Keyboard）-->
