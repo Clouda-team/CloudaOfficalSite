@@ -28,13 +28,15 @@
 		Blend.device.cache.init();
 	});
 
-在页面中加入这段代码即表示离线缓存本地css、js、gif资源，当然如果需要缓存如：png\jpg 等图片，也可以在content中加入 		image/png;image/jpg
+在页面中加入这段代码即表示离线缓存本地css、js、gif资源，当然如果需要缓存如：png\jpg 等图片，也可以在content中加入
+	
+	image/png;image/jpg
 
-（注意：使用该缓存会自动将本页面缓存为非常态离线缓存）。
+（注意：使用该缓存方式会自动将本页面缓存为非常态离线缓存）。
 
 ###Clouda离线存储的自主编程操作
 
-#### 离线存储功能
+#### 自主离线缓存资源
 
 在一些情况我们可能想自主缓存一些json数据、音乐文件、flash文件、影片文件，这时我们可以使用cache.set这个功能对离线cache进行自主编程。
 	
