@@ -1,16 +1,12 @@
-##Clouda离线存储介绍
+##[离线缓存](/blendapi/local/api_runtime)介绍
 
 ###概念介绍
 
-[Clouda离线存储](/blendapi/local/api_runtime)是一套可编程的离线缓存方案,其主要通过对本地数据库操作、文件存储操作、http请求拦截而实现的。通过这套离线存储用户可以实现类Native App的离线体验。[Clouda离线存储](/blendapi/local/api_runtime)又可以分为常态离线缓存和非常态离线缓存。
+[离线缓存](/blendapi/local/api_runtime) 通过对本地数据库操作、文件存储操作、http请求拦截实现了一套可编程的缓存方案。通过这套方案，用户可以在离线时访问web资源或者对某些web资源实现有网时访问线上、无网时访问缓存。
 
-常态离线缓存：资源被缓存以后，如果没有删除缓存，以后每次访问都会使用缓存资源(fileData = 1)
+###通过meta标签启动离线存储功能
 
-非常态离线缓存：资源被缓存以后，只有在网络离线的情况下使用缓存资源，网络在线时不使用缓存资源(fileData = 2)
-
-###Clouda离线存储的简单使用
-
-####通过meta标签启动离线存储功能
+通过一个简单的meta标签，让用户快速实现web资源的离线存储功能。使用方法如下：
 	
 #####1、在head中间加入：
 
@@ -34,9 +30,9 @@
 
 （注意：使用该缓存方式会时，系统会自动将当前页面缓存为非常态离线缓存）。
 
-###Clouda离线存储的自主编程操作
+###离线存储的自主编程操作
 
-#### 自主离线缓存资源
+#### 自主缓存离线资源
 
 在一些情况我们可能想自主缓存一些json数据、音乐文件、flash文件、影片文件，这时我们可以使用cache.set这个功能对离线cache进行自主编程。
 	
@@ -71,21 +67,7 @@
 
 一些缓存如果过时了，我们需要删除可以调用cache.remove接口进行删除：
 
-	Blend.lightInit({
-		ak:'xxx', /*ak是用户在百度开发者平台申请的appKey*/
-		module:['cache']
-	});
-
-	var option = {
-		onsuccess:function(data){
-
-		},
-		onfail:function(data){
-
-		},
-		url:"http://www.baidu.com",
-		fileData:1 
-	};
+	/*options 同上*/
 
 	Blend.device.cache.remove(option)
 
