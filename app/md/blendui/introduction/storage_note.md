@@ -2,7 +2,7 @@
 
 ###概念介绍
 
-[Clouda离线存储](/blendapi/local/api_runtime)是一套可编程的离线缓存方案,其主要通过对本地数据库操作、文件存储操作、http请求拦截而实现的。通过这套离线存储可以实现类Native App的离线体验。[Clouda离线存储](/blendapi/local/api_runtime)又可以分为常态离线缓存和非常态离线缓存。
+[Clouda离线存储](/blendapi/local/api_runtime)是一套可编程的离线缓存方案,其主要通过对本地数据库操作、文件存储操作、http请求拦截而实现的。通过这套离线存储用户可以实现类Native App的离线体验。[Clouda离线存储](/blendapi/local/api_runtime)又可以分为常态离线缓存和非常态离线缓存。
 
 常态离线缓存：资源被缓存以后，如果没有删除缓存，以后每次访问都会使用缓存资源(fileData = 1)
 
