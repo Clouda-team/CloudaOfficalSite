@@ -8,7 +8,7 @@ rapid.config.define({
 
 		gzip : true,
 
-		port : 8230,
+		port : 18080,
 
 		/* "Cache-Control" : "max-age:31536000" */
 		
