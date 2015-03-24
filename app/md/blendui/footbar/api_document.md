@@ -6,13 +6,13 @@
 
 配置所需参数来初始化一个底部菜单组件Footbar
 
-Slider的配置格式如下：
+Footbar的配置格式如下：
 
 <pre><code>var footbar = new Blend.ui.Footbar({"options":"values"});</code></pre>
 
 Slider包含以下配置项：
 
-<h3 class="construct" platform="ios android web">id</h3>
+<h3 class="construct" platform="android">id</h3>
 footbar的id
 
 <table>
@@ -45,7 +45,7 @@ footbar的id
 </code></pre>
 
 
-<h3 class="construct" platform="ios android web">top</h3>
+<h3 class="construct" platform="android">top</h3>
 配置footbar距离屏幕top的坐标
 
 <table>
@@ -74,7 +74,7 @@ footbar的id
 });
 </code></pre>
 
-<h3 class="construct" platform="ios android web">left</h3>
+<h3 class="construct" platform="android">left</h3>
 配置footbar距离屏幕left的坐标
 
 <table>
@@ -104,7 +104,7 @@ footbar的id
 });
 </code></pre>
 
-<h3 class="construct" platform="ios android web">width</h3>
+<h3 class="construct" platform="android">width</h3>
 配置footbar宽度
 
 <table>
@@ -116,7 +116,7 @@ footbar的id
         </tr>
         <tr>
           <th>Number</th>
-          <tdfootbar像素宽度，默认为屏幕宽度</td>
+          <td>footbar像素宽度，默认为屏幕宽度</td>
           <td>否</td>
         </tr>
    <tbody>
@@ -136,7 +136,7 @@ var footbarCase = new Blend.ui.Footbar({
 });
 </code></pre>
 
-<h3 class="construct" platform="ios android web">height</h3>
+<h3 class="construct" platform="android">height</h3>
 配置footbar高度
 
 <table>
@@ -169,7 +169,7 @@ var footbarCase = new Blend.ui.Footbar({
 });
 </code></pre>
 
-<h3 class="construct" platform="ios android web">selected</h3>
+<h3 class="construct" platform="android">selected</h3>
 菜单被选中时的触发函数
 
 <table>
@@ -180,7 +180,7 @@ var footbarCase = new Blend.ui.Footbar({
             <th>是否必须</th>
         </tr>
         <tr>
-          <th>String</th>
+          <th>Function</th>
           <td>点击菜单触发；默认为空；</td>
           <td>否</td>
         </tr>
@@ -211,7 +211,7 @@ footbarCase = new Blend.ui.Footbar({
 
 ##Method
 
-<h3 class="method" platform="ios android web">show ( )</h3>
+<h3 class="method" platform="android">show ( )</h3>
 把footbar显示
 
 实例:
@@ -235,7 +235,7 @@ footbarCase.show();
 </code></pre>
 
 
-<h3 class="method" platform="ios android web">hide ( )</h3>
+<h3 class="method" platform="android">hide ( )</h3>
 隐藏footbar菜单
 
 实例:
@@ -258,7 +258,7 @@ var footbarCase = new Footbar({
 footbarCase.hide();
 </code></pre>
 
-<h3 class="method" platform="ios android web">destroy ( )</h3>
+<h3 class="method" platform="android">destroy ( )</h3>
 销毁footbar
 
 实例:
