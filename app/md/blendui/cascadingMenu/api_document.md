@@ -78,7 +78,7 @@ cascadingMenu的id
 });
 </code></pre>
 
-<h3 class="construct" platform="ios android web">left</h3>
+<h3 class="construct" platform="android">left</h3>
 配置cascadingMenu距离屏幕left的坐标
 
 <table>
@@ -217,7 +217,7 @@ var cascadingMenu = new Blend.ui.CascadingMenu({
 
 ##Method
 
-<h3 class="method" platform="ios android web">show ( )</h3>
+<h3 class="method" platform="android">show ( )</h3>
 把cascadingMenu显示
 
 实例：
@@ -268,7 +268,7 @@ var cascadingMenu = new Blend.ui.CascadingMenu({
 cascadingMenu.hide();
 </code></pre>
 
-<h3 class="method" platform="ios android web">selectItem()</h3>
+<h3 class="method" platform="android">selectItem()</h3>
 选中菜单中的所在项
 
 实例:
