@@ -401,7 +401,9 @@ ul.message-nav li{
 	background: url(/assets/images/1/li-bg.png) no-repeat 0;
 	padding-left: 27px;
 }
-
+.message-activity{
+	width:453px;
+}
 .message-notification{
 	float: right;
 }

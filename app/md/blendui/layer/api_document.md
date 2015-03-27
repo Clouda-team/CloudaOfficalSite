@@ -368,7 +368,7 @@ var layer = new Blend.ui.Layer({
         </tr>
         <tr>
             <th>Boolean</th>
-            <td> 如果subLayer==tuue, 是否fiexd到附属layer上面，默认false</td>
+            <td> 如果subLayer==true, 是否fiexd到附属layer上面，默认false</td>
             <td>否</td>
         </tr>
    <tbody>

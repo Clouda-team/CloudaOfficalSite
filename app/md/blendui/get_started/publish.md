@@ -20,7 +20,7 @@
 
 <http://pan.baidu.com/s/1jGrAdLk>
 
-（2）下载完成后将工程导入Xcode，在工程目录下建立一个应用的目录，例如目录名为“hello”，并将BlendUI开发的工程文件拷贝到“hello”目录下，并在工程`BlendUISDK`目录下找到`BlendUI.m`文件，在文件中找到下面的代码
+（2）下载完成后，将BlendDemo文件夹下的工程导入Xcode，根据开发需求在工程目录下建立一个应用的目录，例如目录名为“hello”，并将BlendUI开发的工程文件拷贝到“hello”目录下，并在工程`RuntimeSDK`目录下找到`RuntimeSDK.m`文件，在文件中找到下面的代码
 
 	- (void)loadAppHomePage
 	{
@@ -48,6 +48,10 @@
 	
 （3）使用Xcode编译完成后，提交应用商店
 	
+* 设置
+
+	如果编译失败，请试着修改BlendDemo -> Build Settings -> Build Active Architectue Only -> DEBUG后的设置全部都选择No
+
 * 本地目录
 
 	工程中用于存放BlendUI项目的目录名，例如“hello”
