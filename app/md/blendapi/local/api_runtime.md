@@ -16,7 +16,6 @@ Runtime是一个与框类似的webapp运行环境，可以提供出色的Native 
 - 文件系统（FileSystem）
 - 地理位置 (Geolocation)
 - 系统语言信息 (Globalization)
-- 地理位置（Geolocation）
 - 陀螺仪感应器 (Gyroscope)
 - 本地媒体功能（Media）
 - 设备通知 (Notification)
@@ -1595,7 +1594,7 @@ onfail | function(err){} | 操作失败，返回错误码信息
 - startProgress(title, msg, options)
 - updateProgress(value)
 - stopProgress()
-- smsVrification(options)
+- smsVerification(options)
 
 <h3 class="notification"> alert</h3>
 
@@ -1907,9 +1906,9 @@ onfail | function(err){} | 操作失败，返回错误码信息
 
 
 
-<h3 class="notification">smsVrification</h3>
+<h3 class="notification">smsVerification</h3>
 
-	smsVrification(options)
+	smsVerification(options)
 	
 **功能描述：**
 

@@ -17,7 +17,7 @@
 - startProgress(title, msg, options)
 - updateProgress(value)
 - stopProgress()
-- smsVrification(options)
+- smsVerification(options)
 
 <h3 class="notification"> alert</h3>
 
@@ -329,9 +329,9 @@
 
 
 
-<h3 class="notification">smsVrification</h3>
+<h3 class="notification">smsVerification</h3>
 
-	smsVrification(options)
+	smsVerification(options)
 	
 **功能描述：**
 

@@ -20,7 +20,7 @@
 
 ## Activity ##
 
-    Blend.device.activity
+    clouda.device.activity
 
 调起应用 
 
@@ -80,7 +80,7 @@
         	beginTime: 1384676947757,
         	endTime: 1384680547757
     	};
-    	Blend.device.activity.start({onsuccess:onsuccess,onfail:onfail,intent:intent});
+    	clouda.device.activity.start({onsuccess:onsuccess,onfail:onfail,intent:intent});
     
 	}
 
@@ -90,7 +90,7 @@
         	uri: "smsto: 18600872789",
         	sms_body: "How are you doing?"
     	};
-    	Blend.device.activity.start({onsuccess:onsuccess,onfail:onfail,intent:intent});
+    	clouda.device.activity.start({onsuccess:onsuccess,onfail:onfail,intent:intent});
 	}
 
 	function playVideo() {//播放视频
@@ -99,12 +99,12 @@
         	uri: "http://bcs.duapp.com/jaketestbucket/BaiduXCloud%20v03.mp4?sign=MBO:B3cd3aed3bca93d78135c99c2ab8b5ce:3rCc42yqHZu6lOn7uuucEMSQzI8%3D",
         	type: "video/*"
     	};
-    	Blend.device.activity.start({onsuccess:onsuccess,onfail:onfail,intent:intent});
+    	clouda.device.activity.start({onsuccess:onsuccess,onfail:onfail,intent:intent});
 	}
 
 ## Battery ##
 
-    Blend.device.battery
+    clouda.device.battery
 
 **方法：**
 
@@ -197,7 +197,7 @@ onfail | function(err){}  | 操作失败，返回错误码信息
 
 ## Connection ##
 
-     Blend.device.connection
+     clouda.device.connection
     
 网络连接
 
@@ -240,14 +240,14 @@ onfail | function(err){}  | 操作失败，返回错误码信息
 网络连接状态类型可能的取值：
 
 
-    Blend.device.CONNECTION_STATUS.UNKNOWN // 未知状态
-    Blend.device.CONNECTION_STATUS.NONE // 断开状态
-    Blend.device.CONNECTION_STATUS.WIFI // WIFI连通状态
-    Blend.device.CONNECTION_STATUS.CELL_2G // 移动数据2G连通状态
-    Blend.device.CONNECTION_STATUS.CELL_3G // 移动数据3G连通状态
-    Blend.device.CONNECTION_STATUS.CELL_4G // 移动数据4G连通状态
-    Blend.device.CONNECTION_STATUS.CELL // 移动数据通连通状态
-    Blend.device.CONNECTION_STATUS.ETHERNET // 以太网连通状态
+    clouda.device.CONNECTION_STATUS.UNKNOWN // 未知状态
+    clouda.device.CONNECTION_STATUS.NONE // 断开状态
+    clouda.device.CONNECTION_STATUS.WIFI // WIFI连通状态
+    clouda.device.CONNECTION_STATUS.CELL_2G // 移动数据2G连通状态
+    clouda.device.CONNECTION_STATUS.CELL_3G // 移动数据3G连通状态
+    clouda.device.CONNECTION_STATUS.CELL_4G // 移动数据4G连通状态
+    clouda.device.CONNECTION_STATUS.CELL // 移动数据通连通状态
+    clouda.device.CONNECTION_STATUS.ETHERNET // 以太网连通状态
 
     startListen(options)
 
@@ -263,7 +263,7 @@ onfail | function(err){}  | 操作失败，返回错误码信息
 
 ## Device ##
 
-    Blend.device.device
+    clouda.device.device
 
 设备信息
 
@@ -377,7 +377,7 @@ colorDepth | int | 色深
 
 ## FileSystem ##
 
-    Blend.device.fs
+    clouda.device.fs
 
 文件管理
 
@@ -636,7 +636,7 @@ key | string | 文件索引
 
 
 ## Geolocation ##
-    Blend.device.geolocation
+    clouda.device.geolocation
 
 地理位置
 
@@ -715,7 +715,7 @@ onsuccess | function(data){} | 操作成功，返回SUCCESS状态码
 onfail | function(err){} | 操作失败，返回错误码信息 
 
 ## Globalization ##
-    Blend.device.globalization
+    clouda.device.globalization
 
 系统语言信息 
 
@@ -743,7 +743,7 @@ onfail | function(err){} | 操作失败，返回错误码信息
 
 
 ## Media ##
-    Blend.device.media
+    clouda.device.media
 
 本地媒体功能
 
@@ -785,10 +785,10 @@ onfail | function(err){} | 操作失败，返回错误码信息
         <td>mediaType</td>
         <td>string</td>          
         <td> 媒体类型，其值如下： <br>
-         - Blend.device.MEDIA_TYPE.PICTURE(默认) <br>
-         - Blend.device.MEDIA_TYPE.VIDEO <br>
-         - Blend.device.MEDIA_TYPE.AUDIO <br>
-         - Blend.device.MEDIA_TYPE.ALLMEDIA
+         - clouda.device.MEDIA_TYPE.PICTURE(默认) <br>
+         - clouda.device.MEDIA_TYPE.VIDEO <br>
+         - clouda.device.MEDIA_TYPE.AUDIO <br>
+         - clouda.device.MEDIA_TYPE.ALLMEDIA
      </td>  
     </tr>
     <tr>
@@ -869,7 +869,7 @@ onsuccess | function(data){} | 操作成功，data返回信息，详见前述 op
 onfail | function(err){} | 操作失败，返回错误码信息 
 
 ## QRCode ##
-     Blend.device.qr
+     clouda.device.qr
 
 二维码、条形码类
 
@@ -902,7 +902,7 @@ type | number | 扫描对象类型
 
 
 ## Keybord ##
-     Blend.device.keybord
+     clouda.device.keybord
 
 键盘，键盘类
 
