@@ -48,10 +48,10 @@ Blend能力按照模块划分，需要统一引入百度直达号的loader脚本
 BlendUI
 
 ######本地设备能力模块：
-<!--	  
-- [加速器](http://clouda.com)  `accelerometer` 
+<!--
+- [加速器](http://clouda.com)  `accelerometer`
 - [调起应用](http://clouda.com)  `activity`
-- [电池](http://clouda.com)  `battery` 
+- [电池](http://clouda.com)  `battery`
 - [指南针](http://clouda.com)  `compass`
 - [网络检测](http://clouda.com)  `connection`
 - [手机通讯录](http://clouda.com) `contact`
@@ -66,11 +66,11 @@ BlendUI
 - [本地媒体功能](http://clouda.com) `media`
 - [横竖屏切换](http://clouda.com) `orientation`
 - [二维码](http://clouda.com) `qr`
-- [截频分享](http://clouda.com)  `screen` 
+- [截频分享](http://clouda.com)  `screen`
 -    [数据存储]() `database`
 -->
 
-<!-- 
+<!--
 - [离线缓存](http://clouda.com)  `cache`
  -->
 
@@ -78,9 +78,9 @@ BlendUI
 加速器，调起应用，电池， 指南针，网络检测，手机通讯录，设备信息，文件系统，地理位置，系统语言信息，陀螺仪，拦截器，键盘，本地存储，本地媒体功能 ，横竖屏切换，二维码，截频分享，数据存储，离线缓存
 
 <!--
-- 加速器  `accelerometer` 
+- 加速器  `accelerometer`
 - 调起应用  `activity`
-- 电池  `battery` 
+- 电池  `battery`
 - 指南针`compass`
 - 网络检测 `connection`
 - 手机通讯录 `contact`
@@ -95,7 +95,7 @@ BlendUI
 - 本地媒体功能 `media`
 - 横竖屏切换 `orientation`
 - 二维码 `qr`
-- 截频分享  `screen` 
+- 截频分享  `screen`
 - 数据存储 `database`
 
 -->
@@ -103,13 +103,13 @@ BlendUI
 ######百度云能力模块：
 
 <!--
-- [百度账号](http://clouda.com)  `account` 
-- [轻支付](http://clouda.com)  `pay` 
-- [社会化分享](http://clouda.com)  `socialshare` 
-- [云推送](http://clouda.com)  `push` 
-- [应用订阅](http://clouda.com)  `app` 
-- [人脸识别](http://clouda.com)  `face` 
-- [个人云存储](http://clouda.com)  `pcs` 
+- [百度账号](http://clouda.com)  `account`
+- [轻支付](http://clouda.com)  `pay`
+- [社会化分享](http://clouda.com)  `socialshare`
+- [云推送](http://clouda.com)  `push`
+- [应用订阅](http://clouda.com)  `app`
+- [人脸识别](http://clouda.com)  `face`
+- [个人云存储](http://clouda.com)  `pcs`
 - [云播放](http://clouda.com)  `player`
 - [语音识别](http://clouda.com)  `vtt`
 - [文本转语音](http://clouda.com)  `tts`
@@ -117,18 +117,18 @@ BlendUI
 
 <!--
 - [反馈](http://clouda.com)  `feedback`
-- [地理定位](http://clouda.com)  `map` 
-- [订阅](http://clouda.com)  `subscribe` 
+- [地理定位](http://clouda.com)  `map`
+- [订阅](http://clouda.com)  `subscribe`
 -->
 
 <!--
-- 百度账号  `account` 
-- 轻支付  `pay` 
-- 社会化分享  `socialshare` 
-- 云推送  `push` 
-- 应用订阅  `app` 
-- 人脸识别  `face` 
-- 个人云存储 `pcs` 
+- 百度账号  `account`
+- 轻支付  `pay`
+- 社会化分享  `socialshare`
+- 云推送  `push`
+- 应用订阅  `app`
+- 人脸识别  `face`
+- 个人云存储 `pcs`
 - 云播放  `player`
 - 语音识别  `vtt`
 - 文本转语音  `tts`
@@ -152,8 +152,8 @@ BlendUI
             module:["qr","blendui"]
         });
 		</script>
-	
-	
+
+
 2.二维码调用
 
 
@@ -177,7 +177,7 @@ BlendUI
 
 
 3.UI模块,Tab切换
-	
+
 
 	var tabs = new Blend.ui.LayerGroup({
         id: "Tabs",
@@ -206,12 +206,11 @@ BlendUI
 	        openUrl(e.data.url);
 	    });
 
-----------------------------------------------------------
 	
 		main.fire("openUrl","top",{
 	        url: $(this).data('link')
 	    });
-		
+
 
 5.离线缓存
 
@@ -220,7 +219,7 @@ Blend实现的是一套可编程的离线缓存方案。其主要通过对本地
 (1) 在head中间加入：
 
 	<script name="baidu-tc-cerfication" type="text/javascript" charset="utf-8" src="http://apps.bdimg.com/cloudaapi/lightapp.js"></script>
-	<meta name="Cache-Type" content="text/css;text/js;image/gif"> 
+	<meta name="Cache-Type" content="text/css;text/js;image/gif">
 
 该meta标签代表需要缓存该页面的所有的css文件、js文件、gif图片文件。
 

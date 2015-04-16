@@ -2,7 +2,7 @@
 
 ## 概述
 
-Blend是一套JavaScript的API，在[手机百度](http://xbox.m.baidu.com/wuxian/)或者[百度rutnime](http://clouda.baidu.com/runtime/introduction/introduce)环境下，将Native的端能力和百度的云服务融合（Blend）到webapp中。
+Blend将Native的端能力和百度的云服务融合（Blend）到webapp中，同时提供Native组件、离线存储等强大的端能力，让你的webapp如虎添翼。
 
 Blend提供以下能力：
 
@@ -33,29 +33,25 @@ Blend能力按照模块划分，需要统一引入百度直达号的loader脚本
 引入loader之后，采用初始化函数按照模块加载各模块；
 
 		Blend.lightInit({
-		    ak:apikey,
-		    module:["app","account","xxxx"]
+				ak: "key-from-zhidahao",// 运用百度云能力必须申请，若不用可删除本行
+		    module:["app","account","blendui"] // Blend的ui能力、本地设备能力和云能力按照module分别加载使用
 		});
 
 1. apikey是运用百度云能力必须申请的ak, 可点击进入[获取API Key](/blendui/introduction/get_api_key "获取API Key")申请;
 
 - module模块名字，Blend的ui能力、本地设备能力和云能力按照module分别加载使用，如ui能力直接用`module:["blendui"]`;
-具体如下，可点击链接进入各个API：
+目前已提供的能力如下：
 
 ######界面交互UI能力：
 
-<!-- 
-- [BlendUI](http://clouda.com) `blendui`
 
--->
-
-- BlendUI `blendui`
+BlendUI
 
 ######本地设备能力模块：
-<!--	  
-- [加速器](http://clouda.com)  `accelerometer` 
+<!--
+- [加速器](http://clouda.com)  `accelerometer`
 - [调起应用](http://clouda.com)  `activity`
-- [电池](http://clouda.com)  `battery` 
+- [电池](http://clouda.com)  `battery`
 - [指南针](http://clouda.com)  `compass`
 - [网络检测](http://clouda.com)  `connection`
 - [手机通讯录](http://clouda.com) `contact`
@@ -70,18 +66,21 @@ Blend能力按照模块划分，需要统一引入百度直达号的loader脚本
 - [本地媒体功能](http://clouda.com) `media`
 - [横竖屏切换](http://clouda.com) `orientation`
 - [二维码](http://clouda.com) `qr`
-- [截频分享](http://clouda.com)  `screen` 
+- [截频分享](http://clouda.com)  `screen`
 -    [数据存储]() `database`
 -->
 
-<!-- 
+<!--
 - [离线缓存](http://clouda.com)  `cache`
  -->
-		
 
-- 加速器  `accelerometer` 
+
+加速器，调起应用，电池， 指南针，网络检测，手机通讯录，设备信息，文件系统，地理位置，系统语言信息，陀螺仪，拦截器，键盘，本地存储，本地媒体功能 ，横竖屏切换，二维码，截频分享，数据存储，离线缓存
+
+<!--
+- 加速器  `accelerometer`
 - 调起应用  `activity`
-- 电池  `battery` 
+- 电池  `battery`
 - 指南针`compass`
 - 网络检测 `connection`
 - 手机通讯录 `contact`
@@ -96,19 +95,21 @@ Blend能力按照模块划分，需要统一引入百度直达号的loader脚本
 - 本地媒体功能 `media`
 - 横竖屏切换 `orientation`
 - 二维码 `qr`
-- 截频分享  `screen` 
+- 截频分享  `screen`
 - 数据存储 `database`
 
-#####百度云能力模块：
+-->
+
+######百度云能力模块：
 
 <!--
-- [百度账号](http://clouda.com)  `account` 
-- [轻支付](http://clouda.com)  `pay` 
-- [社会化分享](http://clouda.com)  `socialshare` 
-- [云推送](http://clouda.com)  `push` 
-- [应用订阅](http://clouda.com)  `app` 
-- [人脸识别](http://clouda.com)  `face` 
-- [个人云存储](http://clouda.com)  `pcs` 
+- [百度账号](http://clouda.com)  `account`
+- [轻支付](http://clouda.com)  `pay`
+- [社会化分享](http://clouda.com)  `socialshare`
+- [云推送](http://clouda.com)  `push`
+- [应用订阅](http://clouda.com)  `app`
+- [人脸识别](http://clouda.com)  `face`
+- [个人云存储](http://clouda.com)  `pcs`
 - [云播放](http://clouda.com)  `player`
 - [语音识别](http://clouda.com)  `vtt`
 - [文本转语音](http://clouda.com)  `tts`
@@ -116,27 +117,27 @@ Blend能力按照模块划分，需要统一引入百度直达号的loader脚本
 
 <!--
 - [反馈](http://clouda.com)  `feedback`
-- [地理定位](http://clouda.com)  `map` 
-- [订阅](http://clouda.com)  `subscribe` 
+- [地理定位](http://clouda.com)  `map`
+- [订阅](http://clouda.com)  `subscribe`
 -->
 
-- 百度账号  `account` 
-- 轻支付  `pay` 
-- 社会化分享  `socialshare` 
-- 云推送  `push` 
-- 应用订阅  `app` 
-- 人脸识别  `face` 
-- 个人云存储 `pcs` 
+<!--
+- 百度账号  `account`
+- 轻支付  `pay`
+- 社会化分享  `socialshare`
+- 云推送  `push`
+- 应用订阅  `app`
+- 人脸识别  `face`
+- 个人云存储 `pcs`
 - 云播放  `player`
 - 语音识别  `vtt`
 - 文本转语音  `tts`
+-->
 
+百度账号，轻支付，社会化分享，云推送，应用订阅，人脸识别，个人云存储 ，云播放，语音识别，文本转语音
 
-## 简单实例
+## 简单二维码扫描Demo
 
-创建一个简单的运用二维码模块和ui模块的简单DEMO [点击下载](http://blend001.duapp.com/blenddemo/demo.zip)
-
-代码片段：
 
 1.loader引入及其模块初始化
 
@@ -148,8 +149,8 @@ Blend能力按照模块划分，需要统一引入百度直达号的loader脚本
             module:["qr","blendui"]
         });
 		</script>
-	
-	
+
+
 2.二维码调用
 
 
@@ -173,7 +174,7 @@ Blend能力按照模块划分，需要统一引入百度直达号的loader脚本
 
 
 3.UI模块,Tab切换
-	
+
 
 	var tabs = new Blend.ui.LayerGroup({
         id: "Tabs",
@@ -198,14 +199,42 @@ Blend能力按照模块划分，需要统一引入百度直达号的loader脚本
 
 4.事件传递
 
+
+		// 接收事件
 		main.on("openUrl",function(e){
 	        openUrl(e.data.url);
 	    });
 
-----------------------------------------------------------
-	
+
+		// 触发事件
 		main.fire("openUrl","top",{
 	        url: $(this).data('link')
 	    });
-		
-		
+
+
+
+5.侧边栏
+
+
+		// 创建侧边栏：
+		main.Layer.addSidebar({
+            url:'menu.html'
+        });
+
+
+		// 显示
+		$("#layermenu").on('click',function(e){
+            e.preventDefault();
+            main.Layer.showSidebar();
+        });
+
+
+
+----------------------------------------------------------
+[代码浏览](https://github.com/Clouda-team/BlendDemo/tree/master/samples/blendui)
+[代码下载](http://blend001.duapp.com/blenddemo/demo.zip)
+[安装下载](http://blend001.duapp.com/blenddemo/blenduidemo.apk)
+
+<img src='http://blend001.duapp.com/blenddemo/down-qr.png' />
+<br/><br/>
+扫码安装
