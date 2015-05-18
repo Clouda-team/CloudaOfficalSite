@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>dialog</title>
+    <meta content="width=device-width,initial-scale=1,user-scalable=no" name="viewport">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <link rel="stylesheet" href="/assets/blend2/dist/boost.css">
+    <link rel="stylesheet" href="/assets/blend2/css/samples.css">
+</head>
+
+<body>
+
+    <header data-blend-widget="header" class="blend-header">
+        <span class="blend-header-left">
+            <a class="blend-header-item blend-action-back-icon" href="javascript:history.back();"></a>
+        </span>
+        <span class="blend-header-title">
+            <span class="blend-header-item">formgroup组件</span>
+        </span>
+        <span class="blend-header-right">
+
+        </span>
+    </header>
+    <br/>
+  <div>
+      <button class="blend-button blend-button-primary" id="domInit">DOM渲染方式 提示弹框</button>
+      <br/> <br/>
+      <button class="blend-button blend-button-primary" id="jsInit">Js渲染方式 常规弹框</button>
+      <br/> <br/>
+      <button class="blend-button blend-button-primary"  id="custome">自定义dialog</button>
+  </div>
+  <br/>
+  <textarea id="result"></textarea>
+
+    <div  id="customeDialog" class="blend-dialog">
+
+      <h3>这是个h3标题</h3>
+      <h4 style="color:red">这是个自定义的h4标题</h4>
+      <span>哈哈<em>这个地方是斜体</em></span>
+      <p>因为是自定义的，所以没有绑定默认事件，可以点击mask关闭</p>
+    </div>
+
+    <div  id="domInitDialog" class="blend-dialog">
+
+      <div class="blend-dialog-body">
+        这是提示弹框
+      </div>
+      <div class="blend-dialog-footer">
+        <a href="javascript:void(0);" class="blend-dialog-cancel">取消</a>
+        <a href="javascript:void(0);" class="blend-dialog-confirm">确认</a>
+      </div>
+    </div>
+
+    <div  id="jsInitDialog" class="blend-dialog">
+    </div>
+
+    <br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br>
+
+
+    <script src="/assets/blend2/dist/boost.js"></script>
+
+    <script>
+
+        ;(function(){
+
+          //自定义dom渲染方式
+          var dialog1 = $("#customeDialog").dialog({
+            maskTapClose:true,
+            renderType:2
+          }).on('dialog:show',function(){
+            console.log("dialog1 show");
+            document.querySelector("#result").innerHTML = "dialog1 show";
+          }).on('dialog:hide',function(){
+            console.log("dialog1 hide");
+            document.querySelector("#result").innerHTML = "dialog1 hide";
+          });
+
+
+          var dialog2 = $("#domInitDialog").dialog({
+            useCustom:false,
+              hasHeader: false,
+            btnStatus:1,
+            renderType:0 // 默认使用dom渲染
+          }).on('dialog:show',function(){
+            console.log("dialog2 show");
+            document.querySelector("#result").innerHTML = "dialog2 show";
+          }).on('dialog:hide',function(){
+            console.log("dialog2 hide");
+            document.querySelector("#result").innerHTML = "dialog2 hide";
+          }).on("dialog:confirm",function(){
+            alert("点击确认22222");
+          });
+
+          //Dom渲染方式
+
+
+          var dialog3 = $("#jsInitDialog").dialog({
+            title:"这是title",
+            content: '<p style="margin: 0;" class="blend-dialog-phone">13313331333</p><p style="margin: 0;"><a href="http://www.baidu.com" class="blend-dialog-link">这是一个链接</a></p>',
+            // cancelOnly: 1,
+            confirmText:"确认",
+            cancelText: '取消',
+            btnStatus:3,
+            renderType:1  //js渲染
+          }).on('dialog:show',function(){
+            console.log("dialog3 show");
+            document.querySelector("#result").innerHTML = "dialog3 show";
+          }).on('dialog:hide',function(){
+            console.log("dialog3 hide");
+            document.querySelector("#result").innerHTML = "dialog3 hide";
+          }).on("dialog:confirm",function(){
+            alert("监听confirm事件，3333333");
+          }).on("dialog:cancel",function(){
+            alert("监听cancel事件，888")
+          });
+
+
+          $("#custome").bind("click",function(){
+
+            dialog1.dialog("show");
+
+          });
+
+          $("#domInit").bind("click",function(){
+
+            dialog2.dialog("show");
+            // dialog2.dialog("show","每一次都在变～～～"+ new Date().getTime());
+            /*dialog2.dialog("show",{
+              title:"title~"+ new
+            });*/
+
+          });
+
+          $("#jsInit").bind("click",function(){
+
+            dialog3.dialog("show");
+            /*if(dialog2)
+            dialog2.dialog("show","每一次都在变～～～"+ new Date().getTime());*/
+
+
+          });
+
+
+        })();
+
+    </script>
+</body>
+
+</html>

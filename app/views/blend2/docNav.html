@@ -1,0 +1,48 @@
+<div class="compons_left fl">
+    <div class="compons_les" id="menus">
+        <section>
+            <h3>CSS组件</h3>
+            <ul>
+                <li><div><a href="/blend2/docs/">按钮<i>button</i></a></div></li>
+                <li><div><a href="/blend2/docs/badge">徽标<i>badge</i></a></div></li>
+                <li><div><a href="/blend2/docs/flexbox">盒子容器<i>flexbox</i></a></div></li>
+                <li><div><a href="/blend2/docs/grid">栅格布局<i>grid</i></a></div></li>
+                <li><div><a href="/blend2/docs/header">顶部导航<i>header</i></a></div></li>
+                <!-- <li><a href="/blend2/docs/imglist">图片列表<i>imglist</i></a></li> -->
+                <li><div><a href="/blend2/docs/nav">列表导航<i>nav</i></a></div></li>
+                <li><div><a href="/blend2/docs/panel">展示板<i>panel</i></a></div></li>
+                <li><div><a href="/blend2/docs/tabnav">标签导航<i>tabnav</i></a></div></li>
+            </ul>
+            <div class="line"></div>
+        </section>
+        <section>
+            <h3>JS组件</h3>
+            <ul>
+                <li><div><a href="/blend2/docs/counter">数量选择器<i>counter</i></a></div></li>
+                <li><div><a href="/blend2/docs/dialog">弹窗<i>dialog</i></a></div></li>
+                <li><div><a href="/blend2/docs/formgroup">表单组<i>formgroup</i></a></div></li>
+                <li><div><a href="/blend2/docs/gallery">图集<i>gallery</i></a></div></li>
+                <li><div><a href="/blend2/docs/list">列表<i>list</i></a></div></li>
+                <li><div><a href="/blend2/docs/loading">加载进度<i>loading</i></a></div></li>
+                <li><div><a href="/blend2/docs/slider">幻灯片<i>slider</i></a></div></li>
+                <li><div><a href="/blend2/docs/tab">标签<i>tab</i></a></div></li>
+                <li><div><a href="/blend2/docs/toast">浮动提示<i>toast</i></a></div></li>
+            </ul>
+            <div class="line"></div>
+        </section>
+    </div>
+</div>
+<script type="text/javascript">
+    ;(function(){
+        var pathname = window.location.pathname;
+        var lis = document.querySelectorAll('#menus section li');
+        for(var i in lis){
+            // lis[i].classList.remove('nav-select');
+            if(lis[i].getElementsByTagName('a')[0].href === location.href){
+                lis[i].classList.add('nav-select');
+                break;
+            }
+        }
+
+    })();
+</script>

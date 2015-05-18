@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width,initial-scale=1,user-scalable=no" name="viewport">
+    <title>列表</title>
+    <link rel="stylesheet" href="/assets/blend2/dist/boost.css">
+    <link rel="stylesheet" href="/assets/blend2/css/samples.css">
+
+</head>
+
+<body>
+
+    <header data-blend-widget="header" class="blend-header">
+        <span class="blend-header-left">
+            <a class="blend-header-item blend-action-back-icon" href="javascript:history.back();"></a>
+        </span>
+        <span class="blend-header-title">
+            <span class="blend-header-item">列表</span>
+        </span>
+        <span class="blend-header-right">
+
+        </span>
+    </header>
+
+    <section data-blend-widget="list" class="blend-list">
+        <div class="blend-list-item">
+            <div class="blend-list-item-content">宫保鸡丁</div>
+            <span class="blend-list-item-delete">删除</span>
+        </div>
+        <div class="blend-list-item">
+            <div class="blend-list-item-content">水煮鱼</div>
+            <span class="blend-list-item-delete">删除</span>
+        </div>
+        <div class="blend-list-item">
+            <div class="blend-list-item-content">米饭1碗</div>
+            <span class="blend-list-item-delete">删除</span>
+        </div>
+    </section>
+
+    <button id="revert">逆序</button><br>
+    <button id="add">添加（仅此可用，其余失效）</button><br>
+    <button id="refresh">刷新</button><br>
+    <button id="destroy">清除</button><br>
+    <button id="create">创建</button><br>
+
+    <script src="/assets/blend2/js/hammer.min.js"></script>
+    <script src="/assets/blend2/dist/boost.js"></script>
+
+    <script>
+        var $blendList = $('.blend-list').eq(0);
+        $blendList.list();//.list('destroy');
+        $('#revert').click(function() {
+            $blendList.list('revert');
+        });
+        $('#add').click(function() {
+            $blendList.append([
+                '<div class="blend-list-item">',
+                    '<div class="blend-list-item-content">米饭1碗</div>',
+                    '<span class="blend-list-item-delete">删除</span>',
+                '</div>'
+            ].join(''));
+            $blendList.list('refresh');
+        });
+        $('#refresh').click(function() {
+            $blendList.list('refresh');
+        });
+        $('#destroy').click(function() {
+            $blendList.list('destroy');
+        });
+        $('#create').click(function() {
+            $blendList.list();
+        });
+    </script>
+
+</body>
+
+</html>

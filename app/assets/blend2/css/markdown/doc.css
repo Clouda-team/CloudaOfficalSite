@@ -1,0 +1,251 @@
+
+.prettyprint {
+    display: block;
+    font-family: Monaco,Consolas,"Lucida Console",monospace;
+    background-color: #f4f4f4;
+    font-size: 8px;
+    border: 0;
+    color: #e9e4e5;
+    line-height: 1.9em;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -moz-background-clip: padding-box;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    padding: 20px!important;
+    white-space: pre;
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin-top: 20px;
+    margin-bottom: 20px
+}
+
+.prettyprint .pln {
+    color: #515151
+}
+
+.prettyprint .com {
+    color: #888
+}
+
+.prettyprint .pun,.prettyprint .opn,.prettyprint .clo {
+    color: #515151
+}
+
+.prettyprint .dec{
+    color: #eee;
+}
+
+.prettyprint .var {
+    color : #606;
+}
+
+.prettyprint .fun {
+    color: red
+}
+
+.prettyprint code {
+    font-family: Monaco,Consolas,"Lucida Console",monospace;
+    font-size: 13px;
+}
+
+.prettyprint .str,.prettyprint .lit,.prettyprint .atv {
+    color: #92a903;
+}
+
+.prettyprint .kwd,.prettyprint .tag {
+    color: #1e8b8b;
+}
+
+.prettyprint .typ,.prettyprint .atn {
+    color: #dc5232;
+}
+
+table{
+    font-size: 12px;
+}
+
+/*#docs ul{
+    list-style-type: disc;
+}
+
+#docs ul li{
+    list-style-type: disc;
+}*/
+
+#docs ol li{
+    list-style-type: decimal;
+}
+
+#docs {
+    /*margin-top: 20px;*/
+    /*margin-left: 210px;*/
+    border:none;
+    background-color: #fff;
+    line-height: 1.5;
+    border-radius: 8px;
+    padding-bottom: 26px;
+}
+
+#docs h1{
+    border-bottom:solid 1px #00a3e7; 
+    font-size: 30px;
+}
+
+#docs br {
+   /* display: none;*/
+}
+
+#docs #arch .fa{
+    padding: 0 0.1em 0 0.2em;
+    color: #bbc;
+}
+
+#docs #arch .fa.support{
+    color : #f4645f;
+}
+
+#docs #arch .fa:first-child{
+    margin-left: 0.5em;
+}
+
+#docs #arch .fa-desktop{
+    font-size: 0.8em;
+}
+
+#docs h3 .fa{
+    font-size: 0.8em;
+    padding: 0 0.1em 0 0.2em;
+    color: #bbc;
+}
+
+#docs h3 .fa.support{
+    color : #f4645f;
+}
+
+#docs h3 .fa:first-child{
+    margin-left: 0.5em;
+}
+
+
+
+#docs h3 .fa-desktop{
+    font-size: 0.67em;
+}
+
+#menu {
+    width: 200px;
+    float: left;
+    margin-top: 20px;
+}
+
+#menu h3 {
+    margin: 8px 0 0;
+    color: #f4645f;
+    cursor: pointer;
+}
+
+#menu a {
+    color: #f4645f;
+    transition: 250ms linear all;
+}
+
+#menu a:hover {
+    color: #424b50;
+}
+
+#menu dl {
+    padding: 12px 0 20px;
+    border-bottom: 1px solid #e9e9e9;
+    display: none;
+    padding-left: 8px;
+}
+#menu dl.active{
+    display: block;
+}
+
+#menu dd {
+    margin-left: 0px;
+    line-height: 25px;
+}
+
+#menu .sub:before{
+    content: "Ò‚ ";
+    color: #ccc;
+}
+
+#menu dd:before{
+    content: " â‰¡ ";
+    color: #ccc;
+}
+
+#arch {
+    padding-left: 0;
+    list-style-type: none;
+}
+
+#arch ul {
+    list-style-type: none;
+    padding-left: 1.2em;
+}
+
+#arch li a{
+    display: inline-block;
+    line-height: 20px;
+    font-size: 14px;
+    text-decoration: none;
+    transition: 250ms linear all;
+    cursor: pointer;
+}
+
+#arch > li > a {
+    font-weight: 600;
+    font-size: 15px;
+}
+
+#arch li a:hover {
+    color: #424b50;
+}
+
+#arch li:before{
+    color: #f4645f;
+    padding-right: 5px;
+    opacity: .4;
+}
+
+#gotop {
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    background-color: #b7b7b7;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    display: none;
+}
+
+#gotop .fa {
+    font-size: 1.6em;
+    position: relative;
+    top: 9px;
+}
+
+#gotop:hover{
+    background-color: #f4645f;
+}
+
+#docs table thead tr{
+    background-color: #f2f2f2;
+}
+
+#docs code{
+    color: #00a3e7;
+    border:none;
+    height: 20px;
+    display: inline-block;
+    line-height: 20px;
+}

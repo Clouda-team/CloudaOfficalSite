@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/assets/blend2/dist/boost.css">
+    <link rel="stylesheet" href="/assets/blend2/css/samples.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title></title>
+
+</head>
+
+<body>
+<header data-blend-widget="header" class="blend-header">
+        <span class="blend-header-left">
+            <a class="blend-header-item blend-action-back-icon" href="javascript:history.back();"></a>
+        </span>
+        <span class="blend-header-title">
+            <span class="blend-header-item">选择框</span>
+        </span>
+        <span class="blend-header-right">
+
+        </span>
+</header>
+
+
+<section class="sample-content">
+
+<div id="checkgroup" data-blend-widget="checkbox"
+     data-blend-checkbox="{&quot;type&quot;:&quot;radio&quot;,&quot;values&quot;:[&quot;radio1&quot;,&quot;radio2&quot;,&quot;radio3&quot;]}">
+    <div class="blend-checkbox-group">
+        <label class="blend-checkbox-label">就是这个原因了</label>
+        <span class="blend-checkbox blend-checkbox-default blend-checkbox-checked"></span>
+    </div>
+    <div class="blend-checkbox-group">
+        <label class="blend-checkbox-label">不是因为这个</label>
+        <span class="blend-checkbox blend-checkbox-default"></span>
+    </div>
+    <div class="blend-checkbox-group">
+        <label class="blend-checkbox-label">让我再想一想</label>
+        <span class="blend-checkbox blend-checkbox-default"></span>
+    </div>
+</div>
+
+
+
+<div id="checkall" class="blend-checkbox-red" data-blend-widget="checkbox" data-blend-checkbox="{&quot;type&quot;:&quot;group&quot;}">
+    <div>
+        <span class="blend-checkbox blend-checkbox-square blend-checkbox-all"></span><label
+            class="blend-checkbox-label">全选</label>
+    </div>
+    <div>
+        <span class="blend-checkbox blend-checkbox-default blend-checkbox-checked"></span><label
+            class="blend-checkbox-label">A</label>
+        <span class="blend-checkbox blend-checkbox-default"></span><label class="blend-checkbox-label">B</label>
+        <span class="blend-checkbox blend-checkbox-default"></span><label class="blend-checkbox-label">C</label>
+    </div>
+
+</div>
+
+<hr/>
+
+<div id="check" data-blend-widget="checkbox" data-blend-checkbox="{&quot;type&quot;:&quot;group&quot;}">
+    <span class="item blend-checkbox blend-checkbox-square blend-checkbox-checked"></span><label
+        class="blend-checkbox-label">A</label>
+    <span class="item blend-checkbox blend-checkbox-square"></span><label class="blend-checkbox-label">B</label>
+</div>
+
+<hr/>
+
+<div id="radio" data-blend-widget="checkbox"
+     data-blend-checkbox="{&quot;type&quot;:&quot;radio&quot;,&quot;values&quot;:[&quot;radio1&quot;,&quot;radio2&quot;]}">
+    <span class="blend-checkbox blend-checkbox-default"></span><label class="blend-checkbox-label">AA</label>
+    <span class="blend-checkbox blend-checkbox-default"></span><label class="blend-checkbox-label">BB</label>
+</div>
+
+</section>
+
+<script src="/assets/blend2/dist/boost.js"></script>
+</body>
+
+</html>

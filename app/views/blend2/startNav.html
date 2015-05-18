@@ -1,0 +1,52 @@
+<div class="compons_left fl">
+    <div class="compons_les" id="menus">
+        <section>
+            <h3>开始使用</h3>
+            <ul>
+                <li><div><a href="/blend2/start/">简介</a></div></li>
+                <li><div><a href="/blend2/start#引用">引用</a></div></li>
+                <li><div><a href="/blend2/start/design">设计预览</a></div></li>
+            </ul>
+            <div class="line"></div>
+        </section>
+        <section>
+            <h3>常见问题</h3>
+            <ul>
+                <li><div><a href="/blend2/start/faq#脚本冲突">脚本冲突</a></div></li>
+                <li><div><a href="/blend2/start/faq#兼容性">兼容性</a></div></li>
+            </ul>
+            <div class="line"></div>
+        </section>
+        <section>
+            <h3>反馈</h3>
+            <ul>
+                <li><div><a href="/blend2/start/feedback#日志">更新日志</a></div></li>
+                <li><div><a href="/blend2/start/feedback#问题反馈">问题反馈</a></div></li>
+            </ul>
+            <div class="line"></div>
+        </section>
+    </div>
+</div>
+<script type="text/javascript">
+    ;(function(){
+        var lis = document.querySelectorAll('#menus section li');
+        for(var i in lis){
+            // lis[i].classList.remove('nav-select');
+            if(lis[i].getElementsByTagName('a')[0].href === location.href){
+                lis[i].classList.add('nav-select');
+                break;
+            }
+        }
+
+        window.onhashchange = function(){
+            var lis = document.querySelectorAll('#menus section li');
+            for(var i in lis){
+                (lis[i].classList) && (lis[i].classList.remove('nav-select'));
+                if(lis[i].getElementsByTagName('a')[0].href === location.href){
+                    lis[i].classList.add('nav-select');
+                }
+            }
+        };
+
+    })();
+</script>

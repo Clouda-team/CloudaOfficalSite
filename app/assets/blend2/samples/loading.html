@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width,initial-scale=1,user-scalable=no" name="viewport">
+    <title>Loading组件</title>
+    <link rel="stylesheet" href="/assets/blend2/dist/boost.css">
+    <link rel="stylesheet" href="/assets/blend2/css/samples.css">
+
+</head>
+
+<body>
+    <header data-blend-widget="header" class="blend-header">
+        <span class="blend-header-left">
+            <a class="blend-header-item blend-action-back-icon" href="javascript:history.back();"></a>
+        </span>
+        <span class="blend-header-title">
+            <span class="blend-header-item">Loading组件</span>
+        </span>
+        <span class="blend-header-right">
+
+        </span>
+    </header>
+
+    <button onclick="triggerLoading()">显示loading</button>
+    <br/><br/>
+    <button onclick="closeLoading()">关闭loading</button>
+</div>
+    <script src="/assets/blend2/dist/boost.js"></script>
+    <script>
+    	var loading = $.blend.loading();
+    	function triggerLoading(){
+        	loading.show();
+    	}
+    	function closeLoading(){
+        	loading.hide();
+    	}
+    </script>
+</body>
+
+</html>

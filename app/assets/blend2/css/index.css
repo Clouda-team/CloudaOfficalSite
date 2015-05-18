@@ -1,0 +1,54 @@
+.progress{
+  width:600px;
+  display: block;
+  position: absolute;
+  left: 50%;
+  top:50%;
+  margin-left:-300px;
+}
+.cover{
+    width:100%;
+    position: absolute;
+    left: 0px;
+    top:0px;
+    opacity: 0.4;
+    display: none;
+    background: #000;
+}
+.bar{
+    background: #337ab7;
+    height: 25px;
+}
+.loading{
+    animation: myfirst 5s;
+    -moz-animation: myfirst 5s; /* Firefox */
+    -webkit-animation: myfirst 5s;  /* Safari 和 Chrome */
+    -o-animation: myfirst 5s; /* Opera */
+}
+
+@keyframes myfirst
+{
+from {width: 0%;}
+to {width: 99%;}
+}
+
+@-moz-keyframes myfirst /* Firefox */
+{
+from {width: 0%;}
+to {width: 99%;}
+}
+
+@-webkit-keyframes myfirst /* Safari 和 Chrome */
+{
+from {width: 0%;}
+to {width: 99%;}
+}
+
+@-o-keyframes myfirst /* Opera */
+{
+from {width: 0%;}
+to {width: 99%;}
+}
+.bottom-padding{
+  padding-bottom: 10px;
+}

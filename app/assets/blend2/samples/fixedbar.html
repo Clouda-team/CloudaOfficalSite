@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width,initial-scale=1,user-scalable=no" name="viewport">
+    <title>fixedbar组件</title>
+    <link rel="stylesheet" href="/assets/blend2/dist/boost.css">
+    <link rel="stylesheet" href="/assets/blend2/dist/sample.css">
+</head>
+
+<body>
+    <header data-blend-widget="header" class="blend-header">
+        <span class="blend-header-left">
+            <a class="blend-header-item blend-action-back-icon" href="javascript:history.back();"></a>
+        </span>
+        <span class="blend-header-title">
+            <span class="blend-header-item">fixedbar组件</span>
+        </span>
+        <span class="blend-header-right">
+
+        </span>
+    </header>
+
+
+
+    <div data-blend-widget="fixedBar" class="blend-fixedBar blend-fixedBar-bottom" style="padding: 9px 16px;display: -webkit-box;">
+        <button style="margin-right: 10px;-webkit-box-flex:1;width: 0;display: block;" class="blend-button blend-button-red">按钮一</button>
+        <button style="-webkit-box-flex:1;width: 0;display: block;" class="blend-button blend-button-default">按钮二</button>
+    </div>
+
+
+
+
+    <script src="/assets/blend2/dist/boost.js"></script>
+    <script>
+        //此处是解决某些浏览器，如uc，横竖屏切换时，由于地址栏的显隐现象，导致的fixedBar不能落底的问题。
+    	$.blend.fixedBar();
+    </script>
+</body>
+
+</html>
