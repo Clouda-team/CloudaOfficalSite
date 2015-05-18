@@ -16,7 +16,10 @@ server.defineAction("blend", function(default_request, default_response){
 	var mod = sep[1];
 	var doc = sep[2];
 
-	
+	/*if(proj === 'blend2'){
+		visitor.forward('blend2');
+		return;
+	}*/
 
 	var mdpath = path.join(USER_DIR, mddir, proj, mod, doc + ".md");
 

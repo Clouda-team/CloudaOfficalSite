@@ -40,8 +40,6 @@ login_type | string(可选)  | login_type表示OAuth授权页面是否展示为�
 mobile | string(可选) | 在login_type 选择sms时，可以设置该参数，用于登录时预填手机号码。
 state | string(可选) | 用于保持请求和回调的状态，授权服务器在回调时（重定向用户浏览器到“redirect_uri”时），会在Query Parameter中原样回传该参数。OAuth2.0标准协议建议，利用state参数来防止CSRF攻击
 disable_third_login | number(可选),默认为1 | 当 disable_third_login = 1 时, 隐藏通过新浪,QQ等三方登录帐号区域. 当 disable_third_login = 0 时, 显示三方帐号登录区域.
-onsuccess | function(){}  | 登录成功的回调函数. onsuccess函数体中,需要开发者手动调用一次`clouda.mbaas.account.closeLoginDialog()`方法.
-onfail | function(){}  | 登录失败的回调函数. onfail函数体中,需要开发者手动调用一次`clouda.mbaas.account.closeLoginDialog()`方法
 
 <h3 class="account">closeLoginDialog </h3>
 

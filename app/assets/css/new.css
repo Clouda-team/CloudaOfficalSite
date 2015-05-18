@@ -450,12 +450,22 @@ ul.message-nav li{
 	font-size: 16px;
 	color:#9ac8ff;
 }
-
+.rel{
+	position: relative;
+}
 .nav-menu-wrapper>ul>li a:hover{
 
 	color:#fff;
 }
 
+.nav-menu-wrapper>ul>li sup{
+	color: rgb(253, 41, 65);
+	font-weight: bold;
+	font-style: italic;
+	position: absolute;
+	 top: -8px;
+  	right: -25px;
+}
 
 
 

@@ -61,6 +61,9 @@ rapid.config.define({
 			url : /^\/blendui(\/.*)?/,
 			doAction : "blend"
 		},{
+			url : /^\/blend2(\/.*)?/,
+			doAction : "blend2"
+		},{
 			url : /^\/blend(\/.*)?/,
 			doAction : "blend"
 		},{
