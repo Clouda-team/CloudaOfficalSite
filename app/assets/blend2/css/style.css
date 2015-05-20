@@ -82,9 +82,8 @@ a {
 .clouda_bann {
     width: 100%;
     margin: 0 auto;
-    background:#000 url(../images/clo_banner.jpg) repeat-x;
+    background:#05090d url(../images/clo_banner.jpg) center 0  no-repeat;
     background-size: 100% 100%;
-    background-size: cover;
     position: relative;
     min-height: 680px;
 }
