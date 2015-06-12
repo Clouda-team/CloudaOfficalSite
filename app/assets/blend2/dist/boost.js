@@ -1,54 +1,5 @@
 (function(window, undefined) {
     var NAMESPACE = "blend-" ;
-    /**
- * @file uix.js
- * @author zhangyuanwei
- */
-/*
-获取UIX版本信息
- */
-var UIX_VERSION = (function () {
-    var ua = navigator.userAgent.toLowerCase();
-    var v = ua.match(/uix\/(\d+\.\d+\.\d+\.\d+)/);
-    return v ? v[1] : undefined;
-})();
-
-var IS_UIX = UIX_VERSION !== undefined;
-var UIX_ACTION_BACK = 'back';
-var ACTION_BACK_CLASS = NAMESPACE + 'action-' + UIX_ACTION_BACK;
-// TODO more action
-
-if (IS_UIX) {
-    (function () {
-        var htmlElem = document.getElementsByTagName('HTML')[0];
-        var className = htmlElem.className;
-        htmlElem.className = className + ' ' + NAMESPACE + 'boost';
-    })();
-}
-
-function color2Hex(str) {
-
-    function toHex(n) {
-        n = Math.max(Math.min(Math.floor(n), 0xFF), 0) + 0x100;
-        return n.toString(16).substring(1);
-    }
-
-    function rgb(r, g, b) {
-        return '#ff' + toHex(r) + toHex(g) + toHex(b);
-    }
-
-    function rgba(r, g, b, a) {
-        a = a * 0xFF;
-        return '#' + toHex(a) + toHex(r) + toHex(g) + toHex(b);
-    }
-
-    color2Hex = function (str) {
-        return (new Function('rgb', 'rgba', 'return ' + str)).call(null, rgb, rgba);
-    };
-
-    return color2Hex(str);
-}
-
     /*! Hammer.JS - v2.0.4 - 2014-09-28
  * http://hammerjs.github.io/
  *
@@ -2513,6 +2464,55 @@ if (typeof define == TYPE_FUNCTION && define.amd) {
 
 })(window, document, 'Hammer');
 
+/**
+ * @file uix.js
+ * @author zhangyuanwei
+ */
+/*
+获取UIX版本信息
+ */
+var UIX_VERSION = (function () {
+    var ua = navigator.userAgent.toLowerCase();
+    var v = ua.match(/uix\/(\d+\.\d+\.\d+\.\d+)/);
+    return v ? v[1] : undefined;
+})();
+
+var IS_UIX = UIX_VERSION !== undefined;
+var UIX_ACTION_BACK = 'back';
+var ACTION_BACK_CLASS = NAMESPACE + 'action-' + UIX_ACTION_BACK;
+// TODO more action
+
+if (IS_UIX) {
+    (function () {
+        var htmlElem = document.getElementsByTagName('HTML')[0];
+        var className = htmlElem.className;
+        htmlElem.className = className + ' ' + NAMESPACE + 'boost';
+    })();
+}
+
+function color2Hex(str) {
+
+    function toHex(n) {
+        n = Math.max(Math.min(Math.floor(n), 0xFF), 0) + 0x100;
+        return n.toString(16).substring(1);
+    }
+
+    function rgb(r, g, b) {
+        return '#ff' + toHex(r) + toHex(g) + toHex(b);
+    }
+
+    function rgba(r, g, b, a) {
+        a = a * 0xFF;
+        return '#' + toHex(a) + toHex(r) + toHex(g) + toHex(b);
+    }
+
+    color2Hex = function (str) {
+        return (new Function('rgb', 'rgba', 'return ' + str)).call(null, rgb, rgba);
+    };
+
+    return color2Hex(str);
+}
+
     //     Zepto.js
 //     (c) 2010-2015 Thomas Fuchs
 //     Zepto.js may be freely distributed under the MIT license.
@@ -3440,6 +3440,32 @@ Zepto.noConflict = function(deep){
 };
 
 window.Zepto = window.$ = Zepto;
+
+    //     Zepto.js
+//     (c) 2010-2015 Thomas Fuchs
+//     Zepto.js may be freely distributed under the MIT license.
+
+// The following code is heavily inspired by jQuery's $.fn.data()
+var BLENDURL = 'http://cp01-rdqa04-dev111.cp01.baidu.com:8042/boost/test/blendui-naitve.js';
+
+;(function($){
+  function dynamicLoad (callback) {  
+      var _doc=document.getElementsByTagName('head')[0], 
+          _script=document.createElement('script'),
+          _loadScript = BLENDURL; 
+      _script.setAttribute('type','text/javascript');  
+      _script.setAttribute('src',_loadScript);  
+      _doc.appendChild(_script);  
+      _script.onload = _script.onreadystatechange=function(){  
+          if(!this.readyState||this.readyState=='loaded'||this.readyState=='complete'){  
+              callback();  
+          }  
+          _script.onload=_script.onreadystatechange=null;  
+      }  
+  };
+
+  $.dynamicLoad = dynamicLoad;
+})(Zepto)
 
     //     Zepto.js
 //     (c) 2010-2015 Thomas Fuchs
@@ -4847,7 +4873,8 @@ $.widget('blend.checkbox', {
     }
 });
 })(Zepto)
-;(function($){/**
+;(function($){/* globals NAMESPACE */
+/**
  * counter 组件
  * @file counter.js
  * @author zhangyuanwei
@@ -5037,7 +5064,9 @@ $.widget('blend.counter', {
 
 });
 })(Zepto)
-;(function($){/**
+;(function($){/* globals NAMESPACE */
+/* globals IS_UIX */
+/**
  * @function dialog
  * @name dialog
  * @author wangzhonghua
@@ -5049,7 +5078,7 @@ $.widget('blend.counter', {
  * @param {Object} options 组件配置（以下参数为配置项）
  * @param {String} options.id (可选, 默认值: 随机数) dialog id
  * @param {Interval} options.top (可选, 默认值: null) dialog 自定义top值
- * @param {String} options.addCssClass (可选, 默认值: \'\') dialog最外层自定义class
+ * @param {String} options.addCSSClass (可选, 默认值: \'\') dialog最外层自定义class
  * @param {String} options.title (可选, 默认值: 标题) dialog 标题
  * @param {String} options.content (可选, 默认值: \'\') dialog 内容
  * @param {String} options.cancelText (可选, 默认值: 取消) dialog 取消按钮的文案
@@ -5072,7 +5101,7 @@ $.widget('blend.dialog', {
         id: null,
         hasHeader: true,        // 是否有diaload头
         top: undefined,         // 自定义dialog距离顶部距离
-        addCssClass: null,
+        addCSSClass: null,
         title: '标题',          // dialog标题
         content: '',            // dialog内容
         cancelText: '取消',     // 取消按钮自定义文案
@@ -5091,8 +5120,8 @@ $.widget('blend.dialog', {
         var options = this.options;
 
         this.$body = $('body');
-        this.id = options.id || 'dialog-' + (((1 + Math.random()) * 0x1000) | 0).toString(16);
-        this.addCssClass = options.addCssClass ? options.addCssClass : '';
+        this.id = options.id || 'dialog-' + this._randomID();
+        this.addCSSClass = options.addCSSClass ? options.addCSSClass : '';
         this.title = options.title;
         this.content = options.content;
         this.cancelText = options.cancelText;
@@ -5121,11 +5150,12 @@ $.widget('blend.dialog', {
             if (this._uix !== null) {
                 // (this._uix.destroy)&&(this._uix.destroy());
             }
-
-            require(['blend'], function (blend) {
-                me._uix = me._createUIXDialog(blend);
+             $.dynamicLoad (function() {
+                require(['src/blend'], function (blend) {
+                    me._uix = me._createUIXDialog(blend);
+                 
+                });
             });
-
             return;
         }
         /**
@@ -5135,6 +5165,14 @@ $.widget('blend.dialog', {
             this.$el = this._createHTMLDialog();
             this._bindEvent();
         }
+    },
+    /**
+     * 返回随机的id
+     * @private
+     * @return {string} 随机生成的id
+     */
+    _randomID: function () {
+        return (((1 + Math.random()) * 0x1000) | 0).toString(16);
     },
     /**
      * 创建UIX的Dialog
@@ -5349,9 +5387,9 @@ $.widget('blend.dialog', {
         var self = this;
         opacity = opacity ? ' style="opacity:' + opacity + ';"' : '';
         var bodyHeight = document.body.clientHeight || document.body.offsetHeight;
-        (this.maskDom = $('<div class="' + NAMESPACE + 'dialog-mask"' + opacity + '></div>')).prependTo(this.$body);
-        this.maskDom.css('height', bodyHeight);
-        this.maskDom.on('click', function (e) {
+        (this._maskDom = $('<div class="' + NAMESPACE + 'dialog-mask"' + opacity + '></div>')).prependTo(this.$body);
+        this._maskDom.css('height', bodyHeight);
+        this._maskDom.on('click', function (e) {
             e.preventDefault();
             self.maskTapClose && self.hide();
         }).on('touchmove', function (e) {
@@ -5362,7 +5400,7 @@ $.widget('blend.dialog', {
      * 关闭mask
      */
     unmask: function () {
-        this.maskDom.off('touchstart touchmove').remove();
+        this._maskDom.off('touchstart touchmove').remove();
     },
     /**
      * 设置dialog位置
@@ -5608,8 +5646,10 @@ $.widget('blend.gallery', {
             if (this._uix !== null) {
               // (this._uix.destroy)&&(this._uix.destroy());
             }
-            require(['blend'], function (blend) {
-                me._uix = me._initUIXGallery(blend);
+            $.dynamicLoad (function() {
+                require(['src/blend'], function (blend) {
+                   me._uix = me._initUIXGallery(blend);
+                });
             });
 
         }
@@ -6994,7 +7034,8 @@ $.widget('blend.list', {
 
 });
 })(Zepto)
-;(function($){/**
+;(function($){/* globals NAMESPACE */
+/**
  * @function loading
  * @file loading.js
  * @name loading
@@ -7033,7 +7074,8 @@ $.widget('blend.loading', {
         var options = this.options;
         this.$el = this.element;
         this.$body = $('body');
-        this.loadingHtml = options.loadingHtml || '<div data-' + NAMESPACE + 'widget="loading" class="' + (options.loadingClass || '') + ' ' + NAMESPACE + 'loading"></div>';
+        this.loadingHtml = options.loadingHtml || '<div data-' + NAMESPACE + 'widget="loading" class="'
+        + (options.loadingClass || '') + ' ' + NAMESPACE + 'loading"></div>';
     },
     /**
      * 组件初始化
@@ -7078,7 +7120,8 @@ $.widget('blend.loading', {
         }
         return this.$el;
     }
-});})(Zepto)
+});
+})(Zepto)
 ;(function($){/* globals NAMESPACE */
 /* eslint-disable fecs-camelcase */
 /**
@@ -7094,8 +7137,8 @@ $.widget('blend.nav', {
         column: 3,
         animate: true,
         time: 500,
-        expand: '更多',
-        pack: '收起',
+        expand: '<i>更多</i>',
+        pack: '<i>收起</i>',
         itemClass: NAMESPACE + 'nav-item',
         row: false
     },
@@ -7112,6 +7155,7 @@ $.widget('blend.nav', {
         nav.expandedClass = NAMESPACE + 'nav-expanded';
         nav.columnClassPre = NAMESPACE + 'nav-column-';
         nav.hideClass = NAMESPACE + 'nav-item-hide';
+        nav.noborderClass = NAMESPACE + 'nav-item-no-border';
         nav.columnRange = [3, 4, 5];
     },
     /**
@@ -7125,8 +7169,8 @@ $.widget('blend.nav', {
         else {
             nav.element.removeClass(nav.animateClass);
         }
-        nav._colunm();
-        nav._row();
+        nav._setColumn();
+        nav._setRow();
         if (!nav.inited) {
             nav._initEvent();
             nav.inited = true;
@@ -7143,7 +7187,7 @@ $.widget('blend.nav', {
             if ($this.hasClass(nav.expandedClass)) {
                 var height = nav.$items.eq(0).height();
                 nav.element.css('height', 15 + height * nav.options.row);
-                $this.removeClass(nav.expandedClass);
+                
                 var max = nav.options.row * nav.options.column;
                 nav.$items.each(function (i) {
                     var $navItem = $(this);
@@ -7157,8 +7201,36 @@ $.widget('blend.nav', {
                             $navItem.addClass(nav.hideClass);
                         }
                     }
+                    if (i >= max - nav.options.column) {
+                        if (nav.options.animate) {
+                            setTimeout(function () {
+                                $navItem.addClass(nav.noborderClass);
+                            }, nav.options.time);
+                        }
+                        else {
+                            $navItem.addClass(nav.noborderClass);
+                        }
+                    } else {
+                        if (nav.options.animate) {
+                            setTimeout(function () {
+                                $navItem.removeClass(nav.noborderClass);
+                            }, nav.options.time);
+                        }
+                        else {
+                            $navItem.removeClass(nav.noborderClass);
+                        }
+                    }
                 });
-                $this.html(nav.options.expand);
+                if (nav.options.animate) {
+                    setTimeout(function () {
+                        $this.html(nav.options.expand);
+                        $this.removeClass(nav.expandedClass);
+                    }, nav.options.time);
+                }
+                else {
+                    $this.html(nav.options.expand);
+                    $this.removeClass(nav.expandedClass);
+                }
             }
             else {
                 var len = nav.$items.length;
@@ -7168,6 +7240,16 @@ $.widget('blend.nav', {
                 $this.addClass(nav.expandedClass);
                 nav.$items.removeClass(nav.hideClass);
                 $this.html(nav.options.pack);
+                var offset = len % nav.options.column || nav.options.column;
+                var max = len - offset;
+                nav.$items.each(function (i) {
+                    var $this = $(this);
+                    if (i >= max) {
+                        $this.addClass(nav.noborderClass);
+                    } else {
+                        $this.removeClass(nav.noborderClass);
+                    }
+                });
             }
             if (nav.options.expandHandle && $.isFunction(nav.options.expandHandle)) {
                 nav.options.expandHandle(e);
@@ -7176,10 +7258,10 @@ $.widget('blend.nav', {
         });
     },
     /**
-     * _column 自定义的成员函数，
+     * _setColumn 自定义的成员函数，
      * 所有以下划线开头的函数不可在外部调用
      */
-    _colunm: function () {
+    _setColumn: function () {
         var nav = this;
         var $el = nav.element;
         /**
@@ -7193,13 +7275,12 @@ $.widget('blend.nav', {
             columnClass.push(nav.columnClassPre + nav.columnRange[i]);
         }
         $el.removeClass(columnClass.join(' ')).addClass(nav.columnClassPre + nav.options.column);
-
     },
     /**
-     * _row 自定义的成员函数，
+     * _setRow 自定义的成员函数，
      * @private
      */
-    _row: function () {
+    _setRow: function () {
         var nav = this;
         var option = nav.options;
         if (option.row === false) {
@@ -7234,6 +7315,15 @@ $.widget('blend.nav', {
         $el.css('height', height);
         $el.find('.' + nav.expandClass).remove();
         nav.$items.removeClass(this.hideClass);
+        var max = (option.column - 1) * option.row;
+        nav.$items.each(function (i) {
+            var $this = $(this);
+            if (i >= max) {
+                $this.addClass(nav.noborderClass);
+            } else {
+                $this.removeClass(nav.noborderClass);
+            }
+        });
     },
     /**
      * @param {number} max 最大行数
@@ -7242,11 +7332,17 @@ $.widget('blend.nav', {
     _addExpand: function (max) {
         var nav = this;
         nav.$items.each(function (i) {
+            var $this = $(this);
+            if (i >= max - nav.options.column) {
+                $this.addClass(nav.noborderClass);
+            } else {
+                $this.removeClass(nav.noborderClass);
+            }
             if (i >= max - 1) {
-                $(this).addClass(nav.hideClass);
+                $this.addClass(nav.hideClass);
             }
             else {
-                $(this).removeClass(nav.hideClass);
+                $this.removeClass(nav.hideClass);
             }
         });
         var height = nav.$items.eq(0).height();
@@ -7268,47 +7364,6 @@ $.widget('blend.nav', {
         nav.options.row = false;
         nav._removeExpand();
         nav.element.off('click.nav', '.' + nav.expandClass);
-    },
-    /**
-     * 设置列数
-     * 没有返回值或者返回值为 undefined 时会保持调用链，
-     * 如果返回值不为 undefined 则将该值返回，不能再次链式调用
-     * @param {number} num 列数
-     * @return {undefined}
-     */
-    column: function (num) {
-        if (arguments.length === 0) {
-            return this.options.column;
-        }
-        if (num && $.inArray(num, this.columnRange) === -1) {
-            return;
-        }
-        this.options.column = num;
-        this._colunm();
-        this._row();
-    },
-    /**
-     * 设置行数
-     * 没有返回值或者返回值为 undefined 时会保持调用链，
-     * 如果返回值不为 undefined 则将该值返回，不能再次链式调用
-     * @param {number} num 行数
-     * @return {undefined}
-     */
-    row: function (num) {
-        if (arguments.length === 0) {
-            return this.options.row;
-        }
-        if (num === false) {
-            this.options.row = false;
-            this._removeExpand();
-            return;
-        }
-        var row = parseInt(num, 10);
-        if (!row || row <= 0) {
-            return;
-        }
-        this.options.row = row;
-        this._row();
     }
 });
 })(Zepto)
@@ -7471,7 +7526,10 @@ $.widget('blend.sidenav', {
 });
 
 })(Zepto)
-;(function($){/**
+;(function($){/* globals NAMESPACE */
+/* globals Hammer */
+/* eslint-disable fecs-camelcase */
+/**
  * Slider 组件
  * Created by dingquan on 15-02-03
  * @file slider.js
@@ -7489,9 +7547,9 @@ $.widget('blend.slider', {
         transitionType: 'ease',     // 过渡类型
         // duration: 0.6,
         speed: 2000,                // 切换的时间间隔
-        theme: "d2",
+        theme: 'd2',
         // needDirection: false,    // 是否需要左右切换的按钮
-        ratio: "normal"     // normal/wide/square/small
+        ratio: 'normal'     // normal/wide/square/small
     },
     /**
      * 创建组件调用一次
@@ -7511,13 +7569,9 @@ $.widget('blend.slider', {
         var ratioClass = NAMESPACE + 'slider-';
         switch (options.ratio) {
             case 'wide':
-                ratioClass += 'wide';
-                break;
             case 'square':
-                ratioClass += 'square';
-                break;
             case 'small':
-                ratioClass += 'small';
+                ratioClass += options.ratio;
                 break;
             default :
                 ratioClass += 'normal';
@@ -7528,9 +7582,9 @@ $.widget('blend.slider', {
         this.$ul = $el.find('.' + NAMESPACE + 'slides');
         this.$li = $el.find('.' + NAMESPACE + 'slides li');
 
-        this.liWidth = this.$li.width();
-        this.liHeight = this.$li.height();
-        this.liLength = this.$li.length;
+        this._liWidth = this.$li.width();
+        this._liHeight = this.$li.height();
+        this._liLength = this.$li.length;
 
         this.autoScroll = null;     // 自动播放interval对象
         this._index = 0;            // 当前幻灯片位置
@@ -7557,29 +7611,17 @@ $.widget('blend.slider', {
          */
         if (opts.continuousScroll) {
             $ul.prepend($li.last().clone()).append($li.first().clone());
-            if (opts.axisX) {
-                that._fnTranslate($ul.children().first(), that.liWidth * -1);
-                that._fnTranslate($ul.children().last(), that.liWidth * that.liLength);
-            }
-            else {
-                that._fnTranslate($ul.children().first(), that.liHeight * -1);
-                that._fnTranslate($ul.children().last(), that.liHeight * that.liLength);
-            }
+
+            var widthOrHeight = opts.axisX ? that._liWidth : that._liHeight;
+            that._fnTranslate($ul.children().first(), widthOrHeight * -1);
+            that._fnTranslate($ul.children().last(), widthOrHeight * that._liLength);
+
         }
 
-        /**
-         * 给初始图片定位
-         */
-        if (opts.axisX) {
-            $li.each(function (i) {
-                that._fnTranslate($(this), that.liWidth * i);
-            });
-        }
-        else {
-            $li.each(function (i) {
-                that._fnTranslate($(this), that.liHeight * i);
-            });
-        }
+        // 给初始图片定位
+        $li.each(function (i) {
+            that._fnTranslate($(this), (opts.axisX ? that._liWidth : that._liHeight) * i);
+        });
 
         that._fnAutoSwipe();
         this._initEvent();
@@ -7612,11 +7654,11 @@ $.widget('blend.slider', {
             that.moveX = that.curX - that.startX;
             that.moveY = that.curY - that.startY;
 
-            that._fnTransition(that.$ul, 0);
+            that._transitionHandle(that.$ul, 0);
 
             if (that.options.axisX) {
-                // console.log(-(that.liWidth * (parseInt(that._index)) - that.moveX));
-                that._fnTranslate(that.$ul, -(that.liWidth * (parseInt(that._index, 10)) - that.moveX));
+                // console.log(-(that._liWidth * (parseInt(that._index)) - that.moveX));
+                that._fnTranslate(that.$ul, -(that._liWidth * (parseInt(that._index, 10)) - that.moveX));
             }
 
         });
@@ -7687,7 +7729,7 @@ $.widget('blend.slider', {
     _initControl: function () {
 
         var $el = this.$container;
-        var liLength = this.liLength;
+        var liLength = this._liLength;
 
         var html = '';
         for (var i = 0; i < liLength; i++) {
@@ -7714,7 +7756,7 @@ $.widget('blend.slider', {
      * @param {Object} dom  zepto object
      * @param {number} num - transition number
      */
-    _fnTransition: function (dom, num) {
+    _transitionHandle: function (dom, num) {
 
         var opts = this.options;
         dom.css({
@@ -7802,10 +7844,10 @@ $.widget('blend.slider', {
         var that = this;
         var opts = this.options;
         // var _vars = this._vars;
-        // var _liLength = this.liLength;
+        // var _liLength = this._liLength;
 
         if (opts.continuousScroll) {
-            if (that._index >= that.liLength) {
+            if (that._index >= that._liLength) {
                 that._fnScroll(.3);
                 that._index = 0;
                 setTimeout(function () {
@@ -7814,7 +7856,7 @@ $.widget('blend.slider', {
             }
             else if (that._index < 0) {
                 that._fnScroll(.3);
-                that._index = that.liLength - 1;
+                that._index = that._liLength - 1;
                 setTimeout(function () {
                     that._fnScroll(0);
                 }, 300);
@@ -7824,11 +7866,11 @@ $.widget('blend.slider', {
             }
         }
         else {
-            if (that._index >= that.liLength) {
+            if (that._index >= that._liLength) {
                 that._index = 0;
             }
             else if (that._index < 0) {
-                that._index = that.liLength - 1;
+                that._index = that._liLength - 1;
             }
             that._fnScroll(.3);
         }
@@ -7845,11 +7887,11 @@ $.widget('blend.slider', {
     _fnScroll: function (num) {
         var $ul = this.$ul;
         var _index = this._index;
-        var _liWidth = this.liWidth;
-        var _liHeight = this.liHeight;
+        var _liWidth = this._liWidth;
+        var _liHeight = this._liHeight;
         var opts = this.options;
 
-        this._fnTransition($ul, num);
+        this._transitionHandle($ul, num);
         if (opts.axisX) {
             this._fnTranslate($ul, -_index * _liWidth);
         }
@@ -7889,15 +7931,14 @@ $.widget('blend.slider', {
         clearInterval(this.autoScroll);
         return this.$container;
     },
-    start: function(){
+    start: function () {
         clearInterval(this.autoScroll);
-        
         this._fnAutoSwipe();
         return this.$container;
-       
     }
 
-});})(Zepto)
+});
+})(Zepto)
 ;(function($){/* globals NAMESPACE */
 /* eslint-disable fecs-camelcase */
 /**
@@ -7932,12 +7973,75 @@ $.widget('blend.tab', {
         tab.$activeEle.css('width', this.itemWidth);
         tab.itemOffsetX = 0;
         tab.current = 0;
-
+        this._uix = null;
     },
     /**
      * _init 初始化的时候调用
      */
-    _init: function () {
+    _init: function () { 
+          if (IS_UIX) {
+            this._UIXInit();
+          } else {
+            this._webInit();
+          }
+    },
+    /**
+     * uix版的初始化
+     * @private
+     */
+    _UIXInit : function () {
+        var me = this;
+        if (this._uix !== null) {
+            this._uix.destroy();
+        }
+        $.dynamicLoad (function() {
+            require(['src/blend'], function (blend) {
+                me._uix = me._initUIXComponent(blend);
+            });
+        });
+    },
+    /**
+     * 创建UIX的实例
+     * @private
+     */
+     _initUIXComponent : function (blend) {
+        var uixTab,
+            me = this, 
+            $el = this.element,
+            $tabItem = $el.find(this._itemSelector);
+            /*创建一个UIXtab*/
+            uixTab = blend.create('tab', {
+                 "id": "tab",
+                 "items":[]
+            });
+            $tabItem.each(me._generateItem(function (item) {
+                uixTab.append(item);
+                uixTab.render();
+            },uixTab));
+            return uixTab;
+     },
+    /**
+     * 生成uix的tab的item
+     * @private
+     */
+    _generateItem : function (callback, uixTab) {
+        return function (index, _item) {
+            var $item = $(_item),
+                blendItem,
+                itemConf ={
+                    text : $item.text(),
+                    href : $item.data('href')
+                },
+                itemTab;
+            itemTab = uixTab.create(itemConf);
+            callback(itemTab);
+        };
+    },
+   /**
+     * web版的初始化
+     * @private
+     */
+    _webInit: function () {
         var tab = this;
 
         tab._checkStart();
@@ -8029,7 +8133,8 @@ $.widget('blend.tab', {
 
 });
 })(Zepto)
-;(function($){/**
+;(function($){/* globals NAMESPACE */
+/**
  * @file toast.js
  * @name toast
  * @author wangzhonghua
@@ -8051,7 +8156,8 @@ $.widget('blend.toast', {
         var options = this.options;
         this.$el = this.element;
         this.$body = $('body');
-        this.toastTpl = options.toastTpl || '<div data-' + NAMESPACE + 'widget="toast" class="' + (options.toastClass || '') + ' ' + NAMESPACE + 'toast">{%content%}</div>';
+        this.toastTpl = options.toastTpl || '<div data-' + NAMESPACE + 'widget="toast" class="'
+        + (options.toastClass || '') + ' ' + NAMESPACE + 'toast">{%content%}</div>';
     },
     /**
      * 初始化组件调用

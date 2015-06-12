@@ -18,7 +18,7 @@ server.defineAction('blend2',function(default_request, default_response){
 	var proj = sep[0];
 	var mod = sep[1];
 
-	if(mod === 'start' || mod === 'docs'){
+	if(mod === 'start' || mod === 'docs' || mod === 'download'){
 		var mdPath = sep.slice(1).join('/');
 		if(sep[sep.length-1] === mod){
 			mdPath += '/index.md';

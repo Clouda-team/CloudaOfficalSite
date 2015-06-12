@@ -25,13 +25,14 @@ ul {
 .fr {
     float: right;
 }
-.disp_none {
-}
 a {
     text-decoration: none;
 }
 .relative{
     position: relative;
+}
+.mar-t-20{
+    margin-top: 20px;
 }
 /*头部*/
 .header {
@@ -764,4 +765,171 @@ a {
     .clouda_bann{
         height: 800px;
     }
+}
+
+/*download widget*/
+.widget-box{
+    border: 1px solid #e5e5e5;
+    border-radius: 6px;
+}
+.w-top{
+    background: #fafafa;
+    height: 87px;
+    line-height: 87px;
+    font-size: 24px;
+    color: #333;
+    border-radius: 6px 6px 0 0;
+    border-bottom: 1px solid #e5e5e5;
+}
+.w-hide{
+    border-bottom: none;
+    border-radius: 6px;
+}
+.triangle{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border: 8px solid transparent;
+    border-left: 8px solid transparent;
+    border-top: 8px solid #999;
+    margin-right: 10px;
+    margin-top: 10px;
+    position: relative;
+    top: 4px;
+    left: -4px;
+}
+.w-hide .triangle{
+    border-top: 8px solid transparent;
+    border-left: 8px solid #999;
+    top: 0;
+    left: 0;
+}
+.w-top .fl{
+    padding-left: 54px;
+    width: 600px;
+    cursor: pointer;
+}
+.w-top .fr{
+    cursor: pointer;
+}
+.w-top p{
+    float: left;
+    line-height: 85px;
+}
+.w-top p span{
+    font-size: 18px;
+    color: #666;
+    padding-right: 84px;
+    width: 210px;
+}
+.w-bottom .checkbox{
+    width: 17px;
+    height: 17px;
+    border: 1px solid #cfcfcf;
+    float: left;
+    margin: 14px 20px 0 0;
+}
+.w-top .checkbox-big{
+    width: 22px;
+    height: 22px;
+    border: 1px solid #cfcfcf;
+    float: left;
+    margin: 31px 24px 0 0;
+}
+.w-bottom{
+    padding: 0 30px;
+    background: #fff;
+    border-radius: 0 0 6px 6px;
+    overflow: hidden;
+    height: 1440px;;
+}
+
+.w-bottom h3{
+    font-size: 18px;
+    color: #333;
+    padding-top: 13px;
+    line-height: 20px;
+    font-weight: normal;
+}
+.w-bottom h3 span{
+    font-size: 14px;
+}
+.w-bottom p{
+    font-size: 14px;
+    color: #999;
+    line-height: 38px;
+    margin-bottom: 6px;
+}
+.w-bottom li{
+    padding: 0 20px;
+    border-bottom: 1px solid #e5e5e5;
+    overflow: hidden;
+    cursor: pointer;
+    -webkit-transition: 0.5s all ease;
+    -moz-transition: 0.5s all ease;
+    -transition: 0.5s all ease;
+}
+.w-bottom .fl{
+    width: 1040px;
+}
+.w-bottom li:last-child{
+    border: none;
+}
+.widget-box .blend-checkbox-checked{
+    background: #fff;
+}
+.widget-box .blend-checkbox-checked:before{
+    color: #0cadf6;
+    font-weight: bolder;
+    line-height: 15px;
+    font-size: 16px;
+    left: 0;
+}
+.widget-box .w-top .blend-checkbox-checked:before{
+    line-height: 20px;
+    font-size: 18px;
+}
+.down-link{
+    width: 246px;
+    height: 76px;
+    border-bottom: 1px solid #0b93d1;
+    background: #0cadf6;
+    border-radius: 2px;
+    margin: 75px auto;
+    font-size: 24px; 
+    text-align: center;
+    padding: 14px 0;
+}
+.down-link a{
+    color: #fff;
+}
+.down-link a:hover, .down-link a:active, .down-link a:visited, .down-link a:link{
+    text-decoration: none;
+    color: #fff;
+    outline: none;
+}
+.down-link span{
+    display: block;
+    line-height: 28px;
+}
+.down-link span:nth-child(2){
+    font-size: 20px;
+}
+.lightback, .lightico{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #fafafa;
+    display: none;
+}
+.lightico{
+    background: url(../images/ziping.png) center center no-repeat;
+    background-size: 100%;
+    top: auto;
+    left: 50%;
+    margin-left: -90px;
+    width: 180px;
+    height: 218px;
 }

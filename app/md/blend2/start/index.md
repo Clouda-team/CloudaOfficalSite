@@ -9,23 +9,17 @@ BlendUI是通过集成原生组件，并为移动O2O场景特别优化的移动w
 为了使移动web应用像原生应用一样流畅交互，在特定的环境下，BlendUI调用内部集成的原生组件来代替web组件，且此切换对用户是透明的不需要额外开发成本；
 
 
-##引用
+##1. 引用
 
 样式：
 
-	<script type="text/javascript" src="http://apps.bdimg.com/libs/blendui/2.0-alpha/blendui.min.css"></script>
+	
+	<link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/blendui/2.0-alpha/blendui.min.css" />
 
 脚本：
 
 	<script type="text/javascript" src="http://apps.bdimg.com/libs/blendui/2.0-alpha/blendui.min.js"></script>
 
-
-
-
-
-
-
-
-
-
-
+##2. 自定义下载
+	
+<a href="/blend2/download/" target="_self">请点击这里查看</a>
